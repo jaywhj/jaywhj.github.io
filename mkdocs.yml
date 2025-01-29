@@ -1,1 +1,12 @@
-site_name: My Docs
+site_name: Aaron's blog
+site_author: Aaron Wang
+site_url: https://jaywhj.github.io/    # 网站地址
+
+repo_url: https://github.com/jaywhj
+repo_name: aaron-repo
+copyright: Copyright &copy; 2025 | 🚀 Aaron Wang
+
+use_directory_urls: false     # 控制生成的文档目录结构，false 表示不生成文件夹目录，直接指向文件
+
+theme:
+  name: material
