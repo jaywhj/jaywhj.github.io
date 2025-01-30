@@ -1,17 +1,48 @@
-# Welcome to MkDocs
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# 主页
 
-## Commands
+## 前言
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+其实，平时没有写作习惯，只不过有时候工作需要或记忆需要，总是要写点诸如文档笔记、思路灵感、幻灯片、思维导图、汇报总结 ... 啥的，随着文件的积攒，就想，那就系统化的整理和归纳一下吧，也方便形成自己的知识库。常规的办公软件、笔记工具、写作平台用起来很费劲，要么复杂，要么难用，要么难看，要么限制多 ... 总之，要做一份不难看的文档，需要花费大量时间去调那些无关紧要的格式与样式，使用体验，那就是五个字：从入门到放弃。
 
-## Project layout
+于是，便有了此念头「**Write Once, Show Anywhere**」。
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+你没看错，就是：一次编写，随处展示，在任意地方以任意格式精美的展示。
+
+最优解：用 Markdown 编写内容，可以一键导出 PDF、Word、Image、HTML、ePub 等格式文档，还可一键输出 **幻灯片**、**思维导图**、**静态网站** ... 而你要做的仅仅是专注于自己的内容，无需关心排版、格式，实现**以最小的输入代价**生成各类**印刷级排版**格式的文档。
+
+
+
+## 笔记文档
+
+Markdown语法，网上教程很多，最流行的是 [CommonMark 规范](http://spec.commonmark.org/) 和 [GitHub Flavored Markdown](https://github.github.com/gfm/)（GFM）。
+
+基于此，自己提炼了一份：[Markdown 实用教程](markdown.md)。（没有比这总结得更好的了）
+
+
+
+## 图形与图表
+
+使用 Markdown 快速生成各类图形与图表，使用参考：Markdown 图形与图表。
+
+
+
+## 幻灯片
+
+使用 Markdown 快速生成精美幻灯片，使用参考：Markdown 幻灯片。
+
+
+
+## 静态网站
+
+使用 Markdown 快速生成静态网站，使用参考：[Markdown 静态网站](website.md)。
+
+
+
+## 关于我
+
+- Geek
+- 极简原则
+- MBTI：ENTJ-A
+- 不会编程的产品经理不是好业务员
+- 爱好：HipHop - 🎵、🎾、🏖️、⛹🏻‍♂️、😋
