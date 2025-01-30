@@ -239,12 +239,11 @@ mkdocs gh-deploy --force
 
 该命令执行了以下动作：
 
-1. 执行 `mkdocs build` 命令，将 Markdown 文件转换成 HTML 静态网页，见 `site` 目录；
-2. 创建 `gh-pages` 分支，并切换到 `gh-pages` 分支；
-3. 将 HTML 静态网页 push 到 GitHub 仓库的 `gh-pages` 分支；
-4. 推送完成，切换回 `master` 分支；
+1. 清理 MkDocs 生成的站点 `site` 目录；
+2. 执行 `mkdocs build` 命令，重新构建文档到 `site` 目录（将 Markdown 文件转换成 HTML 静态网页）；
+3. 拷贝 `site` 目录的内容到 `gh-pages` 分支并推送到 GitHub；
 
-完成部署之后，你网站的 HTML 文件都部署在了 gh-pages 分支。而源文件（Markdown 文件）push 到 Github 仓库是可选的，因为部署网站只需要将 HTML 网页文件推送到远端即可，如果提交了源文件，则在 master 分支。
+完成部署之后，你网站的 HTML 文件都部署在了 gh-pages 分支。而源文件（Markdown 文件）push 到 Github 仓库是可选的，因为网站只需要 HTML 文件即可，如果提交了源文件，则在 `main` 分支。
 
 #### 工作流自动部署
 
@@ -266,41 +265,41 @@ mkdocs gh-deploy --force
 
 三、补充插件依赖(可选)
 
-如果你的 MkDocs 安装了除 `mkdocs-material` 外的其它插件或库，（比如 `mkdocs-glightbox`），那你得在 `ci.yml` 中配置这些安装依赖（新增第 14、15、30 行）；
+如果你的 MkDocs 安装了除 `mkdocs-material` 外的其它插件或库，（比如 `mkdocs-glightbox`），那你得在 `ci.yml` 中配置这些安装依赖（高亮行）；
 
-```bash
+```bash {h1_lines="14 15 30"}
 name: ci 
 on:
-    push:
+  push:
     branches:
-        - master 
-        - main
+      - master 
+      - main
 permissions:
-    contents: write
+  contents: write
 jobs:
-    deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-            fetch-depth: 0
-        - name: Configure Git Credentials
+          fetch-depth: 0
+      - name: Configure Git Credentials
         run: |
-            git config user.name github-actions[bot]
-            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-        - uses: actions/setup-python@v5
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v5
         with:
-            python-version: 3.x
-        - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-        - uses: actions/cache@v4
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v4
         with:
-            key: mkdocs-material-${{ env.cache_id }}
-            path: .cache
-            restore-keys: |
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
             mkdocs-material-
-        - run: pip install mkdocs-glightbox
-        - run: pip install mkdocs-material
-        - run: mkdocs gh-deploy --force
+      - run: pip install mkdocs-glightbox
+      - run: pip install mkdocs-material 
+      - run: mkdocs gh-deploy --force
 ```
 
 ### 5. 配置 GitHub Pages 发布源
