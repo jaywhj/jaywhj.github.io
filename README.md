@@ -12,6 +12,12 @@
 
 ## 知识库
 
-知识库展示，采用  [MkDocs](https://www.mkdocs.org/) 一键生成静态网站，内容包含日常笔记文档，工作成果，各类教程和小工具，方便自己也方便大家。
+知识库展示，采用  [MkDocs](https://www.mkdocs.org/) 一键生成静态网站，内容包含日常**笔记文档**、**工作成果**、各类**教程**和**小工具**，方便自己也方便大家。
 
-[jaywhj.github.io/](https://jaywhj.github.io/)
+比如以下 Markdown 系列教程，更多内容点进网站 [jaywhj.github.io/](https://jaywhj.github.io/)：
+
+- **笔记文档**：使用 Markdown 编写，一键导出 PDF、Word、Image、HTML、ePub ... 详情见： Markdown 实用教程。（没有比这总结得更好的了）
+- **图形与图表**：使用 Markdown 快速生成各类图形与图表，见：Markdown 图形与图表；
+- **幻灯片**：使用 Markdown 快速生成精美幻灯片，见：Markdown 幻灯片；
+- **静态网站**：使用 Markdown 快速生成静态网站，见：Markdown 静态网站；
+
