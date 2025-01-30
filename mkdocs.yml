@@ -117,7 +117,7 @@ plugins:
   - search      # 内置搜索插件
   - tags        # 内置标签插件，对页面进行分类
 
-  # - glightbox   # 图片灯箱特效插件
+  - glightbox   # 图片灯箱特效插件
   # - plotly      # 基于 python 的图表库插件
   
   # - markmap:
