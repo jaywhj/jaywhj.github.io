@@ -13,3 +13,5 @@
 ## 知识库
 
 知识库展示，采用  [MkDocs](https://www.mkdocs.org/) 一键生成静态网站，内容包含日常笔记文档，工作成果，各类教程和小工具，方便自己也方便大家。
+
+[jaywhj.github.io/](https://jaywhj.github.io/)
