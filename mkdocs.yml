@@ -8,6 +8,26 @@ copyright: Copyright &copy; 2025 | 🚀 Aaron Wang
 
 use_directory_urls: false     # 控制生成的文档目录结构，false 表示不生成文件夹目录，直接指向文件
 
+nav:
+  - 首页: index.md
+  - Markdown 系列:
+    - Markdown 教程: markdown.md
+    - Markdown 图表: graph-chart.md
+    - Markdown 幻灯片: slideshow.md
+    - Markdown 脑图: markmap-mkdocs.md
+    - Markdown 网站: website.md
+    - CSS 多列布局: css-layout.md
+  - 效率提升:
+    - 实用工具集: utility-tool.md
+    - MacOS 自动化: script-exe.md
+    - 包管理镜像源: npm-yarn-pnpm.md
+    - Jinja2 教程: jinja2.md
+  - 电商运营:
+    - 直播运营: douyin-pool.md
+  - 其他:
+    - 度假: hainan.md
+  
+
 theme:
   name: material
   custom_dir: docs/overrides  # 配置覆写文件目录，以便添加评论系统
@@ -95,9 +115,9 @@ markdown_extensions:
         - name: mermaid     # 配置 mermaid 绘图
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-        # - name: plotly      # 最强 python 图表库
-        #   class: mkdocs-plotly
-        #   format: !!python/name:mkdocs_plotly_plugin.fences.fence_plotly
+        - name: plotly      # 最强 python 图表库
+          class: mkdocs-plotly
+          format: !!python/name:mkdocs_plotly_plugin.fences.fence_plotly
   - toc:
       permalink: true   # 在每个标题的末尾添加段落符 ¶
       toc_depth: 3      # 目录深度
@@ -119,16 +139,28 @@ plugins:
   - tags        # 内置标签插件，对页面进行分类
 
   - glightbox   # 图片灯箱特效插件
-  # - plotly      # 基于 python 的图表库插件
+  - plotly      # 基于 python 的图表库插件
   
-  # - markmap:
-  #     base_path: docs
-  #     encoding: utf-8
-  #     file_extension: .mm.md
+  - git-revision-date-localized:  # 添加最后更新日期
+      type: timeago    # 时间类型
+      custom_format: "%d. %B %Y"    # 时间格式
+      timezone: Europe/Amsterdam    # 时区
+      locale: zh       # 首选语言
+      fallback_to_build_date: false # 允许回退到 git 不可用时 mkdocs build 执行的时间
+      enable_creation_date: true # 是否启用创建时间
+      exclude:         # 排除的页面
+          - index.md
+      enabled: true    # 是否启用
+      strict: true
 
-  #     d3_version: ''
-  #     lib_version: ''
-  #     view_version: ''
+  - markmap:
+      base_path: docs
+      encoding: utf-8
+      file_extension: .mm.md
+
+      d3_version: ''
+      lib_version: ''
+      view_version: ''
 
 extra_javascript:
   
@@ -138,9 +170,10 @@ extra_javascript:
   # - https://unpkg.com/markmap-view@0.18.0/dist/browser/index.js
 
   # 配置 markmap 离线源
-  # - site-plugin/markmap/d3.min.js
-  # - site-plugin/markmap/index.iife.js
-  # - site-plugin/markmap/index.js
+  - site-plugin/markmap/d3.min.js
+  - site-plugin/markmap/index.iife.js
+  - site-plugin/markmap/index.js
+
 
 
   # 配置 Material 数学公式解析：mathjax/katex 二选一
