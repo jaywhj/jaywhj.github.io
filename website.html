@@ -52,6 +52,8 @@
       
     
     
+      <link rel="stylesheet" href="css/timeago.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -579,11 +581,11 @@
         <li class="md-nav__item">
   <a href="#mkdocs" class="md-nav__link">
     <span class="md-ellipsis">
-      选择 MkDocs
+      一、选择 MkDocs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="选择 MkDocs">
+    <nav class="md-nav" aria-label="一、选择 MkDocs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -621,11 +623,11 @@
         <li class="md-nav__item">
   <a href="#material" class="md-nav__link">
     <span class="md-ellipsis">
-      使用插件 Material
+      二、使用插件 Material
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="使用插件 Material">
+    <nav class="md-nav" aria-label="二、使用插件 Material">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -663,11 +665,11 @@
         <li class="md-nav__item">
   <a href="#github-pages" class="md-nav__link">
     <span class="md-ellipsis">
-      网站部署 GitHub Pages
+      三、网站部署 GitHub Pages
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="网站部署 GitHub Pages">
+    <nav class="md-nav" aria-label="三、网站部署 GitHub Pages">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1102,11 +1104,11 @@
         <li class="md-nav__item">
   <a href="#mkdocs" class="md-nav__link">
     <span class="md-ellipsis">
-      选择 MkDocs
+      一、选择 MkDocs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="选择 MkDocs">
+    <nav class="md-nav" aria-label="一、选择 MkDocs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1144,11 +1146,11 @@
         <li class="md-nav__item">
   <a href="#material" class="md-nav__link">
     <span class="md-ellipsis">
-      使用插件 Material
+      二、使用插件 Material
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="使用插件 Material">
+    <nav class="md-nav" aria-label="二、使用插件 Material">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1186,11 +1188,11 @@
         <li class="md-nav__item">
   <a href="#github-pages" class="md-nav__link">
     <span class="md-ellipsis">
-      网站部署 GitHub Pages
+      三、网站部署 GitHub Pages
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="网站部署 GitHub Pages">
+    <nav class="md-nav" aria-label="三、网站部署 GitHub Pages">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1346,7 +1348,7 @@
 <li><a href="https://www.docusaurus.cn/docs#comparison-with-other-tools">Docusaurus文档 - 与其他工具对比</a>；</li>
 <li><a href="https://wiki-power.com/为什么你需要一个知识库/#_8">为什么你需要一个知识库</a>；</li>
 </ul>
-<h2 id="mkdocs">选择 MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">¶</a></h2>
+<h2 id="mkdocs">一、选择 MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">¶</a></h2>
 <p>本着<strong>极简易用</strong>、非程序员都会用的原则，毫无疑问选择 <a href="https://www.mkdocs.org/">MkDocs</a>，一款流行且快速、简单、轻量级的静态网站生成器。</p>
 <p>用 Markdown 编写内容，仅通过一个 YAML 文件配置一切。</p>
 <p>使用参考：</p>
@@ -1399,7 +1401,9 @@
 <p><a href="https://github.com/mkdocs/catalog">MkDocs 项目和插件列表</a>：</p>
 <ul>
 <li>主题文档插件：<a href="https://github.com/squidfunk/mkdocs-material">mkdocs-material</a>；</li>
-<li>添加日期：<a href="https://github.com/timvink/mkdocs-git-revision-date-localized-plugin">mkdocs-git-revision-date-localized-plugin</a>；</li>
+<li>添加最后更新日期：<a href="https://github.com/timvink/mkdocs-git-revision-date-localized-plugin">mkdocs-git-revision-date-localized-plugin</a>；</li>
+<li>显示作者：<a href="https://github.com/timvink/mkdocs-git-authors-plugin">mkdocs-git-authors-plugin</a>；</li>
+<li>显示作者 GitHub 用户资料：<a href="https://github.com/byrnereese/mkdocs-git-committers-plugin">mkdocs-git-committers-plugin</a>；</li>
 <li>思维导图：<a href="https://github.com/markmap/mkdocs-markmap">mkdocs-markmap</a>；</li>
 <li>绘图插件：<ul>
 <li><a href="https://github.com/fralau/mkdocs-mermaid2-plugin">mkdocs-mermaid2-plugin</a>；</li>
@@ -1416,7 +1420,7 @@
 <li>图片灯箱特效：<a href="https://github.com/blueswen/mkdocs-glightbox">mkdocs-glightbox</a>；</li>
 <li>读取各种表格到页面：<a href="https://github.com/timvink/mkdocs-table-reader-plugin">mkdocs-table-reader-plugin</a>；</li>
 </ul>
-<h2 id="material">使用插件 Material<a class="headerlink" href="#material" title="Permanent link">¶</a></h2>
+<h2 id="material">二、使用插件 Material<a class="headerlink" href="#material" title="Permanent link">¶</a></h2>
 <p><a href="https://github.com/squidfunk/mkdocs-material">Material for MkDocs</a>，一个基于 MkDocs 的强大的文档框架，能让你在几分钟内创建一个专业的静态网站，可搜索、可定制，支持 60 多种语言，适配所有设备。</p>
 <h3 id="1">1. 微调与定制<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
 <p>参考 <a href="https://squidfunk.github.io/mkdocs-material/">Material 官方文档</a>：</p>
@@ -1448,8 +1452,8 @@
 <li><a href="https://github.com/timvink/mkdocs-git-revision-date-localized-plugin">mkdocs-git-revision-date-localized-plugin</a>；</li>
 <li><a href="https://wcowin.work/Mkdocs-Wcowin/blog/websitebeauty/time/">添加文章修订时间戳</a>；</li>
 </ul>
-<h2 id="github-pages">网站部署 GitHub Pages<a class="headerlink" href="#github-pages" title="Permanent link">¶</a></h2>
-<p>使用 GitHub Pages 来托管网站，具体参考 <a href="https://docs.github.com/zh/pages">GitHub Pages 文档</a>；</p>
+<h2 id="github-pages">三、网站部署 GitHub Pages<a class="headerlink" href="#github-pages" title="Permanent link">¶</a></h2>
+<p>你可以将网站部署到 <a href="https://vercel.com/">Vercel</a>、<a href="https://pages.github.com/">GitHub Pages</a>、<a href="https://www.netlify.com/">Netlify</a>、<a href="https://render.com/docs/static-sites">Render</a> 以及 <a href="https://surge.sh/help/getting-started-with-surge">Surge</a> 等静态网站托管服务上，这里我选择 GitHub Pages 来托管网站，具体参考 <a href="https://docs.github.com/zh/pages">GitHub Pages 文档</a>；</p>
 <h3 id="1-github">1. 创建网站 GitHub 仓库<a class="headerlink" href="#1-github" title="Permanent link">¶</a></h3>
 <ul>
 <li>New repository，仓库名建议为 <code>&lt;username&gt;.github.io</code>，比如我的是：<code>jaywhj.github.io</code>；<br/>
@@ -1590,6 +1594,10 @@
 <li><a href="https://blog.arisa.moe/blog/2022/220407-github-pages/">GitHub Pages 文档自动化部署 - MkDocs</a>；</li>
 <li><a href="https://www.cnblogs.com/chinjinyu/p/17610438.html">使用MkDocs搭建个人博客</a>；</li>
 <li><a href="https://edgeai-lab.github.io/notebook/Tools/mkdocs/mkdocs_deploy_githubpages/">MkDocs - 部署WiKi站点到Github Pages</a>；</li>
+<li><a href="https://vuepress.vuejs.org/zh/guide/deployment.html">VuePress 部署</a>；</li>
+<li><a href="https://hugo.opendocs.io/hosting-and-deployment/">Hugo 托管和部署</a>；</li>
+<li><a href="https://developer.volcengine.com/articles/7392435468396970034">玩转AI项目部署</a>；</li>
+<li><a href="https://www.chengzz.com/1078.html">免费静态资源托管站 Vercel 和 Surge</a>；</li>
 </ul>
 
 
@@ -1599,8 +1607,37 @@
 
 
   
+    
+  
+  
+    
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-01-30T18:39:02+01:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-01-30</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-01-30T07:34:51+01:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-01-30</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
 
@@ -1725,6 +1762,10 @@
     
     
       <script src="assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="js/timeago.min.js"></script>
+      
+        <script src="js/timeago_mkdocs_material.js"></script>
       
         <script src="site-plugin/markmap/d3.min.js"></script>
       

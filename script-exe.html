@@ -52,6 +52,8 @@
       
     
     
+      <link rel="stylesheet" href="css/timeago.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -674,7 +676,7 @@
         <li class="md-nav__item">
   <a href="#shell-bash" class="md-nav__link">
     <span class="md-ellipsis">
-      shell 和 bash
+      一、shell 和 bash
     </span>
   </a>
   
@@ -683,7 +685,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      编写脚本
+      二、编写脚本
     </span>
   </a>
   
@@ -692,7 +694,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      脚本授权
+      三、脚本授权
     </span>
   </a>
   
@@ -701,26 +703,26 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      脚本执行
+      四、脚本执行
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="脚本执行">
+    <nav class="md-nav" aria-label="四、脚本执行">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      终端执行
+      1. 终端执行
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      自动操作
+      2. 自动操作
     </span>
   </a>
   
@@ -970,7 +972,7 @@
         <li class="md-nav__item">
   <a href="#shell-bash" class="md-nav__link">
     <span class="md-ellipsis">
-      shell 和 bash
+      一、shell 和 bash
     </span>
   </a>
   
@@ -979,7 +981,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      编写脚本
+      二、编写脚本
     </span>
   </a>
   
@@ -988,7 +990,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      脚本授权
+      三、脚本授权
     </span>
   </a>
   
@@ -997,26 +999,26 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      脚本执行
+      四、脚本执行
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="脚本执行">
+    <nav class="md-nav" aria-label="四、脚本执行">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      终端执行
+      1. 终端执行
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      自动操作
+      2. 自动操作
     </span>
   </a>
   
@@ -1058,13 +1060,13 @@
 
 <h2 id="mac">Mac下自建双击可执行程序<a class="headerlink" href="#mac" title="Permanent link">¶</a></h2>
 <p>最简单的方式，基于 shell 脚本。</p>
-<h2 id="shell-bash">shell 和 bash<a class="headerlink" href="#shell-bash" title="Permanent link">¶</a></h2>
+<h2 id="shell-bash">一、shell 和 bash<a class="headerlink" href="#shell-bash" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>Shell</strong>：Linux 和 Unix 系统中的命令行解释器，包含了各种类型（如 sh、bash、csh、ksh、zsh 等）；</li>
 <li><strong>sh</strong>（Bourne Shell）：早期的标准 Shell，功能简单，适合编写对兼容性有要求的脚本；</li>
 <li><strong>Bash</strong>（Bourne Again Shell）：sh 的增强版，是 Linux 和 Unix 系统中的默认 Shell；</li>
 </ul>
-<h2 id="_1">编写脚本<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h2 id="_1">二、编写脚本<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>新建 <code>autoexe.sh</code> 文件，编写 bash 代码，以 <code>#!/bin/bash</code> 开头：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos="1 "></span></a><span class="ch">#!/bin/bash</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos="2 "></span></a>
@@ -1073,16 +1075,16 @@
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos="5 "></span></a>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos="6 "></span></a><span class="nb">echo</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"\n脚本执行完毕！"</span>
 </span></code></pre></div>
-<h2 id="_2">脚本授权<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h2 id="_2">三、脚本授权<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>打开 <code>终端</code> 输入：<code>chmod 755 autoexe.sh</code></p>
-<h2 id="_3">脚本执行<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<h3 id="_4">终端执行<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<h2 id="_3">四、脚本执行<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h3 id="1">1. 终端执行<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
 <ul>
 <li><strong>拖拽执行</strong>：直接拖拽 <code>autoexe.sh</code> 到 <code>终端</code>，回车即可；</li>
 <li><strong>双击执行 - 更改打开方式</strong>：选中 <code>autoexe.sh</code>，右键 - 显示简介 - 打开方式 - 其他 - 选择 <code>终端</code>，然后双击脚本就可以执行了；</li>
 <li><strong>双击执行 - 改为 command 后缀</strong>：把 <code>autoexe.sh</code> 后缀改为 command 后重新授权即可，此时再双击 <code>autoexe.command</code> 就可以直接运行了。</li>
 </ul>
-<h3 id="_5">自动操作<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<h3 id="2">2. 自动操作<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
 <p>Mac 自带 <code>自动操作.app</code> 程序，可将 shell 脚本打包成可执行程序（.app后缀）：</p>
 <ol>
 <li>搜索打开 <code>自动操作.app</code> 或 <code>Automator.app</code>；</li>
@@ -1112,8 +1114,37 @@
 
 
   
+    
+  
+  
+    
   
 
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-01-31T17:29:52+01:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-01-31</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-01-31T17:29:52+01:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-01-31</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
 
@@ -1182,6 +1213,10 @@
     
     
       <script src="assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="js/timeago.min.js"></script>
+      
+        <script src="js/timeago_mkdocs_material.js"></script>
       
         <script src="site-plugin/markmap/d3.min.js"></script>
       
