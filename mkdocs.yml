@@ -10,7 +10,7 @@ use_directory_urls: false     # 控制生成的文档目录结构，false 表示
 
 nav:
   - 首页: index.md
-  - Markdown 系列教程:
+  - Markdown 系列笔记:
     - Markdown 实用语法: markdown.md
     - Markdown 生成图表: graph-chart.md
     - Markdown 生成幻灯片: slideshow.md
