@@ -10,13 +10,13 @@ use_directory_urls: false     # 控制生成的文档目录结构，false 表示
 
 nav:
   - 首页: index.md
-  - Markdown 系列:
-    - Markdown 教程: markdown.md
-    - Markdown 图表: graph-chart.md
-    - Markdown 幻灯片: slideshow.md
-    - Markdown 脑图: markmap-mkdocs.md
-    - Markdown 网站: website.md
-    - CSS 多列布局: css-layout.md
+  - Markdown 系列教程:
+    - Markdown 实用语法: markdown.md
+    - Markdown 生成图表: graph-chart.md
+    - Markdown 生成幻灯片: slideshow.md
+    - Markdown 生成脑图: markmap-mkdocs.md
+    - Markdown 生成网站: website.md
+    - Markdown 多列布局: css-layout.md
   - 效率提升:
     - 实用工具集: utility-tool.md
     - MacOS 自动化: script-exe.md
@@ -25,7 +25,7 @@ nav:
   - 电商运营:
     - 直播运营: douyin-pool.md
   - 其他:
-    - 度假: hainan.md
+    - 海南畅游: hainan.md
   
 
 theme:
@@ -141,17 +141,17 @@ plugins:
   - glightbox   # 图片灯箱特效插件
   - plotly      # 基于 python 的图表库插件
   
-  - git-revision-date-localized:  # 添加最后更新日期
-      type: timeago    # 时间类型
-      custom_format: "%d. %B %Y"    # 时间格式
-      timezone: Europe/Amsterdam    # 时区
-      locale: zh       # 首选语言
-      fallback_to_build_date: false # 允许回退到 git 不可用时 mkdocs build 执行的时间
-      enable_creation_date: true # 是否启用创建时间
-      exclude:         # 排除的页面
-          - index.md
-      enabled: true    # 是否启用
-      strict: true
+  # - git-revision-date-localized:  # 添加最后更新日期
+  #     type: timeago    # 时间类型：timeago | iso_date
+  #     custom_format: "%d. %B %Y"    # 时间格式
+  #     timezone: Europe/Amsterdam    # 时区
+  #     locale: zh       # 首选语言
+  #     fallback_to_build_date: true # 在 Git 不可用时回退到 mkdocs build 执行时的时间
+  #     enable_creation_date: true   # 是否启用创建时间
+  #     exclude:         # 排除的页面
+  #         - index.md
+  #     enabled: true    # 是否启用
+  #     strict: true
 
   - markmap:
       base_path: docs
@@ -176,17 +176,19 @@ extra_javascript:
 
 
 
-  # 配置 Material 数学公式解析：mathjax/katex 二选一
+  # 数理公式解析：mathjax/katex 二选一
   # https://squidfunk.github.io/mkdocs-material/reference/math/
 
   # 配置 mathjax 路径
   - site-plugin/mathjax/mathjax.js
   - site-plugin/mathjax/tex-mml-chtml.js    # https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
-  # 配置 katex 路径
-  # - site-plugin/katex/katex.js
-  # - site-plugin/katex/katex.min.js        # https://unpkg.com/katex@0/dist/katex.min.js
-  # - site-plugin/katex/auto-render.min.js  # https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+#   # 配置 katex 路径
+#   - site-plugin/katex/katex.js
+#   - site-plugin/katex/katex.min.js        # https://unpkg.com/katex@0/dist/katex.min.js
+#   - site-plugin/katex/auto-render.min.js  # https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+#   # 支持化学方程式：
+#   - site-plugin/katex/mhchem.min.js       # https://unpkg.com/katex/dist/contrib/mhchem.min.js  |  https://cdn.jsdelivr.net/npm/katex/dist/contrib/mhchem.min.js
 
 # extra_css:
 #   # 配置 katex 样式
