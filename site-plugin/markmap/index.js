@@ -47,18 +47,6 @@
     });
     return classList.join(" ");
   }
-  function childSelector(filter) {
-    if (typeof filter === "string") {
-      const tagName = filter;
-      filter = (el) => el.tagName === tagName;
-    }
-    const filterFn = filter;
-    return function selector() {
-      let nodes = Array.from(this.childNodes);
-      if (filterFn) nodes = nodes.filter((node) => filterFn(node));
-      return nodes;
-    };
-  }
   function defer() {
     const obj = {};
     obj.promise = new Promise((resolve, reject) => {
@@ -339,31 +327,33 @@
   }
   const isMacintosh = typeof navigator !== "undefined" && navigator.userAgent.includes("Macintosh");
   const defaultColorFn = d32.scaleOrdinal(d32.schemeCategory10);
+  const lineWidthFactory = (baseWidth = 1, deltaWidth = 3, k = 2) => (node) => baseWidth + deltaWidth / k ** node.state.depth;
   const defaultOptions = {
     autoFit: false,
-    color: (node) => {
-      var _a;
-      return defaultColorFn(`${((_a = node.state) == null ? void 0 : _a.path) || ""}`);
-    },
     duration: 500,
     embedGlobalCSS: true,
     fitRatio: 0.95,
     maxInitialScale: 2,
-    maxWidth: 0,
-    nodeMinHeight: 16,
-    paddingX: 8,
     scrollForPan: isMacintosh,
-    spacingHorizontal: 80,
-    spacingVertical: 5,
     initialExpandLevel: -1,
     zoom: true,
     pan: true,
-    toggleRecursively: false
+    toggleRecursively: false,
+    color: (node) => {
+      var _a;
+      return defaultColorFn(`${((_a = node.state) == null ? void 0 : _a.path) || ""}`);
+    },
+    lineWidth: lineWidthFactory(),
+    maxWidth: 0,
+    nodeMinHeight: 16,
+    paddingX: 8,
+    spacingHorizontal: 80,
+    spacingVertical: 5
   };
   function deriveOptions(jsonOptions) {
     const derivedOptions = {};
     const options = { ...jsonOptions };
-    const { color, colorFreezeLevel } = options;
+    const { color, colorFreezeLevel, lineWidth } = options;
     if ((color == null ? void 0 : color.length) === 1) {
       const solidColor = color[0];
       derivedOptions.color = () => solidColor;
@@ -383,6 +373,12 @@
         };
         return color2(node);
       };
+    }
+    if (lineWidth) {
+      const args = Array.isArray(lineWidth) ? lineWidth : [lineWidth, 0, 1];
+      derivedOptions.lineWidth = lineWidthFactory(
+        ...args
+      );
     }
     const numberKeys = [
       "duration",
@@ -412,6 +408,18 @@
       hash = (hash << 5) - hash + str.charCodeAt(i) | 0;
     }
     return (hash >>> 0).toString(36);
+  }
+  function childSelector(filter) {
+    if (typeof filter === "string") {
+      const selector = filter;
+      filter = (el) => el.matches(selector);
+    }
+    const filterFn = filter;
+    return function selector() {
+      let nodes = Array.from(this.childNodes);
+      if (filterFn) nodes = nodes.filter((node) => filterFn(node));
+      return nodes;
+    };
   }
   function count(node) {
     var sum = 0, children = node.children, i = children && children.length;
@@ -942,12 +950,12 @@
       next: lastLows
     };
   };
-  const css = ".markmap {\n  --markmap-max-width: 9999px;\n  --markmap-a-color: #0097e6;\n  --markmap-a-hover-color: #00a8ff;\n  --markmap-code-bg: #f0f0f0;\n  --markmap-code-color: #555;\n  --markmap-highlight-bg: #ffeaa7;\n  --markmap-table-border: 1px solid currentColor;\n  --markmap-font: 300 16px/20px sans-serif;\n  --markmap-circle-open-bg: #fff;\n  --markmap-text-color: #333;\n\n  font: var(--markmap-font);\n  color: var(--markmap-text-color);\n}\n\n  .markmap-link {\n    fill: none;\n  }\n\n  .markmap-node > circle {\n      cursor: pointer;\n    }\n\n  .markmap-foreign {\n    display: inline-block;\n  }\n\n  .markmap-foreign p {\n      margin: 0;\n    }\n\n  .markmap-foreign a {\n      color: var(--markmap-a-color);\n    }\n\n  .markmap-foreign a:hover {\n        color: var(--markmap-a-hover-color);\n      }\n\n  .markmap-foreign code {\n      padding: 0.25em;\n      font-size: calc(1em - 2px);\n      color: var(--markmap-code-color);\n      background-color: var(--markmap-code-bg);\n      border-radius: 2px;\n    }\n\n  .markmap-foreign pre {\n      margin: 0;\n    }\n\n  .markmap-foreign pre > code {\n        display: block;\n      }\n\n  .markmap-foreign del {\n      text-decoration: line-through;\n    }\n\n  .markmap-foreign em {\n      font-style: italic;\n    }\n\n  .markmap-foreign strong {\n      font-weight: bold;\n    }\n\n  .markmap-foreign mark {\n      background: var(--markmap-highlight-bg);\n    }\n\n  .markmap-foreign table,\n    .markmap-foreign th,\n    .markmap-foreign td {\n      border-collapse: collapse;\n      border: var(--markmap-table-border);\n    }\n\n  .markmap-foreign img {\n      display: inline-block;\n    }\n\n  .markmap-foreign svg {\n      fill: currentColor;\n    }\n\n  .markmap-foreign > div {\n      width: var(--markmap-max-width);\n      text-align: left;\n    }\n\n  .markmap-foreign > div > div {\n        display: inline-block;\n      }\n\n.markmap-dark .markmap {\n  --markmap-code-bg: #1a1b26;\n  --markmap-code-color: #ddd;\n  --markmap-circle-open-bg: #444;\n  --markmap-text-color: #eee;\n}\n";
+  const css = ".markmap {\n  --markmap-max-width: 9999px;\n  --markmap-a-color: #0097e6;\n  --markmap-a-hover-color: #00a8ff;\n  --markmap-code-bg: #f0f0f0;\n  --markmap-code-color: #555;\n  --markmap-highlight-bg: #ffeaa7;\n  --markmap-table-border: 1px solid currentColor;\n  --markmap-font: 300 16px/20px sans-serif;\n  --markmap-circle-open-bg: #fff;\n  --markmap-text-color: #333;\n  --markmap-highlight-node-bg: #ff02;\n\n  font: var(--markmap-font);\n  color: var(--markmap-text-color);\n}\n\n  .markmap-link {\n    fill: none;\n  }\n\n  .markmap-node > circle {\n      cursor: pointer;\n    }\n\n  .markmap-foreign {\n    display: inline-block;\n  }\n\n  .markmap-foreign p {\n      margin: 0;\n    }\n\n  .markmap-foreign a {\n      color: var(--markmap-a-color);\n    }\n\n  .markmap-foreign a:hover {\n        color: var(--markmap-a-hover-color);\n      }\n\n  .markmap-foreign code {\n      padding: 0.25em;\n      font-size: calc(1em - 2px);\n      color: var(--markmap-code-color);\n      background-color: var(--markmap-code-bg);\n      border-radius: 2px;\n    }\n\n  .markmap-foreign pre {\n      margin: 0;\n    }\n\n  .markmap-foreign pre > code {\n        display: block;\n      }\n\n  .markmap-foreign del {\n      text-decoration: line-through;\n    }\n\n  .markmap-foreign em {\n      font-style: italic;\n    }\n\n  .markmap-foreign strong {\n      font-weight: bold;\n    }\n\n  .markmap-foreign mark {\n      background: var(--markmap-highlight-bg);\n    }\n\n  .markmap-foreign table,\n    .markmap-foreign th,\n    .markmap-foreign td {\n      border-collapse: collapse;\n      border: var(--markmap-table-border);\n    }\n\n  .markmap-foreign img {\n      display: inline-block;\n    }\n\n  .markmap-foreign svg {\n      fill: currentColor;\n    }\n\n  .markmap-foreign > div {\n      width: var(--markmap-max-width);\n      text-align: left;\n    }\n\n  .markmap-foreign > div > div {\n        display: inline-block;\n      }\n\n  .markmap-highlight rect {\n    fill: var(--markmap-highlight-node-bg);\n  }\n\n.markmap-dark .markmap {\n  --markmap-code-bg: #1a1b26;\n  --markmap-code-color: #ddd;\n  --markmap-circle-open-bg: #444;\n  --markmap-text-color: #eee;\n}\n";
   const globalCSS = css;
+  const SELECTOR_NODE = "g.markmap-node";
+  const SELECTOR_LINK = "path.markmap-link";
+  const SELECTOR_HIGHLIGHT = "g.markmap-highlight";
   const linkShape = d32.linkHorizontal();
-  function linkWidth(data) {
-    return Math.max(4 - 2 * data.state.depth, 1.5);
-  }
   function minBy(numbers, by) {
     const index = d32.minIndex(numbers, by);
     return numbers[index];
@@ -958,8 +966,8 @@
   const refreshHook = new Hook();
   class Markmap {
     constructor(svg, opts) {
-      this.options = defaultOptions;
-      this.revokers = [];
+      this.options = { ...defaultOptions };
+      this._disposeList = [];
       this.handleZoom = (e) => {
         const { transform } = e;
         this.g.attr("transform", transform);
@@ -978,6 +986,7 @@
         if (isMacintosh ? e.metaKey : e.ctrlKey) recursive = !recursive;
         this.toggleNode(d, recursive);
       };
+      this.ensureView = this.ensureVisible;
       this.svg = svg.datum ? svg : d32.select(svg);
       this.styleNode = this.svg.append("style");
       this.zoom = d32.zoom().filter((event) => {
@@ -992,15 +1001,17 @@
         rect: { x1: 0, y1: 0, x2: 0, y2: 0 }
       };
       this.g = this.svg.append("g");
-      this.observer = new ResizeObserver(
+      this.g.append("g").attr("class", "markmap-highlight");
+      this._observer = new ResizeObserver(
         debounce(() => {
           this.renderData();
         }, 100)
       );
-      this.revokers.push(
+      this._disposeList.push(
         refreshHook.tap(() => {
           this.setData();
-        })
+        }),
+        () => this._observer.disconnect()
       );
     }
     getStyleContent() {
@@ -1071,10 +1082,11 @@
         if (isFoldRecursively) foldRecursively -= 1;
         depth -= 1;
       });
+      return node;
     }
     _relayout() {
       if (!this.state.data) return;
-      this.g.selectAll(childSelector("g")).selectAll(
+      this.g.selectAll(childSelector(SELECTOR_NODE)).selectAll(
         childSelector("foreignObject")
       ).each(function(d) {
         var _a;
@@ -1082,7 +1094,7 @@
         const newSize = [el.scrollWidth, el.scrollHeight];
         d.state.size = newSize;
       });
-      const { spacingHorizontal, paddingX, spacingVertical } = this.options;
+      const { lineWidth, paddingX, spacingHorizontal, spacingVertical } = this.options;
       const layout = flextree({}).children((d) => {
         var _a;
         if (!((_a = d.payload) == null ? void 0 : _a.fold)) return d.children;
@@ -1090,7 +1102,7 @@
         const [width, height] = node.data.state.size;
         return [height, width + (width ? paddingX * 2 : 0) + spacingHorizontal];
       }).spacing((a, b) => {
-        return a.parent === b.parent ? spacingVertical : spacingVertical * 2;
+        return (a.parent === b.parent ? spacingVertical : spacingVertical * 2) + lineWidth(a.data);
       });
       const tree = layout.hierarchy(this.state.data);
       layout(tree);
@@ -1099,7 +1111,7 @@
         const node = fnode.data;
         node.state.rect = {
           x: fnode.y,
-          y: fnode.x,
+          y: fnode.x - fnode.xSize / 2,
           width: fnode.ySize - spacingHorizontal,
           height: fnode.xSize
         };
@@ -1135,26 +1147,69 @@
     }
     async setData(data, opts) {
       if (opts) this.setOptions(opts);
-      if (data) this.state.data = data;
+      if (data) this.state.data = this._initializeData(data);
       if (!this.state.data) return;
-      this._initializeData(this.state.data);
       this.updateStyle();
       await this.renderData();
     }
+    async setHighlight(node) {
+      this.state.highlight = node || void 0;
+      await this.renderData();
+    }
+    _getHighlightRect(highlight) {
+      const svgNode = this.svg.node();
+      const transform = d32.zoomTransform(svgNode);
+      const padding = 4 / transform.k;
+      const rect = {
+        ...highlight.state.rect
+      };
+      rect.x -= padding;
+      rect.y -= padding;
+      rect.width += 2 * padding;
+      rect.height += 2 * padding;
+      return rect;
+    }
     async renderData(originData) {
-      const { paddingX, autoFit, color, maxWidth } = this.options;
-      if (!this.state.data) return;
+      const { paddingX, autoFit, color, maxWidth, lineWidth } = this.options;
+      const rootNode = this.state.data;
+      if (!rootNode) return;
+      const nodeMap = {};
+      const parentMap = {};
       const nodes = [];
-      walkTree(this.state.data, (item, next) => {
+      walkTree(rootNode, (item, next, parent) => {
         var _a;
         if (!((_a = item.payload) == null ? void 0 : _a.fold)) next();
+        nodeMap[item.state.id] = item;
+        if (parent) parentMap[item.state.id] = parent.state.id;
         nodes.push(item);
       });
-      const origin = originData || this.state.data;
-      const originRect = origin.state.rect;
-      const mmG = this.g.selectAll(childSelector("g")).data(nodes, (d) => d.state.key);
-      const mmGEnter = mmG.enter().append("g").attr("data-depth", (d) => d.state.depth).attr("data-path", (d) => d.state.path);
-      const mmGExit = mmG.exit();
+      const originMap = {};
+      const sourceRectMap = {};
+      const setOriginNode = (originNode) => {
+        if (!originNode || originMap[originNode.state.id]) return;
+        walkTree(originNode, (item, next) => {
+          originMap[item.state.id] = originNode.state.id;
+          next();
+        });
+      };
+      const getOriginSourceRect = (node) => {
+        const rect = sourceRectMap[originMap[node.state.id]];
+        return rect || rootNode.state.rect;
+      };
+      const getOriginTargetRect = (node) => (nodeMap[originMap[node.state.id]] || rootNode).state.rect;
+      sourceRectMap[rootNode.state.id] = rootNode.state.rect;
+      if (originData) setOriginNode(originData);
+      const { highlight } = this.state;
+      let highlightNodes = this.g.selectAll(childSelector(SELECTOR_HIGHLIGHT)).selectAll(childSelector("rect")).data(highlight ? [this._getHighlightRect(highlight)] : []).join("rect").attr("x", (d) => d.x).attr("y", (d) => d.y).attr("width", (d) => d.width).attr("height", (d) => d.height);
+      const mmG = this.g.selectAll(childSelector(SELECTOR_NODE)).each((d) => {
+        sourceRectMap[d.state.id] = d.state.rect;
+      }).data(nodes, (d) => d.state.key);
+      const mmGEnter = mmG.enter().append("g").attr("data-depth", (d) => d.state.depth).attr("data-path", (d) => d.state.path).each((d) => {
+        setOriginNode(nodeMap[parentMap[d.state.id]]);
+      });
+      const mmGExit = mmG.exit().each((d) => {
+        setOriginNode(nodeMap[parentMap[d.state.id]]);
+      });
       const mmGMerge = mmG.merge(mmGEnter).attr(
         "class",
         (d) => {
@@ -1166,27 +1221,24 @@
         (d) => [d],
         (d) => d.state.key
       );
-      const mmLineEnter = mmLine.enter().append("line");
-      const mmLineExit = mmGExit.selectAll(
-        childSelector("line")
-      );
+      const mmLineEnter = mmLine.enter().append("line").attr("stroke", (d) => color(d)).attr("stroke-width", 0);
       const mmLineMerge = mmLine.merge(mmLineEnter);
-      const mmCircle = mmGMerge.selectAll(
-        childSelector("circle")
-      ).data(
+      const mmCircle = mmGMerge.selectAll(childSelector("circle")).data(
         (d) => {
           var _a;
           return ((_a = d.children) == null ? void 0 : _a.length) ? [d] : [];
         },
         (d) => d.state.key
-      ).join(
-        (enter) => {
-          return enter.append("circle").attr("stroke-width", "1.5").attr("r", 0).on("click", (e, d) => this.handleClick(e, d)).on("mousedown", stopPropagation);
-        },
-        (update) => update,
-        (exit) => exit.remove()
       );
-      const observer = this.observer;
+      const mmCircleEnter = mmCircle.enter().append("circle").attr("stroke-width", 0).attr("r", 0).on("click", (e, d) => this.handleClick(e, d)).on("mousedown", stopPropagation);
+      const mmCircleMerge = mmCircleEnter.merge(mmCircle).attr("stroke", (d) => color(d)).attr(
+        "fill",
+        (d) => {
+          var _a;
+          return ((_a = d.payload) == null ? void 0 : _a.fold) && d.children ? color(d) : "var(--markmap-circle-open-bg)";
+        }
+      );
+      const observer = this._observer;
       const mmFo = mmGMerge.selectAll(childSelector("foreignObject")).data(
         (d) => [d],
         (d) => d.state.key
@@ -1213,9 +1265,16 @@
           return ((_a = node.payload) == null ? void 0 : _a.fold) ? [] : node.children.map((child) => ({ source: node, target: child }));
         }
       );
-      const mmPath = this.g.selectAll(childSelector("path")).data(links, (d) => d.target.state.key);
+      const mmPath = this.g.selectAll(childSelector(SELECTOR_LINK)).data(links, (d) => d.target.state.key);
       const mmPathExit = mmPath.exit();
-      const mmPathEnter = mmPath.enter().insert("path", "g").attr("class", "markmap-link").attr("data-depth", (d) => d.target.state.depth).attr("data-path", (d) => d.target.state.path);
+      const mmPathEnter = mmPath.enter().insert("path", "g").attr("class", "markmap-link").attr("data-depth", (d) => d.target.state.depth).attr("data-path", (d) => d.target.state.path).attr("d", (d) => {
+        const originRect = getOriginSourceRect(d.target);
+        const pathOrigin = [
+          originRect.x + originRect.width,
+          originRect.y + originRect.height
+        ];
+        return linkShape({ source: pathOrigin, target: pathOrigin });
+      }).attr("stroke-width", 0);
       const mmPathMerge = mmPathEnter.merge(mmPath);
       this.svg.style(
         "--markmap-max-width",
@@ -1223,53 +1282,56 @@
       );
       await new Promise(requestAnimationFrame);
       this._relayout();
+      highlightNodes = highlightNodes.data(highlight ? [this._getHighlightRect(highlight)] : []).join("rect");
+      this.transition(highlightNodes).attr("x", (d) => d.x).attr("y", (d) => d.y).attr("width", (d) => d.width).attr("height", (d) => d.height);
+      mmGEnter.attr("transform", (d) => {
+        const originRect = getOriginSourceRect(d);
+        return `translate(${originRect.x + originRect.width - d.state.rect.width},${originRect.y + originRect.height - d.state.rect.height})`;
+      });
       this.transition(mmGExit).attr("transform", (d) => {
-        const targetX = originRect.x + originRect.width - d.state.rect.width;
-        const targetY = originRect.y + originRect.height / 2 - d.state.rect.height;
+        const targetRect = getOriginTargetRect(d);
+        const targetX = targetRect.x + targetRect.width - d.state.rect.width;
+        const targetY = targetRect.y + targetRect.height - d.state.rect.height;
         return `translate(${targetX},${targetY})`;
       }).remove();
-      mmGEnter.attr(
-        "transform",
-        (d) => `translate(${originRect.x + originRect.width - d.state.rect.width},${originRect.y + originRect.height / 2 - d.state.rect.height})`
-      );
       this.transition(mmGMerge).attr(
         "transform",
-        (d) => `translate(${d.state.rect.x},${d.state.rect.y - d.state.rect.height / 2})`
+        (d) => `translate(${d.state.rect.x},${d.state.rect.y})`
       );
-      this.transition(mmLineExit).attr("x1", (d) => d.state.rect.width).attr("x2", (d) => d.state.rect.width);
+      const mmLineExit = mmGExit.selectAll(
+        childSelector("line")
+      );
+      this.transition(mmLineExit).attr("x1", (d) => d.state.rect.width).attr("stroke-width", 0);
       mmLineEnter.attr("x1", (d) => d.state.rect.width).attr("x2", (d) => d.state.rect.width);
-      mmLineMerge.attr("y1", (d) => d.state.rect.height).attr("y2", (d) => d.state.rect.height).attr("stroke", (d) => color(d));
-      this.transition(mmLineMerge).attr("x1", -1).attr("x2", (d) => d.state.rect.width + 2).attr("stroke-width", linkWidth);
-      mmCircle.attr("cx", (d) => d.state.rect.width).attr("cy", (d) => d.state.rect.height).attr("stroke", (d) => color(d)).attr(
-        "fill",
-        (d) => {
-          var _a;
-          return ((_a = d.payload) == null ? void 0 : _a.fold) && d.children ? color(d) : "var(--markmap-circle-open-bg)";
-        }
+      mmLineMerge.attr("y1", (d) => d.state.rect.height + lineWidth(d) / 2).attr("y2", (d) => d.state.rect.height + lineWidth(d) / 2);
+      this.transition(mmLineMerge).attr("x1", -1).attr("x2", (d) => d.state.rect.width + 2).attr("stroke", (d) => color(d)).attr("stroke-width", lineWidth);
+      const mmCircleExit = mmGExit.selectAll(
+        childSelector("circle")
       );
-      this.transition(mmCircle).attr("r", 6);
+      this.transition(mmCircleExit).attr("r", 0).attr("stroke-width", 0);
+      mmCircleMerge.attr("cx", (d) => d.state.rect.width).attr("cy", (d) => d.state.rect.height + lineWidth(d) / 2);
+      this.transition(mmCircleMerge).attr("r", 6).attr("stroke-width", "1.5");
       this.transition(mmFoExit).style("opacity", 0);
       mmFoMerge.attr("width", (d) => Math.max(0, d.state.rect.width - paddingX * 2)).attr("height", (d) => d.state.rect.height);
       this.transition(mmFoMerge).style("opacity", 1);
-      const pathOrigin = [
-        originRect.x + originRect.width,
-        originRect.y + originRect.height / 2
-      ];
-      this.transition(mmPathExit).attr("d", linkShape({ source: pathOrigin, target: pathOrigin })).remove();
-      mmPathEnter.attr(
-        "d",
-        linkShape({ source: pathOrigin, target: pathOrigin })
-      );
-      this.transition(mmPathMerge).attr("stroke", (d) => color(d.target)).attr("stroke-width", (d) => linkWidth(d.target)).attr("d", (d) => {
+      this.transition(mmPathExit).attr("d", (d) => {
+        const targetRect = getOriginTargetRect(d.target);
+        const pathTarget = [
+          targetRect.x + targetRect.width,
+          targetRect.y + targetRect.height + lineWidth(d.target) / 2
+        ];
+        return linkShape({ source: pathTarget, target: pathTarget });
+      }).attr("stroke-width", 0).remove();
+      this.transition(mmPathMerge).attr("stroke", (d) => color(d.target)).attr("stroke-width", (d) => lineWidth(d.target)).attr("d", (d) => {
         const origSource = d.source;
         const origTarget = d.target;
         const source = [
           origSource.state.rect.x + origSource.state.rect.width,
-          origSource.state.rect.y + origSource.state.rect.height / 2
+          origSource.state.rect.y + origSource.state.rect.height + lineWidth(origSource) / 2
         ];
         const target = [
           origTarget.state.rect.x,
-          origTarget.state.rect.y + origTarget.state.rect.height / 2
+          origTarget.state.rect.y + origTarget.state.rect.height + lineWidth(origTarget) / 2
         ];
         return linkShape({ source, target });
       });
@@ -1302,7 +1364,7 @@
     }
     findElement(node) {
       let result;
-      this.g.selectAll(childSelector("g")).each(function walk(d) {
+      this.g.selectAll(childSelector(SELECTOR_NODE)).each(function walk(d) {
         if (d === node) {
           result = {
             data: d,
@@ -1315,7 +1377,7 @@
     /**
      * Pan the content to make the provided node visible in the viewport.
      */
-    async ensureView(node, padding) {
+    async ensureVisible(node, padding) {
       var _a;
       const itemData = (_a = this.findElement(node)) == null ? void 0 : _a.data;
       if (!itemData) return;
@@ -1327,8 +1389,8 @@
         itemData.state.rect.x + itemData.state.rect.width + 2
       ].map((x) => x * transform.k + transform.x);
       const [top, bottom] = [
-        itemData.state.rect.y - itemData.state.rect.height / 2,
-        itemData.state.rect.y + itemData.state.rect.height / 2
+        itemData.state.rect.y,
+        itemData.state.rect.y + itemData.state.rect.height
       ].map((y) => y * transform.k + transform.y);
       const pd = {
         left: 0,
@@ -1341,6 +1403,31 @@
       const dys = [pd.top - top, relRect.height - pd.bottom - bottom];
       const dx = dxs[0] * dxs[1] > 0 ? minBy(dxs, Math.abs) / transform.k : 0;
       const dy = dys[0] * dys[1] > 0 ? minBy(dys, Math.abs) / transform.k : 0;
+      if (dx || dy) {
+        const newTransform = transform.translate(dx, dy);
+        return this.transition(this.svg).call(this.zoom.transform, newTransform).end().catch(noop);
+      }
+    }
+    async centerNode(node, padding) {
+      var _a;
+      const itemData = (_a = this.findElement(node)) == null ? void 0 : _a.data;
+      if (!itemData) return;
+      const svgNode = this.svg.node();
+      const relRect = svgNode.getBoundingClientRect();
+      const transform = d32.zoomTransform(svgNode);
+      const x = (itemData.state.rect.x + itemData.state.rect.width / 2) * transform.k + transform.x;
+      const y = (itemData.state.rect.y + itemData.state.rect.height / 2) * transform.k + transform.y;
+      const pd = {
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+        ...padding
+      };
+      const cx = (pd.left + relRect.width - pd.right) / 2;
+      const cy = (pd.top + relRect.height - pd.bottom) / 2;
+      const dx = (cx - x) / transform.k;
+      const dy = (cy - y) / transform.k;
       if (dx || dy) {
         const newTransform = transform.translate(dx, dy);
         return this.transition(this.svg).call(this.zoom.transform, newTransform).end().catch(noop);
@@ -1364,7 +1451,7 @@
     destroy() {
       this.svg.on(".zoom", null);
       this.svg.html(null);
-      this.revokers.forEach((fn) => {
+      this._disposeList.forEach((fn) => {
         fn();
       });
     }
@@ -1379,11 +1466,13 @@
     }
   }
   exports.Markmap = Markmap;
+  exports.childSelector = childSelector;
   exports.defaultColorFn = defaultColorFn;
   exports.defaultOptions = defaultOptions;
   exports.deriveOptions = deriveOptions;
   exports.globalCSS = globalCSS;
   exports.isMacintosh = isMacintosh;
+  exports.lineWidthFactory = lineWidthFactory;
   exports.loadCSS = loadCSS;
   exports.loadJS = loadJS;
   exports.refreshHook = refreshHook;

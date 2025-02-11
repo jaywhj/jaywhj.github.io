@@ -14106,7 +14106,12 @@
         if (!$child.is(options.selector)) return;
         skippingHeading = 0;
         const isHeading = level <= 6;
-        let data2 = $child.data();
+        let data2 = {
+          // If the child is an inline element and expected to be a separate node,
+          // data from the closest `<p>` should be included, e.g. `<p data-lines><img /></p>`
+          ...$child.closest("p").data(),
+          ...$child.data()
+        };
         let html22 = result.html || "";
         if ($child.is("ol>li") && (node == null ? void 0 : node.children)) {
           const start = +($child.parent().attr("start") || 1);
@@ -14115,12 +14120,6 @@
           data2 = {
             ...data2,
             listIndex
-          };
-        }
-        if ($child.children("code:only-child").length) {
-          data2 = {
-            ...data2,
-            ...$child.children().data()
           };
         }
         const childNode = addChild({
@@ -25274,8 +25273,10 @@ ${end2.comment}` : end2.comment;
           ...context.parserOptions,
           ...(_a2 = frontmatter == null ? void 0 : frontmatter.markmap) == null ? void 0 : _a2.htmlParser
         };
-        context.content = content.slice(match.index + match[0].length);
-        context.contentLineOffset = content.slice(0, match.index).split("\n").length + 1;
+        context.frontmatterInfo = {
+          lines: content.slice(0, match.index).split("\n").length + 1,
+          offset: match.index + match[0].length
+        };
       });
       return {};
     }
@@ -25327,14 +25328,14 @@ ${end2.comment}` : end2.comment;
   }
   const name$3 = "hljs";
   const preloadScripts$1 = [
-    `@highlightjs/cdn-assets@${"11.10.0"}/highlight.min.js`
+    `@highlightjs/cdn-assets@${"11.11.1"}/highlight.min.js`
   ].map((path) => buildJSItem(path));
   const styles$1 = [
-    `@highlightjs/cdn-assets@${"11.10.0"}/styles/default.min.css`
+    `@highlightjs/cdn-assets@${"11.11.1"}/styles/default.min.css`
   ].map((path) => buildCSSItem(path));
   const config$1 = {
     versions: {
-      hljs: "11.10.0"
+      hljs: "11.11.1"
     },
     preloadScripts: preloadScripts$1,
     styles: styles$1
@@ -25394,20 +25395,21 @@ ${end2.comment}` : end2.comment;
       return path;
     });
   }
+  var define_define_KATEX_RESOURCES_default = ["katex@0.16.18/dist/fonts/KaTeX_AMS-Regular.woff2", "katex@0.16.18/dist/fonts/KaTeX_Caligraphic-Bold.woff2", "katex@0.16.18/dist/fonts/KaTeX_Caligraphic-Regular.woff2", "katex@0.16.18/dist/fonts/KaTeX_Fraktur-Bold.woff2", "katex@0.16.18/dist/fonts/KaTeX_Fraktur-Regular.woff2", "katex@0.16.18/dist/fonts/KaTeX_Main-Bold.woff2", "katex@0.16.18/dist/fonts/KaTeX_Main-BoldItalic.woff2", "katex@0.16.18/dist/fonts/KaTeX_Main-Italic.woff2", "katex@0.16.18/dist/fonts/KaTeX_Main-Regular.woff2", "katex@0.16.18/dist/fonts/KaTeX_Math-BoldItalic.woff2", "katex@0.16.18/dist/fonts/KaTeX_Math-Italic.woff2", "katex@0.16.18/dist/fonts/KaTeX_SansSerif-Bold.woff2", "katex@0.16.18/dist/fonts/KaTeX_SansSerif-Italic.woff2", "katex@0.16.18/dist/fonts/KaTeX_SansSerif-Regular.woff2", "katex@0.16.18/dist/fonts/KaTeX_Script-Regular.woff2", "katex@0.16.18/dist/fonts/KaTeX_Size1-Regular.woff2", "katex@0.16.18/dist/fonts/KaTeX_Size2-Regular.woff2", "katex@0.16.18/dist/fonts/KaTeX_Size3-Regular.woff2", "katex@0.16.18/dist/fonts/KaTeX_Size4-Regular.woff2", "katex@0.16.18/dist/fonts/KaTeX_Typewriter-Regular.woff2"];
   const name$2 = "katex";
   const preloadScripts = [
-    `katex@${"0.16.15"}/dist/katex.min.js`
+    `katex@${"0.16.18"}/dist/katex.min.js`
   ].map((path) => buildJSItem(path));
   const webfontloader = buildJSItem(
     `webfontloader@${"1.6.28"}/webfontloader.js`
   );
   webfontloader.data.defer = true;
-  const styles = [`katex@${"0.16.15"}/dist/katex.min.css`].map(
+  const styles = [`katex@${"0.16.18"}/dist/katex.min.css`].map(
     (path) => buildCSSItem(path)
   );
   const config = {
     versions: {
-      katex: "0.16.15",
+      katex: "0.16.18",
       webfontloader: "1.6.28"
     },
     preloadScripts,
@@ -25445,14 +25447,15 @@ ${end2.comment}` : end2.comment;
       },
       webfontloader
     ],
-    styles
+    styles,
+    resources: define_define_KATEX_RESOURCES_default
   };
   var dist = {};
   var hasRequiredDist;
   function requireDist() {
     if (hasRequiredDist) return dist;
     hasRequiredDist = 1;
-    var __importDefault = dist && dist.__importDefault || function(mod) {
+    var __importDefault = dist.__importDefault || function(mod) {
       return mod && mod.__esModule ? mod : { "default": mod };
     };
     Object.defineProperty(dist, "__esModule", { value: true });
@@ -25969,17 +25972,38 @@ ${end2.comment}` : end2.comment;
   const plugin = definePlugin({
     name,
     transform(transformHooks) {
+      let frontmatterLines = 0;
+      transformHooks.beforeParse.tap((_md, context) => {
+        var _a2;
+        frontmatterLines = ((_a2 = context.frontmatterInfo) == null ? void 0 : _a2.lines) || 0;
+      });
       transformHooks.parser.tap((md) => {
         md.renderer.renderAttrs = wrapFunction(
           md.renderer.renderAttrs,
           (renderAttrs, token) => {
-            let attrs = renderAttrs(token);
             if (token.block && token.map) {
-              attrs += ` data-lines=${token.map.join(",")}`;
+              const lineRange = token.map.map((line) => line + frontmatterLines);
+              token.attrSet("data-lines", lineRange.join(","));
             }
-            return attrs;
+            return renderAttrs(token);
           }
         );
+        if (md.renderer.rules.fence) {
+          md.renderer.rules.fence = wrapFunction(
+            md.renderer.rules.fence,
+            (fence2, tokens, idx, ...rest) => {
+              let result = fence2(tokens, idx, ...rest);
+              const token = tokens[idx];
+              if (result.startsWith("<pre>") && token.map) {
+                const lineRange = token.map.map(
+                  (line) => line + frontmatterLines
+                );
+                result = result.slice(0, 4) + ` data-lines="${lineRange.join(",")}"` + result.slice(4);
+              }
+              return result;
+            }
+          );
+        }
       });
       return {};
     }
@@ -26030,15 +26054,23 @@ ${end2.comment}` : end2.comment;
       const context = {
         content,
         features: {},
-        contentLineOffset: 0,
         parserOptions: fallbackParserOptions
       };
       this.hooks.beforeParse.call(this.md, context);
-      const html2 = this.md.render(context.content, {});
+      let { content: rawContent } = context;
+      if (context.frontmatterInfo)
+        rawContent = rawContent.slice(context.frontmatterInfo.offset);
+      const html2 = this.md.render(rawContent, {});
       this.hooks.afterParse.call(this.md, context);
       const root2 = cleanNode(buildTree(html2, context.parserOptions));
       root2.content || (root2.content = `${((_a2 = context.frontmatter) == null ? void 0 : _a2.title) || ""}`);
       return { ...context, root: root2 };
+    }
+    resolveJS(item) {
+      return patchJSItem(this.urlBuilder, item);
+    }
+    resolveCSS(item) {
+      return patchCSSItem(this.urlBuilder, item);
     }
     /**
      * Get all assets from enabled plugins or filter them by plugin names as keys.
@@ -26054,8 +26086,8 @@ ${end2.comment}` : end2.comment;
         }
       }
       return {
-        styles: styles2.map((item) => patchCSSItem(this.urlBuilder, item)),
-        scripts: scripts.map((item) => patchJSItem(this.urlBuilder, item))
+        styles: styles2.map((item) => this.resolveCSS(item)),
+        scripts: scripts.map((item) => this.resolveJS(item))
       };
     }
     /**
@@ -26067,10 +26099,12 @@ ${end2.comment}` : end2.comment;
     }
   }
   const transformerVersions = {
-    "markmap-lib": "0.18.0"
+    "markmap-lib": "0.18.9"
   };
   exports.Transformer = Transformer;
   exports.builtInPlugins = builtInPlugins;
+  exports.patchCSSItem = patchCSSItem;
+  exports.patchJSItem = patchJSItem;
   exports.transformerVersions = transformerVersions;
   Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 })(this.markmap = this.markmap || {}, window.katex);

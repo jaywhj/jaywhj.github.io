@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="markdown教程, typora教程, markdown编辑器, markdown ppt, markdown幻灯片, reveal教程, revealjs教程, mkdocs教程, mkdocs静态网站, markdown图表, markdown思维导图, markdown静态网站, markdown数学公式, markdown笔记, markdown ai, markdown deepseek, markdown katex, markdown latex, markdown mathjax, markdown markmap, markdown mermaid, hugo, hexo, jekyll,">
+      
       
         <meta name="author" content="汪鸿俊">
       
@@ -20,7 +22,7 @@
       
       
       <link rel="icon" href="assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.3">
     
     
       
@@ -28,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.a40c8224.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.d7758b05.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
@@ -51,6 +53,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -78,7 +82,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -87,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#markdown" class="md-skip">
+        <a href="#Markdown-实用教程" class="md-skip">
           跳转至
         </a>
       
@@ -103,7 +107,8 @@
   <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="index.html" title="Aaron&#39;s blog" class="md-header__button md-logo" aria-label="Aaron's blog" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.03 2.59a1.5 1.5 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,20 +138,30 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange"  aria-label="切换到暗色模式"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="自动模式 - 主题颜色"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="切换到暗色模式" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="自动模式 - 主题颜色" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey"  aria-label="切换到亮色模式"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange"  aria-label="亮色模式"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="切换到亮色模式" for="__palette_0" hidden>
+      <label class="md-header__button md-icon" title="亮色模式" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="deep-orange"  aria-label="暗色模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="暗色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -355,7 +370,8 @@
   <label class="md-nav__title" for="__drawer">
     <a href="index.html" title="Aaron&#39;s blog" class="md-nav__button md-logo" aria-label="Aaron's blog" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.03 2.59a1.5 1.5 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/></svg>
 
     </a>
     Aaron's blog
@@ -387,6 +403,7 @@
   
   <span class="md-ellipsis">
     首页
+    
   </span>
   
 
@@ -425,6 +442,7 @@
   
   <span class="md-ellipsis">
     Markdown 系列
+    
   </span>
   
 
@@ -457,8 +475,11 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.27 19.385H1.73A1.73 1.73 0 0 1 0 17.655V6.345a1.73 1.73 0 0 1 1.73-1.73h20.54A1.73 1.73 0 0 1 24 6.345v11.308a1.73 1.73 0 0 1-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z"/></svg>
+  
   <span class="md-ellipsis">
     Markdown 实用语法
+    
   </span>
   
 
@@ -468,8 +489,11 @@
       <a href="markdown.html" class="md-nav__link md-nav__link--active">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.27 19.385H1.73A1.73 1.73 0 0 1 0 17.655V6.345a1.73 1.73 0 0 1 1.73-1.73h20.54A1.73 1.73 0 0 1 24 6.345v11.308a1.73 1.73 0 0 1-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z"/></svg>
+  
   <span class="md-ellipsis">
     Markdown 实用语法
+    
   </span>
   
 
@@ -491,7 +515,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#markdown_1" class="md-nav__link">
+  <a href="#一什么是-Markdown" class="md-nav__link">
     <span class="md-ellipsis">
       一、什么是 Markdown
     </span>
@@ -500,7 +524,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#markdown_2" class="md-nav__link">
+  <a href="#二Markdown-编辑器" class="md-nav__link">
     <span class="md-ellipsis">
       二、Markdown 编辑器
     </span>
@@ -510,7 +534,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#使用推荐" class="md-nav__link">
     <span class="md-ellipsis">
       使用推荐
     </span>
@@ -524,7 +548,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#markdown_3" class="md-nav__link">
+  <a href="#三Markdown-实用语法" class="md-nav__link">
     <span class="md-ellipsis">
       三、Markdown 实用语法
     </span>
@@ -534,7 +558,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-标题" class="md-nav__link">
     <span class="md-ellipsis">
       1. 标题
     </span>
@@ -543,7 +567,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-文字样式" class="md-nav__link">
     <span class="md-ellipsis">
       2. 文字样式
     </span>
@@ -552,7 +576,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-列表" class="md-nav__link">
     <span class="md-ellipsis">
       3. 列表
     </span>
@@ -561,7 +585,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#4-链接" class="md-nav__link">
     <span class="md-ellipsis">
       4. 链接
     </span>
@@ -570,7 +594,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
+  <a href="#5-图像" class="md-nav__link">
     <span class="md-ellipsis">
       5. 图像
     </span>
@@ -579,7 +603,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#6-引用" class="md-nav__link">
     <span class="md-ellipsis">
       6. 引用
     </span>
@@ -588,7 +612,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
+  <a href="#7-代码片" class="md-nav__link">
     <span class="md-ellipsis">
       7. 代码片
     </span>
@@ -597,7 +621,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#8" class="md-nav__link">
+  <a href="#8-代码块" class="md-nav__link">
     <span class="md-ellipsis">
       8. 代码块
     </span>
@@ -606,7 +630,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#9" class="md-nav__link">
+  <a href="#9-分割线" class="md-nav__link">
     <span class="md-ellipsis">
       9. 分割线
     </span>
@@ -615,7 +639,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#10" class="md-nav__link">
+  <a href="#10-表格" class="md-nav__link">
     <span class="md-ellipsis">
       10. 表格
     </span>
@@ -624,7 +648,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
+  <a href="#11-复选框" class="md-nav__link">
     <span class="md-ellipsis">
       11. 复选框
     </span>
@@ -633,7 +657,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
+  <a href="#12-文档目录" class="md-nav__link">
     <span class="md-ellipsis">
       12. 文档目录
     </span>
@@ -642,7 +666,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#13" class="md-nav__link">
+  <a href="#13-脚注" class="md-nav__link">
     <span class="md-ellipsis">
       13. 脚注
     </span>
@@ -656,7 +680,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#html" class="md-nav__link">
+  <a href="#四HTML-扩展" class="md-nav__link">
     <span class="md-ellipsis">
       四、HTML 扩展
     </span>
@@ -666,7 +690,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
+  <a href="#1-文字样式" class="md-nav__link">
     <span class="md-ellipsis">
       1. 文字样式
     </span>
@@ -675,7 +699,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
+  <a href="#2-图像样式" class="md-nav__link">
     <span class="md-ellipsis">
       2. 图像样式
     </span>
@@ -684,7 +708,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
+  <a href="#3-多列布局" class="md-nav__link">
     <span class="md-ellipsis">
       3. 多列布局
     </span>
@@ -693,7 +717,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_1" class="md-nav__link">
+  <a href="#4-表格技巧" class="md-nav__link">
     <span class="md-ellipsis">
       4. 表格技巧
     </span>
@@ -702,7 +726,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5_1" class="md-nav__link">
+  <a href="#5-任意跳转" class="md-nav__link">
     <span class="md-ellipsis">
       5. 任意跳转
     </span>
@@ -711,7 +735,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6_1" class="md-nav__link">
+  <a href="#6-视频音频" class="md-nav__link">
     <span class="md-ellipsis">
       6. 视频音频
     </span>
@@ -720,7 +744,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-iframe" class="md-nav__link">
+  <a href="#7-iframe-嵌入" class="md-nav__link">
     <span class="md-ellipsis">
       7. iframe 嵌入
     </span>
@@ -734,7 +758,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#五编辑器特性" class="md-nav__link">
     <span class="md-ellipsis">
       五、编辑器特性
     </span>
@@ -744,7 +768,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-emoji" class="md-nav__link">
+  <a href="#1-Emoji-表情" class="md-nav__link">
     <span class="md-ellipsis">
       1. Emoji 表情
     </span>
@@ -753,7 +777,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_2" class="md-nav__link">
+  <a href="#2-标题跳转" class="md-nav__link">
     <span class="md-ellipsis">
       2. 标题跳转
     </span>
@@ -762,7 +786,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-yaml" class="md-nav__link">
+  <a href="#3-YAML-前言" class="md-nav__link">
     <span class="md-ellipsis">
       3. YAML 前言
     </span>
@@ -771,7 +795,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_2" class="md-nav__link">
+  <a href="#4-富文本转换" class="md-nav__link">
     <span class="md-ellipsis">
       4. 富文本转换
     </span>
@@ -780,7 +804,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5_2" class="md-nav__link">
+  <a href="#5-导出文档" class="md-nav__link">
     <span class="md-ellipsis">
       5. 导出文档
     </span>
@@ -789,7 +813,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-yanknote" class="md-nav__link">
+  <a href="#6-YankNote-特性" class="md-nav__link">
     <span class="md-ellipsis">
       6. YankNote 特性
     </span>
@@ -803,7 +827,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#六数理公式" class="md-nav__link">
     <span class="md-ellipsis">
       六、数理公式
     </span>
@@ -813,7 +837,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#排版与渲染" class="md-nav__link">
     <span class="md-ellipsis">
       排版与渲染
     </span>
@@ -822,7 +846,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#1_2" class="md-nav__link">
+  <a href="#1-数学公式" class="md-nav__link">
     <span class="md-ellipsis">
       1. 数学公式
     </span>
@@ -831,7 +855,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_3" class="md-nav__link">
+  <a href="#2-化学方程式" class="md-nav__link">
     <span class="md-ellipsis">
       2. 化学方程式
     </span>
@@ -840,7 +864,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_2" class="md-nav__link">
+  <a href="#3-更多公式" class="md-nav__link">
     <span class="md-ellipsis">
       3. 更多公式
     </span>
@@ -854,7 +878,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#七图形与图表" class="md-nav__link">
     <span class="md-ellipsis">
       七、图形与图表
     </span>
@@ -863,7 +887,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#八静态网站" class="md-nav__link">
     <span class="md-ellipsis">
       八、静态网站
     </span>
@@ -872,7 +896,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#九幻灯片" class="md-nav__link">
     <span class="md-ellipsis">
       九、幻灯片
     </span>
@@ -899,8 +923,11 @@
       <a href="graph-chart.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 2h2v18h18v2H2zm7 8a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m4-8a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m5 10a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3"/></svg>
+  
   <span class="md-ellipsis">
     Markdown 生成图表
+    
   </span>
   
 
@@ -920,8 +947,11 @@
       <a href="slideshow.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.25 3.25q1.21 0 2.33.31 1.12.32 2.09.89.97.55 1.77 1.36.79.8 1.36 1.77.58.97.89 2.09T22 12t-.31 2.33-.89 2.09q-.57.97-1.36 1.77-.8.81-1.77 1.36-.97.58-2.09.89t-2.33.31q-1.07 0-2.1-.25-1.03-.26-1.95-.74-.92-.49-1.7-1.18-.81-.7-1.43-1.58H2.83q-.33 0-.59-.24Q2 16.5 2 16.17V7.83q0-.33.24-.58Q2.5 7 2.83 7h3.24q.62-.88 1.43-1.58.78-.7 1.7-1.18.93-.48 1.95-.74 1.03-.25 2.1-.25m.63 1.28v6.84h6.84q-.12-1.37-.69-2.56T18.55 6.7q-.91-.91-2.12-1.48-1.2-.57-2.55-.69M9.5 10.84q0-.57-.2-.97-.19-.41-.52-.66-.33-.26-.78-.37-.45-.12-1-.12H4.37v6.55h1.54V13h1.03q.48 0 .93-.16.46-.14.82-.41.36-.26.58-.67.23-.4.23-.92m3.75 8.66q.98 0 1.89-.24.9-.26 1.71-.68.81-.45 1.48-1.08.67-.61 1.17-1.37.5-.77.83-1.66.31-.89.39-1.85h-8.08V4.53q-1.45.12-2.73.76T7.67 7h3.5q.33 0 .59.25.24.25.24.58v8.34q0 .33-.24.59-.26.24-.59.24h-3.5q.53.6 1.17 1.06.66.44 1.35.78.72.33 1.49.49.77.17 1.57.17M6.85 10q.47 0 .76.19.28.19.28.7 0 .22-.1.36t-.26.25q-.16.07-.35.1-.18.04-.38.04h-.89V10z"/></svg>
+  
   <span class="md-ellipsis">
     Markdown 生成幻灯片
+    
   </span>
   
 
@@ -941,8 +971,11 @@
       <a href="markmap-mkdocs.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16v-3c0-1.11-.89-2-2-2h-6V8h2V2H9v6h2v3H5c-1.11 0-2 .89-2 2v3H1v6h6v-6H5v-3h6v3H9v6h6v-6h-2v-3h6v3h-2v6h6v-6zM11 4h2v2h-2zM5 20H3v-2h2zm8 0h-2v-2h2zm8 0h-2v-2h2z"/></svg>
+  
   <span class="md-ellipsis">
     Markdown 生成脑图
+    
   </span>
   
 
@@ -962,8 +995,11 @@
       <a href="website.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+  
   <span class="md-ellipsis">
     Markdown 生成网站
+    
   </span>
   
 
@@ -983,8 +1019,11 @@
       <a href="css-layout.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 5v13h5V5M4 18h5V5H4m6 13h5V5h-5z"/></svg>
+  
   <span class="md-ellipsis">
     Markdown 多列布局
+    
   </span>
   
 
@@ -1028,6 +1067,7 @@
   
   <span class="md-ellipsis">
     效率提升
+    
   </span>
   
 
@@ -1051,8 +1091,11 @@
       <a href="utility-tool.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m21.71 20.29-1.42 1.42a1 1 0 0 1-1.41 0L7 9.85A3.8 3.8 0 0 1 6 10a4 4 0 0 1-3.78-5.3l2.54 2.54.53-.53 1.42-1.42.53-.53L4.7 2.22A4 4 0 0 1 10 6a3.8 3.8 0 0 1-.15 1l11.86 11.88a1 1 0 0 1 0 1.41M2.29 18.88a1 1 0 0 0 0 1.41l1.42 1.42a1 1 0 0 0 1.41 0l5.47-5.46-2.83-2.83M20 2l-4 2v2l-2.17 2.17 2 2L18 8h2l2-4Z"/></svg>
+  
   <span class="md-ellipsis">
     实用工具集
+    
   </span>
   
 
@@ -1072,8 +1115,11 @@
       <a href="site-deploy.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 4v2h14V4zm0 10h4v6h6v-6h4l-7-7z"/></svg>
+  
   <span class="md-ellipsis">
     网站部署
+    
   </span>
   
 
@@ -1093,8 +1139,11 @@
       <a href="script-exe.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4zm-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44z"/></svg>
+  
   <span class="md-ellipsis">
     MacOS 自动化
+    
   </span>
   
 
@@ -1114,8 +1163,11 @@
       <a href="npm-yarn-pnpm.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 288h-32v-64h32zm288-128v192H288v32H160v-32H0V160zm-416 32H32v128h64v-96h32v96h32zm160 0H192v160h64v-32h64zm224 0H352v128h64v-96h32v96h32v-96h32v96h32z"/></svg>
+  
   <span class="md-ellipsis">
     包管理镜像源
+    
   </span>
   
 
@@ -1135,8 +1187,11 @@
       <a href="jinja2.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23.718.668-.08.04s-4.563 2.174-8.244 2.651c-1.854.24-4.554.481-6.964.62a66 66 0 0 1-3.254.117c-.917.005-1.63-.032-1.95-.11a20 20 0 0 1-2.4-.732l-.252-.1.346 1.172-.92.81.248.436.44.033 1.052.131.162.514.635.057.318 1.078.092.006s1.338.115 1.762.115c.365 0 .93-.04 1.072-.05l.024.396.287.054v.315l-.8.71.157.028c-.14.01-.227.018-.5.03-.43.017-.934.02-1.203-.018-.586-.086-.71-.086-.71-.086H2.98l-.122.13-.046.446h.152l.055 1.111 2.933-.113-.205 3.682-.02.347-2.242-.127-.02-.761h.538l.057-.42.464-.106.223-.312-2.111-.51-1.705.506.465.388h.166l.025.334.494.028v.763l-.611.157.19.404.105.068v.825h.343v3.296l-.566.086.098 1.247.334.056-.055 2.342 1.803.033-.32-2.303 1.982-.048-.14 1.087-.25 1.032 2.609.033.027-2.28 1.322-.12-.072 1.294-.063.99h1.633l-.053-2.3.176.027.067-1.392h-.243l-.058-.34-.131-1.29.049-1.364h.295v-1.182l-.364.027.04-.806.43-.043.023-.352.172-.025.51-.389-1.827-.375-1.71.379.286.469.239-.02.054-.004.034.442.41-.02.004.674-1.526-.035.053-.877.059-.926v-1.213l.048-1.152 3.485-.178 4.155-.24.033.674-.152 1.949-.063 1.693-1.32-.023-.006-1.018.574-.021.028-.373.27-.041-.012-.057.152-.01.29-.388-2.01-.471-1.986.426.258.45.14-.01v.089h.246v.402l.524.008-.006.856h-.527l-.014.505.187.022-.021.978.393.02-.044 3.615-.523.108.016.423h.176v.985h.289l-.07 1.205-.112 1.314 2.17.057-.07-1.172-.138-.848-.022-.593 1.325-.024-.04 1.002-.009 1.33 1.033.082 1.252-.05.533-.157-.25-.76-.053-1-.08-.583 1.233-.045-.057.742-.006 1.515.738.069.631-.016.416-.13-.187-1.424-.049-.862.25-.027.006-.895.08-.017-.027-.43h-.303l-.049-.527-.023-2.692.222-.006v-.902l.096.014v-.461l-.334-.027.006-.836.57-.051-.033-.362.26-.021-.024-.117.58-.29-2.056-.413-1.88.38.231.432.223-.02.014.077h.203l.011.426.547-.006.035.773-1.67-.012-.212-1.457-.178-.826-.145-1.469.075-.746 3.847-.293.012-1.316.201-.05-.023-.38-.239-.138h-.037l-.357.05-.793.116a62 62 0 0 1-1.625.216l-.19.02-.015-.178-.785-.41.006-.275.271-.008.02-.672c.09-.006.352-.024.771-.062.484-.045 1.04-.105 1.361-.18.597-.14 1.452-.28 1.452-.28l.076-.013.408-1.108.805-.234.066-.184 1.78-.492.306-.252-.717-1.564.047-.236.344-.18.297-.906-.252-.223zM14.825 6.73l-.01.526.407.017-.016.32-.789.518-.086.258-1.86.09.01-.184.112-.18.01-.154.001-.228.067-.156.031-.16v-.092l.08-.323zm-5.18.461-.043.264.199.234-.014.387.176.27-.047.328.025.035-1.847.074.02-.152-.653-.354-.022-.345.29-.014.029-.598zm4.014 8.5 1.258.082-.05 1.938.183 1.54-1.34-.046zm-10.225.084 2.16.112L5.4 17.17v1.219l.137.523-2.09.098zm15.376.01v3.256l-1.29.094-.052-1.723-.158-1.592zm-11.494.076 1.538.006.017 2.996-1.43.026-.076-.928-.006-1.047z"/></svg>
+  
   <span class="md-ellipsis">
     Jinja2 教程
+    
   </span>
   
 
@@ -1180,6 +1235,7 @@
   
   <span class="md-ellipsis">
     电商运营
+    
   </span>
   
 
@@ -1203,8 +1259,11 @@
       <a href="iPhone2Camera.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 5.25A.75.75 0 0 1 11 4.5h2A.75.75 0 0 1 13 6h-2a.75.75 0 0 1-.75-.75M12 19.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/><path d="M4 2.75C4 1.784 4.784 1 5.75 1h12.5c.966 0 1.75.784 1.75 1.75v18.5A1.75 1.75 0 0 1 18.25 23H5.75A1.75 1.75 0 0 1 4 21.25Zm1.75-.25a.25.25 0 0 0-.25.25v18.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25Z"/></svg>
+  
   <span class="md-ellipsis">
     手机高清直播
+    
   </span>
   
 
@@ -1224,8 +1283,11 @@
       <a href="douyin-pool.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.25v13a.75.75 0 0 1-1.136.643L16.5 15.075v2.175A1.75 1.75 0 0 1 14.75 19h-13A1.75 1.75 0 0 1 0 17.25v-11C0 5.284.784 4.5 1.75 4.5h13c.966 0 1.75.784 1.75 1.75v2.175l6.364-3.818A.75.75 0 0 1 24 5.25m-9 1a.25.25 0 0 0-.25-.25h-13a.25.25 0 0 0-.25.25v11c0 .138.112.25.25.25h13a.25.25 0 0 0 .25-.25zm1.5 7.075 6 3.6V6.575l-6 3.6Z"/></svg>
+  
   <span class="md-ellipsis">
     直播运营
+    
   </span>
   
 
@@ -1269,6 +1331,7 @@
   
   <span class="md-ellipsis">
     工作日常
+    
   </span>
   
 
@@ -1292,8 +1355,11 @@
       <a href="financing.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.268 10.541C23.268 4.715 18.544 0 12.728 0c-1.614 0-3.191.317-4.663.952a12 12 0 0 0-3.817 2.574 11.92 11.92 0 0 0-3.516 8.478 11.92 11.92 0 0 0 3.516 8.48 12 12 0 0 0 3.817 2.573 11.9 11.9 0 0 0 4.671.943c1.56 0 3.05-.3 4.416-.837l-.908-2.292a9.5 9.5 0 0 1-3.508.67 9.48 9.48 0 0 1-6.743-2.794A9.48 9.48 0 0 1 3.2 12.004a9.48 9.48 0 0 1 2.794-6.742 9.5 9.5 0 0 1 6.743-2.794 8.072 8.072 0 0 1 6.734 12.524l-2.098-5.165c-.308-.758-.679-1.895-2.071-1.895s-1.763 1.146-2.063 1.895l-1.93 4.769-2.591-6.54H5.993l3.226 7.95c.326.802.688 1.895 2.09 1.895 1.4 0 1.753-1.093 2.08-1.895l1.912-4.724 1.921 4.724c.388.978.802 1.895 2.08 1.895.908 0 1.481-.582 1.798-.96a10.5 10.5 0 0 0 2.168-6.4"/></svg>
+  
   <span class="md-ellipsis">
     投融资逻辑
+    
   </span>
   
 
@@ -1337,6 +1403,7 @@
   
   <span class="md-ellipsis">
     其他
+    
   </span>
   
 
@@ -1360,8 +1427,11 @@
       <a href="hainan.html" class="md-nav__link">
         
   
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m346.3 271.8-60.1-21.9L214 448H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h512c17.7 0 32-14.3 32-32s-14.3-32-32-32H282.1l64.1-176.2zm121.1-.2-3.3 9.1 67.7 24.6c18.1 6.6 38-4.2 39.6-23.4 6.5-78.5-23.9-155.5-80.8-208.5 2 8 3.2 16.3 3.4 24.8l.2 6c1.8 57-7.3 113.8-26.8 167.4M462 99.1c-1.1-34.4-22.5-64.8-54.4-77.4-.9-.4-1.9-.7-2.8-1.1-33-11.7-69.8-2.4-93.1 23.8l-4 4.5C272.4 88.3 245 134.2 226.8 184l-3.3 9.1L434 269.7l3.3-9.1c18.1-49.8 26.6-102.5 24.9-155.5zm-354.8 13.8c-11.1 15.7-2.8 36.8 15.3 43.4l71 25.8 3.3-9.1c19.5-53.6 49.1-103 87.1-145.5l4-4.5c6.2-6.9 13.1-13 20.5-18.2-79.6 2.5-154.7 42.2-201.2 108z"/></svg>
+  
   <span class="md-ellipsis">
     海南畅游
+    
   </span>
   
 
@@ -1405,7 +1475,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#markdown_1" class="md-nav__link">
+  <a href="#一什么是-Markdown" class="md-nav__link">
     <span class="md-ellipsis">
       一、什么是 Markdown
     </span>
@@ -1414,7 +1484,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#markdown_2" class="md-nav__link">
+  <a href="#二Markdown-编辑器" class="md-nav__link">
     <span class="md-ellipsis">
       二、Markdown 编辑器
     </span>
@@ -1424,7 +1494,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#使用推荐" class="md-nav__link">
     <span class="md-ellipsis">
       使用推荐
     </span>
@@ -1438,7 +1508,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#markdown_3" class="md-nav__link">
+  <a href="#三Markdown-实用语法" class="md-nav__link">
     <span class="md-ellipsis">
       三、Markdown 实用语法
     </span>
@@ -1448,7 +1518,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-标题" class="md-nav__link">
     <span class="md-ellipsis">
       1. 标题
     </span>
@@ -1457,7 +1527,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
+  <a href="#2-文字样式" class="md-nav__link">
     <span class="md-ellipsis">
       2. 文字样式
     </span>
@@ -1466,7 +1536,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-列表" class="md-nav__link">
     <span class="md-ellipsis">
       3. 列表
     </span>
@@ -1475,7 +1545,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#4-链接" class="md-nav__link">
     <span class="md-ellipsis">
       4. 链接
     </span>
@@ -1484,7 +1554,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
+  <a href="#5-图像" class="md-nav__link">
     <span class="md-ellipsis">
       5. 图像
     </span>
@@ -1493,7 +1563,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#6-引用" class="md-nav__link">
     <span class="md-ellipsis">
       6. 引用
     </span>
@@ -1502,7 +1572,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
+  <a href="#7-代码片" class="md-nav__link">
     <span class="md-ellipsis">
       7. 代码片
     </span>
@@ -1511,7 +1581,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#8" class="md-nav__link">
+  <a href="#8-代码块" class="md-nav__link">
     <span class="md-ellipsis">
       8. 代码块
     </span>
@@ -1520,7 +1590,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#9" class="md-nav__link">
+  <a href="#9-分割线" class="md-nav__link">
     <span class="md-ellipsis">
       9. 分割线
     </span>
@@ -1529,7 +1599,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#10" class="md-nav__link">
+  <a href="#10-表格" class="md-nav__link">
     <span class="md-ellipsis">
       10. 表格
     </span>
@@ -1538,7 +1608,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
+  <a href="#11-复选框" class="md-nav__link">
     <span class="md-ellipsis">
       11. 复选框
     </span>
@@ -1547,7 +1617,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
+  <a href="#12-文档目录" class="md-nav__link">
     <span class="md-ellipsis">
       12. 文档目录
     </span>
@@ -1556,7 +1626,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#13" class="md-nav__link">
+  <a href="#13-脚注" class="md-nav__link">
     <span class="md-ellipsis">
       13. 脚注
     </span>
@@ -1570,7 +1640,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#html" class="md-nav__link">
+  <a href="#四HTML-扩展" class="md-nav__link">
     <span class="md-ellipsis">
       四、HTML 扩展
     </span>
@@ -1580,7 +1650,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
+  <a href="#1-文字样式" class="md-nav__link">
     <span class="md-ellipsis">
       1. 文字样式
     </span>
@@ -1589,7 +1659,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
+  <a href="#2-图像样式" class="md-nav__link">
     <span class="md-ellipsis">
       2. 图像样式
     </span>
@@ -1598,7 +1668,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
+  <a href="#3-多列布局" class="md-nav__link">
     <span class="md-ellipsis">
       3. 多列布局
     </span>
@@ -1607,7 +1677,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_1" class="md-nav__link">
+  <a href="#4-表格技巧" class="md-nav__link">
     <span class="md-ellipsis">
       4. 表格技巧
     </span>
@@ -1616,7 +1686,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5_1" class="md-nav__link">
+  <a href="#5-任意跳转" class="md-nav__link">
     <span class="md-ellipsis">
       5. 任意跳转
     </span>
@@ -1625,7 +1695,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6_1" class="md-nav__link">
+  <a href="#6-视频音频" class="md-nav__link">
     <span class="md-ellipsis">
       6. 视频音频
     </span>
@@ -1634,7 +1704,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-iframe" class="md-nav__link">
+  <a href="#7-iframe-嵌入" class="md-nav__link">
     <span class="md-ellipsis">
       7. iframe 嵌入
     </span>
@@ -1648,7 +1718,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#五编辑器特性" class="md-nav__link">
     <span class="md-ellipsis">
       五、编辑器特性
     </span>
@@ -1658,7 +1728,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-emoji" class="md-nav__link">
+  <a href="#1-Emoji-表情" class="md-nav__link">
     <span class="md-ellipsis">
       1. Emoji 表情
     </span>
@@ -1667,7 +1737,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_2" class="md-nav__link">
+  <a href="#2-标题跳转" class="md-nav__link">
     <span class="md-ellipsis">
       2. 标题跳转
     </span>
@@ -1676,7 +1746,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-yaml" class="md-nav__link">
+  <a href="#3-YAML-前言" class="md-nav__link">
     <span class="md-ellipsis">
       3. YAML 前言
     </span>
@@ -1685,7 +1755,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_2" class="md-nav__link">
+  <a href="#4-富文本转换" class="md-nav__link">
     <span class="md-ellipsis">
       4. 富文本转换
     </span>
@@ -1694,7 +1764,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5_2" class="md-nav__link">
+  <a href="#5-导出文档" class="md-nav__link">
     <span class="md-ellipsis">
       5. 导出文档
     </span>
@@ -1703,7 +1773,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-yanknote" class="md-nav__link">
+  <a href="#6-YankNote-特性" class="md-nav__link">
     <span class="md-ellipsis">
       6. YankNote 特性
     </span>
@@ -1717,7 +1787,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#六数理公式" class="md-nav__link">
     <span class="md-ellipsis">
       六、数理公式
     </span>
@@ -1727,7 +1797,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#排版与渲染" class="md-nav__link">
     <span class="md-ellipsis">
       排版与渲染
     </span>
@@ -1736,7 +1806,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#1_2" class="md-nav__link">
+  <a href="#1-数学公式" class="md-nav__link">
     <span class="md-ellipsis">
       1. 数学公式
     </span>
@@ -1745,7 +1815,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2_3" class="md-nav__link">
+  <a href="#2-化学方程式" class="md-nav__link">
     <span class="md-ellipsis">
       2. 化学方程式
     </span>
@@ -1754,7 +1824,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_2" class="md-nav__link">
+  <a href="#3-更多公式" class="md-nav__link">
     <span class="md-ellipsis">
       3. 更多公式
     </span>
@@ -1768,7 +1838,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#七图形与图表" class="md-nav__link">
     <span class="md-ellipsis">
       七、图形与图表
     </span>
@@ -1777,7 +1847,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#八静态网站" class="md-nav__link">
     <span class="md-ellipsis">
       八、静态网站
     </span>
@@ -1786,7 +1856,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#九幻灯片" class="md-nav__link">
     <span class="md-ellipsis">
       九、幻灯片
     </span>
@@ -1807,33 +1877,33 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-<nav class="md-tags" >
-  
+
+  <nav class="md-tags" >
     
+      
+      
+      
+        <span class="md-tag">markdown</span>
+      
     
+      
+      
+      
+        <span class="md-tag">tutorial</span>
+      
     
-      <span class="md-tag">tutorial</span>
-    
-  
-    
-    
-    
-      <span class="md-tag">markdown</span>
-    
-  
-</nav>
+  </nav>
 
 
   
   
 
 
-<h1 id="markdown">Markdown 实用教程<a class="headerlink" href="#markdown" title="Permanent link">¶</a></h1>
-<h2 id="markdown_1">一、什么是 Markdown<a class="headerlink" href="#markdown_1" title="Permanent link">¶</a></h2>
+<h1 id="Markdown-实用教程">Markdown 实用教程<a class="headerlink" href="#Markdown-实用教程" title="Permanent link">¶</a></h1>
+<h2 id="一什么是-Markdown">一、什么是 Markdown<a class="headerlink" href="#一什么是-Markdown" title="Permanent link">¶</a></h2>
 <p>Markdown 是一种轻量级的纯文本标记语言，用简单少量的符号对文字进行标注，从而实现 <span style="color:red">以最小的输入代价生成印刷级排版格式的文档</span>。它在 <span style="color:red">流畅的书写</span> 和 <span style="color:red">印刷级阅读体验</span> 之间找到了平衡，让人只需<strong>专注内容而不是纠结排版</strong>。</p>
-<p>常用的标记符号 <strong>不超过十个</strong>，好记好用好效果。</p>
-<h2 id="markdown_2">二、Markdown 编辑器<a class="headerlink" href="#markdown_2" title="Permanent link">¶</a></h2>
+<p>常用的标记符号 <strong>不超过十个</strong>，好记好用好效果。(非程序员用户如产品、运营 ... 也可以轻松搞定)</p>
+<h2 id="二Markdown-编辑器">二、Markdown 编辑器<a class="headerlink" href="#二Markdown-编辑器" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://www.typora.io/">Typora</a>（Mac、Win、Linux），简约不简单，所见即所得；✓</li>
 <li><a href="https://zh.mweb.im/">MWeb</a>（Mac、iOS），一款专注于 Markdown 的写作、记笔记和发布软件；</li>
@@ -1843,19 +1913,19 @@
 <li><a href="https://github.com/nicejade/markdown-online-editor">markdown-online-editor</a>，<a href="https://markdown.lovejade.cn/">Arya - 在线 Markdown 编辑器</a>，支持所有基础语法、数学公式、Mermaid 图表、Echarts 图表、五线谱，以及 PPT 模式、视频音频解析等；✓</li>
 <li><a href="https://github.com/doocs/md">md</a>，<a href="https://doocs.github.io/md/">在线微信 Markdown 编辑器</a>，支持所有基础语法、数学公式、Mermaid 图表、GFM 警告块；</li>
 </ul>
-<h3 id="_1">使用推荐<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<h3 id="使用推荐">使用推荐<a class="headerlink" href="#使用推荐" title="Permanent link">¶</a></h3>
 <ul>
-<li>日常工具使用：推荐 Typora、Arya - 在线 Markdown 编辑器；</li>
+<li>当日常工具用：推荐 Typora、Arya - 在线 Markdown 编辑器；</li>
 <li>用作网文排版：推荐 Arya - 在线 Markdown 编辑器，在线微信 Markdown 编辑器；</li>
-<li>知识库笔记库：推荐 YankNote；<ul>
+<li>写知识笔记形成库：推荐 YankNote；<ul>
 <li>Obsidian 的问题是对 HTML 的支持太弱了，比如 HTML 锚点链接识别不出来，另外导出功能也很弱，就支持一个PDF格式且还不带目录大纲；</li>
 </ul>
 </li>
 </ul>
 <p>使用和体验过不下二十款 Markdown 编辑器，从 <strong>简洁易用、基础功能完善、语法兼容、扩展性、跨平台</strong> 角度看，给大家以上建议，我自己的习惯是 <strong>Typora</strong> 和 <strong>YankNote</strong> 的组合，至少到 2024年是这样。</p>
-<h2 id="markdown_3">三、Markdown 实用语法<a class="headerlink" href="#markdown_3" title="Permanent link">¶</a></h2>
-<p>本教程基于流行的 <a href="http://spec.commonmark.org/">CommonMark 规范</a> 和 <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a> (GFM) 语法拓展。</p>
-<h3 id="1">1. 标题<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<h2 id="三Markdown-实用语法">三、Markdown 实用语法<a class="headerlink" href="#三Markdown-实用语法" title="Permanent link">¶</a></h2>
+<p>本教程基于流行的 <a href="http://spec.commonmark.org/">CommonMark 规范</a> 和 <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a> (GFM) 语法提炼与拓展。</p>
+<h3 id="1-标题">1. 标题<a class="headerlink" href="#1-标题" title="Permanent link">¶</a></h3>
 <p>两种写法：</p>
 <ol>
 <li>用 1-6 个 <code>#</code> 加空格，分别表示 1-6 级标题；</li>
@@ -1872,7 +1942,7 @@
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="gu">这是一个二级标题</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a><span class="gu">-----</span>
 </span></code></pre></div>
-<h3 id="2">2. 文字样式<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<h3 id="2-文字样式">2. 文字样式<a class="headerlink" href="#2-文字样式" title="Permanent link">¶</a></h3>
 <p>Markdown 语法：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>*斜体*    _斜体_
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>**粗体**    __粗体__
@@ -1887,8 +1957,8 @@
 <del>删除线</del><br/>
 <u>下划线</u><br/>
 <mark>背景高亮</mark></p>
-<h3 id="3">3. 列表<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
-<h4 id="_2">无序列表<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
+<h3 id="3-列表">3. 列表<a class="headerlink" href="#3-列表" title="Permanent link">¶</a></h3>
+<h4 id="无序列表">无序列表<a class="headerlink" href="#无序列表" title="Permanent link">¶</a></h4>
 <p>使用 <code>-</code> 或 <code>+</code> 或 <code>*</code> 加空格 表示无序列表：</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">-</span><span class="w"> </span>无序列表项 一
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">-</span><span class="w"> </span>无序列表项 二
@@ -1904,7 +1974,7 @@
 </li>
 <li>无序列表项 三</li>
 </ul>
-<h4 id="_3">有序列表<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
+<h4 id="有序列表">有序列表<a class="headerlink" href="#有序列表" title="Permanent link">¶</a></h4>
 <p>使用 <code>数字+点</code> 加空格 表示有序列表：</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">1.</span> 有序列表项 一
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">2.</span> 有序列表项 二
@@ -1920,13 +1990,13 @@
 </li>
 <li>有序列表项 三</li>
 </ol>
-<h3 id="4">4. 链接<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
+<h3 id="4-链接">4. 链接<a class="headerlink" href="#4-链接" title="Permanent link">¶</a></h3>
 <p>使用 <code>[描述](链接地址)</code> ，为文字增加链接：</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>这是去往 [<span class="nt">Apple</span>](<span class="na">https://www.apple.com.cn</span>) 的链接。
 </span></code></pre></div>
 <p><em>示例效果：</em></p>
 <p>这是去往 <a href="https://www.apple.com.cn">Apple</a> 的链接。</p>
-<h3 id="5">5. 图像<a class="headerlink" href="#5" title="Permanent link">¶</a></h3>
+<h3 id="5-图像">5. 图像<a class="headerlink" href="#5-图像" title="Permanent link">¶</a></h3>
 <p>使用 <code>![描述](图片链接地址)</code> 插入图像，图片链接地址 可以是本地图片路径，也可以是网络图片url：</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>![<span class="nt">网络图片</span>](<span class="na">https://lf3-static.bytednsdoc.com/obj/eden-cn/ulkphgeh7nuvspognuhbo/douyin_web/img/images/logo-horizontal.svg</span>)
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a>![<span class="nt">本地图片</span>](<span class="na">file:///Users/aaron/Pictures/cat.jpg</span>)
@@ -1935,7 +2005,7 @@
 <p><em>示例效果：</em></p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="https://lf3-static.bytednsdoc.com/obj/eden-cn/ulkphgeh7nuvspognuhbo/douyin_web/img/images/logo-horizontal.svg"><img alt="网络图片" src="https://lf3-static.bytednsdoc.com/obj/eden-cn/ulkphgeh7nuvspognuhbo/douyin_web/img/images/logo-horizontal.svg"/></a></p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="assets/cat.jpg"><img alt="本地图片" src="assets/cat.jpg"/></a></p>
-<h3 id="6">6. 引用<a class="headerlink" href="#6" title="Permanent link">¶</a></h3>
+<h3 id="6-引用">6. 引用<a class="headerlink" href="#6-引用" title="Permanent link">¶</a></h3>
 <p>使用 <code>&gt;</code> 加空格 表示引用，也可以多个组合：</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">&gt; </span><span class="ge">野火烧不尽，春风吹又生。</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">&gt; </span><span class="ge">&gt; 春风吹又生</span>
@@ -1947,13 +2017,13 @@
 <p>春风吹又生</p>
 </blockquote>
 </blockquote>
-<h3 id="7">7. 代码片<a class="headerlink" href="#7" title="Permanent link">¶</a></h3>
+<h3 id="7-代码片">7. 代码片<a class="headerlink" href="#7-代码片" title="Permanent link">¶</a></h3>
 <p>使用一个反引号 ` 前后包围的方式表示代码片段：</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>让我们聊聊 <span class="sb">`html`</span>。
 </span></code></pre></div>
 <p><em>示例效果：</em></p>
 <p>让我们聊聊 <code>html</code>。</p>
-<h3 id="8">8. 代码块<a class="headerlink" href="#8" title="Permanent link">¶</a></h3>
+<h3 id="8-代码块">8. 代码块<a class="headerlink" href="#8-代码块" title="Permanent link">¶</a></h3>
 <p>使用三个反引号 ``` 上下包围的方式表示代码块。后面跟编程语言可以支持语法高亮显示，支持所有主流编程语言。</p>
 <p>JavaScript 示例：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>```javascript
@@ -1969,7 +2039,7 @@
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos="3 "></span></a><span class="p">}</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><a href="#__codelineno-9-4"><span class="linenos" data-linenos="4 "></span></a><span class="nx">myFunction</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span>
 </span></code></pre></div>
-<h3 id="9">9. 分割线<a class="headerlink" href="#9" title="Permanent link">¶</a></h3>
+<h3 id="9-分割线">9. 分割线<a class="headerlink" href="#9-分割线" title="Permanent link">¶</a></h3>
 <p>可以在一行中用 <strong>3</strong> 个以上的 <code>-</code> 或 <code>*</code> 或 <code>_</code> 来建立一个分隔线：</p>
 <p>Markdown 语法：</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a>---
@@ -1980,7 +2050,7 @@
 <hr/>
 <hr/>
 <hr/>
-<h3 id="10">10. 表格<a class="headerlink" href="#10" title="Permanent link">¶</a></h3>
+<h3 id="10-表格">10. 表格<a class="headerlink" href="#10-表格" title="Permanent link">¶</a></h3>
 <p>Markdown 语法：</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a>| 项目(左对齐) | 价格(居中) | 数量(右对齐) |
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><a href="#__codelineno-11-2"><span class="linenos" data-linenos="2 "></span></a>| :--- | :---: | ---: |
@@ -2015,7 +2085,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="11">11. 复选框<a class="headerlink" href="#11" title="Permanent link">¶</a></h3>
+<h3 id="11-复选框">11. 复选框<a class="headerlink" href="#11-复选框" title="Permanent link">¶</a></h3>
 <p>Markdown 语法：</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">- [x]</span> 支持 导出 HTML、PDF、ePub、Word 等；
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><a href="#__codelineno-12-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">- [x]</span> 支持 高亮代码段；
@@ -2039,9 +2109,9 @@
 </ul>
 </li>
 </ul>
-<h3 id="12">12. 文档目录<a class="headerlink" href="#12" title="Permanent link">¶</a></h3>
+<h3 id="12-文档目录">12. 文档目录<a class="headerlink" href="#12-文档目录" title="Permanent link">¶</a></h3>
 <p>使用 <code>[TOC]</code> 会自动提取全文标题，生成目录结构。字母用大小写都可以。</p>
-<h3 id="13">13. 脚注<a class="headerlink" href="#13" title="Permanent link">¶</a></h3>
+<h3 id="13-脚注">13. 脚注<a class="headerlink" href="#13-脚注" title="Permanent link">¶</a></h3>
 <p>标准语法为 <code>[^keyword]</code>，keyword随意，保证唯一就行。</p>
 <p>Markdown 语法：</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><a href="#__codelineno-13-1"><span class="linenos" data-linenos="1 "></span></a>Markdown到底是什么？[^ftnt]
@@ -2051,7 +2121,7 @@
 <p><em>示例效果：</em></p>
 <p>Markdown到底是什么？<sup id="fnref:ftnt"><a class="footnote-ref" href="#fn:ftnt">1</a></sup></p>
 <p><mark>普通用户到此，足够了。</mark></p>
-<h2 id="html">四、HTML 扩展<a class="headerlink" href="#html" title="Permanent link">¶</a></h2>
+<h2 id="四HTML-扩展">四、HTML 扩展<a class="headerlink" href="#四HTML-扩展" title="Permanent link">¶</a></h2>
 <p>Markdown 兼容 HTML 标签，可以和 HTML 混编来拓展更多实用功能。使用参考 Typora 文档 <a href="http://support.typora.io/HTML/">HTML Support</a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element">HTML 元素参考</a> 。</p>
 <p>布局容器：</p>
 <ol>
@@ -2059,9 +2129,9 @@
 <li><strong>块级元素</strong>：<code>&lt;div&gt;</code>、<code>&lt;section&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;h1&gt; ~ &lt;h6&gt;</code> 等，表示一块内容区域；</li>
 <li><strong>行内块元素</strong>：<code>&lt;img&gt;</code>、<code>&lt;input&gt;</code> 等，既有行内元素特点，也有块元素特点；</li>
 </ol>
-<h3 id="1_1">1. 文字样式<a class="headerlink" href="#1_1" title="Permanent link">¶</a></h3>
+<h3 id="1-文字样式">1. 文字样式<a class="headerlink" href="#1-文字样式" title="Permanent link">¶</a></h3>
 <p>使用 <code>&lt;span style="color:red"&gt;红色文字&lt;/span&gt;</code> 设置 <span style="color:red">红色文字</span>。</p>
-<h3 id="2_1">2. 图像样式<a class="headerlink" href="#2_1" title="Permanent link">¶</a></h3>
+<h3 id="2-图像样式">2. 图像样式<a class="headerlink" href="#2-图像样式" title="Permanent link">¶</a></h3>
 <p>使用 <code>&lt;img&gt;</code> 标签来显示图片，然后在标签中设置样式。</p>
 <p>修改大小：</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><a href="#__codelineno-14-1"><span class="linenos" data-linenos="1 "></span></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"url"</span> <span class="na">width</span><span class="o">=</span><span class="s">"200px"</span> <span class="na">height</span><span class="o">=</span><span class="s">"100px"</span> <span class="p">/&gt;</span>
@@ -2079,7 +2149,7 @@
 <div style="text-align: left;">
 <img src="https://www.w3cschool.cn/attachments/image/20170526/1495798408306247.jpg" style="zoom:50%; "/>
 </div>
-<h3 id="3_1">3. 多列布局<a class="headerlink" href="#3_1" title="Permanent link">¶</a></h3>
+<h3 id="3-多列布局">3. 多列布局<a class="headerlink" href="#3-多列布局" title="Permanent link">¶</a></h3>
 <p>使用 <code>&lt;div&gt;</code> 多层嵌套，然后再设置其 CSS 属性。</p>
 <style>
 .container {
@@ -2119,8 +2189,8 @@
 <p>YankNote、MWeb、MiaoYan 均支持多列布局渲染。Typora 不支持，但可导出 HTML 正常显示。</p>
 </blockquote>
 <p>详细教程，参考另一篇文档 <a href="css-layout.html">CSS排版布局</a>。</p>
-<h3 id="4_1">4. 表格技巧<a class="headerlink" href="#4_1" title="Permanent link">¶</a></h3>
-<h4 id="41">4.1 表格中换行<a class="headerlink" href="#41" title="Permanent link">¶</a></h4>
+<h3 id="4-表格技巧">4. 表格技巧<a class="headerlink" href="#4-表格技巧" title="Permanent link">¶</a></h3>
+<h4 id="41-表格中换行">4.1 表格中换行<a class="headerlink" href="#41-表格中换行" title="Permanent link">¶</a></h4>
 <p><a id="newline"></a></p>
 <p>可用 <code>&lt;br /&gt;</code> 标签。</p>
 <p><em>示例代码：</em></p>
@@ -2143,7 +2213,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="42">4.2 多列表格简写<a class="headerlink" href="#42" title="Permanent link">¶</a></h4>
+<h4 id="42-多列表格简写">4.2 多列表格简写<a class="headerlink" href="#42-多列表格简写" title="Permanent link">¶</a></h4>
 <p><span id="simplification"></span></p>
 <p>另外多列表格的表示方式还可以简写。</p>
 <p><em>示例代码：</em></p>
@@ -2171,7 +2241,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="5_1">5. 任意跳转<a class="headerlink" href="#5_1" title="Permanent link">¶</a></h3>
+<h3 id="5-任意跳转">5. 任意跳转<a class="headerlink" href="#5-任意跳转" title="Permanent link">¶</a></h3>
 <ol>
 <li>设置锚点：在目标位置添加空的 <code>&lt;span&gt;</code> 或 <code>&lt;a&gt;</code> 标签；</li>
 <li>链接锚点：使用 <code>[显示文字](#锚点id)</code> 格式设置锚点链接；</li>
@@ -2186,7 +2256,7 @@
 <p><em>示例效果：</em></p>
 <p>点击跳转 <a href="#newline">表格中换行</a>。<br/>
 点击跳转 <a href="#simplification">多列表格简写</a>。</p>
-<h3 id="6_1">6. 视频音频<a class="headerlink" href="#6_1" title="Permanent link">¶</a></h3>
+<h3 id="6-视频音频">6. 视频音频<a class="headerlink" href="#6-视频音频" title="Permanent link">¶</a></h3>
 <p>使用 <code>&lt;video&gt;</code> 和 <code>&lt;audio&gt;</code> 标签：</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><a href="#__codelineno-19-1"><span class="linenos" data-linenos="1 "></span></a><span class="p">&lt;</span><span class="nt">video</span> <span class="na">style</span><span class="o">=</span><span class="s">"width:100%;"</span> <span class="na">controls</span><span class="p">&gt;</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a><a href="#__codelineno-19-2"><span class="linenos" data-linenos="2 "></span></a>  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">"file:///Users/aaron/Movies/明日边缘.mp4"</span>  <span class="na">type</span><span class="o">=</span><span class="s">"video/mp4"</span><span class="p">&gt;</span>
@@ -2196,15 +2266,15 @@
 </span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a><a href="#__codelineno-19-6"><span class="linenos" data-linenos="6 "></span></a>  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">"file:///Users/aaron/Music/最伟大的作品 - 周杰伦.mp3"</span> <span class="na">type</span><span class="o">=</span><span class="s">"audio/mpeg"</span><span class="p">&gt;</span>
 </span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7"></a><a href="#__codelineno-19-7"><span class="linenos" data-linenos="7 "></span></a><span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<h3 id="7-iframe">7. iframe 嵌入<a class="headerlink" href="#7-iframe" title="Permanent link">¶</a></h3>
+<h3 id="7-iframe-嵌入">7. iframe 嵌入<a class="headerlink" href="#7-iframe-嵌入" title="Permanent link">¶</a></h3>
 <p><em>示例代码：</em></p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><a href="#__codelineno-20-1"><span class="linenos" data-linenos="1 "></span></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">height</span><span class="o">=</span><span class="s">"300"</span> <span class="na">style</span><span class="o">=</span><span class="s">"width: 100%;"</span> <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span> <span class="na">title</span><span class="o">=</span><span class="s">"multi-column-layout"</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://codepen.io/aaronwang30/embed/yyBBpdg?default-tab=css%2Cresult"</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">"no"</span> <span class="na">allowtransparency</span><span class="o">=</span><span class="s">"true"</span> <span class="na">allowfullscreen</span><span class="o">=</span><span class="s">"true"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <p><em>示例效果：</em></p>
 <iframe allowfullscreen="true" allowtransparency="true" frameborder="no" height="300" scrolling="no" src="https://codepen.io/aaronwang30/embed/yyBBpdg?default-tab=css%2Cresult" style="width: 100%;" title="multi-column-layout"></iframe>
-<h2 id="_4">五、编辑器特性<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<h2 id="五编辑器特性">五、编辑器特性<a class="headerlink" href="#五编辑器特性" title="Permanent link">¶</a></h2>
 <p>各编辑器都扩展了一些除标准 Markdown 规范之外的<strong>独有</strong>特性，这里分别罗列一些实用的。</p>
-<h3 id="1-emoji">1. Emoji 表情<a class="headerlink" href="#1-emoji" title="Permanent link">¶</a></h3>
+<h3 id="1-Emoji-表情">1. Emoji 表情<a class="headerlink" href="#1-Emoji-表情" title="Permanent link">¶</a></h3>
 <ul>
 <li>使用 emoji 简码（编辑器特性）。详情参考 <a href="https://gist.github.com/rxaviers/7360908">Emoji 简码表</a>。</li>
 <li>用 <code>:smile:</code> 表示 <img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f604.svg" title=":smile:"/> </li>
@@ -2213,13 +2283,13 @@
 <li>十六进制：用 <code>&amp;#x1F604;</code> 表示 😄 </li>
 </ul>
 <p>更多 emoji 简码参考：<a href="https://emoojees.com/">emoojees</a>、<a href="https://github.com/ikatyang/emoji-cheat-sheet">emoji-cheat-sheet</a>。</p>
-<h3 id="2_2">2. 标题跳转<a class="headerlink" href="#2_2" title="Permanent link">¶</a></h3>
-<p>部分编辑器会自动生成标题锚点，然后使用 <code>[显示文字](#标题)</code> 直接链接标题，相比前面的 <a href="#5.-任意跳转">任意跳转</a>，不再需要设置锚点。</p>
+<h3 id="2-标题跳转">2. 标题跳转<a class="headerlink" href="#2-标题跳转" title="Permanent link">¶</a></h3>
+<p>部分编辑器会自动生成标题锚点，然后使用 <code>[显示文字](#标题)</code> 直接链接标题，相比前面的 <a href="#5-任意跳转">任意跳转</a>，不再需要设置锚点。</p>
 <ul>
 <li>如果标题重复，则添加从 1 开始的编号后缀，例如用 <code>[显示文字](#标题-1)</code> 表示第一个，以此类推；</li>
 <li>如果标题中含空格，则用 <code>-</code> 代替；</li>
 </ul>
-<h3 id="3-yaml">3. YAML 前言<a class="headerlink" href="#3-yaml" title="Permanent link">¶</a></h3>
+<h3 id="3-YAML-前言">3. YAML 前言<a class="headerlink" href="#3-YAML-前言" title="Permanent link">¶</a></h3>
 <ul>
 <li><a href="https://yaml.org/"><strong>YAML</strong></a>：一种更简洁更易读写的数据序列化语言，通常用于编写配置文件。具体介绍看 <a href="https://www.ibm.com/cn-zh/topics/yaml">什么是 YAML</a>，语法参考：<a href="https://www.runoob.com/w3cnote/yaml-intro.html">YAML 入门教程</a>。</li>
 <li><a href="https://jekyllcn.com/docs/frontmatter/"><strong>YAML Front Matter</strong></a>：头信息，一种在文件顶部使用 YAML 语法定义变量的方式，通常用于为 Markdown 或 HTML 添加元数据、控制布局、定义版本等。</li>
@@ -2230,18 +2300,18 @@
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a><a href="#__codelineno-21-3"><span class="linenos" data-linenos="3 "></span></a><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">汪鸿俊</span>
 </span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4"></a><a href="#__codelineno-21-4"><span class="linenos" data-linenos="4 "></span></a><span class="nn">---</span>
 </span></code></pre></div>
-<h3 id="4_2">4. 富文本转换<a class="headerlink" href="#4_2" title="Permanent link">¶</a></h3>
+<h3 id="4-富文本转换">4. 富文本转换<a class="headerlink" href="#4-富文本转换" title="Permanent link">¶</a></h3>
 <p>Markdown 本质还是 HTML，可以和 HTML 互相转换。这样可以在其它任意地方使用带样式的 Markdown 内容，也可以把其它网页内容粘贴为 Markdown 文本，非常方便。</p>
 <ul>
 <li>HTML → Markdown：Typora、YankNote 都支持把复制的网页内容粘贴为富文本；</li>
 <li>Markdown → HTML：Typora 还可以把当前内容复制为 HTML；</li>
 </ul>
-<h3 id="5_2">5. 导出文档<a class="headerlink" href="#5_2" title="Permanent link">¶</a></h3>
+<h3 id="5-导出文档">5. 导出文档<a class="headerlink" href="#5-导出文档" title="Permanent link">¶</a></h3>
 <p>大部分编辑器支持导出 PDF、HTML、Image 格式文档，借助 <a href="https://pandoc.org/">Pandoc</a> 还可以导出 Word、Epub、RTF、<a href="https://jupyter.org/">Jupyter Notebook</a> 等几乎所有常用格式文档。</p>
 <p>Typora 的导出功能最全面，使用参考 <a href="https://support.typora.io/Export/">Typora Export</a>。</p>
-<h3 id="6-yanknote">6. YankNote 特性<a class="headerlink" href="#6-yanknote" title="Permanent link">¶</a></h3>
+<h3 id="6-YankNote-特性">6. YankNote 特性<a class="headerlink" href="#6-YankNote-特性" title="Permanent link">¶</a></h3>
 <p>单独讲一下 YankNote，因为好用的太多了。</p>
-<h4 id="toc">增强 TOC<a class="headerlink" href="#toc" title="Permanent link">¶</a></h4>
+<h4 id="增强-TOC">增强 TOC<a class="headerlink" href="#增强-TOC" title="Permanent link">¶</a></h4>
 <p>大部分编辑器都支持使用 <code>[TOC]</code> 自动生成文档目录。YankNote 还可设置列表方式和目录层级。</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a><a href="#__codelineno-22-1"><span class="linenos" data-linenos="1 "></span></a>&lt;!-- 常规写法（根据标题自动生成目录） --&gt;
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a><a href="#__codelineno-22-2"><span class="linenos" data-linenos="2 "></span></a>[toc] 
@@ -2249,7 +2319,7 @@
 </span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a><a href="#__codelineno-22-4"><span class="linenos" data-linenos="4 "></span></a>&lt;!-- YankNote写法（ul无序，ol有序，[2,3]表示：只显示2和3级标题） --&gt;
 </span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a><a href="#__codelineno-22-5"><span class="linenos" data-linenos="5 "></span></a>[toc]{type: "ul", level: [2,3]}
 </span></code></pre></div>
-<h4 id="_5">列表转脑图<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<h4 id="列表转脑图">列表转脑图<a class="headerlink" href="#列表转脑图" title="Permanent link">¶</a></h4>
 <p>只需在「列表」的根节点后加上 <code>{.mindmap}</code> 即可。</p>
 <div class="language-markdown highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><a href="#__codelineno-23-1"><span class="linenos" data-linenos="1 "></span></a>&lt;!-- 列表写法 +-* 都可以，[1]只表示数字图标（可选），不是顺序 --&gt;
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a><a href="#__codelineno-23-2"><span class="linenos" data-linenos="2 "></span></a>+ 中心节点{.mindmap}
@@ -2259,8 +2329,8 @@
 </span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6"></a><a href="#__codelineno-23-6"><span class="linenos" data-linenos="6 "></span></a>    + [4] 一致性原则
 </span></code></pre></div>
 <p>此外，还支持一堆的其它图表嵌入，还有直接运行代码片段、HTML小程序、AI 助手、版本控制、宏替换、文档加密等功能。</p>
-<h2 id="_6">六、数理公式<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
-<h3 id="_7">排版与渲染<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<h2 id="六数理公式">六、数理公式<a class="headerlink" href="#六数理公式" title="Permanent link">¶</a></h2>
+<h3 id="排版与渲染">排版与渲染<a class="headerlink" href="#排版与渲染" title="Permanent link">¶</a></h3>
 <p>计算机中，通常用 LaTeX、MathML 或 AsciiMath 标记语言来编写数理公式，用 MathJax 或 KaTeX 渲染引擎来显示这些公式。</p>
 <ul>
 <li>TeX，计算机排版系统，在学术界十分流行，特别是数学、物理学、统计学与计算机科学。</li>
@@ -2270,7 +2340,7 @@
 <li><a href="https://github.com/mathjax/MathJax">MathJax</a>，支持 TeX/LaTeX、MathML 和 AsciiMath 等标记语言的 JS 渲染引擎，功能全面，兼容性好。</li>
 <li><a href="https://katex.org/">KaTeX</a>，另一个 JS 渲染引擎，渲染速度快。</li>
 </ul>
-<h3 id="1_2">1. 数学公式<a class="headerlink" href="#1_2" title="Permanent link">¶</a></h3>
+<h3 id="1-数学公式">1. 数学公式<a class="headerlink" href="#1-数学公式" title="Permanent link">¶</a></h3>
 <p>使用 Tex/LaTeX 编写数学公式，语法参考：<a href="https://support.typora.io/Math/">Math and Academic Functions</a> 。不过，即使有语法参考，编写起来也很费劲，这时，可用以下编辑神器：</p>
 <ul>
 <li><a href="https://webdemo.myscript.com/views/math/index.html">MyScript Math</a>：支持手写数学公式，自动转 LaTeX 或 MathML，<a href="https://github.com/MyScript/myscript-math-web">MyScript</a> 此外还有集成手写框架 <a href="https://github.com/MyScript/iinkTS">iinkTS</a> 及 iOS、Android 手写计算器 Calculator，好评如潮，图标是 <span class="arithmatex">\(\sqrt{3}\)</span> 。</li>
@@ -2282,13 +2352,13 @@
 </ul>
 </li>
 </ul>
-<h4 id="_8">内联公式<a class="headerlink" href="#_8" title="Permanent link">¶</a></h4>
+<h4 id="内联公式">内联公式<a class="headerlink" href="#内联公式" title="Permanent link">¶</a></h4>
 <p>使用 $ 前后包围方式。</p>
 <ul>
 <li>用 <code>$E=mc^2$</code> 表示：<span class="arithmatex">\(E=mc^2\)</span></li>
 <li>用 <code>$\sum_{i=1}^n a_i=0$</code> 表示：<span class="arithmatex">\(\sum_{i=1}^n a_i=0\)</span></li>
 </ul>
-<h4 id="_9">块级公式<a class="headerlink" href="#_9" title="Permanent link">¶</a></h4>
+<h4 id="块级公式">块级公式<a class="headerlink" href="#块级公式" title="Permanent link">¶</a></h4>
 <p>使用 $$ 前后包围的方式。</p>
 <ul>
 <li>用 <code>$$ \displaystyle x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$</code> 表示：</li>
@@ -2298,22 +2368,22 @@
 <li>用 <code>$$ f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$</code> 表示：</li>
 </ul>
 <div class="arithmatex">\[ f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 \]</div>
-<h3 id="2_3">2. 化学方程式<a class="headerlink" href="#2_3" title="Permanent link">¶</a></h3>
+<h3 id="2-化学方程式">2. 化学方程式<a class="headerlink" href="#2-化学方程式" title="Permanent link">¶</a></h3>
 <p>通过 <a href="https://mhchem.github.io/MathJax-mhchem/">mhchem</a> 扩展实现，支持 MathJax 和 KaTeX。</p>
 <ul>
 <li>用 <code>$$ \ce{CH4 + 2 $\left( \ce{O2 + 79/21 N2} \right)$} $$</code> 表示：</li>
 </ul>
 <div class="arithmatex">\[ \ce{CH4 + 2 $\left( \ce{O2 + 79/21 N2} \right)$} \]</div>
-<h3 id="3_2">3. 更多公式<a class="headerlink" href="#3_2" title="Permanent link">¶</a></h3>
+<h3 id="3-更多公式">3. 更多公式<a class="headerlink" href="#3-更多公式" title="Permanent link">¶</a></h3>
 <p>更多 MathJax 使用参考：</p>
 <p><a href="https://docs.mathjax.org/en/latest/basic/mathematics.html">Writing Mathematics for MathJax</a> <br/>
 <a href="https://github.com/mathjax/MathJax-demos-web">MathJax-demos-web</a> <br/>
 <a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">MathJax basic tutorial and quick reference</a> </p>
-<h2 id="_10">七、图形与图表<a class="headerlink" href="#_10" title="Permanent link">¶</a></h2>
+<h2 id="七图形与图表">七、图形与图表<a class="headerlink" href="#七图形与图表" title="Permanent link">¶</a></h2>
 <p>使用 Markdown 快速生成各类图形与图表，参考另一篇文档 <a href="graph-chart.html">Markdown 图形与图表</a>。</p>
-<h2 id="_11">八、静态网站<a class="headerlink" href="#_11" title="Permanent link">¶</a></h2>
+<h2 id="八静态网站">八、静态网站<a class="headerlink" href="#八静态网站" title="Permanent link">¶</a></h2>
 <p>使用 Markdown 快速生成静态网站，参考另一篇文档 <a href="website.html">Markdown 静态网站</a>。</p>
-<h2 id="_12">九、幻灯片<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
+<h2 id="九幻灯片">九、幻灯片<a class="headerlink" href="#九幻灯片" title="Permanent link">¶</a></h2>
 <p>使用 Markdown 快速生成精美幻灯片，参考另一篇文档 <a href="slideshow.html">Markdown 幻灯片</a>。</p>
 <div class="footnote">
 <hr/>
@@ -2456,7 +2526,7 @@
     <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "search.highlight", "toc.follow", "navigation.top", "navigation.tabs", "navigation.expand", "navigation.tracking"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="assets/javascripts/bundle.60a45f97.min.js"></script>
+      <script src="assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="site-plugin/markmap/d3.min.js"></script>
       
