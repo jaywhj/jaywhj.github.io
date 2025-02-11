@@ -22,4 +22,4 @@
 - **静态网站**：使用 Markdown 快速生成静态网站；
 - **...**
 
-更多内容点进网站：[jaywhj.github.io/](https://jaywhj.github.io/)
+更多内容点进网站：[jaywhj.github.io/](https://jaywhj.github.io/)  或  [jaywhj.netlify.app/](https://jaywhj.netlify.app/)

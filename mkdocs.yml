@@ -1,16 +1,17 @@
 site_name: Aaron's blog
 site_author: Aaron Wang
-site_url: https://jaywhj.github.io/    # 网站地址
+site_url: https://jaywhj.github.io/
+site_description: markdown教程, typora教程, markdown编辑器, markdown ppt, markdown幻灯片, reveal教程, revealjs教程, mkdocs教程, mkdocs静态网站, markdown图表, markdown思维导图, markdown静态网站, markdown数学公式, markdown笔记, markdown ai, markdown deepseek, markdown katex, markdown latex, markdown mathjax, markdown markmap, markdown mermaid, hugo, hexo, jekyll,
 
-repo_url: https://github.com/jaywhj
 repo_name: aaron - repo
+repo_url: https://github.com/jaywhj
 copyright: Copyright &copy; 2025 | 🚀 Aaron Wang
 
 use_directory_urls: false     # 控制生成的文档目录结构，false 表示不生成文件夹目录，直接指向文件
 
 nav:
   - 首页: index.md
-  - Markdown 系列笔记:
+  - Markdown 系列:
     - Markdown 实用语法: markdown.md
     - Markdown 生成图表: graph-chart.md
     - Markdown 生成幻灯片: slideshow.md
@@ -19,11 +20,15 @@ nav:
     - Markdown 多列布局: css-layout.md
   - 效率提升:
     - 实用工具集: utility-tool.md
+    - 网站部署: site-deploy.md
     - MacOS 自动化: script-exe.md
     - 包管理镜像源: npm-yarn-pnpm.md
     - Jinja2 教程: jinja2.md
   - 电商运营:
+    - 手机高清直播: iPhone2Camera.md
     - 直播运营: douyin-pool.md
+  - 工作日常:
+    - 投融资逻辑: financing.md
   - 其他:
     - 海南畅游: hainan.md
   
@@ -32,31 +37,36 @@ theme:
   name: material
   custom_dir: docs/overrides  # 配置覆写文件目录，以便添加评论系统
   favicon: assets/favicon.ico
-  logo: assets/logo.png
+  # logo: assets/logo.png
   icon:
-    logo: material/home
+    logo: octicons/home-24    # fontawesome/solid/headphones-simple
     repo: material/github
   language: zh
   palette:
-    - media: "(prefers-color-scheme: light)"    # 根据系统颜色模式自动切换
+    - media: "(prefers-color-scheme)"          # 随系统主题颜色 - 自动切换
+      toggle:
+        icon: material/brightness-auto
+        name: 自动模式 - 主题颜色
+    - media: "(prefers-color-scheme: light)"   # 亮色模式 - 手动
       scheme: default
       primary: white   # deep orange / teal / light green
       accent: deep orange    # deep orange / teal / light green
       toggle:
-        icon: material/brightness-4
-        name: 切换到暗色模式
-    - media: "(prefers-color-scheme: dark)"
+        icon: material/weather-sunny
+        name: 亮色模式
+    - media: "(prefers-color-scheme: dark)"    # 暗色模式 - 手动
       scheme: slate
       primary: blue grey
-      accent: blue grey
+      accent: deep orange
       toggle:
-        icon: material/weather-sunny
-        name: 切换到亮色模式
+        icon: material/brightness-4
+        name: 暗色模式
   features:
     # - header.autohide   # 自动隐藏header
     - content.code.copy # 复制代码按钮
     - search.highlight  # 搜索结果高亮
-    - toc.follow        # 滚动的时候侧边栏自动跟随 
+    - toc.follow        # 滚动的时候侧边栏自动跟随
+    # - toc.integrate     # 目录导航集成，TOC总是作为左侧导航侧边栏的一部分呈现
     - navigation.top    # 返回顶部按钮
     - navigation.tabs   # 导航栏显示在顶部tab里
     - navigation.expand # 默认展开导航栏（导航栏在非顶部的时候才有效）
@@ -119,8 +129,10 @@ markdown_extensions:
           class: mkdocs-plotly
           format: !!python/name:mkdocs_plotly_plugin.fences.fence_plotly
   - toc:
-      permalink: true   # 在每个标题的末尾添加段落符 ¶
       toc_depth: 3      # 目录深度
+      permalink: true   # 在每个标题的末尾添加段落符 ¶
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {}  # 锚点链接：统一字符编码，区分大小写
+      # slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
 
 extra:
   generator: false  # 隐藏页脚 “Made with Material for MkDocs”
@@ -131,6 +143,27 @@ extra:
     - icon: material/email
       link: mailto:<junewhj@qq.com>
       name: Email
+
+
+  # analytics:
+  #   provider: google
+  #   property: G-QBB3SQMGLN
+  
+  #   # 网页底部反馈
+  #   feedback:
+  #     title: 这篇文档对您有帮助吗？
+  #     ratings:
+  #       - icon: material/thumb-up-outline
+  #         name: 有帮助
+  #         data: 1
+  #         note: >-
+  #           感谢您的反馈！
+  #       - icon: material/thumb-down-outline
+  #         name: 没帮助
+  #         data: 0
+  #         note: >-
+  #           感谢您的反馈，请告诉我该如何改进。
+
 
 plugins:
   - blog        # 内置博客插件
@@ -166,8 +199,8 @@ extra_javascript:
   
   # 配置 markmap 源
   # - https://unpkg.com/d3@7.9.0/dist/d3.min.js
-  # - https://unpkg.com/markmap-lib@0.18.0/dist/browser/index.iife.js
-  # - https://unpkg.com/markmap-view@0.18.0/dist/browser/index.js
+  # - https://unpkg.com/markmap-lib@0.18.9/dist/browser/index.iife.js
+  # - https://unpkg.com/markmap-view@0.18.9/dist/browser/index.js
 
   # 配置 markmap 离线源
   - site-plugin/markmap/d3.min.js
@@ -190,6 +223,8 @@ extra_javascript:
 #   # 支持化学方程式：
 #   - site-plugin/katex/mhchem.min.js       # https://unpkg.com/katex/dist/contrib/mhchem.min.js  |  https://cdn.jsdelivr.net/npm/katex/dist/contrib/mhchem.min.js
 
-# extra_css:
+extra_css:
 #   # 配置 katex 样式
 #   - site-plugin/katex/katex.min.css       # https://unpkg.com/katex@0/dist/katex.min.css
+
+  - stylesheets/extra.css
