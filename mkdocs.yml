@@ -212,19 +212,19 @@ extra_javascript:
   # 数理公式解析：mathjax/katex 二选一
   # https://squidfunk.github.io/mkdocs-material/reference/math/
 
-  # 配置 mathjax 路径
-  - site-plugin/mathjax/mathjax.js
-  - site-plugin/mathjax/tex-mml-chtml.js    # https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  # # 配置 mathjax 路径
+  # - site-plugin/mathjax/mathjax.js
+  # - site-plugin/mathjax/tex-mml-chtml.js    # https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
-#   # 配置 katex 路径
-#   - site-plugin/katex/katex.js
-#   - site-plugin/katex/katex.min.js        # https://unpkg.com/katex@0/dist/katex.min.js
-#   - site-plugin/katex/auto-render.min.js  # https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-#   # 支持化学方程式：
-#   - site-plugin/katex/mhchem.min.js       # https://unpkg.com/katex/dist/contrib/mhchem.min.js  |  https://cdn.jsdelivr.net/npm/katex/dist/contrib/mhchem.min.js
+  # 配置 katex 路径
+  - site-plugin/katex/katex.js
+  - site-plugin/katex/katex.min.js        # https://unpkg.com/katex@0/dist/katex.min.js
+  - site-plugin/katex/auto-render.min.js  # https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  # 支持化学方程式
+  - site-plugin/katex/mhchem.min.js       # https://unpkg.com/katex/dist/contrib/mhchem.min.js  |  https://cdn.jsdelivr.net/npm/katex/dist/contrib/mhchem.min.js
 
 extra_css:
-#   # 配置 katex 样式
-#   - site-plugin/katex/katex.min.css       # https://unpkg.com/katex@0/dist/katex.min.css
+  # 配置 katex 样式
+  - site-plugin/katex/katex.min.css       # https://unpkg.com/katex@0/dist/katex.min.css
 
   - stylesheets/extra.css
