@@ -144,25 +144,24 @@ extra:
       link: mailto:<junewhj@qq.com>
       name: Email
 
+  analytics:
+    provider: google
+    property: G-J511NQ6CFQ      # github：G-95D3WD6Z69、netlify：G-J511NQ6CFQ
 
-  # analytics:
-  #   provider: google
-  #   property: G-QBB3SQMGLN
-  
-  #   # 网页底部反馈
-  #   feedback:
-  #     title: 这篇文档对您有帮助吗？
-  #     ratings:
-  #       - icon: material/thumb-up-outline
-  #         name: 有帮助
-  #         data: 1
-  #         note: >-
-  #           感谢您的反馈！
-  #       - icon: material/thumb-down-outline
-  #         name: 没帮助
-  #         data: 0
-  #         note: >-
-  #           感谢您的反馈，请告诉我该如何改进。
+    # # 网页底部反馈
+    # feedback:
+    #   title: 这篇文档对您有帮助吗？
+    #   ratings:
+    #     - icon: material/thumb-up-outline
+    #       name: 有帮助
+    #       data: 1
+    #       note: >-
+    #         感谢您的反馈！
+    #     - icon: material/thumb-down-outline
+    #       name: 没帮助
+    #       data: 0
+    #       note: >-
+    #         感谢您的反馈，请告诉我该如何改进。
 
 
 plugins:
