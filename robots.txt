@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://jaywhj.github.io/sitemap.xml
+Sitemap: https://jaywhj.netlify.app/sitemap.xml

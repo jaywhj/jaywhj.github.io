@@ -1,3 +1,4 @@
+<!-- overrides/main.html -->
 
 <!doctype html>
 <html lang="zh" class="no-js">
@@ -1454,6 +1455,7 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
+  
                   
 
 
@@ -1560,6 +1562,15 @@
 
 
                 
+  <!-- 自动插入评论容器（支持隐藏） -->
+  
+    <div id="twikoo-comments" style="margin: 2rem 0;">
+      <p style="text-align: center; color: #666; font-size: 0.9em;">
+        加载评论中...
+      </p>
+    </div>
+  
+
               </article>
             </div>
           
@@ -1621,6 +1632,7 @@
     <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "search.highlight", "toc.follow", "navigation.top", "navigation.tabs", "navigation.expand", "navigation.tracking"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
+  
       <script src="assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="site-plugin/markmap/d3.min.js"></script>
@@ -1638,6 +1650,34 @@
         <script src="site-plugin/katex/mhchem.min.js"></script>
       
     
+  <!-- 延迟加载 Twikoo -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 检查是否存在评论容器
+      const el = document.getElementById('twikoo-comments');
+      if (!el) return;
+
+      // 延迟加载 Twikoo
+      setTimeout(() => {
+        const script = document.createElement('script');
+        // https://registry.npmmirror.com/twikoo/1.6.41/files/dist/twikoo.min.js
+        // https://cdn.jsdelivr.net/npm/twikoo@1.6.41/dist/twikoo.min.js
+        script.src = 'https://s4.zstatic.net/ajax/libs/twikoo/1.6.41/twikoo.min.js';
+        script.onload = () => {
+          // 清除加载提示
+          el.innerHTML = '';
+          // 初始化 Twikoo
+          twikoo.init({
+            envId: 'https://twikoo-jaywhj.netlify.app/.netlify/functions/twikoo',
+            el: '#twikoo-comments',
+            path: location.pathname,
+          });
+        };
+        document.head.appendChild(script);
+      }, 2000); // 延迟 2 秒加载
+    });
+  </script>
+
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(() => { lightbox.reload() });
 </script></body>
