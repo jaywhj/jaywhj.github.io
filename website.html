@@ -1792,8 +1792,6 @@
 </ol>
 <h4 id="使用-Twikoo">使用 Twikoo<a class="headerlink" href="#使用-Twikoo" title="Permanent link">¶</a></h4>
 <p><a href="https://github.com/twikoojs/twikoo">Twikoo</a>，一个简洁、安全、免费的静态网站评论系统，配置参考 <a href="https://twikoo.js.org/intro.html">Twikoo 文档</a>。</p>
-<h4 id="使用-Cusdis">使用 Cusdis<a class="headerlink" href="#使用-Cusdis" title="Permanent link">¶</a></h4>
-<p><a href="https://github.com/djyde/cusdis">Cusdis</a>，一个轻量级、以隐私为先、开源的评论系统，配置参考 <a href="https://cusdis.com/doc">Cusdis 文档</a>。</p>
 <h3 id="3-添加更新时间戳">3. 添加更新时间戳<a class="headerlink" href="#3-添加更新时间戳" title="Permanent link">¶</a></h3>
 <ul>
 <li><a href="https://github.com/jaywhj/mkdocs-document-dates">mkdocs-document-dates</a>，一个用于显示<strong>准确的</strong>文档创建日期和最后修改日期的 MkDocs 插件，不依赖 Git，支持在 Front Matter 中手动指定日期；✓</li>
@@ -1948,7 +1946,7 @@
 <li><a href="https://edgeai-lab.github.io/notebook/Tools/mkdocs/mkdocs_deploy_githubpages/">MkDocs - 部署WiKi站点到Github Pages</a>；</li>
 <li><a href="https://www.chengzz.com/1078.html">免费静态资源托管站 Vercel 和 Surge</a>；</li>
 </ul>
-<div class="document-dates-plugin-wrapper"><div class="document-dates-plugin"><span><span class="material-icons">add_circle</span>2024-11-22</span><span><span class="material-icons">update</span>2025-02-15</span></div></div>
+<div class="document-dates-plugin-wrapper"><div class="document-dates-plugin"><span><span class="material-icons">add_circle</span>2024-11-22</span><span><span class="material-icons">update</span>2025-02-16</span></div></div>
 
 
 
@@ -1970,10 +1968,26 @@
   <!-- 自动插入评论容器（支持隐藏） -->
   
     <div id="twikoo-comments" style="margin: 2rem 0;">
-      <p style="text-align: center; color: #666; font-size: 0.9em;">
-        加载评论中...
-      </p>
+      <div style="text-align: center;">
+        <div class="loader"></div>
+        <p style="color: #666; font-size: 0.9em;">加载评论中...</p>
+      </div>
     </div>
+    <style>
+      .loader {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #666;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 10px;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>    
   
 
               </article>
@@ -2057,6 +2071,7 @@
     
   <!-- 延迟加载 Twikoo -->
   <script>
+    // 浏览器解析完 HTML 文档后（DOM 就绪），触发 DOMContentLoaded 事件
     document.addEventListener('DOMContentLoaded', () => {
       // 检查是否存在评论容器
       const el = document.getElementById('twikoo-comments');
@@ -2079,7 +2094,7 @@
           });
         };
         document.head.appendChild(script);
-      }, 2000); // 延迟 2 秒加载
+      }, 1000); // 延迟 1 秒加载
     });
   </script>
 
