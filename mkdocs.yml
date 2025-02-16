@@ -18,8 +18,11 @@ nav:
     - Markdown 生成脑图: markmap-mkdocs.md
     - Markdown 生成网站: website.md
     - Markdown 多列布局: css-layout.md
+  - AI 人工智能:
+    - AI 工具集: ai-tools.md
+    - 提示词逻辑: ai-prompt.md
   - 效率提升:
-    - 实用工具集: utility-tool.md
+    - 实用工具集: utility-tools.md
     - 网站部署: site-deploy.md
     - MacOS 自动化: script-exe.md
     - 包管理镜像源: npm-yarn-pnpm.md
@@ -27,6 +30,7 @@ nav:
   - 电商运营:
     - 手机高清直播: iPhone2Camera.md
     - 直播运营: douyin-pool.md
+    - IP 起号: live-broadcast.md
   - 工作日常:
     - 投融资逻辑: financing.md
   - 其他:
@@ -146,7 +150,7 @@ extra:
 
   analytics:
     provider: google
-    property: G-J511NQ6CFQ      # github：G-95D3WD6Z69、netlify：G-J511NQ6CFQ
+    property: G-J511NQ6CFQ      # github：G-95D3WD6Z69 | netlify：G-J511NQ6CFQ
 
     # # 网页底部反馈
     # feedback:
@@ -173,17 +177,13 @@ plugins:
   - glightbox   # 图片灯箱特效插件
   - plotly      # 基于 python 的图表库插件
   
-  # - git-revision-date-localized:  # 添加最后更新日期
-  #     type: timeago    # 时间类型：timeago | iso_date
-  #     custom_format: "%d. %B %Y"    # 时间格式
-  #     timezone: Europe/Amsterdam    # 时区
-  #     locale: zh       # 首选语言
-  #     fallback_to_build_date: true # 在 Git 不可用时回退到 mkdocs build 执行时的时间
-  #     enable_creation_date: true   # 是否启用创建时间
-  #     exclude:         # 排除的页面
-  #         - index.md
-  #     enabled: true    # 是否启用
-  #     strict: true
+  - document-dates:
+      exclude:
+        - index.md
+      date_format: '%Y-%m-%d'
+      show_time: false
+      time_format: '%H:%M:%S'
+      position: bottom  # top | bottom
 
   - markmap:
       base_path: docs
