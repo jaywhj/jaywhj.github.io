@@ -1023,6 +1023,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#四网站部署-Netlify" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、网站部署 Netlify
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1840,6 +1849,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#四网站部署-Netlify" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、网站部署 Netlify
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2032,7 +2050,7 @@
 <li>参考文档 <a href="https://squidfunk.github.io/mkdocs-material/reference/">Reference</a>；</li>
 </ul>
 <h2 id="三网站部署-GitHub-Pages">三、网站部署 GitHub Pages<a class="headerlink" href="#三网站部署-GitHub-Pages" title="Permanent link">¶</a></h2>
-<p>你可以将网站部署到 <a href="https://vercel.com/">Vercel</a>、<a href="https://pages.github.com/">GitHub Pages</a>、<a href="https://www.netlify.com/">Netlify</a>、<a href="https://render.com/docs/static-sites">Render</a>、<a href="https://surge.sh/help/getting-started-with-surge">Surge</a> 等静态网站托管服务上，这里我选择 GitHub Pages 来演示托管网站，具体参考 <a href="https://docs.github.com/zh/pages">GitHub Pages 文档</a>；</p>
+<p>你可以将网站部署到 <a href="https://vercel.com/">Vercel</a>、<a href="https://pages.github.com/">GitHub Pages</a>、<a href="https://www.netlify.com/">Netlify</a>、<a href="https://render.com/docs/static-sites">Render</a>、<a href="https://surge.sh/help/getting-started-with-surge">Surge</a> 等静态网站托管服务上，这里我选择 GitHub Pages 来演示网站托管，具体参考 <a href="https://docs.github.com/zh/pages">GitHub Pages 文档</a>；</p>
 <h3 id="1-创建网站-GitHub-仓库">1. 创建网站 GitHub 仓库<a class="headerlink" href="#1-创建网站-GitHub-仓库" title="Permanent link">¶</a></h3>
 <ul>
 <li>New repository，仓库名建议为 <code>&lt;username&gt;.github.io</code>（方便生成同名网址）。比如我的 GitHub 用户名是 <code>jaywhj</code>，仓库名则是：<code>jaywhj.github.io</code>，最终生成的网址也是它。<br/>
@@ -2073,9 +2091,9 @@
 <li><strong>Push 验证失败</strong>：需配置 <code>Personal Access Token</code>，GitHub 在 2021 年 8 月不再支持使用用户名和密码的方式访问仓库，需要使用用户名和访问 Token 的方式，步骤参考 <a href="https://juejin.cn/post/7144638247346372621">配置 Personal Access Token</a>；</li>
 </ul>
 <h3 id="4-网站部署">4. 网站部署<a class="headerlink" href="#4-网站部署" title="Permanent link">¶</a></h3>
-<p>可选择手动或自动部署，手动方式操作简单，但每次更新都需要手动操作一次，自动方式配置复杂，但是一劳永逸。</p>
+<p>可选择手动或自动部署，手动方式操作更简单。</p>
 <h4 id="手动部署">手动部署<a class="headerlink" href="#手动部署" title="Permanent link">¶</a></h4>
-<p>只需从包含 <code>mkdocs.yml</code> 的目录中调用以下命令即可：</p>
+<p>只需从 MkDocs 项目根目录（<code>mkdocs.yml</code>所在目录）调用以下命令即可：</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>mkdocs<span class="w"> </span>gh-deploy<span class="w"> </span>--force
 </span></code></pre></div>
 <p>该命令执行了以下动作：</p>
@@ -2176,7 +2194,9 @@
 <li><a href="https://edgeai-lab.github.io/notebook/Tools/mkdocs/mkdocs_deploy_githubpages/">MkDocs - 部署WiKi站点到Github Pages</a>；</li>
 <li><a href="https://www.chengzz.com/1078.html">免费静态资源托管站 Vercel 和 Surge</a>；</li>
 </ul>
-<div class="document-dates-plugin-wrapper"><div class="document-dates-plugin"><span><span class="material-icons">add_circle</span>2024-11-22</span><span><span class="material-icons">update</span>2025-02-19</span></div></div>
+<h2 id="四网站部署-Netlify">四、网站部署 Netlify<a class="headerlink" href="#四网站部署-Netlify" title="Permanent link">¶</a></h2>
+<p>参考另一篇文档 <a href="site-deploy.html">网站部署 Netlify</a>。</p>
+<div class="document-dates-plugin-wrapper"><div class="document-dates-plugin"><span><span class="material-icons">add_circle</span>2024-11-22</span><span><span class="material-icons">update</span>2025-02-20</span></div></div>
 
 
 
