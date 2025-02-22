@@ -10,6 +10,8 @@ copyright: Copyright &copy; 2025 | 🚀 Aaron Wang
 use_directory_urls: false     # 控制生成的文档目录结构，false 表示不生成文件夹目录，直接指向文件
 
 nav:
+  - 快讯: 
+    - blog/index.md
   - 首页: index.md
   - Markdown 系列:
     - Markdown 实用语法: markdown.md
@@ -35,7 +37,6 @@ nav:
     - 投融资逻辑: financing.md
   - 其他:
     - 海南畅游: hainan.md
-  
 
 theme:
   name: material
@@ -73,6 +74,7 @@ theme:
     # - toc.integrate     # 目录导航集成，TOC总是作为左侧导航侧边栏的一部分呈现
     - navigation.top    # 返回顶部按钮
     - navigation.tabs   # 导航栏显示在顶部tab里
+    - navigation.indexes  # 启用章节索引页，文档可直接附加到章节
     - navigation.expand # 默认展开导航栏（导航栏在非顶部的时候才有效）
     - navigation.tracking # 锚点跟踪，地址栏中的 URL 会自动更新为活动锚点
     # - navigation.sections # 导航栏分区显示，不缩进无折叠（导航栏在非顶部的时候才有效）
@@ -178,12 +180,11 @@ plugins:
   - plotly      # 基于 python 的图表库插件
   
   - document-dates:
+      type: timeago
+      locale: zh
       exclude:
         - index.md
-      date_format: '%Y-%m-%d'
-      show_time: false
-      time_format: '%H:%M:%S'
-      position: bottom  # top | bottom
+        - blog/*
 
   - markmap:
       base_path: docs
