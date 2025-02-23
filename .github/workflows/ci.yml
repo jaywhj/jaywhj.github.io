@@ -31,5 +31,5 @@ jobs:
       - run: pip install mkdocs-glightbox
       - run: pip install mkdocs-markmap
       - run: pip install mkdocs-plotly-plugin
-      - run: pip install --upgrade mkdocs-document-dates
+      - run: pip install mkdocs-document-dates==0.9.0
       - run: mkdocs gh-deploy --force
