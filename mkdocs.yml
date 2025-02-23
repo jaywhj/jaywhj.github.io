@@ -179,6 +179,7 @@ plugins:
   - glightbox   # 图片灯箱特效插件
   - plotly      # 基于 python 的图表库插件
   
+  
   - document-dates:
       locale: zh
       exclude:
