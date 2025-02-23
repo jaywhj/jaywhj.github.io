@@ -180,7 +180,6 @@ plugins:
   - plotly      # 基于 python 的图表库插件
   
   - document-dates:
-      type: timeago
       locale: zh
       exclude:
         - index.md
