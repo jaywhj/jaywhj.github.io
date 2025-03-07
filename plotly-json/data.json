@@ -1,0 +1,9 @@
+{
+    "data": [
+        {
+            "x": ["giraffes", "orangutans", "monkeys", "Six", "Ten", "Three"],
+            "y": [12, 44, 4, 36, 22, 28],
+            "type": "bar"
+        }
+    ]
+}

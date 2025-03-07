@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Column Layout Demos</title>
+    <style>
+        /* Common styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .section {
+            margin: 40px 0;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Grid Layout - Card style */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        /* Flex Layout - Feature boxes */
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature-box {
+            flex: 1 1 200px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            background: #e9ecef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Column Layout - Text content */
+        .column-container {
+            columns: auto 300px;
+            gap: 40px;
+            column-rule: 1px solid #ddd;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .column-container p {
+            margin-bottom: 20px;
+            break-inside: avoid;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .feature-box {
+                flex-basis: 100%;
+            }
+
+            .column-container {
+                columns: auto 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Grid Layout Demo -->
+    <section class="section">
+        <h2>Grid Layout - Photo Gallery</h2>
+        <div class="grid-container">
+            <div class="card">
+                <img src="https://picsum.photos/400/300?random=1" alt="Random image 1">
+                <h3>Card Title 1</h3>
+                <p>This is a sample card description that showcases the grid layout.</p>
+            </div>
+            <div class="card">
+                <img src="https://picsum.photos/400/300?random=2" alt="Random image 2">
+                <h3>Card Title 2</h3>
+                <p>Another card with different content to demonstrate flexibility.</p>
+            </div>
+            <div class="card">
+                <img src="https://picsum.photos/400/300?random=3" alt="Random image 3">
+                <h3>Card Title 3</h3>
+                <p>The grid automatically adjusts based on screen size.</p>
+            </div>
+            <div class="card">
+                <img src="https://picsum.photos/400/300?random=4" alt="Random image 4">
+                <h3>Card Title 4</h3>
+                <p>Add as many cards as needed, the layout will adjust.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flex Layout Demo -->
+    <section class="section">
+        <h2>Flex Layout - Feature Boxes</h2>
+        <div class="flex-container">
+            <div class="feature-box">
+                <div class="icon">1</div>
+                <div>
+                    <h3>Feature One</h3>
+                    <p>Flexbox creates a flexible layout that adapts to content.</p>
+                </div>
+            </div>
+            <div class="feature-box">
+                <div class="icon">2</div>
+                <div>
+                    <h3>Feature Two</h3>
+                    <p>Items can grow and shrink based on available space.</p>
+                </div>
+            </div>
+            <div class="feature-box">
+                <div class="icon">3</div>
+                <div>
+                    <h3>Feature Three</h3>
+                    <p>The layout wraps automatically on smaller screens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Column Layout Demo -->
+    <section class="section">
+        <h2>Column Layout - Text Content</h2>
+        <div class="column-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
+        </div>
+    </section>
+</body>
+</html>
