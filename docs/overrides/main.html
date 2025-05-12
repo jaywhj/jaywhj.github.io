@@ -42,9 +42,9 @@
       // 延迟加载 Twikoo
       setTimeout(() => {
         const script = document.createElement('script');
+        // https://s4.zstatic.net/ajax/libs/twikoo/1.6.41/twikoo.min.js
         // https://registry.npmmirror.com/twikoo/1.6.41/files/dist/twikoo.min.js
-        // https://cdn.jsdelivr.net/npm/twikoo@1.6.41/dist/twikoo.min.js
-        script.src = 'https://s4.zstatic.net/ajax/libs/twikoo/1.6.41/twikoo.min.js';
+        script.src = 'https://cdn.jsdelivr.net/npm/twikoo@1.6.43/dist/twikoo.min.js';
         script.onload = () => {
           // 清除加载提示
           el.innerHTML = '';
