@@ -1,4 +1,4 @@
-<!-- overrides/main.html -->
+
 <!DOCTYPE html>
 
 <html class="no-js" lang="zh">
@@ -660,28 +660,61 @@
 LS0tCnRpdGxlOiBtYXJrbWFwIOaAnee7tOWvvOWbvgptYXJrbWFwOgogIGNvbG9yRnJlZXplTGV2ZWw6IDIKICBlbWJlZEFzc2V0czogdHJ1ZQogIG1heFdpZHRoOiAzMDAKIyAgaHRtbFBhcnNlcjoKIyAgICBzZWxlY3RvcjogaDEsaDIsaDMsdWwsb2wsbGksdGFibGUscHJlLGltZwotLS0KCiMg5oCd57u05a+85Zu+CgoKCiMjIExpbmtzCgotIFtXZWJzaXRlXShodHRwczovL21hcmttYXAuanMub3JnLykKLSBbR2l0SHViXShodHRwczovL2dpdGh1Yi5jb20vZ2VyYTJsZC9tYXJrbWFwKQoKCgojIyBGZWF0dXJlcwoKTm90ZSB0aGF0IGlmIGJsb2NrcyBhbmQgbGlzdHMgYXBwZWFyIGF0IHRoZSBzYW1lIGxldmVsLCB0aGUgbGlzdHMgd2lsbCBiZSBpZ25vcmVkLgoKIyMjIExpc3RzCgotICoqc3Ryb25nKiogfn5kZWx+fiAqaXRhbGljKiA9PWhpZ2hsaWdodD09Ci0gYGlubGluZSBjb2RlYAotIFt4XSBjaGVja2JveAotIEthdGV4OiAkeCA9IHstYiBccG0gXHNxcnR7Yl4yLTRhY30gXG92ZXIgMmF9JCA8IS0tIG1hcmttYXA6IGZvbGQgLS0+CiAgICAtIE1vcmUgS2F0ZXggRXhhbXBsZXMKLSBOb3cgd2UgY2FuIHdyYXAgdmVyeSB2ZXJ5IHZlcnkgdmVyeSBsb25nIHRleHQgYmFzZWQgb24gYG1heFdpZHRoYCBvcHRpb24KLSBPcmRlcmVkIGxpc3QKICAgIDEuIGl0ZW0gMQogICAgMi4gaXRlbSAyCgojIyMgQmxvY2tzCgpgYGBqcwpmb3IgKGxldCBpID0gMDsgaSA8IDU7IGkrKykgewogICAgY29uc29sZS5sb2coInZhbHVlIiwgaSk7Cn0KYGBgCgp8IFByb2R1Y3RzIHwgUHJpY2UgfAp8LXwtfAp8IEFwcGxlIHwgNCB8CnwgQmFuYW5hIHwgMiB8CgoKPCEtLSAhW2ltZ10oYXNzZXRzL2Zhdmljb24ucG5nKSAtLT4KIVtpbWddKGh0dHBzOi8vbGYxLWNkbjItdG9zLmJ5dGVnb29meS5jb20vYnlkZXNpZ24vaWNvbnBhcmtzaXRlL3N0YXRpYy9tZWRpYS9sb2dvX3dpdGhfbmFtZS41OThmYzAxMS5zdmcpCg==
 </markmap-data></div>
 <div class="document-dates-plugin-wrapper"><div class="document-dates-plugin"><span title="创建时间: 2024-11-29"><span class="material-icons">add_circle</span>2024-11-29</span><span title="最后更新: 2025-02-06"><span class="material-icons">update</span>2025-02-06</span></div></div>
-<!-- 自动插入评论容器（支持隐藏） -->
-<div id="twikoo-comments" style="margin: 2rem 0;">
-<div style="text-align: center;">
-<div class="loader"></div>
-<p style="color: #666; font-size: 0.9em;">加载评论中...</p>
-</div>
-</div>
+<!-- overrides/partials/comments.html -->
 <style>
-      .loader {
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #666;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        animation: spin 1s linear infinite;
-        margin: 0 auto 10px;
-      }
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-    </style>
+#twikoo-comments .tk-loading {
+    text-align: center;
+    padding: 1rem;
+}
+
+#twikoo-comments .tk-loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #666;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: tk-spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+
+#twikoo-comments .tk-loading p {
+    font-size: 0.9em;
+    color: #666;
+    opacity: 0.8;
+}
+
+@keyframes tk-spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+</style>
+<div id="twikoo-comments" style="margin: 2rem 0;">
+<div class="tk-loading">
+<div class="tk-loader"></div>
+<p>评论加载中...</p>
+</div>
+</div>
+<script>
+// 浏览器解析完 HTML 文档后（DOM 就绪），触发 DOMContentLoaded 事件
+document.addEventListener('DOMContentLoaded', () => {
+    const el = document.getElementById('twikoo-comments');
+    if (!el) return;
+
+    setTimeout(() => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/twikoo@1.6.43/dist/twikoo.min.js';
+        script.onload = () => {
+            el.querySelector('.tk-loading').remove();
+            twikoo.init({
+                envId: 'https://twikoo-jaywhj.netlify.app/.netlify/functions/twikoo',
+                el: '#twikoo-comments',
+                path: location.pathname,
+            });
+        };
+        document.head.appendChild(script);
+    }, 1000); // 延迟 1 秒加载
+});
+</script>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -714,7 +747,7 @@ LS0tCnRpdGxlOiBtYXJrbWFwIOaAnee7tOWvvOWbvgptYXJrbWFwOgogIGNvbG9yRnJlZXplTGV2ZWw6
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "search.highlight", "toc.follow", "navigation.top", "navigation.tabs", "navigation.indexes", "navigation.expand", "navigation.tracking"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+<script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "search.highlight", "toc.follow", "navigation.top", "navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
 <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
 <script src="site-plugin/markmap/d3.min.js"></script>
 <script src="site-plugin/markmap/index.iife.js"></script>
@@ -723,34 +756,6 @@ LS0tCnRpdGxlOiBtYXJrbWFwIOaAnee7tOWvvOWbvgptYXJrbWFwOgogIGNvbG9yRnJlZXplTGV2ZWw6
 <script src="site-plugin/katex/katex.min.js"></script>
 <script src="site-plugin/katex/auto-render.min.js"></script>
 <script src="site-plugin/katex/mhchem.min.js"></script>
-<!-- 延迟加载 Twikoo -->
-<script>
-    // 浏览器解析完 HTML 文档后（DOM 就绪），触发 DOMContentLoaded 事件
-    document.addEventListener('DOMContentLoaded', () => {
-      // 检查是否存在评论容器
-      const el = document.getElementById('twikoo-comments');
-      if (!el) return;
-
-      // 延迟加载 Twikoo
-      setTimeout(() => {
-        const script = document.createElement('script');
-        // https://s4.zstatic.net/ajax/libs/twikoo/1.6.41/twikoo.min.js
-        // https://registry.npmmirror.com/twikoo/1.6.41/files/dist/twikoo.min.js
-        script.src = 'https://cdn.jsdelivr.net/npm/twikoo@1.6.43/dist/twikoo.min.js';
-        script.onload = () => {
-          // 清除加载提示
-          el.innerHTML = '';
-          // 初始化 Twikoo
-          twikoo.init({
-            envId: 'https://twikoo-jaywhj.netlify.app/.netlify/functions/twikoo',
-            el: '#twikoo-comments',
-            path: location.pathname,
-          });
-        };
-        document.head.appendChild(script);
-      }, 1000); // 延迟 1 秒加载
-    });
-  </script>
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
 document$.subscribe(() => { lightbox.reload() });
 </script><script type="text/javascript">(function initializeMarkmap() {

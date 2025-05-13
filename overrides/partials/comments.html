@@ -1,0 +1,63 @@
+<!-- overrides/partials/comments.html -->
+
+{% if not page.meta.hide_comment %}
+<style>
+#twikoo-comments .tk-loading {
+    text-align: center;
+    padding: 1rem;
+}
+
+#twikoo-comments .tk-loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #666;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: tk-spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+
+#twikoo-comments .tk-loading p {
+    font-size: 0.9em;
+    color: #666;
+    opacity: 0.8;
+}
+
+@keyframes tk-spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+</style>
+
+<div id="twikoo-comments" style="margin: 2rem 0;">
+    <div class="tk-loading">
+        <div class="tk-loader"></div>
+        <p>评论加载中...</p>
+    </div>
+</div>
+{% endif %}
+
+
+{% block scripts %}
+<script>
+// 浏览器解析完 HTML 文档后（DOM 就绪），触发 DOMContentLoaded 事件
+document.addEventListener('DOMContentLoaded', () => {
+    const el = document.getElementById('twikoo-comments');
+    if (!el) return;
+
+    setTimeout(() => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/twikoo@1.6.43/dist/twikoo.min.js';
+        script.onload = () => {
+            el.querySelector('.tk-loading').remove();
+            twikoo.init({
+                envId: 'https://twikoo-jaywhj.netlify.app/.netlify/functions/twikoo',
+                el: '#twikoo-comments',
+                path: location.pathname,
+            });
+        };
+        document.head.appendChild(script);
+    }, 1000); // 延迟 1 秒加载
+});
+</script>
+{% endblock %}
