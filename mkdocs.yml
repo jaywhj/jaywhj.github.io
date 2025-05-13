@@ -76,7 +76,7 @@ theme:
     - navigation.tabs   # 导航栏显示在顶部tab里
     - navigation.indexes  # 启用章节索引页，文档可直接附加到章节
     - navigation.expand # 默认展开导航栏（导航栏在非顶部的时候才有效）
-    - navigation.tracking # 锚点跟踪，地址栏中的 URL 会自动更新为活动锚点
+    # - navigation.tracking # 锚点跟踪，地址栏中的 URL 会自动更新为活动锚点
     # - navigation.sections # 导航栏分区显示，不缩进无折叠（导航栏在非顶部的时候才有效）
     # - navigation.footer # 底部导航栏
 
