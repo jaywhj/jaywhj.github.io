@@ -152,7 +152,7 @@ extra:
 
   analytics:
     provider: google
-    property: G-95D3WD6Z69      # github：G-95D3WD6Z69 | netlify：G-J511NQ6CFQ
+    property: G-J511NQ6CFQ      # github：G-95D3WD6Z69 | netlify：G-J511NQ6CFQ
 
     # # 网页底部反馈
     # feedback:
@@ -182,6 +182,7 @@ plugins:
   
   - document-dates:
       locale: zh
+      position: top
       exclude:
         - index.md
         - blog/*
