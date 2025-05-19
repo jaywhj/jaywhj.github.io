@@ -19,9 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
             envId: 'https://twikoo-jaywhj.netlify.app/.netlify/functions/twikoo',
             el: '#twikoo-comments',
             path: location.pathname,
+            // lang: 'en',
         });
     };
-    document.head.appendChild(script);
+    document.body.appendChild(script);
 });
 </script>
 {% endblock %}
