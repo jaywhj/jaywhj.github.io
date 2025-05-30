@@ -182,6 +182,7 @@ plugins:
   
   - document-dates:
       locale: zh
+      type: timeago
       position: top
       exclude:
         - index.md
