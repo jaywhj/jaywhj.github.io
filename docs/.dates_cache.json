@@ -55,6 +55,10 @@
     "created": "2024-02-15T02:59:56",
     "modified": "2025-02-15T02:59:56"
   },
+  "jinja2.md": {
+    "created": "2024-03-22T14:46:41",
+    "modified": "2025-02-06T14:46:41"
+  },
   "ai-prompt.md": {
     "created": "2025-05-06T19:26:58",
     "modified": "2025-05-06T19:26:58"
@@ -105,7 +109,10 @@
   "mac-add2.md": {
     "created": "2025-05-30T22:18:07.497264"
   },
-  "personalization.md": {
-    "created": "2024-12-12T12:31:40"
+  "mkdocs-document-dates.md": {
+    "created": "2023-02-15T03:09:15"
+  },
+  "github-custom2.md": {
+    "created": "2024-02-15T03:09:15"
   }
 }
