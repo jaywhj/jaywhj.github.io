@@ -1,6 +1,6 @@
 ---
 title: 海南畅游
-author: 汪鸿俊
+author: Wang
 icon: fontawesome/solid/umbrella-beach
 ---
 

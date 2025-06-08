@@ -31,5 +31,5 @@ jobs:
       - run: pip install mkdocs-glightbox
       - run: pip install mkdocs-markmap
       - run: pip install mkdocs-plotly-plugin
-      - run: pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ mkdocs-document-dates==3.2.2
+      - run: pip install mkdocs-document-dates
       - run: mkdocs gh-deploy --force
