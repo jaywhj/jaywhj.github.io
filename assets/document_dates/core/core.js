@@ -55,7 +55,7 @@ function setConfig(newConfig) {
 
 // Theme management
 function getCurrentTheme() {
-    const scheme = document.body?.getAttribute('data-md-color-scheme') || 'default';
+    const scheme = (document.body && document.body.getAttribute('data-md-color-scheme')) || 'default';
     return scheme === 'slate' ? config.theme.dark : config.theme.light;
 }
 

@@ -6,7 +6,7 @@
 /*
 DocumentDates.setConfig({
     theme: {
-        // configurable: light material, or custom theme in user.config.css, for example 'tomato'
+        // configurable: light material, or custom theme in user.config.css, for example: sorrel sublime tomato
         light: 'light',
         dark: 'material'
     },
@@ -36,12 +36,10 @@ DocumentDates.setConfig({
 
 /*
 DocumentDates.registerHook('beforeInit', async (context) => {
-    console.log('Custom logic before initialization');
     
 });
 
 DocumentDates.registerHook('afterInit', async (context) => {
-    console.log('Continue, after initialization');
     
 });
 */

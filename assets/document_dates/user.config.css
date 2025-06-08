@@ -54,12 +54,20 @@
     font-size: 12px;
 } */
 
-/* Demo of the custom theme 'tomato', you can configure it in user.config.js (optional) */
+/* Demo of the custom theme 'sorrel' and 'sublime', you can configure it in user.config.js (optional) */
 /* 
-.tippy-box[data-theme~='tomato'] {
-    background-color: tomato;
-    color: white;
+.tippy-box[data-theme~='sorrel'] {
+    background-color: #F7E6E2;
+    color: #B1402A;
 }
-.tippy-box[data-theme~='tomato'] > .tippy-arrow::before {
-    color: tomato;
+.tippy-box[data-theme~='sorrel'] > .tippy-arrow::before {
+    color: #F7E6E2;
+}
+
+.tippy-box[data-theme~='sublime'] {
+    background-color: #474747;
+    color: #F19D38;
+}
+.tippy-box[data-theme~='sublime'] > .tippy-arrow::before {
+    color: #474747;
 } */
