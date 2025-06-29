@@ -3,7 +3,7 @@
     */
 /* 
 .document-dates-plugin {
-    color: rgba(142, 142, 142, 0.7);
+    color: rgba(109, 157, 204, 0.7);
     font-size: 0.75rem;
 }
 .document-dates-plugin .material-icons {
@@ -13,7 +13,7 @@
 /* Customized icons, just change the icon name.
     Google Fonts Icons (2500+): https://fonts.google.com/icons
 
-    add_circle: add_circle, add_circle, note_add, add
+    add_circle: add_circle, add_circle, note_add, more_time
     update:     update, check_circle, task, refresh
     person:     person, account_circle
     group:      group, groups */
@@ -49,10 +49,6 @@
 /* 3. Tooltip styles
     including theme, arrow, font, color, background color, etc
     */
-
-/* .tippy-box {
-    font-size: 12px;
-} */
 
 /* Demo of the custom theme 'sorrel' and 'sublime', you can configure it in user.config.js (optional) */
 /* 
