@@ -1,13 +1,15 @@
 site_name: Aaron's blog
 site_author: Aaron Wang
-site_url: https://jaywhj.github.io/
-site_description: markdown教程, typora教程, markdown编辑器, markdown ppt, markdown幻灯片, reveal教程, revealjs教程, mkdocs教程, mkdocs静态网站, markdown图表, markdown思维导图, markdown静态网站, markdown数学公式, markdown笔记, markdown ai, markdown deepseek, markdown katex, markdown latex, markdown mathjax, markdown markmap, markdown mermaid, hugo, hexo, jekyll,
+site_url: https://jaywhj.netlify.app/
+# site_description: markdown教程, typora教程, markdown编辑器, markdown ppt, markdown幻灯片, reveal教程, revealjs教程, mkdocs教程, mkdocs静态网站, markdown图表, markdown思维导图, markdown静态网站, markdown数学公式, markdown笔记, markdown ai, markdown deepseek, markdown katex, markdown latex, markdown mathjax, markdown markmap, markdown mermaid, hugo, hexo, jekyll,
 
 repo_name: aaron - repo
 repo_url: https://github.com/jaywhj
 copyright: Copyright &copy; 2025 | 🚀 Aaron Wang
 
 use_directory_urls: false     # 控制生成的文档目录结构，false 表示不生成文件夹目录，直接指向文件
+exclude_docs: |
+  /drafts/
 
 nav:
   - 快讯: 
@@ -147,7 +149,7 @@ extra:
       link: https://github.com/jaywhj
       name: GitHub
     - icon: material/email
-      link: mailto:<junewhj@qq.com>
+      link: mailto:junewhj@qq.com
       name: Email
 
   analytics:
@@ -181,7 +183,6 @@ plugins:
   
   
   - document-dates:
-      locale: zh
       type: timeago
       position: top
       exclude:
@@ -198,7 +199,9 @@ plugins:
       view_version: ''
 
 extra_javascript:
-  
+  # - assets/document_dates/core/timeago.full.min.js
+  # - assets/document_dates/core/timeago-load.js
+
   # 配置 markmap 源
   # - https://unpkg.com/d3@7.9.0/dist/d3.min.js
   # - https://unpkg.com/markmap-lib@0.18.9/dist/browser/index.iife.js
