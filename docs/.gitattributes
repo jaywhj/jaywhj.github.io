@@ -1,3 +1,2 @@
 .dates_cache.jsonl merge=union
-.dates_cache.json merge=custom_merge
 .dates_cache.json merge=custom_json_merge
