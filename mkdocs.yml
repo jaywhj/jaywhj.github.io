@@ -1,52 +1,43 @@
-site_name: Aaron's blog
+site_name: 文档即产品
 site_author: Aaron Wang
 site_url: https://jaywhj.netlify.app/
-# site_description: markdown教程, typora教程, markdown编辑器, markdown ppt, markdown幻灯片, reveal教程, revealjs教程, mkdocs教程, mkdocs静态网站, markdown图表, markdown思维导图, markdown静态网站, markdown数学公式, markdown笔记, markdown ai, markdown deepseek, markdown katex, markdown latex, markdown mathjax, markdown markmap, markdown mermaid, hugo, hexo, jekyll,
+site_description: markdown系列教程，markdown转PPT、静态网站、图表、思维导图，markdown编写AI结构化提示词等，应有尽有
 
 repo_name: aaron - repo
 repo_url: https://github.com/jaywhj
 copyright: Copyright &copy; 2025 | 🚀 Aaron Wang
 
-use_directory_urls: false     # 控制生成的文档目录结构，false 表示不生成文件夹目录，直接指向文件
+# 控制生成的文档目录结构，false 表示不生成文件夹目录，直接指向文件
+use_directory_urls: false
+
+# 设置排除文件和文件夹
 exclude_docs: |
   /drafts/
 
+# 导航版块
 nav:
-  - 快讯: 
-    - blog/index.md
   - 首页: index.md
   - Markdown 系列:
     - Markdown 实用语法: markdown.md
-    - Markdown 生成图表: graph-chart.md
     - Markdown 生成幻灯片: slideshow.md
     - Markdown 生成脑图: markmap-mkdocs.md
     - Markdown 生成网站: website.md
     - Markdown 多列布局: css-layout.md
-  - AI 人工智能:
+  - 效率提升:
+    - 海南: hainan.md
     - AI 工具集: ai-tools.md
     - 提示词逻辑: ai-prompt.md
-  - 效率提升:
-    - 实用工具集: utility-tools.md
-    - 网站部署: site-deploy.md
     - MacOS 自动化: script-exe.md
-    - 包管理镜像源: npm-yarn-pnpm.md
-    - Jinja2 教程: jinja2.md
-  - 电商运营:
-    - 手机高清直播: iPhone2Camera.md
-    - 直播运营: douyin-pool.md
-    - IP 起号: live-broadcast.md
-  - 工作日常:
-    - 投融资逻辑: financing.md
-  - 其他:
-    - 海南畅游: hainan.md
+  - 最近更新: RECENTLY_UPDATED.md
+  - 博客: 
+    - blog/index.md
 
+# 主题板块
 theme:
   name: material
-  custom_dir: docs/overrides  # 配置覆写文件目录，以便添加评论系统
-  favicon: assets/favicon.ico
-  # logo: assets/logo.png
+  custom_dir: docs/overrides  # 配置覆写文件目录
   icon:
-    logo: octicons/home-24    # fontawesome/solid/headphones-simple
+    logo: octicons/home-24
     repo: material/github
   language: zh
   palette:
@@ -56,8 +47,8 @@ theme:
         name: 自动模式 - 主题颜色
     - media: "(prefers-color-scheme: light)"   # 亮色模式 - 手动
       scheme: default
-      primary: white   # deep orange / teal / light green
-      accent: deep orange    # deep orange / teal / light green
+      primary: white
+      accent: deep orange
       toggle:
         icon: material/weather-sunny
         name: 亮色模式
@@ -69,25 +60,21 @@ theme:
         icon: material/brightness-4
         name: 暗色模式
   features:
-    # - header.autohide   # 自动隐藏header
     - content.code.copy # 复制代码按钮
     - search.highlight  # 搜索结果高亮
     - toc.follow        # 滚动的时候侧边栏自动跟随
-    # - toc.integrate     # 目录导航集成，TOC总是作为左侧导航侧边栏的一部分呈现
     - navigation.top    # 返回顶部按钮
     - navigation.tabs   # 导航栏显示在顶部tab里
     - navigation.indexes  # 启用章节索引页，文档可直接附加到章节
     - navigation.expand # 默认展开导航栏（导航栏在非顶部的时候才有效）
-    # - navigation.tracking # 锚点跟踪，地址栏中的 URL 会自动更新为活动锚点
-    # - navigation.sections # 导航栏分区显示，不缩进无折叠（导航栏在非顶部的时候才有效）
     # - navigation.footer # 底部导航栏
 
+# markdown 属性扩展
 markdown_extensions:
   # 给 mkdocs 的解析器 python-markdown 添加换行扩展
   # https://python-markdown.github.io/extensions/nl2br/
   - nl2br
 
-  # 一堆不常见的扩展属性
   - abbr                # 缩略语提示小工具
   - admonition          # 扩展弹出警告框，通常称为 call-outs
   - attr_list           # 扩展给元素添加HTML/CSS属性的功能
@@ -102,8 +89,6 @@ markdown_extensions:
   - pymdownx.smartsymbols   # 智能符号，如 (tm) → ™
   - pymdownx.snippets   # 将任意文件内容嵌入到文档
   - pymdownx.blocks.caption   # 向 Markdown 块添加标题，包括图像、表格和代码块
-
-  # 常用属性  
   - pymdownx.highlight
   - pymdownx.inlinehilite   # 内联代码高亮，建立在 highlight 基础上
   - footnotes               # 脚注
@@ -133,18 +118,16 @@ markdown_extensions:
         - name: mermaid     # 配置 mermaid 绘图
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-        - name: plotly      # 最强 python 图表库
-          class: mkdocs-plotly
-          format: !!python/name:mkdocs_plotly_plugin.fences.fence_plotly
   - toc:
       toc_depth: 3      # 目录深度
       permalink: true   # 在每个标题的末尾添加段落符 ¶
       slugify: !!python/object/apply:pymdownx.slugs.slugify {}  # 锚点链接：统一字符编码，区分大小写
       # slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
 
+# 额外配置板块
 extra:
   generator: false  # 隐藏页脚 “Made with Material for MkDocs”
-  social:
+  social:   # 右下角的社交按钮
     - icon: fontawesome/brands/github
       link: https://github.com/jaywhj
       name: GitHub
@@ -152,84 +135,67 @@ extra:
       link: mailto:junewhj@qq.com
       name: Email
 
-  analytics:
-    provider: google
-    property: G-J511NQ6CFQ      # github：G-95D3WD6Z69 | netlify：G-J511NQ6CFQ
+  # 多语言选择（可随意增删）
+  alternate:
+    - name: 中文
+      lang: zh
+    - name: English
+      lang: en
+    - name: Deutsch
+      lang: de
+    - name: Русский язык
+      lang: ru
+    - name: 日本語
+      lang: ja
+    - name: Dutch
+      lang: nl
+    - name: Français
+      lang: fr
+    - name: Português
+      lang: pt
+    - name: بالعربية
+      lang: ar
+    - name: 한국어
+      lang: ko
 
-    # # 网页底部反馈
-    # feedback:
-    #   title: 这篇文档对您有帮助吗？
-    #   ratings:
-    #     - icon: material/thumb-up-outline
-    #       name: 有帮助
-    #       data: 1
-    #       note: >-
-    #         感谢您的反馈！
-    #     - icon: material/thumb-down-outline
-    #       name: 没帮助
-    #       data: 0
-    #       note: >-
-    #         感谢您的反馈，请告诉我该如何改进。
-
-
+# 插件板块
 plugins:
   - blog        # 内置博客插件
-  - offline     # 内置离线插件，可离线访问网站
+  - offline     # 内置离线插件，可离线访问网站，插件会自动禁用 use_directory_urls 设置
   - search      # 内置搜索插件
   - tags        # 内置标签插件，对页面进行分类
 
-  - glightbox   # 图片灯箱特效插件
-  - plotly      # 基于 python 的图表库插件
-  
-  
-  - document-dates:
+  # 文档日期、作者、头像插件
+  - document-dates:     # https://github.com/jaywhj/mkdocs-document-dates
       type: timeago
-      position: top
       exclude:
         - index.md
         - blog/*
 
-  - markmap:
-      base_path: docs
-      encoding: utf-8
-      file_extension: .mm.md
-
-      d3_version: ''
-      lib_version: ''
-      view_version: ''
+  # 最近更新的文档列表插件
+  - recently-updated:   # https://github.com/jaywhj/mkdocs-recently-updated-docs
+      limit: 10
+      exclude:
+        - index.md
+        - RECENTLY_UPDATED.md
+      # template: templates/recently_updated.html
 
 extra_javascript:
-  # - assets/document_dates/core/timeago.full.min.js
-  # - assets/document_dates/core/timeago-load.js
+  # 配置 full 版本的 timeago
+  - assets/document_dates/core/timeago.full.min.js
+  # 加载翻译插件 translate
+  - javascripts/translate.min.js
+  - javascripts/extra.js
 
-  # 配置 markmap 源
-  # - https://unpkg.com/d3@7.9.0/dist/d3.min.js
-  # - https://unpkg.com/markmap-lib@0.18.9/dist/browser/index.iife.js
-  # - https://unpkg.com/markmap-view@0.18.9/dist/browser/index.js
-
-  # 配置 markmap 离线源
-  - site-plugin/markmap/d3.min.js
-  - site-plugin/markmap/index.iife.js
-  - site-plugin/markmap/index.js
-
-
-
-  # 数理公式解析：mathjax/katex 二选一
-  # https://squidfunk.github.io/mkdocs-material/reference/math/
-
-  # # 配置 mathjax 路径
-  # - site-plugin/mathjax/mathjax.js
-  # - site-plugin/mathjax/tex-mml-chtml.js    # https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-
-  # 配置 katex 路径
+  # 配置数学公式解析库 katex 路径
   - site-plugin/katex/katex.js
-  - site-plugin/katex/katex.min.js        # https://unpkg.com/katex@0/dist/katex.min.js
-  - site-plugin/katex/auto-render.min.js  # https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - site-plugin/katex/katex.min.js
+  - site-plugin/katex/auto-render.min.js
   # 支持化学方程式
-  - site-plugin/katex/mhchem.min.js       # https://unpkg.com/katex/dist/contrib/mhchem.min.js  |  https://cdn.jsdelivr.net/npm/katex/dist/contrib/mhchem.min.js
+  - site-plugin/katex/mhchem.min.js
 
 extra_css:
   # 配置 katex 样式
-  - site-plugin/katex/katex.min.css       # https://unpkg.com/katex@0/dist/katex.min.css
-
+  - site-plugin/katex/katex.min.css
+  # 配置额外的样式
   - stylesheets/extra.css

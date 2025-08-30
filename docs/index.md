@@ -1,7 +1,5 @@
 ## MkDocs - Aaron 主题
 
-如果你喜欢这个主题，请点亮你的星星 ⭐️
-
 ### 特色
 
 - 基于 Material for MkDocs 优化和美化
@@ -22,7 +20,7 @@
 4. **编译启动**：继续执行 `mkdocs serve` 或 `mkdocs build`
 5. **预览效果**：打开浏览器访问 `http://127.0.0.1:8000`，或直接双击 `site/index.html` 文件打开
 
-<br />
+
 
 ## Markdown 系列教程
 
@@ -41,28 +39,5 @@
 
 以上所有技巧见：[jaywhj.netlify.app/](https://jaywhj.netlify.app/)
 
-<br />
 
-## License
 
-**MIT License**
-
-Copyright (c) 2025 Aaron Wang
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
