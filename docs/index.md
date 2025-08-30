@@ -14,9 +14,9 @@
 
 ### 快速使用
 
-1. **前置要求**：提前安装好 Python 3.8+
-2. **下载模板**：下载模板文件 [jaywhj.github.io-main.zip](https://github.com/jaywhj/jaywhj.github.io/archive/refs/heads/main.zip) ，然后解压
-3. **安装依赖**：在命令行中切换到解压目录后，执行 `pip install -r requirements.txt`
+1. 前置要求：提前安装好 Python 3.8+
+2. 下载模板：下载模板文件 [jaywhj.github.io-main.zip](https://github.com/jaywhj/jaywhj.github.io/archive/refs/heads/main.zip) ，然后解压
+3. 安装依赖：在命令行中切换到解压目录后，执行 `pip install -r requirements.txt`
 
     如有问题也可以选择逐一安装依赖插件：
 
@@ -26,8 +26,8 @@
     pip install mkdocs-document-dates
     ```
 
-4. **编译启动**：继续执行 `mkdocs serve` 或 `mkdocs build`
-5. **预览效果**：打开浏览器访问 `http://127.0.0.1:8000`，或直接双击 `site/index.html` 文件打开
+4. 编译启动：继续执行 `mkdocs serve` 或 `mkdocs build`
+5. 预览效果：打开浏览器访问 `http://127.0.0.1:8000`，或直接双击 `site/index.html` 文件打开
 
 
 
