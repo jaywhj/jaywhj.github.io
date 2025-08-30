@@ -25,6 +25,7 @@
     pip install mkdocs-material
     pip install mkdocs-document-dates
     ```
+    
 4. 编译启动：继续执行 `mkdocs serve` 或 `mkdocs build`
 5. 预览效果：打开浏览器访问 `http://127.0.0.1:8000`，或直接双击 `site/index.html` 文件打开
 
