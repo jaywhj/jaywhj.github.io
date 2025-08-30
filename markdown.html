@@ -1,0 +1,1934 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="markdown系列教程，markdown转PPT、静态网站、图表、思维导图，markdown编写AI结构化提示词等，应有尽有">
+      
+      
+        <meta name="author" content="Aaron Wang">
+      
+      
+        <link rel="canonical" href="https://jaywhj.netlify.app/markdown.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="hainan.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Markdown 实用教程 - 文档即产品</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="site-plugin/katex/katex.min.css">
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/tippy/tippy.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/tippy/backdrop.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/tippy/material.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/tippy/light.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/tippy/scale.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/core/core.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/user.config.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#Markdown-实用教程" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="index.html" title="文档即产品" class="md-header__button md-logo" aria-label="文档即产品" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.03 2.59a1.5 1.5 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            文档即产品
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Markdown 实用教程
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="自动模式 - 主题颜色"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="自动模式 - 主题颜色" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange"  aria-label="亮色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="亮色模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="deep-orange"  aria-label="暗色模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="暗色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="选择当前语言">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="." hreflang="zh" class="md-select__link">
+              中文
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="." hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="." hreflang="de" class="md-select__link">
+              Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="." hreflang="ru" class="md-select__link">
+              Русский язык
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="." hreflang="ja" class="md-select__link">
+              日本語
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="." hreflang="nl" class="md-select__link">
+              Dutch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="." hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="." hreflang="pt" class="md-select__link">
+              Português
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="." hreflang="ar" class="md-select__link">
+              بالعربية
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="." hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jaywhj" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron - repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="markdown.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Markdown 系列
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="hainan.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  效率提升
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="RECENTLY_UPDATED.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  最近更新
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="blog/index.html" class="md-tabs__link">
+          
+  
+  
+    
+  
+  博客
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="文档即产品" class="md-nav__button md-logo" aria-label="文档即产品" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.03 2.59a1.5 1.5 0 0 1 1.94 0l7.5 6.363a1.5 1.5 0 0 1 .53 1.144V19.5a1.5 1.5 0 0 1-1.5 1.5h-5.75a.75.75 0 0 1-.75-.75V14h-2v6.25a.75.75 0 0 1-.75.75H4.5A1.5 1.5 0 0 1 3 19.5v-9.403c0-.44.194-.859.53-1.144ZM12 3.734l-7.5 6.363V19.5h5v-6.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v6.25h5v-9.403Z"/></svg>
+
+    </a>
+    文档即产品
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jaywhj" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    aaron - repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Markdown 系列
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Markdown 系列
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.27 19.385H1.73A1.73 1.73 0 0 1 0 17.655V6.345a1.73 1.73 0 0 1 1.73-1.73h20.54A1.73 1.73 0 0 1 24 6.345v11.308a1.73 1.73 0 0 1-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z"/></svg>
+  
+  <span class="md-ellipsis">
+    Markdown 实用语法
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="markdown.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.27 19.385H1.73A1.73 1.73 0 0 1 0 17.655V6.345a1.73 1.73 0 0 1 1.73-1.73h20.54A1.73 1.73 0 0 1 24 6.345v11.308a1.73 1.73 0 0 1-1.73 1.731zM5.769 15.923v-4.5l2.308 2.885 2.307-2.885v4.5h2.308V8.078h-2.308l-2.307 2.885-2.308-2.885H3.46v7.847zM21.232 12h-2.309V8.077h-2.307V12h-2.308l3.461 4.039z"/></svg>
+  
+  <span class="md-ellipsis">
+    Markdown 实用语法
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#一什么是-Markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、什么是 Markdown
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#二Markdown-编辑器" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、Markdown 编辑器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、Markdown 编辑器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#使用推荐" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用推荐
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#三Markdown-实用语法" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、Markdown 实用语法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、Markdown 实用语法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-标题" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 标题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-文字样式" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 文字样式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-列表" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-链接" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 链接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-图像" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 图像
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-引用" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 引用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-代码片" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 代码片
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-代码块" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 代码块
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-分割线" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 分割线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-表格" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 表格
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-复选框" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. 复选框
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-文档目录" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. 文档目录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-脚注" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. 脚注
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#六数理公式" class="md-nav__link">
+    <span class="md-ellipsis">
+      六、数理公式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、数理公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-数学公式" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 数学公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-化学方程式" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 化学方程式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#七图形与图表" class="md-nav__link">
+    <span class="md-ellipsis">
+      七、图形与图表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#八静态网站" class="md-nav__link">
+    <span class="md-ellipsis">
+      八、静态网站
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#九幻灯片" class="md-nav__link">
+    <span class="md-ellipsis">
+      九、幻灯片
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="slideshow.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown 生成幻灯片
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="markmap-mkdocs.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown 生成脑图
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="website.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown 生成网站
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="css-layout.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown 多列布局
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    效率提升
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            效率提升
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hainan.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M497.5 341.1c-5.9 16.7-25.3 23-41.1 15.1l-178.2-89.1-1.6 3.2L187.8 448H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h84.2l103.2-206.3 1.6-3.2-165.4-82.7c-15.8-7.9-22.4-27.3-12.5-42C89 45.2 167.2 0 256 0c141.4 0 256 114.6 256 256 0 29.8-5.1 58.5-14.5 85.1"/></svg>
+  
+  <span class="md-ellipsis">
+    海南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai-tools.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI 工具集
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai-prompt.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    提示词逻辑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="script-exe.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MacOS 自动化
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RECENTLY_UPDATED.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    最近更新
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="blog/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    博客
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            博客
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    归档
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            归档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="blog/archive/2025.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#一什么是-Markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、什么是 Markdown
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#二Markdown-编辑器" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、Markdown 编辑器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、Markdown 编辑器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#使用推荐" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用推荐
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#三Markdown-实用语法" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、Markdown 实用语法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、Markdown 实用语法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-标题" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 标题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-文字样式" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 文字样式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-列表" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-链接" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 链接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-图像" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 图像
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-引用" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 引用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-代码片" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 代码片
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-代码块" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 代码块
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-分割线" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 分割线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-表格" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 表格
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-复选框" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. 复选框
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-文档目录" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. 文档目录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-脚注" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. 脚注
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#六数理公式" class="md-nav__link">
+    <span class="md-ellipsis">
+      六、数理公式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、数理公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-数学公式" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 数学公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-化学方程式" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 化学方程式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#七图形与图表" class="md-nav__link">
+    <span class="md-ellipsis">
+      七、图形与图表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#八静态网站" class="md-nav__link">
+    <span class="md-ellipsis">
+      八、静态网站
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#九幻灯片" class="md-nav__link">
+    <span class="md-ellipsis">
+      九、幻灯片
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <span class="md-tag">markdown</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">tutorial</span>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="Markdown-实用教程">Markdown 实用教程<a class="headerlink" href="#Markdown-实用教程" title="Permanent link">&para;</a></h1>
+<div class='document-dates-plugin-wrapper document-dates-top'><div class='document-dates-plugin' locale=''><span data-tippy-content data-tippy-raw='2018-05-16'><span class='material-icons' data-icon='doc_created'></span><time datetime='2018-05-16T00:00:00'></time></span><span data-tippy-content data-tippy-raw='2025-08-30'><span class='material-icons' data-icon='doc_modified'></span><time datetime='2025-08-30T13:56:11.422279+00:00'></time></span><span class='material-icons' data-icon='doc_author'></span><div class='avatar-group'><div class='avatar-wrapper' data-name='Aaron Wang' data-tippy-content data-tippy-raw='Aaron Wang'><span class='avatar-text'></span><img class='avatar' src='https://avatars.githubusercontent.com/jaywhj' /></div></div></div></div>
+
+<h2 id="一什么是-Markdown">一、什么是 Markdown<a class="headerlink" href="#一什么是-Markdown" title="Permanent link">&para;</a></h2>
+<p>Markdown 是一种轻量级的纯文本标记语言，用简单少量的符号对文字进行标注，从而实现 <span style="color:red">以最小的输入代价生成印刷级排版格式的文档</span>。它在 <span style="color:red">流畅的书写</span> 和 <span style="color:red">印刷级阅读体验</span> 之间找到了平衡，让人只需<strong>专注内容而不是纠结排版</strong>。</p>
+<p>常用的标记符号 <strong>不超过十个</strong>，好记好用好效果。(非程序员用户如产品、运营 ... 也可以轻松搞定)</p>
+<h2 id="二Markdown-编辑器">二、Markdown 编辑器<a class="headerlink" href="#二Markdown-编辑器" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.typora.io/">Typora</a>（Mac、Win、Linux），简约不简单，所见即所得；✓</li>
+<li><a href="https://zh.mweb.im/">MWeb</a>（Mac、iOS），一款专注于 Markdown 的写作、记笔记和发布软件；</li>
+<li><a href="https://obsidian.md/download">Obsidian</a>（Mac、Win、Linux、iOS、Android），一款支持 Zettelkasten 笔记法的笔记管理软件，利用「双向链接」打造「知识循环」体系，支持基础的 markdown 语法；</li>
+<li><a href="https://yank-note.com/zh-CN">YankNote</a>（Mac、Win、Linux），一款强大可扩展的 Markdown 编辑器，满足了所有幻想，还可以<a href="https://demo.yank-note.com/">在线体验</a>；✓</li>
+<li><a href="https://github.com/maqi1520/mdx-notes">mdx-notes</a>（Mac、Win、Linux、Web），跨平台笔记软件，Web版 <a href="https://mdxnotes.com/post?id=demo">在线编辑器</a>可作为网文排版工具；</li>
+<li><a href="https://github.com/nicejade/markdown-online-editor">markdown-online-editor</a>，<a href="https://markdown.lovejade.cn/">Arya - 在线 Markdown 编辑器</a>，支持所有基础语法、数学公式、Mermaid 图表、Echarts 图表、五线谱，以及 PPT 模式、视频音频解析等；✓</li>
+<li><a href="https://github.com/doocs/md">md</a>，<a href="https://doocs.github.io/md/">在线微信 Markdown 编辑器</a>，支持所有基础语法、数学公式、Mermaid 图表、GFM 警告块；</li>
+</ul>
+<h3 id="使用推荐">使用推荐<a class="headerlink" href="#使用推荐" title="Permanent link">&para;</a></h3>
+<ul>
+<li>当日常工具用：推荐 Typora、Arya - 在线 Markdown 编辑器；</li>
+<li>用作网文排版：推荐 Arya - 在线 Markdown 编辑器，md 在线微信 Markdown 编辑器；</li>
+<li>写知识笔记形成库：推荐 YankNote；<ul>
+<li>Obsidian 的问题是对 HTML 的支持太弱了，比如 HTML 锚点链接识别不出来，另外导出功能也很弱，就支持一个PDF格式且还不带目录大纲；</li>
+</ul>
+</li>
+</ul>
+<p>使用和体验过不下二十款 Markdown 编辑器，从 <strong>简洁易用、基础功能完善、语法兼容、扩展性、跨平台</strong> 角度看，给大家以上建议，我自己的习惯是 <strong>Typora</strong> 和 <strong>YankNote</strong> 的组合，至少到 2024年是这样。</p>
+<h2 id="三Markdown-实用语法">三、Markdown 实用语法<a class="headerlink" href="#三Markdown-实用语法" title="Permanent link">&para;</a></h2>
+<p>本教程基于流行的 <a href="http://spec.commonmark.org/">CommonMark 规范</a> 和 <a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a> (GFM) 语法提炼与拓展。</p>
+<h3 id="1-标题">1. 标题<a class="headerlink" href="#1-标题" title="Permanent link">&para;</a></h3>
+<p>两种写法：</p>
+<ol>
+<li>用 1-6 个 <code>#</code> 加空格，分别表示 1-6 级标题；</li>
+<li><code>=</code> 或 <code>-</code> 号，只能表示一二级标题，不常用；</li>
+</ol>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><a href="#__codelineno-0-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="gh"># 一级标题</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><a href="#__codelineno-0-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="gu">## 二级标题</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><a href="#__codelineno-0-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="gu">#### 四级标题</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><a href="#__codelineno-0-4"><span class="linenos" data-linenos=" 4 "></span></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><a href="#__codelineno-0-5"><span class="linenos" data-linenos=" 5 "></span></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><a href="#__codelineno-0-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="gh">这是一个一级标题</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><a href="#__codelineno-0-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="gh">=====</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><a href="#__codelineno-0-8"><span class="linenos" data-linenos=" 8 "></span></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><a href="#__codelineno-0-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="gu">这是一个二级标题</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><a href="#__codelineno-0-10"><span class="linenos" data-linenos="10 "></span></a><span class="gu">-----</span>
+</span></code></pre></div>
+<h3 id="2-文字样式">2. 文字样式<a class="headerlink" href="#2-文字样式" title="Permanent link">&para;</a></h3>
+<p>Markdown 语法：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><a href="#__codelineno-1-1"><span class="linenos" data-linenos="1 "></span></a>*斜体*    _斜体_
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><a href="#__codelineno-1-2"><span class="linenos" data-linenos="2 "></span></a>**粗体**    __粗体__
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><a href="#__codelineno-1-3"><span class="linenos" data-linenos="3 "></span></a>***加粗斜体***    ___加粗斜体___
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><a href="#__codelineno-1-4"><span class="linenos" data-linenos="4 "></span></a>~~删除线~~
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><a href="#__codelineno-1-5"><span class="linenos" data-linenos="5 "></span></a>&lt;u&gt;下划线&lt;/u&gt;
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><a href="#__codelineno-1-6"><span class="linenos" data-linenos="6 "></span></a>&lt;mark&gt;背景高亮&lt;/mark&gt;
+</span></code></pre></div>
+<p><em>斜体</em>    <em>斜体</em><br />
+<strong>粗体</strong>    <strong>粗体</strong><br />
+<strong><em>加粗斜体</em></strong>    <strong><em>加粗斜体</em></strong><br />
+<del>删除线</del><br />
+<u>下划线</u><br />
+<mark>背景高亮</mark></p>
+<h3 id="3-列表">3. 列表<a class="headerlink" href="#3-列表" title="Permanent link">&para;</a></h3>
+<h4 id="无序列表">无序列表<a class="headerlink" href="#无序列表" title="Permanent link">&para;</a></h4>
+<p>使用 <code>-</code> 或 <code>+</code> 或 <code>*</code> 加空格 表示无序列表：</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">-</span><span class="w"> </span>无序列表项 一
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">-</span><span class="w"> </span>无序列表项 二
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">    </span><span class="k">-</span><span class="w"> </span>无序列表
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos="4 "></span></a><span class="k">-</span><span class="w"> </span>无序列表项 三
+</span></code></pre></div>
+<p><em>示例效果：</em></p>
+<ul>
+<li>无序列表项 一</li>
+<li>无序列表项 二<ul>
+<li>无序列表</li>
+</ul>
+</li>
+<li>无序列表项 三</li>
+</ul>
+<h4 id="有序列表">有序列表<a class="headerlink" href="#有序列表" title="Permanent link">&para;</a></h4>
+<p>使用 <code>数字+点</code> 加空格 表示有序列表：</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">1.</span> 有序列表项 一
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">2.</span> 有序列表项 二
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">    </span><span class="k">1.</span> 有序列表
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a><span class="k">3.</span> 有序列表项 三
+</span></code></pre></div>
+<p><em>示例效果：</em></p>
+<ol>
+<li>有序列表项 一</li>
+<li>有序列表项 二<ol>
+<li>有序列表</li>
+</ol>
+</li>
+<li>有序列表项 三</li>
+</ol>
+<h3 id="4-链接">4. 链接<a class="headerlink" href="#4-链接" title="Permanent link">&para;</a></h3>
+<p>使用 <code>[描述](链接地址)</code> ，为文字增加链接：</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a>这是去往 [<span class="nt">Apple</span>](<span class="na">https://www.apple.com.cn</span>) 的链接。
+</span></code></pre></div>
+<p><em>示例效果：</em></p>
+<p>这是去往 <a href="https://www.apple.com.cn">Apple</a> 的链接。</p>
+<h3 id="5-图像">5. 图像<a class="headerlink" href="#5-图像" title="Permanent link">&para;</a></h3>
+<p>使用 <code>![描述](图片链接地址)</code> 插入图像，图片链接地址 可以是本地图片路径，也可以是网络图片url：</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a>![<span class="nt">网络图片</span>](<span class="na">https://lf3-static.bytednsdoc.com/obj/eden-cn/ulkphgeh7nuvspognuhbo/douyin_web/img/images/logo-horizontal.svg</span>)
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a>![<span class="nt">本地图片</span>](<span class="na">file:///Users/aaron/Pictures/cat.jpg</span>)
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos="3 "></span></a>![<span class="nt">本地图片</span>](<span class="na">/Users/aaron/Pictures/cat.jpg</span>)
+</span></code></pre></div>
+<p><em>示例效果：</em></p>
+<p><img alt="网络图片" src="https://lf3-static.bytednsdoc.com/obj/eden-cn/ulkphgeh7nuvspognuhbo/douyin_web/img/images/logo-horizontal.svg" /></p>
+<h3 id="6-引用">6. 引用<a class="headerlink" href="#6-引用" title="Permanent link">&para;</a></h3>
+<p>使用 <code>&gt;</code> 加空格 表示引用，也可以多个组合：</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">&gt; </span><span class="ge">野火烧不尽，春风吹又生。</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">&gt; </span><span class="ge">&gt; 春风吹又生</span>
+</span></code></pre></div>
+<p><em>示例效果：</em></p>
+<blockquote>
+<p>野火烧不尽，春风吹又生。</p>
+<blockquote>
+<p>春风吹又生</p>
+</blockquote>
+</blockquote>
+<h3 id="7-代码片">7. 代码片<a class="headerlink" href="#7-代码片" title="Permanent link">&para;</a></h3>
+<p>使用一个反引号 ` 前后包围的方式表示代码片段：</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a>让我们聊聊 <span class="sb">`html`</span>。
+</span></code></pre></div>
+<p><em>示例效果：</em></p>
+<p>让我们聊聊 <code>html</code>。</p>
+<h3 id="8-代码块">8. 代码块<a class="headerlink" href="#8-代码块" title="Permanent link">&para;</a></h3>
+<p>使用三个反引号 ``` 上下包围的方式表示代码块。后面跟编程语言可以支持语法高亮显示，支持所有主流编程语言。</p>
+<p>JavaScript 示例：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a>```javascript
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos="2 "></span></a>function myFunction(a, b) {
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos="3 "></span></a>    return a * b;
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos="4 "></span></a>}
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><a href="#__codelineno-8-5"><span class="linenos" data-linenos="5 "></span></a>myFunction(10, 2); 
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><a href="#__codelineno-8-6"><span class="linenos" data-linenos="6 "></span></a>```
+</span></code></pre></div>
+<p><em>示例效果：</em></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a><span class="kd">function</span><span class="w"> </span><span class="nx">myFunction</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><a href="#__codelineno-9-3"><span class="linenos" data-linenos="3 "></span></a><span class="p">}</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><a href="#__codelineno-9-4"><span class="linenos" data-linenos="4 "></span></a><span class="nx">myFunction</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span>
+</span></code></pre></div>
+<h3 id="9-分割线">9. 分割线<a class="headerlink" href="#9-分割线" title="Permanent link">&para;</a></h3>
+<p>可以在一行中用 <strong>3</strong> 个以上的 <code>-</code> 或 <code>*</code> 或 <code>_</code> 来建立一个分隔线：</p>
+<p>Markdown 语法：</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a>---
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><a href="#__codelineno-10-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">-</span><span class="w"> </span>- -
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><a href="#__codelineno-10-3"><span class="linenos" data-linenos="3 "></span></a>***
+</span></code></pre></div>
+<p><em>示例效果：</em></p>
+<hr />
+<hr />
+<hr />
+<h3 id="10-表格">10. 表格<a class="headerlink" href="#10-表格" title="Permanent link">&para;</a></h3>
+<p>Markdown 语法：</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a>| 项目(左对齐) | 价格(居中) | 数量(右对齐) |
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><a href="#__codelineno-11-2"><span class="linenos" data-linenos="2 "></span></a>| :--- | :---: | ---: |
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><a href="#__codelineno-11-3"><span class="linenos" data-linenos="3 "></span></a>| 计算机 | 1600 | 5 |
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><a href="#__codelineno-11-4"><span class="linenos" data-linenos="4 "></span></a>| 手机 | 12 | 12 |
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><a href="#__codelineno-11-5"><span class="linenos" data-linenos="5 "></span></a>| 管线 | 1 | 234 |
+</span></code></pre></div>
+<p><em>示例效果：</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项目(左对齐)</th>
+<th style="text-align: center;">价格(居中)</th>
+<th style="text-align: right;">数量(右对齐)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">计算机</td>
+<td style="text-align: center;">1600</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">手机</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">管线</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">234</td>
+</tr>
+</tbody>
+</table>
+<h3 id="11-复选框">11. 复选框<a class="headerlink" href="#11-复选框" title="Permanent link">&para;</a></h3>
+<p>Markdown 语法：</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos="1 "></span></a><span class="k">- [x]</span> 支持 导出 HTML、PDF、ePub、Word 等；
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><a href="#__codelineno-12-2"><span class="linenos" data-linenos="2 "></span></a><span class="k">- [x]</span> 支持 高亮代码段；
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><a href="#__codelineno-12-3"><span class="linenos" data-linenos="3 "></span></a><span class="k">- [x]</span> 支持 数学公式；
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><a href="#__codelineno-12-4"><span class="linenos" data-linenos="4 "></span></a><span class="k">- [x]</span> 支持 幻灯片；
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><a href="#__codelineno-12-5"><span class="linenos" data-linenos="5 "></span></a><span class="k">- [x]</span> 支持 思维导图；
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><a href="#__codelineno-12-6"><span class="linenos" data-linenos="6 "></span></a><span class="k">- [x]</span> 支持 流程图、序列图、甘特图和各类图表；
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a><a href="#__codelineno-12-7"><span class="linenos" data-linenos="7 "></span></a><span class="k">- [ ]</span> 任务一，未做任务；
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a><a href="#__codelineno-12-8"><span class="linenos" data-linenos="8 "></span></a><span class="w">    </span><span class="k">- [ ]</span> 子任务；
+</span></code></pre></div>
+<p><em>示例效果：</em></p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> 支持 导出 HTML、PDF、ePub、Word 等；</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> 支持 高亮代码段；</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> 支持 数学公式；</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> 支持 幻灯片；</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> 支持 思维导图；</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> 支持 流程图、序列图、甘特图和各类图表；</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> 任务一，未做任务；<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> 子任务；</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-文档目录">12. 文档目录<a class="headerlink" href="#12-文档目录" title="Permanent link">&para;</a></h3>
+<p>使用 <code>[TOC]</code> 会自动提取全文标题，生成目录结构。字母用大小写都可以。</p>
+<h3 id="13-脚注">13. 脚注<a class="headerlink" href="#13-脚注" title="Permanent link">&para;</a></h3>
+<p>标准语法为 <code>[^keyword]</code>，keyword随意，保证唯一就行。</p>
+<p>Markdown 语法：</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><a href="#__codelineno-13-1"><span class="linenos" data-linenos="1 "></span></a>Markdown到底是什么？[^ftnt]
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><a href="#__codelineno-13-2"><span class="linenos" data-linenos="2 "></span></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><a href="#__codelineno-13-3"><span class="linenos" data-linenos="3 "></span></a>[<span class="nl">^ftnt</span>]: <span class="na">Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档。</span>
+</span></code></pre></div>
+<p><em>示例效果：</em></p>
+<p>Markdown到底是什么？<sup id="fnref:ftnt"><a class="footnote-ref" href="#fn:ftnt">1</a></sup></p>
+<p><mark>普通用户到此，足够了。</mark></p>
+<h2 id="六数理公式">六、数理公式<a class="headerlink" href="#六数理公式" title="Permanent link">&para;</a></h2>
+<h3 id="1-数学公式">1. 数学公式<a class="headerlink" href="#1-数学公式" title="Permanent link">&para;</a></h3>
+<h4 id="内联公式">内联公式<a class="headerlink" href="#内联公式" title="Permanent link">&para;</a></h4>
+<p>使用 $ 前后包围方式。</p>
+<ul>
+<li>用 <code>$E=mc^2$</code> 表示：<span class="arithmatex">\(E=mc^2\)</span></li>
+<li>用 <code>$\sum_{i=1}^n a_i=0$</code> 表示：<span class="arithmatex">\(\sum_{i=1}^n a_i=0\)</span></li>
+</ul>
+<h4 id="块级公式">块级公式<a class="headerlink" href="#块级公式" title="Permanent link">&para;</a></h4>
+<p>使用 $$ 前后包围的方式。</p>
+<ul>
+<li>用 <code>$$ \displaystyle x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$</code> 表示：</li>
+</ul>
+<div class="arithmatex">\[ \displaystyle x = {-b \pm \sqrt{b^2-4ac} \over 2a} \]</div>
+<ul>
+<li>用 <code>$$ f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$</code> 表示：</li>
+</ul>
+<div class="arithmatex">\[ f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 \]</div>
+<h3 id="2-化学方程式">2. 化学方程式<a class="headerlink" href="#2-化学方程式" title="Permanent link">&para;</a></h3>
+<p>通过 <a href="https://mhchem.github.io/MathJax-mhchem/">mhchem</a> 扩展实现，支持 MathJax 和 KaTeX。</p>
+<ul>
+<li>用 <code>$$ \ce{CH4 + 2 $\left( \ce{O2 + 79/21 N2} \right)$} $$</code> 表示：</li>
+</ul>
+<div class="arithmatex">\[ \ce{CH4 + 2 $\left( \ce{O2 + 79/21 N2} \right)$} \]</div>
+<h2 id="七图形与图表">七、图形与图表<a class="headerlink" href="#七图形与图表" title="Permanent link">&para;</a></h2>
+<p>使用 Markdown 快速生成各类图形与图表，参考另一篇文档 <a href="graph-chart.md">Markdown 图形与图表</a>。</p>
+<h2 id="八静态网站">八、静态网站<a class="headerlink" href="#八静态网站" title="Permanent link">&para;</a></h2>
+<p>使用 Markdown 快速生成静态网站，参考另一篇文档 <a href="website.md">Markdown 静态网站</a>。</p>
+<h2 id="九幻灯片">九、幻灯片<a class="headerlink" href="#九幻灯片" title="Permanent link">&para;</a></h2>
+<p>使用 Markdown 快速生成精美幻灯片，参考另一篇文档 <a href="slideshow.md">Markdown 幻灯片</a>。</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:ftnt">
+<p>Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档。&#160;<a class="footnote-backref" href="#fnref:ftnt" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 | 🚀 Aaron Wang
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/jaywhj" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:junewhj@qq.com" target="_blank" rel="noopener" title="Email" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "search.highlight", "toc.follow", "navigation.top", "navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="assets/document_dates/core/timeago.min.js"></script>
+      
+        <script src="assets/document_dates/core/timeago.full.min.js"></script>
+      
+        <script src="javascripts/translate.min.js"></script>
+      
+        <script src="javascripts/extra.js"></script>
+      
+        <script src="site-plugin/katex/katex.js"></script>
+      
+        <script src="site-plugin/katex/katex.min.js"></script>
+      
+        <script src="site-plugin/katex/auto-render.min.js"></script>
+      
+        <script src="site-plugin/katex/mhchem.min.js"></script>
+      
+        <script src="assets/document_dates/tippy/popper.min.js"></script>
+      
+        <script src="assets/document_dates/tippy/tippy.umd.min.js"></script>
+      
+        <script src="assets/document_dates/core/default.config.js"></script>
+      
+        <script src="assets/document_dates/user.config.js"></script>
+      
+        <script src="assets/document_dates/core/utils.js"></script>
+      
+        <script src="assets/document_dates/core/core.js"></script>
+      
+    
+  </body>
+</html>

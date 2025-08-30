@@ -3,24 +3,32 @@
     including icons, fonts, colors, etc
     */
 .document-dates-plugin {
-    color: rgba(142, 142, 142, 0.7);
-    font-size: 0.75rem;
-    padding: 0.2rem 0;
+    color: #666;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
-    margin-bottom: 0.3rem;
+    padding: 0.2rem 0;
+    margin-bottom: 0.6rem;
 }
-.document-dates-plugin span:not(:first-child) {
-    margin-left: 1.5rem;
+.md-main .document-dates-plugin {
+    color: rgba(142, 142, 142, 0.7);
+    font-size: 0.75rem;
 }
-.document-dates-plugin span {
+.document-dates-plugin > span {
     display: inline-flex;
     align-items: center;
 }
+.document-dates-plugin > span:not(:first-child) {
+    margin-left: 1.5rem;
+}
 .document-dates-plugin .material-icons {
+    font-size: 1rem;
+    opacity: 0.85;
+    margin-right: 0.3rem;
+}
+.md-main .document-dates-plugin .material-icons {
     font-size: 0.9rem;
     opacity: 0.7;
-    margin-right: 0.3rem;
 }
 
 /* Customized icons, just change the icon name.
@@ -48,15 +56,13 @@
 /* 2. Plug-in wrapper styles
     including divider, margin, padding, etc
     */
-.document-dates-plugin-wrapper.document-dates-top {
-    margin: -1rem 0 1rem 0;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid rgba(142, 142, 142, 0.15);
-}
+.document-dates-plugin-wrapper.document-dates-top,
 .document-dates-plugin-wrapper.document-dates-bottom {
     margin: 1rem 0;
-    padding-bottom: 0.3rem;
     border-bottom: 1px solid rgba(142, 142, 142, 0.15);
+}
+.md-main .document-dates-plugin-wrapper.document-dates-top {
+    margin: -1rem 0 1rem 0;
 }
 
 /* Hide the footnote divider immediately following the date information with the CSS adjacent sibling selector */
@@ -96,4 +102,51 @@ Recommended Colors:
     -webkit-transform: scale(0.75);
     -ms-transform: scale(0.75);
     transform: scale(0.75);
+}
+
+
+
+/* 4. Author Avatar styles */
+.avatar-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -0.15rem;
+    padding-left: 0.15rem;
+}
+.avatar-wrapper {
+    margin: 0.15rem;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    opacity: 0.7;
+    filter: grayscale(90%);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.avatar-wrapper:hover {
+    transform: scale(1.08);
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+.avatar-wrapper img.avatar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.avatar-wrapper .avatar-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
 }
