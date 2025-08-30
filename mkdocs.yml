@@ -173,12 +173,12 @@ plugins:
         - blog/*
 
   # 最近更新的文档列表插件
-  - recently-updated:   # https://github.com/jaywhj/mkdocs-recently-updated-docs
-      limit: 10
-      exclude:
-        - index.md
-        - RECENTLY_UPDATED.md
-      # template: templates/recently_updated.html
+  # - recently-updated:   # https://github.com/jaywhj/mkdocs-recently-updated-docs
+  #     limit: 10
+  #     exclude:
+  #       - index.md
+  #       - RECENTLY_UPDATED.md
+  #     # template: templates/recently_updated.html
 
 extra_javascript:
   # 配置 full 版本的 timeago

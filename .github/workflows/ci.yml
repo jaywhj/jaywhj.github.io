@@ -28,8 +28,5 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material
-      - run: pip install mkdocs-glightbox
-      - run: pip install mkdocs-markmap
-      - run: pip install mkdocs-plotly-plugin
       - run: pip install mkdocs-document-dates
       - run: mkdocs gh-deploy --force
