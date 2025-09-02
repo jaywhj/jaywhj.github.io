@@ -22,9 +22,9 @@
   - 如有问题也可以选择逐一安装依赖插件：
 
     ```bash
-    pip install mkdocs
     pip install mkdocs-material
     pip install mkdocs-document-dates
+    pip install mkdocs-recently-updated-docs
     ```
 
 4. 编译启动：继续执行 `mkdocs serve` 或 `mkdocs build`
