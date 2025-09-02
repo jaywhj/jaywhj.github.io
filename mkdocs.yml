@@ -26,7 +26,6 @@ nav:
   - 效率提升:
     - 海南: hainan.md
     - AI 工具集: ai-tools.md
-    - 提示词逻辑: ai-prompt.md
     - MacOS 自动化: script-exe.md
   - 最近更新: RECENTLY_UPDATED.md
   - 博客: 
@@ -171,14 +170,17 @@ plugins:
       exclude:
         - index.md
         - blog/*
+      recently-updated: # 在侧边栏导航中显示最近更新的文档列表
+        limit: 10
+        exclude:
+          - index.md
 
-  # 最近更新的文档列表插件
-  # - recently-updated:   # https://github.com/jaywhj/mkdocs-recently-updated-docs
-  #     limit: 10
-  #     exclude:
-  #       - index.md
-  #       - RECENTLY_UPDATED.md
-  #     # template: templates/recently_updated.html
+  # 在任意md文档中显示最近更新的文档列表插件
+  - recently-updated:   # https://github.com/jaywhj/mkdocs-recently-updated-docs
+      limit: 10
+      exclude:
+        - index.md
+      # template: templates/recently_updated.html
 
 extra_javascript:
   # 配置 full 版本的 timeago
