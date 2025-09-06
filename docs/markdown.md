@@ -354,17 +354,17 @@ $$ \ce{CH4 + 2 $\left( \ce{O2 + 79/21 N2} \right)$} $$
 
 ## 七、图形与图表
 
-使用 Markdown 快速生成各类图形与图表，参考另一篇文档 [Markdown 图形与图表](graph-chart.md)。
+使用 Markdown 快速生成各类图形与图表，参考另一篇文档 [Markdown 图形与图表](https://jaywhj.netlify.app/graph-chart)。
 
 
 
 ## 八、静态网站
 
-使用 Markdown 快速生成静态网站，参考另一篇文档 [Markdown 静态网站](website.md)。
+使用 Markdown 快速生成静态网站，参考另一篇文档 [Markdown 静态网站](https://jaywhj.netlify.app/website)。
 
 
 
 ## 九、幻灯片
 
-使用 Markdown 快速生成精美幻灯片，参考另一篇文档 [Markdown 幻灯片](slideshow.md)。
+使用 Markdown 快速生成精美幻灯片，参考另一篇文档 [Markdown 幻灯片](https://jaywhj.netlify.app/slideshow)。
 
