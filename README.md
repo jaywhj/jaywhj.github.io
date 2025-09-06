@@ -58,11 +58,9 @@
 
 这样，你就只需要专注于自己的内容，无需关心格式、排版，无需担心某些平台有什么限制 ...
 
-这里还有一篇文章做了详细的介绍：[笔记文档的终极解决方案](https://jaywhj.netlify.app/final-notes)
+详细介绍见：[笔记文档的终极解决方案](https://jaywhj.netlify.app/final-notes)
 
 
-
-以上所有技巧见：[jaywhj.netlify.app/](https://jaywhj.netlify.app/)
 
 <br />
 
