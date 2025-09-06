@@ -1,10 +1,12 @@
 ## MkDocs - Aaron 主题
 
+如果你喜欢这个主题，请点亮你右上角的星 ⭐️
+
 ### 特色
 
 - 基于 Material for MkDocs 优化和美化
-- 包含主题切换功能，支持自适应系统主题配色，自动切换
-- 包含多语言选择功能，支持自适应本地化语言，自动切换
+- 包含主题切换功能，支持**自适应**系统主题配色，自动切换
+- 包含多语言选择功能，支持**自适应**本地化语言，自动切换
 - 内置翻译插件，支持 100+ 语言自由切换
 - 内置离线插件，可离线访问网站
 - 内置搜索插件、博客插件
@@ -15,38 +17,49 @@
 ### 快速使用
 
 1. 前置要求：提前安装好 Python 3.8+
-2. 下载模板：下载模板文件 [jaywhj.github.io-main.zip](https://github.com/jaywhj/jaywhj.github.io/archive/refs/heads/main.zip) ，然后解压
+2. 下载模板：下载最新模板文件 [jaywhj.github.io-main.zip](https://github.com/jaywhj/jaywhj.github.io/archive/refs/heads/main.zip) ，然后解压
 3. 安装依赖：在命令行中切换到解压目录后，执行 `pip install -r requirements.txt`
-
-    如有问题也可以选择逐一安装依赖插件：
+  - 如有问题也可以选择逐一安装依赖插件：
 
     ```bash
-    pip install mkdocs
     pip install mkdocs-material
     pip install mkdocs-document-dates
+    pip install mkdocs-recently-updated-docs
     ```
 
 4. 编译启动：继续执行 `mkdocs serve` 或 `mkdocs build`
 5. 预览效果：打开浏览器访问 `http://127.0.0.1:8000`，或直接双击 `site/index.html` 文件打开
 
+<br />
 
+## 笔记文档的终极解决方案
 
-## Markdown 系列教程
+笔记工具也好，文档平台也好，不是功能越多越炫丽越好，而是应该大道至简，追求极简易用，人人可用，追求以下目标和原则：
 
-理念：**Write Once, Show Anywhere**，一次编写，随处展示，在任意地方以任意格式精美的展示内容。
+**目标**：
 
-用 Markdown 在**本地编写**内容即可：
+- 最小的输入代价
+- 印刷级阅读体验
+- 随处的排版发布
+- 丰富的格式转换
+- 导出迁移无限制
+- 安全存储无广告
+- 简洁易用无门槛
+- 我的内容我做主
 
-- **专业编写**：你可以使用任意你喜欢的专业 Markdown 编辑器编写内容，无任何限制且支持全部的 Markdown 语法；
-- **通用格式**：支持一键导出 PDF、Word、Image、HTML、ePub，也支持一键生成 **PPT 幻灯片**、**思维导图**、**静态网站**；
-- **任意发布**：支持一键排版到 **微信公众号、知乎、掘金、头条、Github、各类知识库** 等平台；
-- **安全无患**：内容存在本地，不受任何平台限制，使用无门槛，安全无广告，我的内容我做主；
+**原则**：**Write Once, Show Anywhere**，一次编写，随处展示，在任意地方以任意格式精美的展示内容。
 
-这样，你就只需要专注于自己的内容，无需关心格式、排版，无需担心某些平台有什么限制 ... 实现一劳永逸。
+**方案**：而实现这样的目标原则，最佳方式就是：采用「**Markdown 格式 + 专业工具本地编写**」
+
+- **专业编写**：你可以使用任意你喜欢的专业 Markdown 编辑器编写内容，无任何限制且支持全部 Markdown 语法
+- **通用格式**：支持一键导出 PDF、Word、Image、HTML、ePub，一键生成 **PPT 幻灯片**、**思维导图**、**静态网站**
+- **任意发布**：支持一键排版到 **微信公众号、知乎、掘金、头条、Github、各类知识库** 等平台
+- **安全无患**：内容存在本地，不受任何平台限制，使用无门槛，安全无广告，我的内容我做主
+
+这样，你就只需要专注于自己的内容，无需关心格式、排版，无需担心某些平台有什么限制 ...
+
+这里还有一篇文章做了详细的介绍：[笔记文档的终极解决方案](https://jaywhj.netlify.app/final-notes)
 
 
 
 以上所有技巧见：[jaywhj.netlify.app/](https://jaywhj.netlify.app/)
-
-
-

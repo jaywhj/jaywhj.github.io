@@ -136,25 +136,27 @@ extra:
 
   # 多语言选择（可随意增删）
   alternate:
-    - name: 中文
+    - name: 🇨🇳 中文
       lang: zh
-    - name: English
+    - name: 🇬🇧 English
       lang: en
-    - name: Deutsch
+    - name: 🇩🇪 Deutsch
       lang: de
-    - name: Русский язык
+    - name: 🇷🇺 Русский язык
       lang: ru
-    - name: 日本語
+    - name: 🇯🇵 日本語
       lang: ja
-    - name: Dutch
+    - name: 🇳🇱 Dutch
       lang: nl
-    - name: Français
+    - name: 🇫🇷 Français
       lang: fr
-    - name: Português
+    - name: 🇪🇸 Español
+      lang: es
+    - name: 🇧🇷 Português
       lang: pt
-    - name: بالعربية
+    - name: 🇸🇦 العربية
       lang: ar
-    - name: 한국어
+    - name: 🇰🇷 한국어
       lang: ko
 
 # 插件板块

@@ -1,5 +1,4 @@
 
-
 .homepage-header {
    text-align: center;
    margin-bottom: 2em;
@@ -18,6 +17,12 @@ nav.md-nav--secondary ul {
   border-left: 1px solid lightblue;
 }
 
+/* 设置 material主题 h2标题的颜色 */
 .md-main h2 {
    color: #0077cc;
+}
+
+/* 调整 material主题 语言选择框的最大高度 */
+.md-header .md-select:hover .md-select__inner {
+   max-height: 75vh;
 }
