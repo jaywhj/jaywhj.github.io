@@ -49,7 +49,7 @@
 
 **原则**：**Write Once, Show Anywhere**，一次编写，随处展示，在任意地方以任意格式精美的展示内容。
 
-**方案**：而实现这样的目标原则，最佳方式就是：采用「<mark>Markdown 格式 + 专业工具本地编写</mark>」
+**方案**：而实现这样的目标原则，最佳方式就是：采用「<mark>**Markdown 格式 + 专业工具本地编写**</mark>」
 
 - **专业编写**：你可以使用任意你喜欢的专业 Markdown 编辑器编写内容，无任何限制且支持全部 Markdown 语法
 - **通用格式**：支持一键导出 PDF、Word、Image、HTML、ePub，一键生成 **PPT 幻灯片**、**思维导图**、**静态网站**
@@ -58,7 +58,9 @@
 
 这样，你就只需要专注于自己的内容，无需关心格式、排版，无需担心某些平台有什么限制 ...
 
-详细介绍见：[笔记文档的终极解决方案](https://jaywhj.netlify.app/final-notes)
+
+
+以上所有技巧见：[jaywhj.netlify.app/](https://jaywhj.netlify.app/)
 
 
 
