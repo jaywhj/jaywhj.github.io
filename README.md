@@ -12,11 +12,11 @@
 - 内置搜索插件、博客插件
 - 支持数理公式、化学方程式渲染
 - 支持 mermaid 绘图
-- 清爽简洁、配置简单、小白易用
+- 清爽简洁、小白易用
 
 ### 快速使用
 
-1. 前置要求：提前安装好 [Python](https://www.python.org/downloads/) 3.8+
+1. 前置要求：安装好 [Python](https://www.python.org/downloads/) 3.8+
 2. 下载模板：下载最新模板文件 [jaywhj.github.io-main.zip](https://github.com/jaywhj/jaywhj.github.io/archive/refs/heads/main.zip) ，然后解压
 3. 安装依赖：切换到解压目录后，执行 `pip install -r requirements.txt`
 4. 编译启动：执行 `mkdocs serve` 或 `mkdocs build`
