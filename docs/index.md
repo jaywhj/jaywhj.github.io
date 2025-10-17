@@ -1,4 +1,4 @@
-## MkDocs - Aaron 主题
+## MkDocs - Aaron 极简风主题
 
 如果你喜欢这个主题，请点亮你右上角的星 ⭐️
 
