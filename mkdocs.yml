@@ -1,6 +1,6 @@
 site_name: 文档即产品
 site_author: Aaron Wang
-site_url: https://jaywhj.netlify.app/
+site_url: https://hongjun.vip/
 site_description: markdown系列教程，markdown转PPT、静态网站、图表、思维导图，markdown编写AI结构化提示词等，应有尽有
 
 repo_name: aaron - repo
@@ -19,17 +19,13 @@ nav:
   - 首页: index.md
   - Markdown 系列:
     - Markdown 实用语法: markdown.md
-    - Markdown 生成幻灯片: slideshow.md
-    - Markdown 生成脑图: markmap-mkdocs.md
-    - Markdown 生成网站: website.md
-    - Markdown 多列布局: css-layout.md
+    - mkdocs插件-日期作者头像: document-dates-zh.md
   - 效率提升:
+    - mkdocs插件-最近更新列表: recently-updated-zh.md
     - 海南: hainan.md
-    - AI 工具集: ai-tools.md
-    - MacOS 自动化: script-exe.md
   - 最近更新: RECENTLY_UPDATED.md
-  - 博客: 
-    - blog/index.md
+  # - 博客: 
+    # - blog/index.md
 
 # 主题板块
 theme:
@@ -161,10 +157,12 @@ extra:
 
 # 插件板块
 plugins:
-  - blog        # 内置博客插件
+  # - blog        # 内置博客插件
   - offline     # 内置离线插件，可离线访问网站，插件会自动禁用 use_directory_urls 设置
   - search      # 内置搜索插件
   - tags        # 内置标签插件，对页面进行分类
+
+  - glightbox   # 图片灯箱特效插件
 
   # 文档日期、作者、头像插件
   - document-dates:     # https://github.com/jaywhj/mkdocs-document-dates
@@ -172,17 +170,10 @@ plugins:
       exclude:
         - index.md
         - blog/*
-      recently-updated: # 在侧边栏导航中显示最近更新的文档列表
+      recently-updated:
         limit: 10
         exclude:
           - index.md
-
-  # 在任意md文档中显示最近更新的文档列表插件
-  - recently-updated:   # https://github.com/jaywhj/mkdocs-recently-updated-docs
-      limit: 10
-      exclude:
-        - index.md
-      # template: templates/recently_updated.html
 
 extra_javascript:
   # 配置 full 版本的 timeago

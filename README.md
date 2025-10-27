@@ -7,7 +7,9 @@
 - 基于 Material for MkDocs 优化和美化
 - 包含主题切换功能，支持**自适应**系统主题配色，自动切换
 - 包含多语言选择功能，支持**自适应**本地化语言，自动切换
-- 内置翻译插件，支持 100+ 语言自由切换
+- 内置新一代日期作者头像插件 [mkdocs-document-dates](https://github.com/jaywhj/mkdocs-document-dates)
+- 内置 GLightbox 插件，支持图像灯箱特效
+- 内置 AI i18n 多语言插件，支持 100+ 语言自由切换
 - 内置离线插件，可离线访问网站
 - 内置搜索插件、博客插件
 - 支持数理公式、化学方程式渲染
@@ -52,7 +54,7 @@
 
 
 
-以上所有技巧见：[jaywhj.netlify.app/](https://jaywhj.netlify.app/)
+以上所有技巧见：[hongjun.vip/](https://hongjun.vip/)
 
 
 
