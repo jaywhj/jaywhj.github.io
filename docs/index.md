@@ -16,7 +16,7 @@
 - 支持 mermaid 绘图渲染
 - 清爽简洁、小白易用
 
-### 快速使用
+### 快速开始
 
 1. 前置要求：安装好 [Python](https://www.python.org/downloads/) 3.8+
 2. 下载模板：下载最新模板文件 [jaywhj.github.io-main.zip](https://github.com/jaywhj/jaywhj.github.io/archive/refs/heads/main.zip) ，然后解压
