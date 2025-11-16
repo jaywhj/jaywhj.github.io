@@ -2,11 +2,9 @@
 
 [English](README.md) | 简体中文
 
+<br />
 
-
-效果预览: https://jaywhj.github.io
-
-如果你喜欢这个主题，请点亮你右上角的星 ⭐️
+如果你喜欢这个主题，请点亮你右上角的星 ⭐️，效果预览: https://jaywhj.github.io
 
 ### 特色
 
