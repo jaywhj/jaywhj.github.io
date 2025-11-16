@@ -1,5 +1,11 @@
 ## Aaron - MkDocs 极简风主题
 
+[English](README.md) | 简体中文
+
+
+
+效果预览: https://jaywhj.github.io
+
 如果你喜欢这个主题，请点亮你右上角的星 ⭐️
 
 ### 特色
@@ -43,7 +49,7 @@
 
 **原则**：**Write Once, Show Anywhere**，一次编写，随处展示，在任意地方以任意格式精美的展示内容。
 
-**方案**：而实现这样的目标原则，最佳方式就是：采用「**Markdown 格式 + 专业工具本地编写**」
+**方案**：而实现这样的目标原则，最佳方式就是：采用「<mark>Markdown 格式 + 专业工具本地编写</mark>」
 
 - **专业编写**：你可以使用任意你喜欢的专业 Markdown 编辑器编写内容，无任何限制且支持全部 Markdown 语法
 - **通用格式**：支持一键导出 PDF、Word、Image、HTML、ePub，一键生成 **PPT 幻灯片**、**思维导图**、**静态网站**
@@ -55,3 +61,31 @@
 
 
 以上所有技巧见：[hongjun.vip/](https://hongjun.vip/)
+
+
+
+<br />
+
+## License
+
+**MIT License**
+
+Copyright (c) 2025 Aaron Wang
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
