@@ -1,11 +1,11 @@
 site_name: 文档即产品
 site_author: Aaron Wang
 site_url: https://hongjun.vip/
-site_description: markdown系列教程，markdown转PPT、静态网站、图表、思维导图，markdown编写AI结构化提示词等，应有尽有
-
-repo_name: aaron - repo
-repo_url: https://github.com/jaywhj
+site_description: mkdocs教程，markdown教程，markdown生成PPT、静态网站、图表、思维导图，markdown编写AI结构化提示词
 copyright: Copyright &copy; 2025 | 🚀 Aaron Wang
+
+repo_url: https://github.com/jaywhj
+repo_name: aaron - repo
 
 # 控制生成的文档目录结构，false 表示不生成文件夹目录，直接指向文件
 use_directory_urls: false
@@ -29,40 +29,50 @@ nav:
 
 # 主题板块
 theme:
-  name: material
+  name: materialx
   custom_dir: docs/overrides  # 配置覆写文件目录
   icon:
     logo: octicons/home-24
     repo: material/github
   language: zh
   palette:
-    - media: "(prefers-color-scheme)"          # 随系统主题颜色 - 自动切换
+    - media: "(prefers-color-scheme)"          # 自动模式 - 随系统主题调色板自动切换
       toggle:
         icon: material/brightness-auto
-        name: 自动模式 - 主题颜色
-    - media: "(prefers-color-scheme: light)"   # 亮色模式 - 手动
+        name: 自动模式 - 随系统主题色
+    - media: "(prefers-color-scheme: light)"   # 手动模式 - 亮色
       scheme: default
-      primary: white
-      accent: deep orange
+      accent: blue
       toggle:
         icon: material/weather-sunny
         name: 亮色模式
-    - media: "(prefers-color-scheme: dark)"    # 暗色模式 - 手动
+    - media: "(prefers-color-scheme: dark)"    # 手动模式 - 暗色
       scheme: slate
-      primary: blue grey
       accent: deep orange
       toggle:
         icon: material/brightness-4
         name: 暗色模式
   features:
+    # - header.autohide   # 自动隐藏header
+
+    - navigation.top          # 返回顶部按钮
+    - navigation.indexes      # 启用章节索引页，文档可直接附加到章节
+    - navigation.tabs         # 导航栏显示在顶部tab里
+    # - navigation.tabs.sticky  # 顶部导航栏始终可见
+    # - navigation.expand       # 默认展开侧边导航栏
+    # - navigation.sections     # 侧边导航栏分组显示，不缩进无折叠
+    # - navigation.prune        # 只渲染可见的导航项，从而减少构建站点的大小（需关闭 navigation.expand，开启后会影响用户体验，比如折叠的分组展开时就没法显示文章列表了）
+    # - navigation.instant      # 启用即时加载，无需完全重新加载页面，对于大型文档站点有用（所有内部链接的事件都将被拦截并通过 XHR 发送）
+    # - navigation.instant.prefetch # 启用即时预取，用户将鼠标悬停在链接上，就会开始提取页面，这减少了用户的感知加载时间
+    # - navigation.tracking     # 锚点跟踪，地址栏中的 URL 会自动更新为活动锚点
+    - navigation.footer       # 底部导航栏
+
     - content.code.copy # 复制代码按钮
+    - content.tooltips  # 启用漂亮的提示工具，取代浏览器默认样式
+    - content.footnote.tooltips # 悬停显示脚注，可以在不离开文档上下文的情况下阅读脚注
     - search.highlight  # 搜索结果高亮
     - toc.follow        # 滚动的时候侧边栏自动跟随
-    - navigation.top    # 返回顶部按钮
-    - navigation.tabs   # 导航栏显示在顶部tab里
-    - navigation.indexes  # 启用章节索引页，文档可直接附加到章节
-    - navigation.expand # 默认展开导航栏（导航栏在非顶部的时候才有效）
-    # - navigation.footer # 底部导航栏
+    # - toc.integrate     # 目录导航集成，TOC总是作为左侧导航侧边栏的一部分呈现
 
 # markdown 属性扩展
 markdown_extensions:
@@ -74,7 +84,10 @@ markdown_extensions:
   - admonition          # 扩展弹出警告框，通常称为 call-outs
   - attr_list           # 扩展给元素添加HTML/CSS属性的功能
   - def_list            # 扩展将定义列表添加到文档
+  - footnotes           # 脚注
+  - md_in_html          # 解析 html 中的 markdown
   - tables              # 增强表格
+
   - pymdownx.betterem   # 文本样式加强
   - pymdownx.caret      # 上标、插入符号
   - pymdownx.mark       # 标记、==高亮==
@@ -83,15 +96,12 @@ markdown_extensions:
   - pymdownx.details    # 可折叠的块 Note，支持：标注、批注、警告、引用等
   - pymdownx.smartsymbols   # 智能符号，如 (tm) → ™
   - pymdownx.snippets   # 将任意文件内容嵌入到文档
-  - pymdownx.blocks.caption   # 向 Markdown 块添加标题，包括图像、表格和代码块
-  - pymdownx.highlight
+  - pymdownx.blocks.caption # 向 Markdown 块添加标题，包括图像、表格和代码块
   - pymdownx.inlinehilite   # 内联代码高亮，建立在 highlight 基础上
-  - footnotes               # 脚注
-  - md_in_html              # 解析 html 中的 markdown
   - pymdownx.keys           # 扩展键盘渲染-按键组合写法
+
   - pymdownx.tasklist:      # 任务列表
       custom_checkbox: true     # 切换复选框渲染样式，用漂亮的图标替换原生的
-      clickable_checkbox: true  # 复选框是否可单击
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji 
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -134,11 +144,11 @@ extra:
   alternate:
     - name: 🇨🇳 中文
       lang: zh
-    - name: 🇬🇧 English
+    - name: 🇺🇸 English
       lang: en
     - name: 🇩🇪 Deutsch
       lang: de
-    - name: 🇷🇺 Русский язык
+    - name: 🇷🇺 Русский
       lang: ru
     - name: 🇯🇵 日本語
       lang: ja
@@ -158,9 +168,9 @@ extra:
 # 插件板块
 plugins:
   # - blog        # 内置博客插件
-  - offline     # 内置离线插件，可离线访问网站，插件会自动禁用 use_directory_urls 设置
+  # - tags        # 内置标签插件，对页面进行分类
   - search      # 内置搜索插件
-  - tags        # 内置标签插件，对页面进行分类
+  - offline     # 内置离线插件，可离线访问网站，插件会自动禁用 use_directory_urls 设置
 
   - glightbox   # 图片灯箱特效插件
 
@@ -174,10 +184,12 @@ plugins:
         limit: 10
         exclude:
           - index.md
+          - blog/*
 
 extra_javascript:
   # 配置 full 版本的 timeago
   - assets/document_dates/core/timeago.full.min.js
+
   # 加载翻译插件 translate
   - javascripts/translate.min.js
   - javascripts/extra.js
@@ -192,5 +204,3 @@ extra_javascript:
 extra_css:
   # 配置 katex 样式
   - site-plugin/katex/katex.min.css
-  # 配置额外的样式
-  - stylesheets/extra.css

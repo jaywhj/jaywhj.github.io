@@ -4,13 +4,13 @@
 
 <br />
 
-如果你喜欢这个主题，请点亮你右上角的星 ⭐️，效果预览: https://jaywhj.github.io
+如果你喜欢这个主题，请点亮你右上角的星 ⭐️，效果预览:  https://jaywhj.github.io
 
 ### 特色
 
-- 基于 Material for MkDocs 优化和美化
-- 包含主题切换功能，支持**自适应**系统主题配色，自动切换
-- 包含多语言选择功能，支持**自适应**本地化语言，自动切换
+- 基于 [MaterialX](https://github.com/jaywhj/mkdocs-material) for MkDocs 优化和美化，内置 Zensical 一样的现代主题
+- 包含主题配色切换功能，支持**自适应**系统主题配色
+- 包含多语言选择功能，支持**自适应**本地化语言
 - 内置新一代日期作者头像插件 [mkdocs-document-dates](https://github.com/jaywhj/mkdocs-document-dates)
 - 内置 GLightbox 插件，支持图像灯箱特效
 - 内置 AI i18n 多语言插件，支持 100+ 语言自由切换

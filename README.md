@@ -8,9 +8,9 @@ If you like this theme, light up your star ⭐️ in the top right corner, previ
 
 ### Features
 
-- Optimized and beautified based on Material for MkDocs
-- Includes theme switching functionality, supports **adaptive** system theme colors and automatic switching
-- Includes multi-language selection functionality, supports **adaptive** localization language and automatic switching
+- Optimized and beautified based on [MaterialX](https://github.com/jaywhj/mkdocs-material) for MkDocs, with modern themes like Zensical built in
+- Include theme color switching function, supports **adaptive** system theme colors
+- Includes multi-language selection functionality, supports **adaptive** localization language
 - Built-in next-generation date-author-avatar plugin [mkdocs-document-dates](https://github.com/jaywhj/mkdocs-document-dates)
 - Built-in GLightbox plugin for image lightbox effects
 - Built-in AI i18n multi-language plugin, supporting 100+ languages for free switching
