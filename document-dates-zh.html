@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="markdown系列教程，markdown转PPT、静态网站、图表、思维导图，markdown编写AI结构化提示词等，应有尽有">
+        <meta name="description" content="mkdocs教程，markdown教程，markdown生成PPT、静态网站、图表、思维导图，markdown编写AI结构化提示词">
       
       
         <meta name="author" content="Aaron Wang">
@@ -44,7 +44,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.0.2">
     
     
       
@@ -52,7 +52,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.d9c1a55b.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
@@ -77,8 +77,6 @@
     
     
       <link rel="stylesheet" href="site-plugin/katex/katex.min.css">
-    
-      <link rel="stylesheet" href="stylesheets/extra.css">
     
       <link rel="stylesheet" href="assets/document_dates/fonts/material-icons.css">
     
@@ -109,11 +107,6 @@
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
             .gslide-image img { background: white; }
-            .gscrollbar-fixer { padding-right: 15px; }
-            .gdesc-inner { font-size: 0.75rem; }
-            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
-            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
-            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
         </style></head>
   
   
@@ -180,9 +173,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="自动模式 - 主题颜色" type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="自动模式 - 随系统主题色" type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="自动模式 - 主题颜色" for="__palette_1" hidden>
+      <label class="md-header__button md-icon" title="自动模式 - 随系统主题色" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"></path></svg>
       </label>
     
@@ -190,7 +183,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="deep-orange" aria-label="亮色模式" type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue" aria-label="亮色模式" type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="亮色模式" for="__palette_2" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
@@ -200,7 +193,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="deep-orange" aria-label="暗色模式" type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-orange" aria-label="暗色模式" type="radio" name="__palette" id="__palette_2">
     
       <label class="md-header__button md-icon" title="暗色模式" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
@@ -231,7 +224,7 @@
         
           <li class="md-select__item">
             <a href="." hreflang="en" class="md-select__link">
-              🇬🇧 English
+              🇺🇸 English
             </a>
           </li>
         
@@ -243,7 +236,7 @@
         
           <li class="md-select__item">
             <a href="." hreflang="ru" class="md-select__link">
-              🇷🇺 Русский язык
+              🇷🇺 Русский
             </a>
           </li>
         
@@ -295,6 +288,8 @@
 </div>
     
     
+      
+        
       
       
         <label class="md-header__button md-icon" for="__search">
@@ -717,6 +712,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="指定日期时间">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#优先级" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        优先级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#自定义日期" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自定义日期
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#自动缓存创建日期" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自动缓存创建日期
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#适配任意环境" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        适配任意环境
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -727,6 +772,56 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="指定作者">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#优先级_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        优先级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#自定义作者" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自定义作者
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#增强作者配置" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        增强作者配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Git作者聚合" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git作者聚合
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -753,17 +848,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#添加本地化语言" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        添加本地化语言
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#使用模板变量" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -771,6 +855,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="使用模板变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#为-sitemap-设置正确的-lastmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为 sitemap 设置正确的 lastmod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#重新定制插件" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重新定制插件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -808,8 +920,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#效果预览" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        效果预览
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#添加本地化语言" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        添加本地化语言
+      
+    </span>
+  </a>
   
 </li>
       
@@ -829,6 +963,17 @@
     <span class="md-ellipsis">
       
         开发小故事
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#评论区" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        评论区
       
     </span>
   </a>
@@ -875,9 +1020,7 @@
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -1071,6 +1214,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="指定日期时间">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#优先级" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        优先级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#自定义日期" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自定义日期
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#自动缓存创建日期" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自动缓存创建日期
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#适配任意环境" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        适配任意环境
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1081,6 +1274,56 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="指定作者">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#优先级_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        优先级
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#自定义作者" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        自定义作者
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#增强作者配置" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        增强作者配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Git作者聚合" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git作者聚合
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1107,17 +1350,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#添加本地化语言" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        添加本地化语言
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#使用模板变量" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1125,6 +1357,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="使用模板变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#为-sitemap-设置正确的-lastmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为 sitemap 设置正确的 lastmod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#重新定制插件" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        重新定制插件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1162,8 +1422,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#效果预览" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        效果预览
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#添加本地化语言" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        添加本地化语言
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1183,6 +1465,17 @@
     <span class="md-ellipsis">
       
         开发小故事
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#评论区" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        评论区
       
     </span>
   </a>
@@ -1210,28 +1503,27 @@
 
 
 <h1 id="mkdocs-document-dates">mkdocs-document-dates<a class="headerlink" href="#mkdocs-document-dates" title="Permanent link">¶</a></h1>
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><span data-tippy-content data-tippy-raw="2025-10-27"><span class="material-icons" data-icon="doc_created"></span><time datetime="2025-10-27T16:11:53+08:00"></time></span><span data-tippy-content data-tippy-raw="2025-10-27"><span class="material-icons" data-icon="doc_modified"></span><time datetime="2025-10-27T08:11:53+00:00"></time></span><span class="material-icons" data-icon="doc_author"></span><div class="avatar-group"><div class="avatar-wrapper" data-name="Aaron" data-tippy-content data-tippy-raw="&lt;a href=&quot;mailto:junewhj@qq.com&quot;&gt;Aaron&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://avatars.githubusercontent.com/jaywhj" data-desc-position="bottom"><img class="avatar" src="https://avatars.githubusercontent.com/jaywhj" onerror="this.style.display='none'"></a></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><span data-tippy-content data-tippy-raw="2025-10-27"><span class="material-icons" data-icon="doc_created"></span><time datetime="2025-10-27T16:11:53+08:00"></time></span><span data-tippy-content data-tippy-raw="2025-12-09"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2025-12-09T12:25:04+00:00"></time></span><span class="material-icons" data-icon="doc_author"></span><div class="avatar-group"><div class="avatar-wrapper" data-name="Aaron" data-tippy-content data-tippy-raw="&lt;a href=&quot;mailto:junewhj@qq.com&quot;&gt;Aaron&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://avatars.githubusercontent.com/jaywhj" data-desc-position="bottom"><img class="avatar" src="https://avatars.githubusercontent.com/jaywhj" onerror="this.style.display='none'"></a></div></div></div></div>
 
-<p>新一代用于显示文档确切<strong>创建时间、最后更新时间、作者、头像、邮箱</strong>等信息的 MkDocs 插件</p>
+<p>新一代用于显示文档确切<strong>创建日期、最后更新日期、作者、头像、邮箱</strong>等信息的 MkDocs 插件</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="assets/document-dates.gif" data-desc-position="bottom"><img alt="render" src="assets/document-dates.gif"></a></p>
 <h2 id="特性">特性<a class="headerlink" href="#特性" title="Permanent link">¶</a></h2>
 <ul>
 <li>始终显示文档的<strong>精确</strong>元信息，且适用于任何环境（无 Git、Git 环境、Docker 容器、所有 CI/CD 构建系统等）</li>
-<li>支持列表显示最近更新的文档（按更新时间降序排列）</li>
-<li>支持在 <code>Front Matter</code> 中手动指定时间和作者</li>
-<li>支持多种时间格式（date、datetime、timeago）</li>
+<li>支持列表显示最近更新的文档（按更新日期降序排列）</li>
+<li>支持在 <code>Front Matter</code> 中手动指定日期和作者</li>
+<li>支持多种日期格式（date、datetime、timeago）</li>
 <li>支持多种作者模式（头像、文本、隐藏）</li>
+<li>支持手动配置作者的姓名、链接、头像、邮箱等</li>
 <li>灵活的显示位置（顶部或底部）</li>
 <li>优雅的样式设计（完全可定制）</li>
-<li>智能 Tooltip 悬浮提示</li>
 <li>多语言支持，本地化支持，智能识别用户语言，自动适配</li>
-<li>跨平台支持（Windows、macOS、Linux）</li>
 <li>
 <p><strong>极致的构建效率</strong>：O(1)，无需设置环境变量 <code>!ENV</code> 来区别运行</p>
 <table>
 <thead>
 <tr>
-<th>构建效率对比：</th>
+<th>构建速度对比：</th>
 <th style="text-align: center;">100个md：</th>
 <th style="text-align: center;">1000个md：</th>
 <th style="text-align: center;">时间复杂度：</th>
@@ -1239,15 +1531,15 @@
 </thead>
 <tbody>
 <tr>
-<td>git-revision-date-localized</td>
-<td style="text-align: center;">&gt; 3 s</td>
-<td style="text-align: center;">&gt; 30 s</td>
-<td style="text-align: center;">O(n)</td>
+<td>git-revision-date-localized<br><br>git-authors</td>
+<td style="text-align: center;"><br>＞ 3 s</td>
+<td style="text-align: center;"><br>＞ 30 s</td>
+<td style="text-align: center;"><br>O(n)</td>
 </tr>
 <tr>
 <td>document-dates</td>
-<td style="text-align: center;">&lt; 0.1 s</td>
-<td style="text-align: center;">&lt; 0.15 s</td>
+<td style="text-align: center;">＜ 0.1 s</td>
+<td style="text-align: center;">＜ 0.15 s</td>
 <td style="text-align: center;">O(1)</td>
 </tr>
 </tbody>
@@ -1265,111 +1557,171 @@
 <p>或者，完整配置：</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><a href="#__codelineno-2-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="nt">plugins</span><span class="p">:</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><a href="#__codelineno-2-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">document-dates</span><span class="p">:</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">      </span><span class="nt">position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">top</span><span class="w">            </span><span class="c1"># 显示位置: top(标题后) bottom(文档末尾)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span><span class="w">               </span><span class="c1"># 时间类型: date datetime timeago, 默认：date</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><a href="#__codelineno-2-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">      </span><span class="nt">position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">top</span><span class="w">            </span><span class="c1"># 显示位置: top(标题后) bottom(文档末尾), 默认: top</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><a href="#__codelineno-2-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">date</span><span class="w">               </span><span class="c1"># 日期类型: date datetime timeago, 默认: date</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><a href="#__codelineno-2-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">      </span><span class="nt">exclude</span><span class="p">:</span><span class="w">                 </span><span class="c1"># 排除文件列表</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><a href="#__codelineno-2-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temp.md</span><span class="w">                  </span><span class="c1"># 示例：排除指定文件</span>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><a href="#__codelineno-2-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/*</span><span class="w">                   </span><span class="c1"># 示例：排除 blog 目录下所有文件，包括子目录</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">      </span><span class="nt">date_format</span><span class="p">:</span><span class="w"> </span><span class="s">'%Y-%m-%d'</span><span class="w">  </span><span class="c1"># 日期格式化字符串（例如：%Y年%m月%d日、%b %d, %Y）</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><a href="#__codelineno-2-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">      </span><span class="nt">date_format</span><span class="p">:</span><span class="w"> </span><span class="s">'%Y-%m-%d'</span><span class="w">  </span><span class="c1"># 日期格式化字符串（例如: %Y年%m月%d日、%b %d, %Y）</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><a href="#__codelineno-2-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">      </span><span class="nt">time_format</span><span class="p">:</span><span class="w"> </span><span class="s">'%H:%M:%S'</span><span class="w">  </span><span class="c1"># 时间格式化字符串（仅在 type=datetime 时有效）</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">      </span><span class="nt">show_author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">        </span><span class="c1"># 作者显示模式: true(头像) text(文本) false(隐藏)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><a href="#__codelineno-2-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">      </span><span class="nt">show_created</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">       </span><span class="c1"># 显示创建日期: true false, 默认: true</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><a href="#__codelineno-2-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">      </span><span class="nt">show_updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">       </span><span class="c1"># 显示最后更新日期: true false, 默认: true</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><a href="#__codelineno-2-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">      </span><span class="nt">show_author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">        </span><span class="c1"># 显示作者: true(头像) text(文本) false(隐藏), 默认: true</span>
 </span></code></pre></div>
 <h2 id="指定日期时间">指定日期时间<a class="headerlink" href="#指定日期时间" title="Permanent link">¶</a></h2>
-<p><strong>优先级</strong>：插件会按以下顺序<strong>自动获取</strong>文档的精确时间信息，会自动缓存创建时间</p>
+<h3 id="优先级">优先级<a class="headerlink" href="#优先级" title="Permanent link">¶</a></h3>
+<p>插件会按以下顺序<strong>自动加载</strong>文档的创建日期和最后更新日期</p>
 <pre class="mermaid"><code>%%{init: {'theme': 'default', 'themeVariables': {'fontSize': '12px'}}}%%
 flowchart LR
-    A(Front Matter)
-    B(缓存文件)
-    C(Git时间戳)
-    D(文件时间戳)
-    A -.创建时间.-&gt; B -.-&gt; C -.-&gt; D
-    A -.最后更新时间.-&gt; C</code></pre>
+    A(1.Front Matter)
+    B(2.缓存文件)
+    C(3.Git时间戳)
+    D(4.文件时间戳)
+    A -.创建日期.-&gt; B -.-&gt; C -.-&gt; D
+    A -.最后更新日期.-&gt; C</code></pre>
 <!--
-- [x] 创建时间：`Front Matter` > `缓存文件` > `Git时间戳` > `文件时间戳`
+- [x] 创建日期：`Front Matter` > `缓存文件` > `Git时间戳` > `文件时间戳`
 - [x] 最后更新：`Front Matter` > `Git时间戳` > `文件时间戳`
 -->
 
-<p><strong>自定义</strong>：可在 Front Matter 中通过以下字段手动指定</p>
+<div class="admonition quote">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">创建日期</label><label for="__tabbed_1_2">最后更新日期</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>优先读取 Front Matter 中的自定义创建日期</li>
+<li>其次读取缓存文件中的创建日期</li>
+<li>再次读取文档「首次 git commit 日期」作为创建日期</li>
+<li>最后读取文件的创建时间</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>优先读取 Front Matter 中的自定义最后更新日期</li>
+<li>其次读取文档「最近一次 git commit 日期」作为最后更新日期</li>
+<li>最后读取文件的修改时间</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<h3 id="自定义日期">自定义日期<a class="headerlink" href="#自定义日期" title="Permanent link">¶</a></h3>
+<p>可在 Front Matter 中通过以下字段手动指定</p>
 <ul>
-<li>创建时间：<code>created</code>, <code>date</code></li>
-<li>最后更新：<code>modified</code>, <code>updated</code></li>
+<li>创建日期：<code>created</code>, <code>date</code></li>
+<li>最后更新：<code>updated</code>, <code>modified</code></li>
 </ul>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><a href="#__codelineno-3-1"><span class="linenos" data-linenos="1 "></span></a><span class="nn">---</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><a href="#__codelineno-3-2"><span class="linenos" data-linenos="2 "></span></a><span class="nt">created</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2023-01-01</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="nt">modified</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-23</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><a href="#__codelineno-3-3"><span class="linenos" data-linenos="3 "></span></a><span class="nt">updated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-02-23</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><a href="#__codelineno-3-4"><span class="linenos" data-linenos="4 "></span></a><span class="nn">---</span>
 </span></code></pre></div>
+<h3 id="自动缓存创建日期">自动缓存创建日期<a class="headerlink" href="#自动缓存创建日期" title="Permanent link">¶</a></h3>
+<p>插件会自动缓存创建日期（最后更新日期不必缓存），以下是它的原理：</p>
+<p>1) 为了始终能获取文档的原始创建日期（早于第一次 git 提交），采用了缓存文件来存储原始创建日期，位于 docs 目录下（默认是隐藏的），请不要删除：</p>
+<ul>
+<li><code>docs/.dates_cache.jsonl</code>，缓存文件</li>
+<li><code>docs/.gitattributes</code>，缓存文件的合并机制</li>
+</ul>
+<p>2) 采用了 Git Hooks 机制来自动触发缓存的存储（在你每次执行 <code>git commit</code> 时），缓存文件也会随之自动提交，并且 Git Hooks 的安装在插件被安装时也会自动触发，全程无需任何手动干预</p>
+<ul>
+<li>请确保是从终端执行 <code>git commit</code>，而不是从 VSCode 之类的集成工具中，因为这些工具在集成 Git hooks 时存在 bug</li>
+</ul>
+<p>回退策略：如果缓存文件不存在或自动缓存失败，创建日期也不会受到影响，它会进入第 3 优先级（读取首次 git commit 日期作为创建日期）</p>
+<h3 id="适配任意环境">适配任意环境<a class="headerlink" href="#适配任意环境" title="Permanent link">¶</a></h3>
+<p>插件在任意环境中均能获取文档的<strong>原始</strong>精准日期，支持无 Git 环境、Git 环境、Docker 容器、所有 CI/CD 构建系统等，以下是它的原理：</p>
+<ol>
+<li>采用文件时间戳：确保能在本地无 Git 环境中，获取原始的准确日期</li>
+<li>采用 Git 时间戳：确保能在 Git 环境中，获取相对准确的日期</li>
+<li>采用缓存文件：确保能在 Git 环境中，获取原始的绝对准确日期</li>
+<li>Front Matter：如果你不想采用自动化日期，则可以在 Front Matter 中进行个性化自定义</li>
+</ol>
 <h2 id="指定作者">指定作者<a class="headerlink" href="#指定作者" title="Permanent link">¶</a></h2>
-<p><strong>优先级</strong>：插件会按以下顺序<strong>自动获取</strong>文档的作者信息，会自动解析邮件后做链接</p>
+<h3 id="优先级_1">优先级<a class="headerlink" href="#优先级_1" title="Permanent link">¶</a></h3>
+<p>插件会按以下顺序<strong>自动加载</strong>文档的作者信息，会自动解析邮件后做链接</p>
 <pre class="mermaid"><code>%%{init: {'theme': 'default', 'themeVariables': {'fontSize': '12px'}}}%%
 flowchart LR
-    A(Front Matter)
-    B(Git作者)
-    C(site_author)
-    D(PC用户名)
-    A -.-&gt; B -.-&gt; C -.-&gt; D
-    click C "#__tabbed_1_2"</code></pre>
+    A(1.Front Matter)
+    B(2.Git作者)
+    C(3.site_author)
+    D(4.PC用户名)
+    A -.-&gt; B -.-&gt; C -.-&gt; D</code></pre>
 <!--
 - [x] `Front Matter` > `Git作者` > `site_author(mkdocs.yml)` > `PC用户名`
 -->
 
-<p><strong>自定义</strong>：可在 Front Matter 中通过以下方式配置</p>
+<div class="admonition quote">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">顺序说明</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>优先读取 Front Matter 中的自定义作者</li>
+<li>其次读取 Git 作者</li>
+<li>再次读取 mkdocs.yml 中的 site_author</li>
+<li>最后读取 PC用户名</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<h3 id="自定义作者">自定义作者<a class="headerlink" href="#自定义作者" title="Permanent link">¶</a></h3>
+<p>可在 Front Matter 中通过以下方式配置：</p>
 <p>1) 配置一个简单作者：通过字段 <code>name</code></p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><a href="#__codelineno-4-1"><span class="linenos" data-linenos="1 "></span></a><span class="nn">---</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><a href="#__codelineno-4-2"><span class="linenos" data-linenos="2 "></span></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">any-name</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><a href="#__codelineno-4-3"><span class="linenos" data-linenos="3 "></span></a><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">e-name@gmail.com</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><a href="#__codelineno-4-4"><span class="linenos" data-linenos="4 "></span></a><span class="nn">---</span>
 </span></code></pre></div>
-<p>2) 配置一个完整作者：通过字段 <code>author</code>（字段可选配）</p>
+<p>2) 配置一个或多个作者：通过字段 <code>authors</code></p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><a href="#__codelineno-5-1"><span class="linenos" data-linenos="1 "></span></a><span class="nn">---</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a><span class="nt">author</span><span class="p">:</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jay</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><a href="#__codelineno-5-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">  </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jay@qq.com</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><a href="#__codelineno-5-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">  </span><span class="nt">avatar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://xxx.author-avatar-URL.com/xxx.png</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><a href="#__codelineno-5-6"><span class="linenos" data-linenos="6 "></span></a><span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://xxx.website-URL.com/xxx</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><a href="#__codelineno-5-7"><span class="linenos" data-linenos="7 "></span></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">author description</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><a href="#__codelineno-5-8"><span class="linenos" data-linenos="8 "></span></a><span class="nn">---</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><a href="#__codelineno-5-2"><span class="linenos" data-linenos="2 "></span></a><span class="nt">authors</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><a href="#__codelineno-5-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jaywhj</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><a href="#__codelineno-5-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dawang</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><a href="#__codelineno-5-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sunny</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><a href="#__codelineno-5-6"><span class="linenos" data-linenos="6 "></span></a><span class="nn">---</span>
 </span></code></pre></div>
-<p>3) 配置多个作者：通过字段 <code>authors</code>（要为多个作者配置完整信息则可在 <code>docs/</code> 目录下新建配置文件 <code>authors.yml</code>，格式参考 <a href="https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/authors.yml">authors.yml</a>）</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos="1 "></span></a><span class="nn">---</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos="2 "></span></a><span class="nt">authors</span><span class="p">:</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jaywhj</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><a href="#__codelineno-6-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dawang</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><a href="#__codelineno-6-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sunny</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><a href="#__codelineno-6-6"><span class="linenos" data-linenos="6 "></span></a><span class="nn">---</span>
+<h3 id="增强作者配置">增强作者配置<a class="headerlink" href="#增强作者配置" title="Permanent link">¶</a></h3>
+<p>可为所有作者补充完整信息配置，以丰富用户体验。在 <code>docs/</code> 目录下创建一个 <code>authors.yml</code> 文件，格式参考：</p>
+<div class="language-yaml highlight"><span class="filename">docs/authors.yml</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><a href="#__codelineno-6-1"><span class="linenos" data-linenos=" 1 "></span></a><span class="nt">authors</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><a href="#__codelineno-6-2"><span class="linenos" data-linenos=" 2 "></span></a><span class="w">  </span><span class="nt">jaywhj</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><a href="#__codelineno-6-3"><span class="linenos" data-linenos=" 3 "></span></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Aaron Wang</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><a href="#__codelineno-6-4"><span class="linenos" data-linenos=" 4 "></span></a><span class="w">    </span><span class="nt">avatar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://xxx.com/avatar.jpg</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><a href="#__codelineno-6-5"><span class="linenos" data-linenos=" 5 "></span></a><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://jaywhj.netlify.app/</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><a href="#__codelineno-6-6"><span class="linenos" data-linenos=" 6 "></span></a><span class="w">    </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">junewhj@qq.com</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><a href="#__codelineno-6-7"><span class="linenos" data-linenos=" 7 "></span></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Minimalism</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><a href="#__codelineno-6-8"><span class="linenos" data-linenos=" 8 "></span></a><span class="w">  </span><span class="nt">user2</span><span class="p">:</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><a href="#__codelineno-6-9"><span class="linenos" data-linenos=" 9 "></span></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xxx</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><a href="#__codelineno-6-10"><span class="linenos" data-linenos="10 "></span></a><span class="w">    </span><span class="nt">avatar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/avatar.png</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11"></a><a href="#__codelineno-6-11"><span class="linenos" data-linenos="11 "></span></a><span class="w">    </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://xxx.com</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12"></a><a href="#__codelineno-6-12"><span class="linenos" data-linenos="12 "></span></a><span class="w">    </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xxx@gmail.com</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13"></a><a href="#__codelineno-6-13"><span class="linenos" data-linenos="13 "></span></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xxx</span>
 </span></code></pre></div>
-<div class="admonition quote">
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Git作者</label><label for="__tabbed_1_2">site_author</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>支持账户聚合，即同一人的不同邮箱账户可显示为同一作者，可通过在仓库根目录提供一个 <code>.mailmap</code> 文件来配置，详情见 <a href="https://git-scm.com/docs/gitmailmap">gitmailmap</a>。以下示例将 <code>.local</code> 账户聚合到 <code>junewhj@qq.com</code>：</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a><span class="l l-Scalar l-Scalar-Plain">Aaron &lt;junewhj@qq.com&gt; &lt;aaron@AarondeMacBook-Pro.local&gt;</span>
+<p>当 <code>Front Matter</code>、<code>Git作者</code>、<code>site_author(mkdocs.yml)</code> 中的作者名跟 authors 中的 key 匹配时，会自动加载 key 对应的完整作者信息</p>
+<h3 id="Git作者聚合">Git作者聚合<a class="headerlink" href="#Git作者聚合" title="Permanent link">¶</a></h3>
+<p>Git作者支持账户聚合，即同一人的多个不同邮箱账户可聚合显示为同一作者，可通过在仓库根目录提供一个 <code>.mailmap</code> 文件来配置，详情见 <a href="https://git-scm.com/docs/gitmailmap">gitmailmap</a></p>
+<p>以下示例将 gmail 账户聚合到 qq 账户，统一显示为 Aaron：</p>
+<div class="language-yaml highlight"><span class="filename">.mailmap</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><a href="#__codelineno-7-1"><span class="linenos" data-linenos="1 "></span></a><span class="l l-Scalar l-Scalar-Plain">Aaron &lt;junewhj@qq.com&gt; &lt;aaron@gmail.com&gt;</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<p>通过 mkdocs.yml 中的 <code>site_author</code> 属性加载</p>
-</div>
-</div>
-</div>
-</div>
 <h2 id="指定头像">指定头像<a class="headerlink" href="#指定头像" title="Permanent link">¶</a></h2>
 <p><strong>优先级</strong>：插件会按以下顺序<strong>自动加载</strong>作者头像</p>
 <pre class="mermaid"><code>%%{init: {'theme': 'default', 'themeVariables': {'fontSize': '12px'}}}%%
 flowchart LR
-    A(Front Matter)
-    B(GitHub头像)
-    C(字符头像)
+    A(1.Front Matter)
+    B(2.GitHub头像)
+    C(3.姓名字符头像)
     A -.-&gt; B -.-&gt; C</code></pre>
 <!--
-- [x] `Front Matter` > `GitHub头像` > `字符头像`
+- [x] `Front Matter` > `GitHub头像` > `姓名字符头像`
 -->
 
-<p><strong>自定义</strong>：可在 Front Matter 中通过 <a href="#指定作者">自定义作者</a>的 <code>avatar</code> 字段进行自定义</p>
+<p><strong>自定义</strong>：</p>
+<p>可通过 <a href="#增强作者配置">增强作者配置</a> 中的 <code>avatar</code> 字段进行自定义（支持 URL 路径和本地文件路径）</p>
+<p><strong>其它</strong>：</p>
 <div class="admonition quote">
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">GitHub头像</label><label for="__tabbed_2_2">字符头像</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">GitHub头像</label><label for="__tabbed_3_2">姓名字符头像</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>解析 mkdocs.yml 中的 <code>repo_url</code> 属性自动加载</p>
+<p>解析 mkdocs.yml 中的 <code>repo_url</code> 属性自动加载，无需单独配置</p>
 </div>
 <div class="tabbed-block">
 <p>根据作者姓名自动生成，规则如下：<br>
@@ -1391,48 +1743,43 @@ flowchart LR
 <tbody>
 <tr>
 <td style="text-align: center;"><strong>样式与主题</strong></td>
-<td><code>docs/assets/document_dates/user.config.css</code></td>
+<td>docs/assets/document_dates/user.config.css</td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>属性与功能</strong></td>
-<td><code>docs/assets/document_dates/user.config.js</code></td>
+<td>docs/assets/document_dates/user.config.js</td>
 </tr>
 </tbody>
 </table>
-<h2 id="添加本地化语言">添加本地化语言<a class="headerlink" href="#添加本地化语言" title="Permanent link">¶</a></h2>
-<p>可为 <code>timeago</code> 和 <code>tooltip</code> 补充更多本地化语言：</p>
-<p><strong>tooltip</strong></p>
-<p>内置语言：<code>en zh zh_TW es fr de ar ja ko ru nl pt</code></p>
-<ul>
-<li>无需手动指定，自动识别（保留了原来的配置项 <code>locale</code>，但已不建议手动配置了）</li>
-<li>如语言缺失或内置语言不准确，可在 <code>user.config.js</code> 中，参考 <a href="https://github.com/jaywhj/mkdocs-document-dates/blob/main/mkdocs_document_dates/static/config/user.config.js">Part 3</a>，自行注册添加，也可以提交 PR 内置</li>
-</ul>
-<p><strong>timeago</strong></p>
-<p>当设置 <code>type: timeago</code> 时，会启用 timeago.js 来动态地渲染时间，timeago.min.js 内置的语言仅包含 <code>en zh</code>，如需加载其他语言，可以按如下方式配置（2选1）：</p>
-<ul>
-<li>在 <code>user.config.js</code> 中，参考 <a href="https://github.com/jaywhj/mkdocs-document-dates/blob/main/mkdocs_document_dates/static/config/user.config.js">Part 2</a>，自行注册添加</li>
-<li>在 <code>mkdocs.yml</code> 中，配置 full 版本的 <code>timeago.full.min.js</code>，一次性重载 <a href="https://github.com/hustcc/timeago.js/tree/master/src/lang">所有区域语言</a><br>
-    <div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a><span class="nt">extra_javascript</span><span class="p">:</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/document_dates/core/timeago.full.min.js</span>
-</span></code></pre></div></li>
-</ul>
 <h2 id="使用模板变量">使用模板变量<a class="headerlink" href="#使用模板变量" title="Permanent link">¶</a></h2>
 <p>你可以在模板中使用如下变量访问文档的元信息：</p>
 <ul>
 <li>page.meta.document_dates_created</li>
-<li>page.meta.document_dates_modified</li>
+<li>page.meta.document_dates_updated</li>
 <li>page.meta.document_dates_authors</li>
 <li>config.extra.recently_updated_docs</li>
 </ul>
-<p>应用示例：</p>
-<ul>
-<li><strong>示例1</strong>：为你站点的 sitemap.xml 设置正确的 <code>lastmod</code>，以便搜索引擎能更好的处理 SEO，从而提高你网站的曝光率（下载 <a href="https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/sitemap.xml">sitemap.xml</a> 后覆盖：<code>docs/overrides/sitemap.xml</code>）</li>
-<li><strong>示例2</strong>：利用模板重新定制插件，你可以完全掌控渲染逻辑，插件只负责提供数据（下载 <a href="https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/partials/source-file.html">source-file.html</a> 后覆盖：<code>docs/overrides/partials/source-file.html</code>）</li>
-</ul>
+<h3 id="为-sitemap-设置正确的-lastmod">为 sitemap 设置正确的 lastmod<a class="headerlink" href="#为-sitemap-设置正确的-lastmod" title="Permanent link">¶</a></h3>
+<p>可以通过模板变量 <code>document_dates_updated</code> 为你站点的 <code>sitemap.xml</code> 设置正确的 <code>lastmod</code>，以便搜索引擎能更好的处理 SEO，从而提高你网站的曝光率</p>
+<p>步骤：下载示例模板 <a href="https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/sitemap.xml">sitemap.xml</a>，覆盖 <code>docs/overrides/sitemap.xml</code></p>
+<h3 id="重新定制插件">重新定制插件<a class="headerlink" href="#重新定制插件" title="Permanent link">¶</a></h3>
+<p>可以利用模板重新定制插件，你可以完全掌控渲染逻辑，插件只负责提供数据</p>
+<p>步骤：下载示例模板 <a href="https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/partials/source-file.html">source-file.html</a>，覆盖 <code>docs/overrides/partials/source-file.html</code>，然后自由定制模板中的代码</p>
 <h2 id="添加最近更新模块">添加最近更新模块<a class="headerlink" href="#添加最近更新模块" title="Permanent link">¶</a></h2>
-<p>可在任意模板中通过 <code>config.extra.recently_updated_docs</code> 变量获取最近更新的文档数据（按更新时间降序排列），然后自行定制渲染逻辑。</p>
-<p>或者参考以下预设模板示例直接使用：</p>
+<p>可在任意模板中通过 <code>config.extra.recently_updated_docs</code> 变量获取最近更新的文档数据（按更新日期降序排列），然后自行定制渲染逻辑</p>
+<p>或者参考以下示例，直接使用预设模板（列表标题和链接将自动渲染）：</p>
 <h3 id="添加到侧边栏导航中">添加到侧边栏导航中<a class="headerlink" href="#添加到侧边栏导航中" title="Permanent link">¶</a></h3>
+<p>1) 在 <code>mkdocs.yml</code> 中配置开关 recently-updated：<br>
+    </p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><a href="#__codelineno-8-1"><span class="linenos" data-linenos="1 "></span></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">document-dates</span><span class="p">:</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><a href="#__codelineno-8-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><a href="#__codelineno-8-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">recently-updated</span><span class="p p-Indicator">:</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><a href="#__codelineno-8-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">        </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">        </span><span class="c1"># 限制显示的文档数量</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><a href="#__codelineno-8-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">        </span><span class="nt">exclude</span><span class="p">:</span><span class="w">         </span><span class="c1"># 排除不想显示的文档</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><a href="#__codelineno-8-6"><span class="linenos" data-linenos="6 "></span></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><a href="#__codelineno-8-7"><span class="linenos" data-linenos="7 "></span></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/*</span>
+</span></code></pre></div><p></p>
+<p>2) 下载示例模板 <a href="https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/partials/nav.html">nav.html</a>，覆盖 <code>docs/overrides/partials/nav.html</code></p>
+<h3 id="添加到文档的任意位置">添加到文档的任意位置<a class="headerlink" href="#添加到文档的任意位置" title="Permanent link">¶</a></h3>
 <p>1) 在 <code>mkdocs.yml</code> 中配置开关 recently-updated：<br>
     </p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><a href="#__codelineno-9-1"><span class="linenos" data-linenos="1 "></span></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">document-dates</span><span class="p">:</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><a href="#__codelineno-9-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -1440,45 +1787,40 @@ flowchart LR
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><a href="#__codelineno-9-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">        </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">        </span><span class="c1"># 限制显示的文档数量</span>
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><a href="#__codelineno-9-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">        </span><span class="nt">exclude</span><span class="p">:</span><span class="w">         </span><span class="c1"># 排除不想显示的文档</span>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><a href="#__codelineno-9-6"><span class="linenos" data-linenos="6 "></span></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
-</span></code></pre></div><p></p>
-<p>2) 下载 <a href="https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/partials/nav.html">nav.html</a> 后覆盖 <code>docs/overrides/partials/nav.html</code></p>
-<h3 id="添加到文档的任意位置">添加到文档的任意位置<a class="headerlink" href="#添加到文档的任意位置" title="Permanent link">¶</a></h3>
-<p>1) 在 <code>mkdocs.yml</code> 中配置开关 recently-updated：<br>
-    </p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">document-dates</span><span class="p">:</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><a href="#__codelineno-10-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><a href="#__codelineno-10-3"><span class="linenos" data-linenos="3 "></span></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">recently-updated</span><span class="p p-Indicator">:</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><a href="#__codelineno-10-4"><span class="linenos" data-linenos="4 "></span></a><span class="w">        </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">        </span><span class="c1"># 限制显示的文档数量</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><a href="#__codelineno-10-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">        </span><span class="nt">exclude</span><span class="p">:</span><span class="w">         </span><span class="c1"># 排除不想显示的文档</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><a href="#__codelineno-10-6"><span class="linenos" data-linenos="6 "></span></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><a href="#__codelineno-9-7"><span class="linenos" data-linenos="7 "></span></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blog/*</span>
 </span></code></pre></div><p></p>
 <p>2) 在文档中任意位置插入这一行：<br>
-    </p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a><span class="l l-Scalar l-Scalar-Plain">&lt;!-- RECENTLY_UPDATED_DOCS --&gt;</span>
+    </p><div class="language-yaml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><a href="#__codelineno-10-1"><span class="linenos" data-linenos="1 "></span></a><span class="l l-Scalar l-Scalar-Plain">&lt;!-- RECENTLY_UPDATED_DOCS --&gt;</span>
 </span></code></pre></div><p></p>
+<h3 id="效果预览">效果预览<a class="headerlink" href="#效果预览" title="Permanent link">¶</a></h3>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="assets/recently-updated.png" data-desc-position="bottom"><img alt="recently-updated" src="assets/recently-updated.png"></a></p>
 <p>如果你只想使用「最近更新模块」，也可以安装单独的插件 <a href="https://github.com/jaywhj/mkdocs-recently-updated-docs">mkdocs-recently-updated-docs</a></p>
+<h2 id="添加本地化语言">添加本地化语言<a class="headerlink" href="#添加本地化语言" title="Permanent link">¶</a></h2>
+<p>插件的 <code>tooltip</code> 和 <code>timeago</code> 内置了多语言支持，并且会自动识别 <code>locale</code>，无需手动配置。如有语言缺失，则可为它们补充：</p>
+<p><strong>tooltip</strong></p>
+<p>内置语言：<code>en zh zh_TW es fr de ar ja ko ru nl pt</code></p>
+<p>补充方式（2选1）：</p>
+<ul>
+<li>在 <code>user.config.js</code> 中，参考 <a href="https://github.com/jaywhj/mkdocs-document-dates/blob/main/mkdocs_document_dates/static/config/user.config.js">Part 3</a>，自行注册添加</li>
+<li>提交 PR 以供纳入</li>
+</ul>
+<p><strong>timeago</strong></p>
+<p>当设置 <code>type: timeago</code> 时，将启用 timeago.js 库以进行动态时间渲染，<code>timeago.min.js</code> 内置的语言仅包含 <code>en zh</code>，如需加载其他语言，可以按如下方式配置（2选1）：</p>
+<ul>
+<li>在 <code>user.config.js</code> 中，参考 <a href="https://github.com/jaywhj/mkdocs-document-dates/blob/main/mkdocs_document_dates/static/config/user.config.js">Part 2</a>，自行注册添加</li>
+<li>在 <code>mkdocs.yml</code> 中，配置 full 版本的 <code>timeago.full.min.js</code>，一次性重载 <a href="https://github.com/hustcc/timeago.js/tree/master/src/lang">所有区域语言</a><br>
+  <div class="language-yaml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><a href="#__codelineno-11-1"><span class="linenos" data-linenos="1 "></span></a><span class="nt">extra_javascript</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><a href="#__codelineno-11-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/document_dates/core/timeago.full.min.js</span>
+</span></code></pre></div></li>
+</ul>
 <h2 id="其它提示">其它提示<a class="headerlink" href="#其它提示" title="Permanent link">¶</a></h2>
-<ol>
-<li>Git 的 <code>git checkout</code>、<code>git clone</code> 等行为会“重建文件”，从而导致克隆或检出后的分支/文件的原始时间戳丢失。<ul>
-<li>这是由于 Git 内部原理导致的，Git 存储文件的原理是内容寻址存储（content-addressable storage），不是直接存储，所以当你执行 checkout、clone、merge、rebase 等操作时，Git 会从 object 数据库（或 packfile）里解压出对应 blob， 写入磁盘作为工作区文件，即“重建文件”，从而导致原始时间戳丢失</li>
-</ul>
-</li>
-<li>为了始终能获取准确的创建时间，采用了单独的文件来存储文档的原始创建时间，位于 docs 目录下（默认是隐藏的），请不要删除：<ul>
-<li><code>docs/.dates_cache.jsonl</code>，缓存文件</li>
-<li><code>docs/.gitattributes</code>，缓存文件的合并机制</li>
-</ul>
-</li>
-<li>采用了 Git Hooks 机制来自动触发缓存的存储（在每次执行 <code>git commit</code> 时），缓存文件也会随之自动提交，并且 Git Hooks 的安装在插件被安装时也会自动触发，全程无需任何手动干预<ul>
-<li>请确保是从终端运行 git commit，而不是直接从 VSCode 之类的集成工具中，因为这些工具在集成 Git hooks 时存在 bug</li>
-</ul>
-</li>
-<li>在 Docker 中运行时，需要先设置 HOME 环境变量，因为安装 Git Hooks 需要一个可写的用户配置目录。例如，在你的 <code>docker-compose.yml</code> 中添加以下配置：<br>
-    <div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos="1 "></span></a><span class="nt">environment</span><span class="p">:</span>
+<p>在 Docker 中运行时，需要先设置 HOME 环境变量，因为安装 Git Hooks 需要一个可写的用户配置目录。例如，在你的 <code>docker-compose.yml</code> 中添加以下配置：</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><a href="#__codelineno-12-1"><span class="linenos" data-linenos="1 "></span></a><span class="nt">environment</span><span class="p">:</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><a href="#__codelineno-12-2"><span class="linenos" data-linenos="2 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HOME=/docs</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><a href="#__codelineno-12-3"><span class="linenos" data-linenos="3 "></span></a><span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/docs</span>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><a href="#__codelineno-12-4"><span class="linenos" data-linenos="4 "></span></a><span class="nt">volumes</span><span class="p">:</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><a href="#__codelineno-12-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./mkdocs:/docs</span>
-</span></code></pre></div></li>
-</ol>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><a href="#__codelineno-12-5"><span class="linenos" data-linenos="5 "></span></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./mkdocs:/docs</span><span class="w">    </span><span class="c1"># 将宿主机的 ./mkdocs 挂载到容器中的 /docs</span>
+</span></code></pre></div>
 <h2 id="开发小故事">开发小故事<a class="headerlink" href="#开发小故事" title="Permanent link">¶</a></h2>
 <p>一个可有可无、微不足道的小插件，没事的朋友可以看看 ^_^ </p>
 <ul>
@@ -1487,13 +1829,15 @@ flowchart LR
 </ul>
 </li>
 <li><strong>迭代</strong>：<ul>
-<li>开发后，就理解了为什么不采用文件时间戳，因为文件在经过 git checkout 或 clone 时会被重建，从而导致原始时间戳信息丢失，解决办法有很多：</li>
-<li>方法 1，采用最近一次 git commit 时间作为文档的最后更新时间，采用首次 git commit 时间作为文档的创建时间，<code>git-revision-date-localized</code> 就是这么做的（这种方式，存在一定的误差且无法在无Git环境中使用）</li>
-<li>方法 2，可以提前缓存原始时间，后续读缓存就可以了（时间准确且不依赖任何环境）。缓存的地方，可以是源文档的 Front Matter 中，也可以是单独的文件，我选择了后者。存储在 Front Matter 中非常合理且更简单，但是这样会修改文档的源内容，虽然对正文无任何影响，但是我还是想保证数据的原始性</li>
+<li>开发后，就理解了为什么不采用文件时间戳，因为文件在经过 git checkout 或 git clone 时会被重建，从而导致克隆或检出后的分支/文件的原始时间戳丢失，解决办法有很多：<ul>
+<li>方法 1，采用最近一次 git commit 日期作为文档的最后更新日期，采用首次 git commit 日期作为文档的创建日期，<code>git-revision-date-localized</code> 就是这么做的（这种方式，存在一定的误差且无法在无Git环境中使用）</li>
+<li>方法 2，可以提前缓存原始日期，后续读缓存就可以了（日期准确且不依赖任何环境）。缓存的地方，可以是源文档的 Front Matter 中，也可以是单独的文件，我选择了后者。存储在 Front Matter 中非常合理且更简单，但是这样会修改文档的源内容，虽然对正文无任何影响，但是我还是想保证数据的原始性</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><strong>难点</strong>：<ol>
-<li>什么时候去读取和存储原始时间？这只是 mkdocs 的一个插件，入口和权限非常有限，mkdocs 提供的只有 build 和 serve，那万一用户不执行 build 或 serve 而直接 commit 呢（比如使用 CI/CD 构建系统时），那就拿不到文件的时间信息了，更别说缓存了<ul>
+<li>什么时候去读取和存储原始日期？这只是 mkdocs 的一个插件，入口和权限非常有限，mkdocs 提供的只有 build 和 serve，那万一用户不执行 build 或 serve 而直接 commit 呢（比如使用 CI/CD 构建系统时），那样你就无法获取文件的日期了，更别说缓存了<ul>
 <li>直接说结论：利用 Git Hooks 机制，能在特定的 git 动作发生时触发自定义脚本，比如每次 commit 时</li>
 </ul>
 </li>
@@ -1502,15 +1846,15 @@ flowchart LR
 </ul>
 </li>
 <li>跨平台的 hook 怎么设计？执行 python 脚本，需要明确指定 python 解释器，而用户的 python 环境，因操作系统、python 的安装方式以及配置的不同而各不相同，如何才能保证在所有环境下都能正常运行？<ul>
-<li>解决办法：考虑过 shell 脚本，但考虑到最终还是要回调 python 脚本，所以还是直接采用 python 脚本更方便。可以在 hook 安装时就检测用户的 python 环境，然后动态设置 hook 的 shebang 行，从而设置正确的 python 解释器</li>
+<li>解决办法：不要在 hook 中再去判断用户的 python 环境，因为为时已晚。你可以在安装钩子之前就这样做，然后动态设置 hook 的 shebang 行，从而设置正确的 python 解释器</li>
 </ul>
 </li>
 <li>在多人协作时，如何保证单独的缓存文件不冲突？<ul>
-<li>我的方案：采用 JSONL（JSON Lines）代替 JSON，配合并集的合并策略 <code>merge=union</code></li>
+<li>我的方案：采用 JSONL 代替 JSON，配合并集的合并策略 <code>merge=union</code></li>
 </ul>
 </li>
-<li>在文档较多时( &gt; 1000 )，如何降低 build 用时？通常每次获取 git 信息都是一次文件 I/O 操作，如果文件较多，就会大大影响构建速度，这让用户没法忍受（比如，为了提高预览速度，<code>git-revision-date-localized</code> 只能通过添加环境变量 <code>enabled: !ENV</code> 在本地禁用自己）<ul>
-<li>解决办法：减少或固定 I/O 次数 + 使用缓存 + 替换运行效率较低的系统函数</li>
+<li>在文档较多时( &gt; 200 )，如何降低 build 用时？通常每次获取 git 信息都是一次文件 I/O 操作，如果文件较多，就会大大影响构建速度，这让用户没法忍受（比如，<code>git-revision-date-localized</code> 只能通过添加环境变量 <code>enabled: !ENV</code> 在本地禁用自己来提高预览速度，这有点掩耳盗铃的感觉）<ul>
+<li>解决办法：减少 I/O 次数 + 替换运行效率较低的系统函数</li>
 </ul>
 </li>
 </ol>
@@ -1520,17 +1864,18 @@ flowchart LR
 <li><strong>易用性</strong>：无复杂配置，常用的配置项也就 2-3 条，另外为个性化配置提供了模板</li>
 <li><strong>简洁性</strong>：无任何不必要的配置，无 Git 依赖，无 CI/CD 配置依赖，无其他包依赖</li>
 <li><strong>个性化</strong>：可完全自定义插件，完全掌控渲染逻辑，插件只负责提供数据</li>
-<li><strong>智能化</strong>：智能解析文档时间、作者、头像，智能识别用户语言并自动适配，此外，还有自动安装 Git Hooks、自动缓存、自动 commit 等</li>
+<li><strong>智能化</strong>：智能解析文档日期、作者、头像，智能识别用户语言并自动适配，此外，还有自动安装 Git Hooks、自动缓存、自动 commit 等</li>
 <li><strong>兼容性</strong>：兼容旧版操作系统和浏览器，如 WIN7、MacOS 10.11、iOS 12、Chrome 63.0.3239</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>最后的秘密</strong>：<ul>
-<li>编程是业余爱好，我是一名从业八年的市场营销人员（欢迎留言）</li>
+<li><strong>最后的秘密秘密 🤐</strong>：<ul>
+<li>编程是爱好，我是一名从业八年的市场营销人员（欢迎留言）</li>
 </ul>
 </li>
 </ul>
+<h2 id="评论区">评论区<a class="headerlink" href="#评论区" title="Permanent link">¶</a></h2>
 
 
 
@@ -1539,8 +1884,19 @@ flowchart LR
 
 
   
+    
+  
+  
+    
+  
+  
+    
   
 
+
+  <div class="document-dates-plugin">
+    
+  </div>
 
 
 
@@ -1563,6 +1919,46 @@ flowchart LR
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚">
+        
+          
+          <a href="markdown.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: Markdown 实用语法">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Markdown 实用语法
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="recently-updated-zh.html" class="md-footer__link md-footer__link--next" aria-label="下一页: mkdocs插件-最近更新列表">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                mkdocs插件-最近更新列表
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1609,10 +2005,10 @@ flowchart LR
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy", "search.highlight", "toc.follow", "navigation.top", "navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.top", "navigation.indexes", "navigation.tabs", "navigation.footer", "content.code.copy", "content.tooltips", "content.footnote.tooltips", "search.highlight", "toc.follow"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="assets/javascripts/bundle.5ec956ea.min.js"></script>
       
         <script src="assets/document_dates/core/timeago.min.js"></script>
       
@@ -1645,5 +2041,4 @@ flowchart LR
     
   
 <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(()=>{ lightbox.reload(); });
 </script></body></html>

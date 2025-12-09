@@ -8,6 +8,7 @@ Part 1:
 // tooltip_config.theme.light = 'tomato';
 // tooltip_config.placement = 'top';
 // tooltip_config.arrow = false;
+// tooltip_config.zIndex = 2;
 
 /* Or, override all configuration items: */
 /*
@@ -23,6 +24,7 @@ TooltipConfig.setConfig({
     interactive: true,      // content in Tooltip is interactive
     animation: 'scale',     // animation type: scale shift-away
     inertia: true,          // animation inertia
+    // zIndex: 2,              // control the display layer(z-index) of the tooltip element
     // arrow: false,           // whether to allow arrows
     // animateFill: true,      // determines if the background fill color should be animated
     // delay: [400, null],     // delay: [show, hide]: show is 400ms, and hide is null for the default value
@@ -70,7 +72,7 @@ Part 3:
 // Way 1: User-defined one language
 TooltipLanguage.register('en', {
     created_time: "Custom Created",
-    modified_time: "Custom Last Update",
+    updated_time: "Custom Last Update",
     author: "Custom Author",
     authors: "Custom Authors"
 });
@@ -79,13 +81,13 @@ TooltipLanguage.register('en', {
 const userLanguages = {
     en: {
         created_time: "Created",
-        modified_time: "Last Update",
+        updated_time: "Last Update",
         author: "Author",
         authors: "Authors"
     },
     zh: {
         created_time: "创建时间",
-        modified_time: "最后更新",
+        updated_time: "最后更新",
         author: "作者",
         authors: "作者"
     }
