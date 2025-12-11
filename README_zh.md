@@ -69,4 +69,4 @@
 
 **Wechat**: 
 
-<img src="docs/assets/wechat-group.jpg" width="150" />
+<img src="docs/assets/wechat-group.jpg" width="140" />

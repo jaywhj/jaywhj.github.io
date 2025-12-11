@@ -36,4 +36,4 @@ If you like this theme, light up your star ⭐️ in the top right corner, previ
 
 **Wechat**: 
 
-<img src="docs/assets/wechat-group.jpg" width="150" />
+<img src="docs/assets/wechat-group.jpg" width="140" />
