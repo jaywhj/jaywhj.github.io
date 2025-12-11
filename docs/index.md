@@ -54,7 +54,7 @@
 
 ## 交流群
 
-**Discord**: https://discord.gg/cvTfge4AUy
+**Discord**: [https://discord.gg/cvTfge4AUy](https://discord.gg/cvTfge4AUy)
 
 **Wechat**: 
 
