@@ -49,3 +49,13 @@
 
 
 以上所有技巧见：[hongjun.vip/](https://hongjun.vip/)
+
+<br />
+
+## 交流群
+
+**Discord**: https://discord.gg/cvTfge4AUy
+
+**Wechat**: 
+
+<img src="assets/wechat-group.jpg" width="140" />
