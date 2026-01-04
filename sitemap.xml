@@ -2,26 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://hongjun.vip/index.html</loc>
+        <lastmod>2025-12-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://hongjun.vip/RECENTLY_UPDATED.html</loc>
+        <lastmod>2025-08-30</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://hongjun.vip/document-dates-zh.html</loc>
+        <lastmod>2026-01-04</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://hongjun.vip/hainan.html</loc>
+        <lastmod>2025-06-08</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://hongjun.vip/markdown.html</loc>
+        <lastmod>2025-12-09</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://hongjun.vip/materialx-for-mkdocs.html</loc>
+        <lastmod>2026-01-04</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://hongjun.vip/recently-updated-zh.html</loc>
+        <lastmod>2025-10-27</lastmod>
         <changefreq>daily</changefreq>
     </url>
 </urlset>
