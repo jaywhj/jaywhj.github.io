@@ -17,6 +17,7 @@ exclude_docs: |
 # 导航版块
 nav:
   - 首页: index.md
+  - 下一代主题插件 MaterialX: materialx-for-mkdocs.md
   - Markdown 系列:
     - Markdown 实用语法: markdown.md
     - mkdocs插件-日期作者头像: document-dates-zh.md
@@ -35,6 +36,8 @@ theme:
     logo: octicons/home-24
     repo: material/github
   language: zh
+  font: false
+
   palette:
     - media: "(prefers-color-scheme)"          # 自动模式 - 随系统主题调色板自动切换
       toggle:
@@ -52,6 +55,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: 暗色模式
+
   features:
     # - header.autohide   # 自动隐藏header
 
@@ -124,7 +128,7 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
   - toc:
-      toc_depth: 3      # 目录深度
+      toc_depth: 4      # 目录深度
       permalink: true   # 在每个标题的末尾添加段落符 ¶
       slugify: !!python/object/apply:pymdownx.slugs.slugify {}  # 锚点链接：统一字符编码，区分大小写
       # slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}

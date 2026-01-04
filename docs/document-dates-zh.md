@@ -1,3 +1,7 @@
+---
+icon: material/power-plug-outline
+---
+
 # mkdocs-document-dates
 
 新一代用于显示文档确切**创建日期、最后更新日期、作者、头像、邮箱**等信息的 MkDocs 插件
@@ -49,9 +53,6 @@ plugins:
         - blog/*                   # 示例：排除 blog 目录下所有文件，包括子目录
       date_format: '%Y-%m-%d'  # 日期格式化字符串（例如: %Y年%m月%d日、%b %d, %Y）
       time_format: '%H:%M:%S'  # 时间格式化字符串（仅在 type=datetime 时有效）
-      show_created: true       # 显示创建日期: true false, 默认: true
-      show_updated: true       # 显示最后更新日期: true false, 默认: true
-      show_author: true        # 显示作者: true(头像) text(文本) false(隐藏), 默认: true
 ```
 
 ## 指定日期时间
@@ -117,6 +118,7 @@ updated: 2025-02-23
 2) 采用了 Git Hooks 机制来自动触发缓存的存储（在你每次执行 `git commit` 时），缓存文件也会随之自动提交，并且 Git Hooks 的安装在插件被安装时也会自动触发，全程无需任何手动干预
 
 - 请确保是从终端执行 `git commit`，而不是从 VSCode 之类的集成工具中，因为这些工具在集成 Git hooks 时存在 bug
+- 如发现 hook 自动安装失败，也可以使用此命令手动安装：`mkdocs-document-dates-hooks`
 
 回退策略：如果缓存文件不存在或自动缓存失败，创建日期也不会受到影响，它会进入第 3 优先级（读取首次 git commit 日期作为创建日期）
 
@@ -206,7 +208,7 @@ authors:
 
 ### Git作者聚合
 
-Git作者支持账户聚合，即同一人的多个不同邮箱账户可聚合显示为同一作者，可通过在仓库根目录提供一个 `.mailmap` 文件来配置，详情见 [gitmailmap](https://git-scm.com/docs/gitmailmap)
+Git作者支持账户聚合，即同一人的多个不同邮箱账户可聚合显示为同一作者，可通过在仓库根目录提供一个 `.mailmap` 文件来配置，这也是 Git 本身的一个功能，详情见 [gitmailmap](https://git-scm.com/docs/gitmailmap)
 
 以下示例将 gmail 账户聚合到 qq 账户，统一显示为 Aaron：
 
@@ -222,13 +224,13 @@ Aaron <junewhj@qq.com> <aaron@gmail.com>
 %%{init: {'theme': 'default', 'themeVariables': {'fontSize': '12px'}}}%%
 flowchart LR
     A(1.Front Matter)
-    B(2.GitHub头像)
-    C(3.姓名字符头像)
+    B(2.Gravatar头像)
+    C(3.字符头像)
     A -.-> B -.-> C
 ```
 
 <!--
-- [x] `Front Matter` > `GitHub头像` > `姓名字符头像`
+- [x] `Front Matter` > `Gravatar头像` > `字符头像`
 -->
 
 **自定义**：
@@ -239,24 +241,57 @@ flowchart LR
 
 !!! quote ""
 
-    === "GitHub头像"
+    === "Gravatar头像"
     
-        解析 mkdocs.yml 中的 `repo_url` 属性自动加载，无需单独配置
+        根据 Git 的 `user.email` 从 Gravatar 或 Weavatar 加载
     
-    === "姓名字符头像"
+    === "字符头像"
     
         根据作者姓名自动生成，规则如下：
         1. 提取 initials：英文取首字母组合，中文取首字
         2. 生成动态背景色：基于名字哈希值生成 HSL 颜色
 
-## 设置插件样式
+## 结构与样式
 
-可通过预置入口快速设置插件样式，比如**图标、主题、颜色、字体、动画、分界线**等，你只需要找到下方文件取消里面的注释即可：
+### 配置结构
 
-|    类别：    | 位置：                                         |
-| :---------: | --------------------------------------------- |
+可在 mkdocs.yml 或 Front Matter 中通过以下方式配置插件的显示结构
+
+**全局开关**，在 mkdocs.yml 中配置：
+
+```yaml
+plugins:
+  - document-dates:
+      ...
+      show_created: true    # 显示创建日期: true false, 默认: true
+      show_updated: true    # 显示最后更新日期: true false, 默认: true
+      show_author: true     # 显示作者: true(头像) text(文本) false(隐藏), 默认: true 
+```
+
+**局部开关**，在文档的 Front Matter 中配置（字段一样）：
+
+```yaml
+---
+show_created: true
+show_updated: true
+show_author: text
+---
+```
+
+!!! tip "注意"
+
+    组合使用时，全局开关是总闸，只有在总闸开启时局部开关才有效，不是局部覆盖全局逻辑
+
+### 配置样式
+
+可通过预置入口快速设置插件样式，比如**图标、主题、颜色、字体、动画、分界线**等，你只需要找到下方文件，取消里面的注释即可：
+
+|    类别：    | 位置：                |
+| :---------: | -------------------- |
 | **样式与主题** | docs/assets/document_dates/user.config.css |
 | **属性与功能** | docs/assets/document_dates/user.config.js  |
+
+也可以参考最新的示例文件自由定制：[user.config](https://github.com/jaywhj/mkdocs-document-dates/tree/main/mkdocs_document_dates/static/config)
 
 ## 使用模板变量
 
@@ -379,7 +414,7 @@ volumes:
         - 解决办法：不要在 hook 中再去判断用户的 python 环境，因为为时已晚。你可以在安装钩子之前就这样做，然后动态设置 hook 的 shebang 行，从而设置正确的 python 解释器
     4. 在多人协作时，如何保证单独的缓存文件不冲突？
         - 我的方案：采用 JSONL 代替 JSON，配合并集的合并策略 `merge=union`
-    5. 在文档较多时( > 200 )，如何降低 build 用时？通常每次获取 git 信息都是一次文件 I/O 操作，如果文件较多，就会大大影响构建速度，这让用户没法忍受（比如，`git-revision-date-localized` 只能通过添加环境变量 `enabled: !ENV` 在本地禁用自己来提高预览速度，这有点掩耳盗铃的感觉）
+    5. 在文档较多时( > 200 )，如何加快构建速度？通常每次获取 git 信息都是一次文件 I/O 操作，如果文件较多，就会大大影响构建速度，这让用户没法忍受（比如，`git-revision-date-localized` 只能通过添加环境变量 `enabled: !ENV` 在本地禁用自己来提高预览速度，这有点掩耳盗铃的感觉）
         - 解决办法：减少 I/O 次数 + 替换运行效率较低的系统函数
 - **精进**：
     - 既然是新开发的插件，那就奔着**优秀产品**的方向去设计，追求极致的**易用性、简洁性、个性化、智能化**
