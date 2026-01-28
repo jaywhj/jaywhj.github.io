@@ -42,7 +42,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.0.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-materialx-10.0.6">
     
     
       
@@ -50,10 +50,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2b547a30.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.38ef902c.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.dcd3f6cf.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.a15909a1.min.css">
       
       
 
@@ -591,8 +591,6 @@
         
   
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 7V3h-2v4h-4V3H8v4C7 7 6 8 6 9v5.5L9.5 18v3h5v-3l3.5-3.5V9c0-1-1-2-2-2m0 6.67-2.91 2.92-.42.41h-1.34l-.41-.41L8 13.67V9.09c0-.03.06-.09.09-.09h7.83c.03 0 .08.06.08.09z"></path></svg>
-  
   <span class="md-ellipsis">
     
   
@@ -706,7 +704,7 @@
         
   
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 7V3h-2v4h-4V3H8v4C7 7 6 8 6 9v5.5L9.5 18v3h5v-3l3.5-3.5V9c0-1-1-2-2-2m0 6.67-2.91 2.92-.42.41h-1.34l-.41-.41L8 13.67V9.09c0-.03.06-.09.09-.09h7.83c.03 0 .08.06.08.09z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 14h1.5v2.82l2.44 1.41-.75 1.3L16 17.69zm1-2a5 5 0 0 0-5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5m0-2a7 7 0 0 1 7 7 7 7 0 0 1-7 7c-2.79 0-5.2-1.64-6.33-4H1v-3c0-2.66 5.33-4 8-4 .6 0 1.34.07 2.12.2A6.99 6.99 0 0 1 17 10m-7 7c0-.7.1-1.38.29-2-.42-.07-.86-.1-1.29-.1-2.97 0-6.1 1.46-6.1 2.1v1.1h7.19A7 7 0 0 1 10 17M9 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 1.9A2.1 2.1 0 0 0 6.9 8 2.1 2.1 0 0 0 9 10.1 2.1 2.1 0 0 0 11.1 8 2.1 2.1 0 0 0 9 5.9"></path></svg>
   
   <span class="md-ellipsis">
     
@@ -799,7 +797,7 @@
         
   
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 7V3h-2v4h-4V3H8v4C7 7 6 8 6 9v5.5L9.5 18v3h5v-3l3.5-3.5V9c0-1-1-2-2-2m0 6.67-2.91 2.92-.42.41h-1.34l-.41-.41L8 13.67V9.09c0-.03.06-.09.09-.09h7.83c.03 0 .08.06.08.09z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.629 6.857c0-.379.304-.686.686-.686.378 0 .685.312.685.686v10.286a.684.684 0 0 1-.686.686.69.69 0 0 1-.686-.686V6.857zM2.057 10.286a2.057 2.057 0 1 1 0 4.114 2.057 2.057 0 0 1 0-4.114m7.543 0a2.057 2.057 0 1 1 0 4.114 2.057 2.057 0 0 1 0-4.114m7.543 0a2.057 2.057 0 1 1 0 4.114 2.057 2.057 0 0 1 0-4.114"></path></svg>
   
   <span class="md-ellipsis">
     
@@ -941,63 +939,230 @@
 
 <h2 style="text-align: center;margin-bottom: 1.5rem;">最近更新</h2>
 <style>
-.recently-updated {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 10px;
-    margin: 0;
-    padding: 16px;
-    border: 1px solid rgba(142, 142, 142, 0.15);
-    border-radius: 8px;
-    font-family: system-ui, sans-serif;
+.article-layout-switcher {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
 }
-.recently-updated-item {
+.article-layout-switcher button + button {
+    margin-left: 8px;
+}
+.article-layout-switcher button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
+    color: var(--md-typeset-color, #1c1c1c);
+    opacity: 0.4;
+    transition: all 0.2s;
 }
-.recently-updated-item span {
-    font-size: 0.84em;
-    color: rgba(142, 142, 142, 0.5);
-    margin-right: 4px;
-    flex-shrink: 0;
-    width: 90px;
+.article-layout-switcher button:hover {
+    background: rgba(142, 142, 142, 0.1);
+    opacity: 0.8;
 }
-.recently-updated-item a {
+.article-layout-switcher button.is-active {
+    opacity: 1;
+    color: var(--md-accent-fg-color, blue);
+    background: rgba(142, 142, 142, 0.1);
+}
+.article-layout-switcher .material-icons {
+    font-size: 20px;
+}
+
+/* --- 网格模式 (默认) --- */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+    /* transition: all 0.2s ease; */
+}
+
+/* --- 详情模式 (is-detail) --- */
+.article-grid.is-detail {
+    grid-template-columns: 1fr;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 列表模式 (is-list) --- */
+.article-grid.is-list {
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 1px solid rgba(142, 142, 142, 0.2);
+    border-radius: 8px;
+    row-gap: 0;
+    padding: 11px;
+}
+.article-grid.is-list .card-body {
+    display: none;
+}
+.article-grid.is-list .article-card {
+    border: none;
+    border-radius: 0;
+    padding: 8px;
+}
+.article-grid.is-list .card-title {
+    font-weight: 400;
+    color: #0077cc;
+    /* color: var(--md-typeset-color, #1c1c1c); */
+
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    color: #0077cc;
-    text-decoration: none;
-    transition: color 0.2s ease;
+    min-width: 0;
 }
-.recently-updated-item a:hover {
+.article-grid.is-list .card-date {
+    margin-right: 0;
+}
+
+
+.article-card {
+    border: 1px solid rgba(142, 142, 142, 0.2);
+    border-radius: 8px;
+    padding: 16px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 第一行：标题与时间 --- */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+.card-title {
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--md-typeset-color, #1c1c1c);
+    margin-right: 12px;
+}
+.card-date {
+    font-size: 0.84em;
+    color: rgba(100, 100, 100, 0.4);
+    white-space: nowrap;
+    margin-right: 10px;
+}
+.card-header:hover .card-title {
+    color: var(--md-accent-fg-color, blue);
     text-decoration: underline;
 }
+
+/* --- 第二行：摘要与封面图 --- */
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+.card-summary {
+    flex: 1;
+    color: rgba(142, 142, 142, 1);
+    font-size: 0.7rem;
+    line-height: 1.6;
+    letter-spacing: 0.02rem;
+    word-break: break-all;
+    
+    /* 3 行文字截断，超出显示省略号 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.card-cover {
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: 10px;
+}
+.card-cover a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 !important;
+}
 </style>
-<div class="recently-updated">
-    <div class="recently-updated-item">
-        <span>2026-01-04</span>
-        <a href="document-dates-zh.html" target="_blank">mkdocs插件-日期作者头像</a>
+
+<div class="article-layout-switcher">
+    <button class="layout-list-btn" title="List View"><span class="material-icons">view_list</span></button>
+    <button class="layout-detail-btn" title="Detail View"><span class="material-icons">view_day</span></button>
+    <button class="layout-grid-btn" title="Grid View"><span class="material-icons">view_module</span></button>
+</div>
+
+<div class="article-grid">
+    <div class="article-card">
+        <a class="card-header" href="document-dates-zh.html" target="_blank">
+            <div class="card-title">mkdocs插件-日期作者头像</div>
+            <time class="dd-timeago card-date" datetime="2026-01-28 10:51:53">2026-01-28</time>
+        </a>
+        <div class="card-body">
+            <div class="card-summary">新一代用于显示文档确切创建日期、最后更新日期、作者、头像、邮箱等信息的 MkDocs 插件   特性  - 始终显示文档的精确元信息，且适用于任何环境（无 Git、Git 环境、Docker 容器、所有 CI/CD 构建系统等）  - 支持列表显示最近更新的文档（按更新日期降序排列）  - 支持在 Front Matter 中手动指定日期和作者  - 支持多种日期格式（date、datetime、timeago）  - 支持多种作者模式（头像、文本、隐藏）  - 支持手动配置作者的姓名、链接、头像、邮箱等  - 灵活的显示位置（顶部或底部）  - 优雅的样式设计（完全可定制）</div>
+        </div>
     </div>
-    <div class="recently-updated-item">
-        <span>2026-01-04</span>
-        <a href="materialx-for-mkdocs.html" target="_blank">下一代主题插件 MaterialX</a>
+    <div class="article-card">
+        <a class="card-header" href="materialx-for-mkdocs.html" target="_blank">
+            <div class="card-title">下一代主题插件 MaterialX</div>
+            <time class="dd-timeago card-date" datetime="2026-01-28 10:51:53">2026-01-28</time>
+        </a>
+        <div class="card-body">
+            <div class="card-summary">MaterialX for MkDocs，下一代 mkdocs-material，基于 mkdocs-material-9.7.1 衍生，取名为 X，会持续提供维护与更新。  由于 mkdocs-material 已进入维护模式，不再有新功能，而替代品 Zensical 目前还不完善，并且不兼容 MkDocs 原有的插件生态，这将导致原本的繁荣生态被打破而失去活力，用户原本稳定而又完善的站点如果要迁移到 Zensical，则有着较高的迁移成本和不稳定性的风险。  那有没有办法做到，既能拥有 mkdocs-material 的丰富生态和稳定性，又能拥有像 Zensical 一样的新特性呢？  答案就是 MaterialX，并且 MaterialX 将有着以下全新的定位。   MaterialX 路线图  在我看来，技术的魅力在于让更多的人利用你提供的工具轻而易举就实现了他原来很难做到的事。  一个好的产品，在功能设计上，应该是恰到好处，适可而止，而不是提供更多的功能选择和眼花缭乱的配置项。说实话，无论是 mkdocs-material 还是 Zensical，都有点个性化过度了，配置项太多太复杂了，谁的配置项最后不是动辄几百行？哪个初次用 mkdocs-material 的人没折腾上好几天？  而我希望把它做成一个傻瓜式的程序，用户只需要简单少量的配置，就能轻松把平时的笔记和文档转成自己的专业站点，方便传播分享与交流。  所以，MaterialX 将遵循以下目标和原则：  - 目标：追求人人可用，人人都可拥有自己的网站，包括但不限于开发者、产品经理、运营人员、运维人员等，不再是技术人员的专利</div>
+            <div class="card-cover">
+                <img src="assets/cat.jpg" alt="下一代主题插件 MaterialX">
+            </div>
+        </div>
     </div>
-    <div class="recently-updated-item">
-        <span>2025-12-09</span>
-        <a href="markdown.html" target="_blank">Markdown 实用语法</a>
+    <div class="article-card">
+        <a class="card-header" href="recently-updated-zh.html" target="_blank">
+            <div class="card-title">mkdocs插件-最近更新列表</div>
+            <time class="dd-timeago card-date" datetime="2026-01-28 10:51:53">2026-01-28</time>
+        </a>
+        <div class="card-body">
+            <div class="card-summary">mkdocs-recently-updated-docs：一行代码显示最近更新的文档列表  - 按更新时间降序显示最近更新的文档，列表项动态更新  - 支持列表、详情、网格等多种视图模式  - 支持自动提取文章摘要  - 支持在 Front Matter 中自定义文章封面  - 支持自定义显示数量  - 支持排除指定文件或目录  - 适用于任何环境（no-Git, Git, Docker, all CI/CD build systems, etc.）</div>
+        </div>
     </div>
-    <div class="recently-updated-item">
-        <span>2025-10-27</span>
-        <a href="recently-updated-zh.html" target="_blank">mkdocs插件-最近更新列表</a>
+    <div class="article-card">
+        <a class="card-header" href="markdown.html" target="_blank">
+            <div class="card-title">Markdown 实用语法</div>
+            <time class="dd-timeago card-date" datetime="2025-12-09 12:25:04">2025-12-09</time>
+        </a>
+        <div class="card-body">
+            <div class="card-summary">一、什么是 Markdown  Markdown 是一种轻量级的纯文本标记语言，用简单少量的符号对文字进行标注，从而实现以最小的输入代价生成印刷级排版格式的文档。它在流畅的书写和印刷级阅读体验之间找到了平衡，让人只需专注内容而不是纠结排版。  常用的标记符号 不超过十个，好记好用好效果。(非程序员用户如产品、运营 ... 也可以轻松搞定)   二、Markdown 编辑器  - Typora（Mac、Win、Linux），简约不简单，所见即所得；✓  - MWeb（Mac、iOS），一款专注于 Markdown 的写作、记笔记和发布软件；  - Obsidian（Mac、Win、Linux、iOS、Android），一款支持 Zettelkasten 笔记法的笔记管理软件，利用「双向链接」打造「知识循环」体系，支持基础的 markdown 语法；  - YankNote（Mac、Win、Linux），一款强大可扩展的 Markdown 编辑器，满足了所有幻想，还可以在线体验；✓  - mdx-notes（Mac、Win、Linux、Web），跨平台笔记软件，Web版 在线编辑器可作为网文排版工具；  - markdown-online-editor，Arya - 在线 Markdown 编辑器，支持所有基础语法、数学公式、Mermaid 图表、Echarts 图表、五线谱，以及 PPT 模式、视频音频解析等；✓</div>
+        </div>
     </div>
-    <div class="recently-updated-item">
-        <span>2025-08-30</span>
-        <a href="RECENTLY_UPDATED.html" target="_blank">最近更新</a>
+    <div class="article-card">
+        <a class="card-header" href="RECENTLY_UPDATED.html" target="_blank">
+            <div class="card-title">最近更新</div>
+            <time class="dd-timeago card-date" datetime="2025-08-30 13:52:51">2025-08-30</time>
+        </a>
+        <div class="card-body">
+            <div class="card-summary"></div>
+        </div>
     </div>
-    <div class="recently-updated-item">
-        <span>2025-06-08</span>
-        <a href="hainan.html" target="_blank">海南</a>
+    <div class="article-card">
+        <a class="card-header" href="hainan.html" target="_blank">
+            <div class="card-title">海南</div>
+            <time class="dd-timeago card-date" datetime="2025-06-08 03:18:33">2025-06-08</time>
+        </a>
+        <div class="card-body">
+            <div class="card-summary">一、定目的地  - 三亚：市中心、三亚湾、大东海、亚龙湾、海棠湾；  - 陵水：土福湾、清水湾、日月湾(冲浪)、石梅湾(观海亭+最美公路)；  - 海口：看小红书笔记分享（看个十条八条）；   二、出行方式   飞海口  - 先飞海口，再坐高铁到旅游目的地。海口机场隔壁就是美兰高铁站，可直达三亚、陵水等，海南省的高铁是一个绕岛循环线路，来回转圈，发车多，比较方便和经济，还能欣赏一下沿途风景。   飞三亚  - 直飞三亚，再打车到目的地。旅游旺季机票相对较贵，而且从机场打车到目的地也得个把小时，整体花费多也没省时间。   三、住宿与出行</div>
+        </div>
     </div>
 </div>
 
