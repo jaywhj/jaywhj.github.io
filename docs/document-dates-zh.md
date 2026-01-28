@@ -1,5 +1,5 @@
 ---
-icon: material/power-plug-outline
+icon: material/account-clock-outline
 ---
 
 # mkdocs-document-dates
@@ -28,32 +28,45 @@ icon: material/power-plug-outline
 
 ## 安装
 
+用 `pip` 安装:
+
 ```bash
 pip install mkdocs-document-dates
 ```
 
-## 配置
-
-在你的 mkdocs.yml 中添加插件即可：
+然后，在 `mkdocs.yml` 中添加以下行：
 
 ```yaml
 plugins:
   - document-dates
 ```
 
-或者，完整配置：
+或者，常用配置：
 
 ```yaml
 plugins:
   - document-dates:
-      position: top            # 显示位置: top(标题后) bottom(文档末尾), 默认: top
-      type: date               # 日期类型: date datetime timeago, 默认: date
-      exclude:                 # 排除文件列表
-        - temp.md                  # 示例：排除指定文件
-        - blog/*                   # 示例：排除 blog 目录下所有文件，包括子目录
-      date_format: '%Y-%m-%d'  # 日期格式化字符串（例如: %Y年%m月%d日、%b %d, %Y）
-      time_format: '%H:%M:%S'  # 时间格式化字符串（仅在 type=datetime 时有效）
+      position: top       # 显示位置: top(标题后) bottom(文档末尾), 默认: top
+      type: date          # 日期类型: date datetime timeago, 默认: date
+      exclude:            # 排除文件列表
+        - temp.md             # 示例：排除指定文件
+        - blog/*              # 示例：排除 blog 目录下所有文件，包括子目录
 ```
+
+## 配置
+
+支持以下配置选项：
+
+| 选项 | 有效值 | 默认值 | 描述 |
+| :-- | :-- | :-- | :-- |
+| **position** | `top`, `bottom` | `top` | 指定插件的显示位置 |
+| **type** | `date`, `datetime`, `timeago` | `date` | 指定日期显示的类型 |
+| **exclude** | [] | none | 指定排除文件列表 |
+| **date_format** |  | '%Y-%m-%d' | 指定日期格式化字符串 |
+| **time_format** |  | '%H:%M:%S' | 指定时间格式化字符串, 仅当 type=datetime 时有效 |
+| **show_created** | `true`, `false` | `true` | 指定是否显示创建日期 |
+| **show_updated** | `true`, `false` | `true` | 指定是否显示最后更新日期 |
+| **show_author** | `true`(头像), `false`(隐藏), `text`(文本) | `true` | 指定作者显示的类型 |
 
 ## 指定日期时间
 
@@ -71,11 +84,6 @@ flowchart LR
     A -.创建日期.-> B -.-> C -.-> D
     A -.最后更新日期.-> C
 ```
-
-<!--
-- [x] 创建日期：`Front Matter` > `缓存文件` > `Git时间戳` > `文件时间戳`
-- [x] 最后更新：`Front Matter` > `Git时间戳` > `文件时间戳`
--->
 
 !!! quote ""
 
@@ -122,6 +130,27 @@ updated: 2025-02-23
 
 回退策略：如果缓存文件不存在或自动缓存失败，创建日期也不会受到影响，它会进入第 3 优先级（读取首次 git commit 日期作为创建日期）
 
+### 配置 Git 抓取深度
+
+如果“创建日期”采用的是首次 git 提交日期（即无自定义创建日期和缓存文件创建日期），并且你又是通过 CI 系统进行部署的，那你可能需要在 CI 系统中配置 git fetch depth，以获取准确的首次 git 提交记录，例如：
+
+```yaml hl_lines="6 7"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+```
+
+!!! quote ""
+
+    - Github Actions: set `fetch-depth` to `0` ([docs](https://github.com/actions/checkout))
+    - Gitlab Runners: set `GIT_DEPTH` to `0` ([docs](https://docs.gitlab.com/ee/ci/pipelines/settings.html#limit-the-number-of-changes-fetched-during-clone))
+    - Bitbucket pipelines: set `clone: depth: full` ([docs](https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/))
+    - Azure Devops pipelines: set `Agent.Source.Git.ShallowFetchDepth` to something very high like `10e99` ([docs](https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops#shallow-fetch))
+
 ### 适配任意环境
 
 插件在任意环境中均能获取文档的**原始**精准日期，支持无 Git 环境、Git 环境、Docker 容器、所有 CI/CD 构建系统等，以下是它的原理：
@@ -146,10 +175,6 @@ flowchart LR
     D(4.PC用户名)
     A -.-> B -.-> C -.-> D
 ```
-
-<!--
-- [x] `Front Matter` > `Git作者` > `site_author(mkdocs.yml)` > `PC用户名`
--->
 
 !!! quote ""
 
@@ -228,10 +253,6 @@ flowchart LR
     C(3.字符头像)
     A -.-> B -.-> C
 ```
-
-<!--
-- [x] `Front Matter` > `Gravatar头像` > `字符头像`
--->
 
 **自定义**：
 
@@ -316,48 +337,54 @@ show_author: text
 
 ## 添加最近更新模块
 
-可在任意模板中通过 `config.extra.recently_updated_docs` 变量获取最近更新的文档数据（按更新日期降序排列），然后自行定制渲染逻辑
+最新更新模块非常适合**文档数量众多**的网站，这样读者可以**快速查看最新内容**
 
-或者参考以下示例，直接使用预设模板（列表标题和链接将自动渲染）：
+![recently-updated](assets/recently-updated-zh.gif)
+
+你可在任意模板中通过 `config.extra.recently_updated_docs` 变量获取最近更新的文档数据（按更新日期降序排列），然后自行定制渲染逻辑
+
+或者直接使用预设模板：
+
+- 按更新时间降序显示最近更新的文档，列表项动态更新
+- 支持列表、详情、网格等多种视图模式
+- 支持自动提取文章摘要
+- 支持在 Front Matter 中自定义文章封面
+
+### 配置开关
+
+首先，在 `mkdocs.yml` 中配置开关 `recently-updated`：
+
+```yaml
+- document-dates:
+    ...
+    recently-updated:
+        limit: 10        # 限制显示的文档数量
+        exclude:         # 排除不想显示的文档
+          - index.md
+          - blog/*
+```
 
 ### 添加到侧边栏导航中
 
-1) 在 `mkdocs.yml` 中配置开关 recently-updated：
-    ```yaml
-    - document-dates:
-        ...
-        recently-updated:
-            limit: 10        # 限制显示的文档数量
-            exclude:         # 排除不想显示的文档
-              - index.md
-              - blog/*
-    ```
-
-2) 下载示例模板 [nav.html](https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/partials/nav.html)，覆盖 `docs/overrides/partials/nav.html`
+下载示例模板 [nav.html](https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/partials/nav.html)，覆盖 `docs/overrides/partials/nav.html`
 
 ### 添加到文档的任意位置
 
-1) 在 `mkdocs.yml` 中配置开关 recently-updated：
-    ```yaml
-    - document-dates:
-        ...
-        recently-updated:
-            limit: 10        # 限制显示的文档数量
-            exclude:         # 排除不想显示的文档
-              - index.md
-              - blog/*
-    ```
+在文档中任意位置插入这一行：
 
-2) 在文档中任意位置插入这一行：
-    ```yaml
-    <!-- RECENTLY_UPDATED_DOCS -->
-    ```
+```yaml
+<!-- RECENTLY_UPDATED_DOCS -->
+```
 
-### 效果预览
+### 配置文章封面
 
-![recently-updated](assets/recently-updated.png)
+可在 Front Matter 中使用字段 `cover` 指定文章封面，支持 URL 路径和本地文件路径，比如像这样：
 
-如果你只想使用「最近更新模块」，也可以安装单独的插件 [mkdocs-recently-updated-docs](https://github.com/jaywhj/mkdocs-recently-updated-docs)
+```yaml
+---
+cover: assets/cat.jpg
+---
+```
 
 ## 添加本地化语言
 
