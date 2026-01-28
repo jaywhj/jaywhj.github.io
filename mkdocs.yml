@@ -20,9 +20,9 @@ nav:
   - 下一代主题插件 MaterialX: materialx-for-mkdocs.md
   - Markdown 系列:
     - Markdown 实用语法: markdown.md
-    - mkdocs插件-日期作者头像: document-dates-zh.md
+    - 日期作者头像插件: document-dates-zh.md
   - 效率提升:
-    - mkdocs插件-最近更新列表: recently-updated-zh.md
+    - 最近更新列表插件: recently-updated-zh.md
     - 海南: hainan.md
   - 最近更新: RECENTLY_UPDATED.md
   # - 博客: 
