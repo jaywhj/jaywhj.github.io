@@ -45,13 +45,15 @@ theme:
         name: 自动模式 - 随系统主题色
     - media: "(prefers-color-scheme: light)"   # 手动模式 - 亮色
       scheme: default
-      accent: blue
+      primary: blue
+      accent: light blue
       toggle:
         icon: material/weather-sunny
         name: 亮色模式
     - media: "(prefers-color-scheme: dark)"    # 手动模式 - 暗色
       scheme: slate
-      accent: deep orange
+      primary: cyan
+      accent: cyan
       toggle:
         icon: material/brightness-4
         name: 暗色模式
@@ -59,9 +61,9 @@ theme:
   features:
     # - header.autohide   # 自动隐藏header
 
-    - navigation.top          # 返回顶部按钮
-    - navigation.indexes      # 启用章节索引页，文档可直接附加到章节
     - navigation.tabs         # 导航栏显示在顶部tab里
+    - navigation.top          # 返回顶部按钮
+    # - navigation.indexes      # 启用章节索引页，文档可直接附加到章节
     # - navigation.tabs.sticky  # 顶部导航栏始终可见
     # - navigation.expand       # 默认展开侧边导航栏
     # - navigation.sections     # 侧边导航栏分组显示，不缩进无折叠
@@ -176,19 +178,22 @@ plugins:
   - search      # 内置搜索插件
   - offline     # 内置离线插件，可离线访问网站，插件会自动禁用 use_directory_urls 设置
 
-  - glightbox   # 图片灯箱特效插件
-
   # 文档日期、作者、头像插件
   - document-dates:     # https://github.com/jaywhj/mkdocs-document-dates
       type: timeago
       exclude:
         - index.md
+        - '*/index.md'
         - blog/*
       recently-updated:
         limit: 10
         exclude:
           - index.md
+          - '*/index.md'
           - blog/*
+
+  # 图片灯箱特效插件
+  - glightbox
 
 extra_javascript:
   # 配置 full 版本的 timeago
