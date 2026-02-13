@@ -27,7 +27,7 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-materialx-
-      - run: pip install mkdocs-materialx
-      - run: pip install mkdocs-document-dates
+      - run: pip install --upgrade mkdocs-materialx
+      - run: pip install --upgrade mkdocs-document-dates
       - run: pip install mkdocs-glightbox
       - run: mkdocs gh-deploy --force
