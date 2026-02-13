@@ -183,14 +183,12 @@ plugins:
       type: timeago
       exclude:
         - index.md
-        - '*/index.md'
         - blog/*
         - RECENTLY_UPDATED.md
       recently-updated:
         limit: 10
         exclude:
           - index.md
-          - '*/index.md'
           - blog/*
 
   # 图片灯箱特效插件
