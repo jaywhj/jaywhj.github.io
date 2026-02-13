@@ -185,6 +185,7 @@ plugins:
         - index.md
         - '*/index.md'
         - blog/*
+        - RECENTLY_UPDATED.md
       recently-updated:
         limit: 10
         exclude:
