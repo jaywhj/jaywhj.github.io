@@ -1,0 +1,11 @@
+#!/Library/Frameworks/Python.framework/Versions/3.13/bin/python3.13
+
+try:
+    from mkdocs_document_dates.cache_manager import update_cache
+except Exception:
+    import sys
+    # 正常退出（0 状态码），不影响 git 的后续动作
+    sys.exit(0)
+
+if __name__ == "__main__":
+    update_cache()

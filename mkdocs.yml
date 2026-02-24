@@ -38,6 +38,7 @@ theme:
   language: zh
   font: false
 
+  # topbar_style: primary   # glass primary accent
   palette:
     - media: "(prefers-color-scheme)"          # 自动模式 - 随系统主题调色板自动切换
       toggle:
