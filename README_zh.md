@@ -1,4 +1,4 @@
-## Aaron - MkDocs 极简风主题
+## MkDocs 极简风主题模板
 
 [English](README.md) | 简体中文
 
