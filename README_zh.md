@@ -1,4 +1,4 @@
-## MkDocs 极简风主题模板
+## MaterialX for MkDocs 的极简风主题模板
 
 [English](README.md) | 简体中文
 
