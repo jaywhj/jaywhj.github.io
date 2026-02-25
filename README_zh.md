@@ -1,10 +1,10 @@
-## Aaron - MkDocs 极简风主题
+## MaterialX for MkDocs 的极简风主题模板
 
 [English](README.md) | 简体中文
 
 <br />
 
-如果你喜欢这个主题，请点亮你右上角的星 ⭐️，效果预览:  https://jaywhj.github.io
+如果你喜欢这个模板，请点亮你右上角的星 ⭐️，效果预览:  https://jaywhj.github.io
 
 ### 特色
 

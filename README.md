@@ -1,10 +1,10 @@
-## Aaron - MkDocs Minimalist Theme
+## MaterialX for MkDocs's minimalist theme template
 
 English | [简体中文](README_zh.md)
 
 <br />
 
-If you like this theme, light up your star ⭐️ in the top right corner, preview: https://jaywhj.github.io
+If you like this template, light up your star ⭐️ in the top right corner, preview: https://jaywhj.github.io
 
 ### Features
 
