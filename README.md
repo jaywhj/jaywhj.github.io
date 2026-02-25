@@ -1,4 +1,4 @@
-## Aaron - MkDocs Minimalist Theme
+## MaterialX Theme Template for MkDocs
 
 English | [简体中文](README_zh.md)
 
