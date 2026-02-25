@@ -27,7 +27,7 @@
 前置要求：安装好 [Python](https://www.python.org/downloads/) 3.8+
 
 1. 下载模板：点击下载最新模板文件 [jaywhj.github.io-main.zip](https://github.com/jaywhj/jaywhj.github.io/archive/refs/heads/main.zip) 并解压它（或 `git clone https://github.com/jaywhj/jaywhj.github.io.git`）
-2. 安装依赖：切换到解压目录后，执行 `pip install -r requirements.txt`
+2. 安装依赖：在终端里切换到解压目录后，执行 `pip install -r requirements.txt`
 3. 编译启动：执行 `mkdocs serve -o` 或 `mkdocs build`
 4. 预览效果：打开浏览器访问 `http://127.0.0.1:8000`，或直接双击 `site/index.html` 打开
 

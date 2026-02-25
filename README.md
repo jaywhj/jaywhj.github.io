@@ -27,7 +27,7 @@ If you like this template, light up your star ⭐️ in the top right corner, pr
 **Prerequisites**: Install [Python](https://www.python.org/downloads/) 3.8 or higher
 
 1. **Download Template**: Click to download the latest template file [jaywhj.github.io-main.zip](https://github.com/jaywhj/jaywhj.github.io/archive/refs/heads/main.zip) and extract it (or `git clone https://github.com/jaywhj/jaywhj.github.io.git`)
-2. **Install Dependencies**: Change to the extracted directory, then run `pip install -r requirements.txt`
+2. **Install Dependencies**: Navigate to the extracted directory in the terminal, then run `pip install -r requirements.txt`
 3. **Build & Start**: Execute `mkdocs serve -o` or `mkdocs build`
 4. **Preview**: Open your browser and visit `http://127.0.0.1:8000`, or directly double-click `site/index.html` to open
 
