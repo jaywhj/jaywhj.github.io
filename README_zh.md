@@ -1,4 +1,4 @@
-## MaterialX for MkDocs 的极简风主题模板
+## MaterialX for MkDocs 极简风主题模板
 
 [English](README.md) | 简体中文
 
@@ -18,15 +18,18 @@
 - 内置搜索插件、博客插件
 - 支持数理公式、化学方程式渲染
 - 支持 mermaid 绘图渲染
+- 内置支持动态设定 lastmod 的 sitemap.xml 模板
+- 内置 GitHub Actions 工作流 (`.github/workflows/ci.yml`)，支持自动部署到 GitHub Pages
 - 清爽简洁、小白易用
 
 ### 快速使用
 
-1. 前置要求：安装好 [Python](https://www.python.org/downloads/) 3.8+
-2. 下载模板：下载最新模板文件 [jaywhj.github.io-main.zip](https://github.com/jaywhj/jaywhj.github.io/archive/refs/heads/main.zip) ，然后解压
-3. 安装依赖：切换到解压目录后，执行 `pip install -r requirements.txt`
-4. 编译启动：执行 `mkdocs serve` 或 `mkdocs build`
-5. 预览效果：打开浏览器访问 `http://127.0.0.1:8000`，或直接双击 `site/index.html` 打开
+前置要求：安装好 [Python](https://www.python.org/downloads/) 3.8+
+
+1. 下载模板：点击下载最新模板文件 [jaywhj.github.io-main.zip](https://github.com/jaywhj/jaywhj.github.io/archive/refs/heads/main.zip) 并解压它（或 `git clone https://github.com/jaywhj/jaywhj.github.io.git`）
+2. 安装依赖：切换到解压目录后，执行 `pip install -r requirements.txt`
+3. 编译启动：执行 `mkdocs serve -o` 或 `mkdocs build`
+4. 预览效果：打开浏览器访问 `http://127.0.0.1:8000`，或直接双击 `site/index.html` 打开
 
 <br />
 
@@ -59,7 +62,6 @@
 
 
 以上所有技巧见：[hongjun.vip/](https://hongjun.vip/)
-
 
 <br />
 

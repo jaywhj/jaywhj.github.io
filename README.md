@@ -1,4 +1,4 @@
-## MaterialX for MkDocs's minimalist theme template
+## Minimalist Theme Template for MaterialX for MkDocs
 
 English | [简体中文](README_zh.md)
 
@@ -18,15 +18,18 @@ If you like this template, light up your star ⭐️ in the top right corner, pr
 - Built-in search plugin and blog plugin
 - Supports rendering of mathematical formulas and chemical equations
 - Supports Mermaid diagram rendering
+- Built-in sitemap.xml template with dynamic lastmod support
+- Built-in GitHub Actions workflow (`.github/workflows/ci.yml`), supports automatic deployment to GitHub Pages
 - Clean, simple, and user-friendly for beginners
 
 ### Quick Start
 
-1. **Prerequisites**: Install [Python](https://www.python.org/downloads/) 3.8 or higher
-2. **Download Template**: Download the latest template file [jaywhj.github.io-main.zip](https://github.com/jaywhj/jaywhj.github.io/archive/refs/heads/main.zip) and extract it
-3. **Install Dependencies**: Change to the extracted directory, then run `pip install -r requirements.txt`
-4. **Build & Start**: Execute `mkdocs serve` or `mkdocs build`
-5. **Preview**: Open your browser and visit `http://127.0.0.1:8000`, or directly double-click `site/index.html` to open
+**Prerequisites**: Install [Python](https://www.python.org/downloads/) 3.8 or higher
+
+1. **Download Template**: Click to download the latest template file [jaywhj.github.io-main.zip](https://github.com/jaywhj/jaywhj.github.io/archive/refs/heads/main.zip) and extract it (or `git clone https://github.com/jaywhj/jaywhj.github.io.git`)
+2. **Install Dependencies**: Change to the extracted directory, then run `pip install -r requirements.txt`
+3. **Build & Start**: Execute `mkdocs serve -o` or `mkdocs build`
+4. **Preview**: Open your browser and visit `http://127.0.0.1:8000`, or directly double-click `site/index.html` to open
 
 <br />
 
