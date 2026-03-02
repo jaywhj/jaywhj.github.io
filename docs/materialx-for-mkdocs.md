@@ -4,13 +4,13 @@ cover: assets/cat.jpg
 
 # 下一代主题插件 MaterialX
 
-[**MaterialX for MkDocs**](https://github.com/jaywhj/mkdocs-materialx)，下一代 mkdocs-material，基于 `mkdocs-material-9.7.1` 衍生，取名为 `X`，会持续提供维护与更新。
+[**MaterialX for MkDocs**](https://github.com/jaywhj/mkdocs-materialx)，下一代 mkdocs-material，让你继续用熟悉的方式构建漂亮站点。基于 `mkdocs-material-9.7.1` 衍生，取名为 `X`，提供持续的维护与更新。
 
 由于 mkdocs-material 已进入维护模式，不再有新功能，而替代品 Zensical 目前还不完善，并且不兼容 MkDocs 原有的插件生态，这将导致原本的繁荣生态被打破而失去活力，用户原本稳定而又完善的站点如果要迁移到 Zensical，则有着较高的迁移成本和不稳定性的风险。
 
 那有没有办法做到，既能拥有 mkdocs-material 的丰富生态和稳定性，又能拥有像 Zensical 一样的新特性呢？
 
-答案就是 **MaterialX**，并且 MaterialX 将有着以下全新的定位。
+答案就是 **MaterialX**，它将拥有以下全新愿景和定位。
 
 ## MaterialX 路线图
 
@@ -32,8 +32,8 @@ cover: assets/cat.jpg
 
 | 差异 | mkdocs-material | MaterialX |
 | --- | --- | --- |
-| **最后版本** | mkdocs-material-9.7.1 | mkdocs-materialx-10.x <br />(基于 mkdocs-material-9.7.1 升级而来) |
-| **使用方式** | mkdocs.yml 中配置主题名 `material` | mkdocs.yml 中使用新主题名 `materialx` <br />其他一切都和使用 material 时一样 |
+| **最后版本** | mkdocs-material-9.7.1 | mkdocs-materialx-10.x <br />(基于 mkdocs-material-9.7.1 衍生) |
+| **使用方式** | mkdocs.yml 配主题名 `material` | mkdocs.yml 配新主题名 `materialx` <br />其他一切都和使用 material 时一样 |
 | **当前状态** | 即将停止维护 | 持续维护与更新 |
 | **功能更新** | 无（有遗留 bug） | bug 修复、新功能添加、用户体验优化等 <br />具体见 [Changelog](https://github.com/jaywhj/mkdocs-materialx/releases) |
 
@@ -44,11 +44,22 @@ cover: assets/cat.jpg
 | **功能定位** | 技术开发者、技术文档 | 任何 Markdown 用户、Markdown 笔记及文档 |
 | **开发语言** | Rust | Python |
 | **发展阶段** | 诞生几个月，初期，bug多，基础功能不完善 | 诞生超十年，成熟稳定期 |
-| **使用方式** | 采用 zensical.toml，全新配置格式 <br />原 mkdocs.yml 中所有配置项需从头再来 | 延用 mkdocs.yml，使用主题 `materialx` <br />无迁移成本 |
+| **使用方式** | 采用 TOML 全新配置格式 <br />原 mkdocs.yml 中所有配置项需从头再来 | 延用 mkdocs.yml <br />0 迁移成本 |
 | **生态环境** | 完全从 0 构建的一个新工具，不兼容原 MkDocs 中的一切，未来发展未知 | 基于 MkDocs 与 mkdocs-material-9.7.1，兼容 MkDocs 多年沉淀下来的丰富生态，开放、活跃 |
 | **侧重方向** | 注重技术个性化，功能配置将越来越繁重，使用将越来越复杂 | 侧重通用型功能和可视化呈现，以极简易用为首要原则，将会越来越轻量化 |
 
 Zensical 很棒，但我找不到用 Zensical 的理由。
+
+### MaterialX 更新要点
+
+- 添加了与 Zensical 一致的现代 Liquid Glass 主题
+- 新增了下一代日期作者插件，参见：[document-dates-zh](document-dates-zh.md)
+- 添加了最新更新模块，参见：[recently-updated-zh](recently-updated-zh.md)
+- 重构了移动端 TOC 组件，在移动设备上实现无缝 NAV 和 TOC 体验 (Zensical 在移动端无 TOC 功能)
+- 完美修复了移动设备上当抽屉处于激活时，轻扫会穿透抽屉的问题 (Zensical & Material 未能修复)
+- 为 TOC 添加了缩进引导线和活动链接强调色
+- 将 "返回顶部容器" 移至底部，更符合就近操作的交互逻辑
+- 允许在 Liquid Glass 主题中设置顶栏背景颜色，参见 [Topbar style](https://jaywhj.github.io/mkdocs-materialx/setup/changing-the-colors.html#topbar-style)
 
 <br />
 
@@ -69,9 +80,61 @@ theme:
 
 > 注意：主题名字是 `materialx`，不是 material，其他一切都和使用 material 时一样
 
+使用以下命令启动实时预览，自动打开和自动热重载：
+
+```
+mkdocs serve --livereload -o
+```
+
 <br />
 
 ## 更新日志
+
+### mkdocs-materialx-10.0.9
+
+#### en
+
+- Added configurable styles for topbar, allow to set topbar background color in Liquid Glass theme, see [Topbar style](https://jaywhj.github.io/mkdocs-materialx/setup/changing-the-colors.html#topbar-style)
+- Make color-mix of navigation background compatible with iOS 14 and earlier
+- Optimized the css details of NAV and TOC on different platforms again to improve the aesthetics
+
+#### zh
+
+- 为 topbar 增加了可配置样式，允许在 Liquid Glass 主题中设置 topbar 的背景颜色，见 [Topbar style](https://jaywhj.github.io/mkdocs-materialx/setup/changing-the-colors.html#topbar-style)
+- 让导航的背景混合色兼容 iOS 14 及更早版本
+- 再次优化了 NAV 和 TOC 在不同平台上的 css 细节，提升了美观度
+
+<br />
+
+### mkdocs-materialx-10.0.8
+
+#### en
+
+- **Highlights**: Fixed issue where swipe events would wear through on mobile
+- **Highlights**: Adjust the “back to top” container to dynamic positioning, now it will be intelligently centered and auto-hide when not needed
+- Adjust the color of active link from `accent` to `primary`, the primary color is used for active links in NAV and TOC, text links and several other components
+- Optimized NAV and TOC styles
+- Adjusted the style of `admonition`
+- Added underline for text link on hover/focus
+- Fixed incorrect actor-line color in `mermaid` sequence
+- Fixed issue where the top container may be blocked by the tabbed
+- Fixed search containers vertical not centered issue
+- Fixed `annotation` button vertical not centered issue
+
+#### zh
+
+- **重点更新** ：修复了在移动设备上轻扫事件会穿透的问题
+- **重点更新** ：将 "返回顶部 "容器调整为动态定位，现在它会智能居中，并在不需要时自动隐藏
+- 将活动链接的颜色从 `accent` 调整为 `primary`，primary 用于导航和目录中的活动链接、文本链接和其他一些组件
+- 优化了 nav 和 toc 样式
+- 调整了 `admonition` 的样式
+- 在悬停/聚焦时为文本链接添加了下划线
+- 修复了 `mermaid` sequence 图中 actor-line 颜色不正确的问题
+- 修复了顶部容器可能被选项卡遮挡的问题
+- 修复了搜索容器垂直不居中的问题
+- 修复了 `annotation` 按钮垂直不居中的问题
+
+<br />
 
 ### mkdocs-materialx-10.0.6
 
@@ -104,8 +167,8 @@ theme:
 #### en
 
 - New: **Refactor the TOC components for mobile**, now you can experience TOC perfectly on mobile!
-- New: Add a new generation date author plugin, see doc [Add document dates authors](https://jaywhj.github.io/mkdocs-materialx/setup/adding-document-dates-authors/)
-- New: Add recent updates module, see doc [Add recent updates module](https://jaywhj.github.io/mkdocs-materialx/setup/adding-recent-updates-module/)
+- New: Add a new generation date author plugin, see doc [Add document dates authors](https://jaywhj.github.io/mkdocs-materialx/setup/adding-document-dates-authors.html)
+- New: Add recent updates module, see doc [Add recent updates module](https://jaywhj.github.io/mkdocs-materialx/setup/adding-recent-updates-module.html)
 - Fixed: Show/hide bottom navigation container wisely
 - Fixed: TOC not hiding when clicked
 - Fixed: Gaussian Blur not working in Safari
@@ -115,8 +178,8 @@ theme:
 #### zh
 
 - 新增: **为移动设备重构 TOC 组件**，现在您可以在移动设备上完美体验 TOC！
-- 新增: 新一代日期作者插件，参见文档 [添加文档日期作者](https://jaywhj.github.io/mkdocs-materialx/setup/adding-document-dates-authors/)
-- 新增: 最近更新模块, 参见文档 [添加最近更新模块](https://jaywhj.github.io/mkdocs-materialx/setup/adding-recent-updates-module/)
+- 新增: 新一代日期作者插件，参见文档 [添加文档日期作者](https://jaywhj.github.io/mkdocs-materialx/setup/adding-document-dates-authors.html)
+- 新增: 最近更新模块, 参见文档 [添加最近更新模块](https://jaywhj.github.io/mkdocs-materialx/setup/adding-recent-updates-module.html)
 - 修复: 合理显示/隐藏底部导航器
 - 修复: 选中 TOC 后不隐藏的问题
 - 修复: 高斯模糊在 Safari 中不起作用的问题
@@ -131,8 +194,8 @@ theme:
 
 - New: Refactor the TOC components for mobile, now you can experience TOC perfectly on mobile!
 - New: Show `git repo` in sidebar on mobile
-- New: Add a new generation date author plugin, see doc [Add document dates authors](https://jaywhj.github.io/mkdocs-materialx/setup/adding-document-dates-authors/)
-- New: Add recent updates module, see doc [Add recent updates module](https://jaywhj.github.io/mkdocs-materialx/setup/adding-recent-updates-module/)
+- New: Add a new generation date author plugin, see doc [Add document dates authors](https://jaywhj.github.io/mkdocs-materialx/setup/adding-document-dates-authors.html)
+- New: Add recent updates module, see doc [Add recent updates module](https://jaywhj.github.io/mkdocs-materialx/setup/adding-recent-updates-module.html)
 - Fixed: Placing the back-to-top button at the bottom, this is more in line with the interaction logic of proximity operation
 - Fixed: Optimize the judgment of the direction of the swipe gesture, so as to adjust the sensitivity of showing the bottom menu
 - Fixed: Search function does not display properly on mobile
@@ -147,8 +210,8 @@ theme:
 
 - 新增: 针对移动设备重构 TOC 组件
 - 新增: 在移动设备侧边栏添加 `git repo` 显示
-- 新增: 添加新一代日期作者插件，参见文档 [添加文档日期作者](https://jaywhj.github.io/mkdocs-materialx/setup/adding-document-dates-authors/)
-- 新增: 添加最近更新模块, 参见文档 [添加最近更新模块](https://jaywhj.github.io/mkdocs-materialx/setup/adding-recent-updates-module/)
+- 新增: 添加新一代日期作者插件，参见文档 [添加文档日期作者](https://jaywhj.github.io/mkdocs-materialx/setup/adding-document-dates-authors.html)
+- 新增: 添加最近更新模块, 参见文档 [添加最近更新模块](https://jaywhj.github.io/mkdocs-materialx/setup/adding-recent-updates-module.html)
 - 修复: 将「回到页面顶部」按钮放在底部，更符合就近操作的交互逻辑
 - 修复: 优化对轻扫手势方向的判断，以调整显示底部菜单的灵敏度
 - 修复: 搜索功能在手机上无法正常显示的问题
