@@ -10,8 +10,8 @@ icon: material/account-clock-outline
 
 ## 特性
 
-- 始终显示文档的**精确**元信息，且适用于任何环境（无 Git、Git 环境、Docker 容器、所有 CI/CD 构建系统等）
-- 支持列表显示最近更新的文档（按更新日期降序排列）
+- 适用于任何环境：无 Git、Git 环境、Docker 容器、所有 CI/CD 构建系统等
+- 支持列表显示最近更新的文档（按更新日期倒序排列）
 - 支持在 `Front Matter` 中手动指定日期和作者
 - 支持多种日期格式（date、datetime、timeago）
 - 支持多种作者模式（头像、文本、隐藏）
@@ -48,12 +48,13 @@ plugins:
   - document-dates:
       position: top       # 显示位置: top(标题后) bottom(文档末尾), 默认: top
       type: date          # 日期类型: date datetime timeago, 默认: date
-      exclude:            # 排除文件列表
+      exclude:            # 排除文件列表（支持 unix shell 样式的通配符）
         - temp.md             # 示例：排除指定文件
         - blog/*              # 示例：排除 blog 目录下所有文件，包括子目录
+        - '*/index.md'        # 示例：排除所有子目录下的 index.md 文件
 ```
 
-## 配置
+## 配置选项
 
 支持以下配置选项：
 
@@ -68,11 +69,26 @@ plugins:
 | **show_updated** | `true`, `false` | `true` | 指定是否显示最后更新日期 |
 | **show_author** | `true`(头像), `false`(隐藏), `text`(文本) | `true` | 指定作者显示的类型 |
 
-## 指定日期时间
+## 功能设置
 
-### 优先级
+插件提供了丰富的自定义选项，可满足各种个性化需求
 
-插件会按以下顺序**自动加载**文档的创建日期和最后更新日期
+### 日期时间
+
+日期数据的获取采用了多种不同形式的组合，以适配各种运行环境，支持无 Git 环境、Git 环境、Docker 容器、所有 CI/CD 构建系统等：
+
+- 采用 **文件系统时间戳**：确保在本地无 Git 环境中，能获取原始的准确日期
+- 采用 **Git 时间戳**：确保在 Git 环境中，能获取相对准确的日期
+- 采用 **缓存文件**：确保在 Git 环境中，能获取原始的准确日期
+- Front Matter：如果你不想采用自动化日期，则可以在 Front Matter 中手动指定
+
+??? quote "为什么在 Git 环境中不采用文件系统时间戳？"
+
+    因为文件在经过 git checkout 或 git clone 时会被重建，从而导致克隆或检出后的分支/文件的原始时间戳丢失
+
+#### 加载顺序
+
+默认，插件会按以下顺序 **自动加载** 文档的「创建日期」和「最后更新日期」
 
 ```mermaid
 %%{init: {'theme': 'default', 'themeVariables': {'fontSize': '12px'}}}%%
@@ -84,6 +100,11 @@ flowchart LR
     A -.创建日期.-> B -.-> C -.-> D
     A -.最后更新日期.-> C
 ```
+
+<!--
+- [x] 创建日期：`Front Matter` > `缓存文件` > `Git时间戳` > `文件时间戳`
+- [x] 最后更新：`Front Matter` > `Git时间戳` > `文件时间戳`
+-->
 
 !!! quote ""
 
@@ -100,9 +121,9 @@ flowchart LR
         2. 其次读取文档「最近一次 git commit 日期」作为最后更新日期
         3. 最后读取文件的修改时间
 
-### 自定义日期
+#### 自定义日期
 
-可在 Front Matter 中通过以下字段手动指定
+可在 Front Matter 中通过以下字段指定
 
 - 创建日期：`created`, `date`
 - 最后更新：`updated`, `modified`
@@ -114,27 +135,28 @@ updated: 2025-02-23
 ---
 ```
 
-### 自动缓存创建日期
+#### 缓存创建日期
 
-插件会自动缓存创建日期（最后更新日期不必缓存），以下是它的原理：
+在 Git 环境中，默认会读取文档的「首次 git commit 日期」作为创建日期，但如果你需要获取文档被创建时的原始日期（早于首次 git commit），则可以选择手动安装 Git hooks 以采用缓存机制来解决此问题。在终端里导航到目标仓库目录，执行以下命令安装 Git hooks:
 
-1) 为了始终能获取文档的原始创建日期（早于第一次 git 提交），采用了缓存文件来存储原始创建日期，位于 docs 目录下（默认是隐藏的），请不要删除：
+```
+mdd-hooks
+```
+
+> 此命令会在目标仓库的根目录局部安装 pre-commit 钩子，位于 `.githooks/pre-commit`
+
+此后，在你每次执行 `git commit` 时，会自动生成含创建日期的缓存文件，位于 docs 目录下（默认隐藏），并且缓存文件也会随之自动 commit
 
 - `docs/.dates_cache.jsonl`，缓存文件
 - `docs/.gitattributes`，缓存文件的合并机制
 
-2) 采用了 Git Hooks 机制来自动触发缓存的存储（在你每次执行 `git commit` 时），缓存文件也会随之自动提交，并且 Git Hooks 的安装在插件被安装时也会自动触发，全程无需任何手动干预
+此方式，支持 CI/CD 构建系统，会自动识别缓存文件并加载
 
-- 请确保是从终端执行 `git commit`，而不是从 VSCode 之类的集成工具中，因为这些工具在集成 Git hooks 时存在 bug
-- 如发现 hook 自动安装失败，也可以使用此命令手动安装：`mkdocs-document-dates-hooks`
+#### 配置 Git 抓取深度
 
-回退策略：如果缓存文件不存在或自动缓存失败，创建日期也不会受到影响，它会进入第 3 优先级（读取首次 git commit 日期作为创建日期）
+在 CI/CD 系统中，如果「创建日期」采用的是「首次 git commit 日期」（即无自定义和缓存文件日期），那你需要在 CI 系统中配置 `git fetch depth`，以获取正确的首次 git commit 记录，例如：
 
-### 配置 Git 抓取深度
-
-如果“创建日期”采用的是首次 git 提交日期（即无自定义创建日期和缓存文件创建日期），并且你又是通过 CI 系统进行部署的，那你可能需要在 CI 系统中配置 git fetch depth，以获取准确的首次 git 提交记录，例如：
-
-```yaml hl_lines="6 7"
+```yaml hl_lines="6 7" title=".github/workflows/ci.yaml"
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -146,25 +168,16 @@ jobs:
 
 !!! quote ""
 
-    - Github Actions: set `fetch-depth` to `0` ([docs](https://github.com/actions/checkout))
-    - Gitlab Runners: set `GIT_DEPTH` to `0` ([docs](https://docs.gitlab.com/ee/ci/pipelines/settings.html#limit-the-number-of-changes-fetched-during-clone))
-    - Bitbucket pipelines: set `clone: depth: full` ([docs](https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/))
-    - Azure Devops pipelines: set `Agent.Source.Git.ShallowFetchDepth` to something very high like `10e99` ([docs](https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops#shallow-fetch))
+    - **Github** Actions: set `fetch-depth` to `0` ([docs](https://github.com/actions/checkout))
+    - **Gitlab** Runners: set `GIT_DEPTH` to `0` ([docs](https://docs.gitlab.com/ee/ci/pipelines/settings.html#limit-the-number-of-changes-fetched-during-clone))
+    - **Bitbucket** pipelines: set `clone: depth: full` ([docs](https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/))
+    - **Azure** Devops pipelines: set `Agent.Source.Git.ShallowFetchDepth` to something very high like `10e99` ([docs](https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/pipeline-options-for-git?view=azure-devops#shallow-fetch))
 
-### 适配任意环境
+### 作者
 
-插件在任意环境中均能获取文档的**原始**精准日期，支持无 Git 环境、Git 环境、Docker 容器、所有 CI/CD 构建系统等，以下是它的原理：
+#### 加载顺序
 
-1. 采用文件时间戳：确保能在本地无 Git 环境中，获取原始的准确日期
-2. 采用 Git 时间戳：确保能在 Git 环境中，获取相对准确的日期
-3. 采用缓存文件：确保能在 Git 环境中，获取原始的绝对准确日期
-4. Front Matter：如果你不想采用自动化日期，则可以在 Front Matter 中进行个性化自定义
-
-## 指定作者
-
-### 优先级
-
-插件会按以下顺序**自动加载**文档的作者信息，会自动解析邮件后做链接
+插件会按以下顺序 **自动加载** 文档的作者信息，会自动解析邮件后做链接
 
 ```mermaid
 %%{init: {'theme': 'default', 'themeVariables': {'fontSize': '12px'}}}%%
@@ -176,16 +189,20 @@ flowchart LR
     A -.-> B -.-> C -.-> D
 ```
 
+<!--
+- [x] `Front Matter` > `Git作者` > `site_author(mkdocs.yml)` > `PC用户名`
+-->
+
 !!! quote ""
 
-    === "顺序说明"
+    === "说明"
     
         1. 优先读取 Front Matter 中的自定义作者
         2. 其次读取 Git 作者
         3. 再次读取 mkdocs.yml 中的 site_author
         4. 最后读取 PC用户名
 
-### 自定义作者
+#### 自定义作者
 
 可在 Front Matter 中通过以下方式配置：
 
@@ -209,9 +226,9 @@ authors:
 ---
 ```
 
-### 增强作者配置
+#### 增强作者配置
 
-可为所有作者补充完整信息配置，以丰富用户体验。在 `docs/` 目录下创建一个 `authors.yml` 文件，格式参考：
+可为所有作者补充完整信息配置，以丰富用户体验。在 `docs/` 目录下创建一个 `authors.yml` 文件，格式如下：
 
 ```yaml title="docs/authors.yml"
 authors:
@@ -231,38 +248,46 @@ authors:
 
 当 `Front Matter`、`Git作者`、`site_author(mkdocs.yml)` 中的作者名跟 authors 中的 key 匹配时，会自动加载 key 对应的完整作者信息
 
-### Git作者聚合
+#### Git作者聚合
 
 Git作者支持账户聚合，即同一人的多个不同邮箱账户可聚合显示为同一作者，可通过在仓库根目录提供一个 `.mailmap` 文件来配置，这也是 Git 本身的一个功能，详情见 [gitmailmap](https://git-scm.com/docs/gitmailmap)
 
-以下示例将 gmail 账户聚合到 qq 账户，统一显示为 Aaron：
+以下示例将我的其它 Git 账户统一聚合，显示为 `Aaron <junewhj@qq.com>`：
 
 ```yaml title=".mailmap"
 Aaron <junewhj@qq.com> <aaron@gmail.com>
+Aaron <junewhj@qq.com> <aaron@AarondeMacBook-Pro.local>
+Aaron <junewhj@qq.com> aaron <aaronwqt@icloud.com>
 ```
 
-## 指定头像
+### 头像
 
-**优先级**：插件会按以下顺序**自动加载**作者头像
+#### 加载顺序
+
+插件会按以下顺序 **自动加载** 作者头像
 
 ```mermaid
 %%{init: {'theme': 'default', 'themeVariables': {'fontSize': '12px'}}}%%
 flowchart LR
     A(1.Front Matter)
-    B(2.Gravatar头像)
+    B(2.网络头像)
     C(3.字符头像)
     A -.-> B -.-> C
 ```
 
-**自定义**：
+<!--
+- [x] `Front Matter` > `网络头像` > `字符头像`
+-->
+
+#### 自定义头像
 
 可通过 [增强作者配置](#增强作者配置) 中的 `avatar` 字段进行自定义（支持 URL 路径和本地文件路径）
 
-**其它**：
+#### 其它头像
 
 !!! quote ""
 
-    === "Gravatar头像"
+    === "网络头像"
     
         根据 Git 的 `user.email` 从 Gravatar 或 Weavatar 加载
     
@@ -272,15 +297,15 @@ flowchart LR
         1. 提取 initials：英文取首字母组合，中文取首字
         2. 生成动态背景色：基于名字哈希值生成 HSL 颜色
 
-## 结构与样式
+### 结构与样式
 
-### 配置结构
+#### 配置结构
 
 可在 mkdocs.yml 或 Front Matter 中通过以下方式配置插件的显示结构
 
 **全局开关**，在 mkdocs.yml 中配置：
 
-```yaml
+```yaml title="mkdocs.yml"
 plugins:
   - document-dates:
       ...
@@ -303,9 +328,9 @@ show_author: text
 
     组合使用时，全局开关是总闸，只有在总闸开启时局部开关才有效，不是局部覆盖全局逻辑
 
-### 配置样式
+#### 配置样式
 
-可通过预置入口快速设置插件样式，比如**图标、主题、颜色、字体、动画、分界线**等，你只需要找到下方文件，取消里面的注释即可：
+可通过预置入口快速设置插件样式，比如 **图标、主题、颜色、字体、动画、分界线** 等，你只需要找到下方文件，取消里面的注释即可：
 
 |    类别：    | 位置：                |
 | :---------: | -------------------- |
@@ -314,61 +339,61 @@ show_author: text
 
 也可以参考最新的示例文件自由定制：[user.config](https://github.com/jaywhj/mkdocs-document-dates/tree/main/mkdocs_document_dates/static/config)
 
-## 使用模板变量
+### 使用模板变量
 
 你可以在模板中使用如下变量访问文档的元信息：
 
-- page.meta.document_dates_created
-- page.meta.document_dates_updated
-- page.meta.document_dates_authors
+- page.meta._mx.document_dates.dates.created
+- page.meta._mx.document_dates.dates.updated
+- page.meta._mx.document_dates.authors
 - config.extra.recently_updated_docs
 
-### 为 sitemap 设置正确的 lastmod
+#### 为 sitemap 设置正确的 lastmod
 
-可以通过模板变量 `document_dates_updated` 为你站点的 `sitemap.xml` 设置正确的 `lastmod`，以便搜索引擎能更好的处理 SEO，从而提高你网站的曝光率
+可以通过模板变量 `_mx.document_dates.dates.updated` 为你站点的 `sitemap.xml` 设置正确的 `lastmod`，以便搜索引擎能更好的处理 SEO，从而提高你网站的曝光率
 
-步骤：下载示例模板 [sitemap.xml](https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/sitemap.xml)，覆盖 `docs/overrides/sitemap.xml`
+步骤：下载示例模板 [sitemap.xml](https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/sitemap.xml)，覆盖路径 `docs/overrides/sitemap.xml`
 
-### 重新定制插件
+#### 重新定制插件
 
 可以利用模板重新定制插件，你可以完全掌控渲染逻辑，插件只负责提供数据
 
-步骤：下载示例模板 [source-file.html](https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/partials/source-file.html)，覆盖 `docs/overrides/partials/source-file.html`，然后自由定制模板中的代码
+步骤：下载示例模板 [source-file.html](https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/partials/source-file.html)，覆盖路径 `docs/overrides/partials/source-file.html`，然后自由定制模板中的代码
 
-## 添加最近更新模块
+### 最近更新模块
 
-最新更新模块非常适合**文档数量众多**的网站，这样读者可以**快速查看最新内容**
+最新更新模块会以结构化的方式展示站点的文档信息，这非常适合**文档数量众多或更新频繁**的网站，这样读者可以**快速查看最新内容**
 
 ![recently-updated](assets/recently-updated-zh.gif)
 
-你可在任意模板中通过 `config.extra.recently_updated_docs` 变量获取最近更新的文档数据（按更新日期降序排列），然后自行定制渲染逻辑
+你可在任意模板中通过 `config.extra.recently_updated_docs` 变量获取最近更新的文档数据（按更新日期倒序排列），然后自行定制渲染逻辑
 
 或者直接使用预设模板：
 
-- 按更新时间降序显示最近更新的文档，列表项动态更新
+- 按更新时间倒序显示最近更新的文档，列表项动态更新
 - 支持列表、详情、网格等多种视图模式
-- 支持自动提取文章摘要
+- 支持自动提取文章摘要，无需手动设置
 - 支持在 Front Matter 中自定义文章封面
 
-### 配置开关
+#### 配置开关
 
 首先，在 `mkdocs.yml` 中配置开关 `recently-updated`：
 
-```yaml
+```yaml title="mkdocs.yml"
 - document-dates:
     ...
     recently-updated:
         limit: 10        # 限制显示的文档数量
-        exclude:         # 排除不想显示的文档
+        exclude:         # 排除不想显示的文档（支持 unix shell 样式的通配符）
           - index.md
           - blog/*
 ```
 
-### 添加到侧边栏导航中
+#### 添加到侧边栏导航中
 
-下载示例模板 [nav.html](https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/partials/nav.html)，覆盖 `docs/overrides/partials/nav.html`
+下载示例模板 [nav.html](https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/partials/nav.html)，覆盖路径 `docs/overrides/partials/nav.html`
 
-### 添加到文档的任意位置
+#### 添加到文档的任意位置
 
 在文档中任意位置插入这一行：
 
@@ -376,9 +401,9 @@ show_author: text
 <!-- RECENTLY_UPDATED_DOCS -->
 ```
 
-### 配置文章封面
+#### 配置文章封面
 
-可在 Front Matter 中使用字段 `cover` 指定文章封面，支持 URL 路径和本地文件路径，比如像这样：
+可在 Front Matter 中使用字段 `cover` 指定文章封面（支持 URL 路径和本地文件路径）：
 
 ```yaml
 ---
@@ -386,7 +411,7 @@ cover: assets/cat.jpg
 ---
 ```
 
-## 添加本地化语言
+### 本地化语言
 
 插件的 `tooltip` 和 `timeago` 内置了多语言支持，并且会自动识别 `locale`，无需手动配置。如有语言缺失，则可为它们补充：
 
@@ -405,52 +430,37 @@ cover: assets/cat.jpg
 
 - 在 `user.config.js` 中，参考 [Part 2](https://github.com/jaywhj/mkdocs-document-dates/blob/main/mkdocs_document_dates/static/config/user.config.js)，自行注册添加
 - 在 `mkdocs.yml` 中，配置 full 版本的 `timeago.full.min.js`，一次性重载 [所有区域语言](https://github.com/hustcc/timeago.js/tree/master/src/lang)
-  ```yaml
+  ```yaml title="mkdocs.yml"
   extra_javascript:
     - assets/document_dates/core/timeago.full.min.js
   ```
 
-## 其它提示
 
-在 Docker 中运行时，需要先设置 HOME 环境变量，因为安装 Git Hooks 需要一个可写的用户配置目录。例如，在你的 `docker-compose.yml` 中添加以下配置：
-
-```yaml
-environment:
-  - HOME=/docs
-working_dir: /docs
-volumes:
-  - ./mkdocs:/docs    # 将宿主机的 ./mkdocs 挂载到容器中的 /docs
-```
 
 ## 开发小故事
 
 一个可有可无、微不足道的小插件，没事的朋友可以看看 \^\_\^ 
 
 - **起源**：
-    - 是因为 [git-revision-date-localized](https://github.com/timvink/mkdocs-git-revision-date-localized-plugin) ，一个很棒的项目。在2024年底使用时，发现我这本地用不了，因为我的 mkdocs 文档没有纳入 git 管理，然后我就不理解为什么不读取文件时间戳，而要用 git 时间戳，而且文件时间戳更准确，还给作者提了 issue，结果等了一周左右没得到回复（后面作者回复了，人不错，估计他当时在忙没来得及），然后就想，过年期间没啥事，现在 AI 这么火，要不借助 AI 自己试试，就诞生了，诞生于2025年2月
+    - 是因为 [git-revision-date-localized](https://github.com/timvink/mkdocs-git-revision-date-localized-plugin) ，一个很棒的项目。在2024年底使用时，发现我这本地用不了，因为我的 mkdocs 文档没有纳入 git 管理，然后我就不理解为什么不读取文件时间戳，而要用 git 时间戳，而且文件时间戳更准确，还给作者提了 issue，结果等了一周左右没得到回复（后面作者回复了，人不错，估计他当时在忙没来得及），然后就想要不自己试试，就诞生了，诞生于2025年2月
 - **迭代**：
     - 开发后，就理解了为什么不采用文件时间戳，因为文件在经过 git checkout 或 git clone 时会被重建，从而导致克隆或检出后的分支/文件的原始时间戳丢失，解决办法有很多：
         - 方法 1，采用最近一次 git commit 日期作为文档的最后更新日期，采用首次 git commit 日期作为文档的创建日期，`git-revision-date-localized` 就是这么做的（这种方式，存在一定的误差且无法在无Git环境中使用）
         - 方法 2，可以提前缓存原始日期，后续读缓存就可以了（日期准确且不依赖任何环境）。缓存的地方，可以是源文档的 Front Matter 中，也可以是单独的文件，我选择了后者。存储在 Front Matter 中非常合理且更简单，但是这样会修改文档的源内容，虽然对正文无任何影响，但是我还是想保证数据的原始性
+        - 方法 3，在 CI 系统中配置自定义脚本 [git-restore-mtime](https://github.com/chetan/git-restore-mtime-action) 以自动恢复文件的原始时间戳
 - **难点**：
     1. 什么时候去读取和存储原始日期？这只是 mkdocs 的一个插件，入口和权限非常有限，mkdocs 提供的只有 build 和 serve，那万一用户不执行 build 或 serve 而直接 commit 呢（比如使用 CI/CD 构建系统时），那样你就无法获取文件的日期了，更别说缓存了
-        - 直接说结论：利用 Git Hooks 机制，能在特定的 git 动作发生时触发自定义脚本，比如每次 commit 时
-    2. 如何自动安装 Git Hooks？在何时？怎么触发？通过 pip 从 PyPI 安装包并没有标准的 post-install 钩子机制
-        - 我的方案：分析了 pip 从 PyPI 安装包的流程，发现通过源码包编译安装时（sdist），会调用 setuptools 来处理，那么可以在 setuptools 的流程中想办法植入安装脚本，即在 setup.py 中添加自定义脚本
-    3. 跨平台的 hook 怎么设计？执行 python 脚本，需要明确指定 python 解释器，而用户的 python 环境，因操作系统、python 的安装方式以及配置的不同而各不相同，如何才能保证在所有环境下都能正常运行？
-        - 解决办法：不要在 hook 中再去判断用户的 python 环境，因为为时已晚。你可以在安装钩子之前就这样做，然后动态设置 hook 的 shebang 行，从而设置正确的 python 解释器
-    4. 在多人协作时，如何保证单独的缓存文件不冲突？
+        - 直接说结论：利用 Git Hooks 机制，能在特定的 git 动作发生时触发自定义脚本，比如每次 commit 时（需选配安装 hook）
+    2. 在多人协作时，如何保证单独的缓存文件不冲突？
         - 我的方案：采用 JSONL 代替 JSON，配合并集的合并策略 `merge=union`
-    5. 在文档较多时( > 200 )，如何加快构建速度？通常每次获取 git 信息都是一次文件 I/O 操作，如果文件较多，就会大大影响构建速度，这让用户没法忍受（比如，`git-revision-date-localized` 只能通过添加环境变量 `enabled: !ENV` 在本地禁用自己来提高预览速度，这有点掩耳盗铃的感觉）
-        - 解决办法：减少 I/O 次数 + 替换运行效率较低的系统函数
+    3. 在文档较多时( > 200 )，如何加快构建速度？通常每次获取 git 信息都是一次文件 I/O 操作，如果文件较多，就会大大影响构建速度，这让用户没法忍受（比如，`git-revision-date-localized` 只能通过添加环境变量 `enabled: !ENV` 在本地禁用自己来提高预览速度，这有点掩耳盗铃的感觉）
+        - 解决办法：跳过不必要的 I/O 访问，减少 I/O 次数
 - **精进**：
     - 既然是新开发的插件，那就奔着**优秀产品**的方向去设计，追求极致的**易用性、简洁性、个性化、智能化**
-        - **易用性**：无复杂配置，常用的配置项也就 2-3 条，另外为个性化配置提供了模板
+        - **易用性**：无复杂配置，常用的配置项也就 2-3 条，另外为个性化配置提供了一键使用的模板
         - **简洁性**：无任何不必要的配置，无 Git 依赖，无 CI/CD 配置依赖，无其他包依赖
         - **个性化**：可完全自定义插件，完全掌控渲染逻辑，插件只负责提供数据
-        - **智能化**：智能解析文档日期、作者、头像，智能识别用户语言并自动适配，此外，还有自动安装 Git Hooks、自动缓存、自动 commit 等
-        - **兼容性**：兼容旧版操作系统和浏览器，如 WIN7、MacOS 10.11、iOS 12、Chrome 63.0.3239
-- **最后的秘密秘密 🤐**：
-    - 编程是爱好，我是一名从业八年的市场营销人员（欢迎留言）
+        - **智能化**：智能解析文档日期、作者、头像，智能识别用户语言并自动适配
+        - **兼容性**：兼容早期操作系统和浏览器，如 Windows 7、MacOS 10、iOS 12、Chrome 63 等
 
 ## 评论区

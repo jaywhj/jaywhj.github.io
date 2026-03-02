@@ -14,4 +14,6 @@ icon: simple/lastpass
 - 支持排除指定文件或目录
 - 适用于任何环境（no-Git, Git, Docker, all CI/CD build systems, etc.）
 
+最新更新模块会以结构化的方式展示站点的文档信息，这非常适合**文档数量众多或更新频繁**的网站，这样读者可以**快速查看最新内容**
+
 ![recently-updated](assets/recently-updated-zh.gif)
