@@ -9,8 +9,8 @@
 ### 特色
 
 - 基于 [MaterialX](https://github.com/jaywhj/mkdocs-material) for MkDocs 优化和美化，内置 Zensical 一样的现代主题
-- 包含主题配色切换功能，支持**自适应**系统主题配色
-- 包含多语言选择功能，支持**自适应**本地化语言
+- 包含主题配色切换功能，支持自适应系统主题配色
+- 包含多语言选择功能，支持自适应本地化语言
 - 内置新一代日期作者头像插件 [mkdocs-document-dates](https://github.com/jaywhj/mkdocs-document-dates)
 - 内置 GLightbox 插件，支持图像灯箱特效
 - 内置 AI i18n 多语言插件，支持 100+ 语言自由切换
@@ -18,6 +18,8 @@
 - 内置搜索插件、博客插件
 - 支持数理公式、化学方程式渲染
 - 支持 mermaid 绘图渲染
+- 内置侧边栏「最近更新」组件
+    - 位于 `docs/overrides/partials/nav.html`（如不需要，删除 `partials` 文件夹即可）
 - 内置支持动态设定 lastmod 的 sitemap.xml 模板
 - 内置 GitHub Actions 工作流 (`.github/workflows/ci.yml`)，支持自动部署到 GitHub Pages
 - 清爽简洁、小白易用

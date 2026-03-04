@@ -9,8 +9,8 @@ If you like this template, light up your star ⭐️ in the top right corner, pr
 ### Features
 
 - Optimized and beautified based on [MaterialX](https://github.com/jaywhj/mkdocs-material) for MkDocs, with modern themes like Zensical built in
-- Include theme color switching function, supports **adaptive** system theme colors
-- Includes multi-language selection functionality, supports **adaptive** localization language
+- Include theme color switching function, supports adaptive system theme colors
+- Includes multi-language selection functionality, supports adaptive localization language
 - Built-in next-generation date-author-avatar plugin [mkdocs-document-dates](https://github.com/jaywhj/mkdocs-document-dates)
 - Built-in GLightbox plugin for image lightbox effects
 - Built-in AI i18n multi-language plugin, supporting 100+ languages for free switching
@@ -18,6 +18,8 @@ If you like this template, light up your star ⭐️ in the top right corner, pr
 - Built-in search plugin and blog plugin
 - Supports rendering of mathematical formulas and chemical equations
 - Supports Mermaid diagram rendering
+- Built-in sidebar "Recent Updates" component
+    - Located at `docs/overrides/partials/nav.html` (simply delete the `partials` folder if not needed)
 - Built-in sitemap.xml template with dynamic lastmod support
 - Built-in GitHub Actions workflow (`.github/workflows/ci.yml`), supports automatic deployment to GitHub Pages
 - Clean, simple, and user-friendly for beginners
