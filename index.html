@@ -466,13 +466,41 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    
+                    <!--
+  Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Determine classes -->
 
 
   
 
 
+
+<!-- Navigation -->
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+
+  <!-- Site title -->
   <label class="md-nav__title" for="__drawer">
     <a href="index.html" title="文档即产品" class="md-nav__button md-logo" aria-label="文档即产品" data-md-component="logo">
       
@@ -482,6 +510,8 @@
     </a>
     文档即产品
   </label>
+
+  <!-- Repository information -->
   
     <div class="md-nav__source">
       <a href="https://github.com/jaywhj" title="前往仓库" class="md-source" data-md-component="source">
@@ -495,7 +525,9 @@
 </a>
     </div>
   
-  <ul class="md-nav__list">
+
+  <!-- Navigation list -->
+  <ul class="md-nav__list" data-md-scrollfix>
     
       
       
@@ -866,6 +898,33 @@
   
 
     
+
+
+    <!-- Recently Updated Docs -->
+    <div style="padding: 20px 0;">
+      <span class="md-nav__link" style="font-weight: 700; cursor: default;">最近更新</span>
+      <div>
+        <div class="md-nav__item">
+            <a href="/document-dates-zh.html" class="md-nav__link">日期作者头像插件</a>
+        </div>
+        <div class="md-nav__item">
+            <a href="/recently-updated-zh.html" class="md-nav__link">最近更新列表插件</a>
+        </div>
+        <div class="md-nav__item">
+            <a href="/materialx-for-mkdocs.html" class="md-nav__link">下一代主题插件 MaterialX</a>
+        </div>
+        <div class="md-nav__item">
+            <a href="/markdown.html" class="md-nav__link">Markdown 实用语法</a>
+        </div>
+        <div class="md-nav__item">
+            <a href="/RECENTLY_UPDATED.html" class="md-nav__link">最近更新</a>
+        </div>
+        <div class="md-nav__item">
+            <a href="/hainan.html" class="md-nav__link">海南</a>
+        </div>
+      </div>
+    </div>
+
   </ul>
 </nav>
                   </div>
@@ -982,7 +1041,7 @@
     border: 1px solid rgba(142, 142, 142, 0.2);
     border-radius: 8px;
     row-gap: 0;
-    padding: 11px;
+    padding: 12px;
 }
 .article-grid.is-list .card-body {
     display: none;
@@ -1035,7 +1094,8 @@
     white-space: nowrap;
     margin-right: 10px;
 }
-.card-header:hover {
+.card-header:hover,
+.card-header:focus {
     text-decoration: none !important;
 }
 .card-header:hover .card-title {
@@ -1077,9 +1137,9 @@
     transition: filter 0.3s ease;
 
     /* Safari 圆角闪烁修复 */
-    transform: translateZ(0);              /* 建立独立合成层 */
-    will-change: transform;                /* 提前告诉浏览器 */
-    -webkit-mask-image: -webkit-radial-gradient(white, black); /* 强制圆角裁剪走 mask 管线 */
+    transform: translateZ(0);
+    will-change: transform;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
     isolation: isolate;
 }
 .card-cover:hover {
@@ -1187,6 +1247,12 @@
 <li>内置搜索插件、博客插件</li>
 <li>支持数理公式、化学方程式渲染</li>
 <li>支持 mermaid 绘图渲染</li>
+<li>内置侧边栏「最近更新」组件<ul>
+<li>位于 <code>docs/overrides/partials/nav.html</code>，如不需要，删除 <code>partials</code> 文件夹即可</li>
+</ul>
+</li>
+<li>内置支持动态设定 lastmod 的 sitemap.xml 模板</li>
+<li>内置 GitHub Actions 工作流 (<code>.github/workflows/ci.yml</code>)，支持自动部署到 GitHub Pages</li>
 <li>清爽简洁、小白易用</li>
 </ul>
 <h2 style="text-align: center;margin-bottom: 1.5rem;">笔记文档的终极解决方案</h2>
@@ -1335,8 +1401,6 @@
     
     
       <script src="assets/javascripts/bundle.6a56f36d.min.js"></script>
-      
-        <script src="assets/document_dates/core/timeago.min.js"></script>
       
         <script src="assets/document_dates/core/timeago.full.min.js"></script>
       
