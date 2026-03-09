@@ -90,6 +90,36 @@ mkdocs serve --livereload -o
 
 ## 更新日志
 
+### mkdocs-materialx-10.1.0
+
+#### en
+
+- Fixed the version number matching bug for info plugin
+- Fixed that back-to-top was not centered on the blog page
+- Fixed blog page not showing return title in left sidebar on desktop
+- Optimized user experience: 
+    - Adjusted the scope of scroll penetration prevention for the scrollfix container to mobile devices only
+    - Adjusted the top value of the admonition icon so that it is always aligned with the top line
+    - Adjusted the color depth of the indentation guide
+    - When the TOC is empty, do not hide the "Show TOC" button, instead, display a text prompt in the TOC sidebar
+- Adjusted the dependency configuration method: removed `requirements.txt` and migrated all dependency configurations to `pyproject.toml`
+- Optimized the build order in the Dockerfile to improve the utilization rate of Docker build cache, thereby enhancing build efficiency
+- Updated the template examples for date plugin
+
+#### zh
+
+- 修复了 info 插件的版本号匹配 bug
+- 修复了 back-to-top 在 blog 页面不居中的问题
+- 修复了 blog 页面在桌面端左侧边栏不显示返回标题的问题
+- 优化了用户体验：
+    - 将防止 scrollfix 容器滚动渗透的范围调整为仅限移动设备
+    - 调整了 admonition 图标的 top 值，使其始终对齐 top line
+    - 调整了缩进参考线的颜色深度
+    - 当 TOC 为空时，不隐藏 "Show TOC" 按钮，而是在 TOC 侧边栏显示文字提示
+- 调整了依赖关系配置方法：去除了 `requirements.txt`，全部改为使用 `pyproject.toml`
+- 优化了 Dockerfile 中的构建顺序，提高了 Docker build cache 的利用率，从而提升构建效率
+- 更新了日期插件的模板示例
+
 ### mkdocs-materialx-10.0.9
 
 #### en
