@@ -74,17 +74,17 @@
     
       <link rel="stylesheet" href="assets/document_dates/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="assets/document_dates/tippy/light.css">
-    
-      <link rel="stylesheet" href="assets/document_dates/tippy/material.css">
-    
-      <link rel="stylesheet" href="assets/document_dates/tippy/backdrop.css">
-    
-      <link rel="stylesheet" href="assets/document_dates/tippy/shift-away.css">
+      <link rel="stylesheet" href="assets/document_dates/tippy/tippy.css">
     
       <link rel="stylesheet" href="assets/document_dates/tippy/scale.css">
     
-      <link rel="stylesheet" href="assets/document_dates/tippy/tippy.css">
+      <link rel="stylesheet" href="assets/document_dates/tippy/material.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/tippy/light.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/tippy/backdrop.css">
     
       <link rel="stylesheet" href="assets/document_dates/core/core.css">
     
@@ -1301,10 +1301,10 @@
       <span class="md-nav__link" style="font-weight: 700; cursor: default;">最近更新</span>
       <div>
         <div class="md-nav__item">
-            <a href="/materialx-for-mkdocs.html" class="md-nav__link">下一代主题插件 MaterialX</a>
+            <a href="/document-dates-zh.html" class="md-nav__link">日期作者头像插件</a>
         </div>
         <div class="md-nav__item">
-            <a href="/document-dates-zh.html" class="md-nav__link">日期作者头像插件</a>
+            <a href="/materialx-for-mkdocs.html" class="md-nav__link">下一代主题插件 MaterialX</a>
         </div>
         <div class="md-nav__item">
             <a href="/recently-updated-zh.html" class="md-nav__link">最近更新列表插件</a>
@@ -1762,7 +1762,7 @@
 
 
 <h1 id="mkdocs-document-dates">mkdocs-document-dates<a class="headerlink" href="#mkdocs-document-dates" title="Permanent link">¶</a></h1>
-<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2025-10-27"><span class="material-icons" data-icon="doc_created"></span><time datetime="2025-10-27T16:11:53+08:00"></time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-03-02"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-03-02T14:38:28+00:00"></time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Aaron" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:junewhj@qq.com&quot;&gt;Aaron&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-src="" data-email="junewhj@qq.com"></a></div></div></div></div></div>
+<div class="document-dates-plugin-wrapper document-dates-top"><div class="document-dates-plugin" locale=""><div class="dd-left"><span class="dd-item" data-tippy-content="" data-tippy-raw="2025-10-27"><span class="material-icons" data-icon="doc_created"></span><time datetime="2025-10-27T16:11:53+08:00"></time></span><span class="dd-item" data-tippy-content="" data-tippy-raw="2026-03-28"><span class="material-icons" data-icon="doc_updated"></span><time datetime="2026-03-28T13:46:07+00:00"></time></span></div><div class="dd-right"><span class="material-icons" data-icon="doc_author"></span><div class="author-group"><div class="avatar-wrapper" data-name="Aaron" data-tippy-content="" data-tippy-raw="&lt;a href=&quot;mailto:junewhj@qq.com&quot;&gt;Aaron&lt;/a&gt;"><span class="avatar-text"></span><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="" data-desc-position="bottom"><img class="avatar" data-src="" data-email="junewhj@qq.com"></a></div></div></div></div></div>
 
 <p>新一代用于显示文档确切<strong>创建日期、最后更新日期、作者、头像、邮箱</strong>等信息的 MkDocs 插件</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="assets/document-dates.gif" data-desc-position="bottom"><img alt="render" src="assets/document-dates.gif"></a></p>
@@ -2121,13 +2121,13 @@ flowchart LR
 <h3 id="使用模板变量">使用模板变量<a class="headerlink" href="#使用模板变量" title="Permanent link">¶</a></h3>
 <p>你可以在模板中使用如下变量访问文档的元信息：</p>
 <ul>
-<li>page.meta._mx.document_dates.dates.created</li>
-<li>page.meta._mx.document_dates.dates.updated</li>
-<li>page.meta._mx.document_dates.authors</li>
+<li>page.meta.document_dates.dates.created</li>
+<li>page.meta.document_dates.dates.updated</li>
+<li>page.meta.document_dates.authors</li>
 <li>config.extra.recently_updated_docs</li>
 </ul>
 <h4 id="为-sitemap-设置正确的-lastmod">为 sitemap 设置正确的 lastmod<a class="headerlink" href="#为-sitemap-设置正确的-lastmod" title="Permanent link">¶</a></h4>
-<p>可以通过模板变量 <code>_mx.document_dates.dates.updated</code> 为你站点的 <code>sitemap.xml</code> 设置正确的 <code>lastmod</code>，以便搜索引擎能更好的处理 SEO，从而提高你网站的曝光率</p>
+<p>可以通过模板变量 <code>document_dates.dates.updated</code> 为你站点的 <code>sitemap.xml</code> 设置正确的 <code>lastmod</code>，以便搜索引擎能更好的处理 SEO，从而提高你网站的曝光率</p>
 <p>步骤：下载示例模板 <a href="https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/sitemap.xml">sitemap.xml</a>，覆盖路径 <code>docs/overrides/sitemap.xml</code></p>
 <h4 id="重新定制插件">重新定制插件<a class="headerlink" href="#重新定制插件" title="Permanent link">¶</a></h4>
 <p>可以利用模板重新定制插件，你可以完全掌控渲染逻辑，插件只负责提供数据</p>

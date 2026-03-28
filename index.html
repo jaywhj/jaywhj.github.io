@@ -72,17 +72,17 @@
     
       <link rel="stylesheet" href="assets/document_dates/fonts/material-icons.css">
     
-      <link rel="stylesheet" href="assets/document_dates/tippy/light.css">
-    
-      <link rel="stylesheet" href="assets/document_dates/tippy/material.css">
-    
-      <link rel="stylesheet" href="assets/document_dates/tippy/backdrop.css">
-    
-      <link rel="stylesheet" href="assets/document_dates/tippy/shift-away.css">
+      <link rel="stylesheet" href="assets/document_dates/tippy/tippy.css">
     
       <link rel="stylesheet" href="assets/document_dates/tippy/scale.css">
     
-      <link rel="stylesheet" href="assets/document_dates/tippy/tippy.css">
+      <link rel="stylesheet" href="assets/document_dates/tippy/material.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/tippy/shift-away.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/tippy/light.css">
+    
+      <link rel="stylesheet" href="assets/document_dates/tippy/backdrop.css">
     
       <link rel="stylesheet" href="assets/document_dates/core/core.css">
     
@@ -905,10 +905,10 @@
       <span class="md-nav__link" style="font-weight: 700; cursor: default;">最近更新</span>
       <div>
         <div class="md-nav__item">
-            <a href="/materialx-for-mkdocs.html" class="md-nav__link">下一代主题插件 MaterialX</a>
+            <a href="/document-dates-zh.html" class="md-nav__link">日期作者头像插件</a>
         </div>
         <div class="md-nav__item">
-            <a href="/document-dates-zh.html" class="md-nav__link">日期作者头像插件</a>
+            <a href="/materialx-for-mkdocs.html" class="md-nav__link">下一代主题插件 MaterialX</a>
         </div>
         <div class="md-nav__item">
             <a href="/recently-updated-zh.html" class="md-nav__link">最近更新列表插件</a>
@@ -984,6 +984,7 @@
 
 <h2 style="text-align: center;margin-bottom: 1.5rem;">最近更新</h2>
 <style>
+/* --- 视图选择器 --- */
 .article-layout-switcher {
     display: flex;
     justify-content: flex-end;
@@ -1017,7 +1018,7 @@
     font-size: 20px;
 }
 
-/* --- 网格模式 (默认) --- */
+/* --- 三种视图 --- */
 .article-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1025,15 +1026,18 @@
     margin: 20px 0;
     /* transition: all 0.2s ease; */
 }
-
-/* --- 详情模式 (is-detail) --- */
 .article-grid.is-detail {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     margin-left: auto;
     margin-right: auto;
 }
-
-/* --- 列表模式 (is-list) --- */
+.article-grid.is-detail .card-summary {
+    --summary-lines: var(--summary-lines-detail);
+}
+.article-grid.is-detail .card-cover {
+    width: 135px;
+    height: 90px;
+}
 .article-grid.is-list {
     margin-left: auto;
     margin-right: auto;
@@ -1044,6 +1048,9 @@
     padding: 12px;
 }
 .article-grid.is-list .card-body {
+    display: none;
+}
+.article-grid.is-list .card-footer {
     display: none;
 }
 .article-grid.is-list .article-card {
@@ -1064,7 +1071,7 @@
     margin-right: 0;
 }
 
-
+/* --- Card --- */
 .article-card {
     border: 1px solid rgba(142, 142, 142, 0.2);
     border-radius: 8px;
@@ -1073,13 +1080,14 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    height:100%;
 }
 
-/* --- 第一行：标题与时间 --- */
+/* --- Header --- */
 .card-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     text-decoration: none;
 }
 .card-title {
@@ -1089,10 +1097,12 @@
     margin-right: 12px;
 }
 .card-date {
-    font-size: 0.84em;
-    color: rgba(100, 100, 100, 0.4);
+    font-size: 0.8em;
+    color: rgba(100, 100, 100, 0.6);
     white-space: nowrap;
     margin-right: 10px;
+    /* 补偿 baseline 布局时字体度量的误差 */
+    transform: translateY(-1px);
 }
 .card-header:hover,
 .card-header:focus {
@@ -1103,37 +1113,45 @@
     text-decoration: underline;
 }
 
-/* --- 第二行：摘要与封面图 --- */
+/* --- Body --- */
 .card-body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 12px;
 }
 .card-summary {
-    flex: 1;
-    color: rgba(142, 142, 142, 1);
+    --summary-lines: var(--summary-lines-grid, 4);
+    --lh: 1.8em;
+
+    line-height: var(--lh);
+    max-height: calc(var(--summary-lines) * var(--lh));
+
+    position: relative;
+    overflow: visible;
+    pointer-events: none;
+
+    color: var(--md-default-fg-color--light, rgb(121, 121, 121));
     font-size: 0.7rem;
-    line-height: 1.6;
     letter-spacing: 0.02rem;
     word-break: break-all;
-    
-    /* 3 行文字截断，超出显示省略号 */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black calc(100% - var(--lh)*1.2),
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        black calc(100% - var(--lh)*1.2),
+        transparent 100%
+    );
 }
 .card-cover {
-    width: 120px;
-    height: 80px;
-    border-radius: 8px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    float: right;
+    width: 105px;
+    height: 70px;
+    margin: 2px 0 0 10px;
+    border-radius: 4px;
     overflow: hidden;
-    margin-left: 10px;
+
     transition: filter 0.3s ease;
 
     /* Safari 圆角闪烁修复 */
@@ -1166,6 +1184,55 @@
 .card-cover:hover img {
     transform: scale(1.1) translateX(4px) translateZ(0);
 }
+.card-body::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* --- Footer --- */
+.card-footer {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 12px;
+    margin-bottom: -4px;
+    font-size: 0.75rem;
+    line-height: 1.6;
+}
+.card-footer .read-time {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.65rem;
+    color: rgba(100, 100, 100, 0.6);
+    white-space: nowrap;
+    margin-right: 12px;
+}
+.card-footer .read-time-icon {
+    font-size: 0.8rem;
+    opacity: .7;
+    margin-right: 4px;
+}
+
+.md-typeset .md-tags:not([hidden]) {
+    margin: 0 0 0 auto;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    gap: 0;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+.md-typeset .md-tag {
+    font-weight: 400;
+    flex-shrink: 0;
+    gap: 0;
+    color: var(--md-default-fg-color--light);
+    margin-right: 6px;
+}
+.md-typeset .md-tag-icon::before {
+    margin-right: 4px;
+}
 </style>
 
 <div class="article-layout-switcher">
@@ -1174,26 +1241,35 @@
     <button class="layout-grid-btn"><span class="material-icons">view_module</span></button>
 </div>
 
-<div class="article-grid">
-    <div class="article-card">
-        <a class="card-header" href="materialx-for-mkdocs.html" target="_blank">
-            <div class="card-title">下一代主题插件 MaterialX</div>
-            <time class="dd-timeago card-date" datetime="2026-03-09 08:37:29">2026-03-09</time>
-        </a>
-        <div class="card-body">
-            <div class="card-summary">MaterialX for MkDocs，下一代 mkdocs-material，让你继续用熟悉的方式构建漂亮站点。基于 mkdocs-material-9.7.1 衍生，取名为 X，提供持续的维护与更新。  由于 mkdocs-material 已进入维护模式，不再有新功能，而替代品 Zensical 目前还不完善，并且不兼容 MkDocs 原有的插件生态，这将导致原本的繁荣生态被打破而失去活力，用户原本稳定而又完善的站点如果要迁移到 Zensical，则有着较高的迁移成本和不稳定性的风险。  那有没有办法做到，既能拥有 mkdocs-material 的丰富生态和稳定性，又能拥有像 Zensical 一样的新特性呢？  答案就是 MaterialX，它将拥有以下全新愿景和定位。   MaterialX 路线图  在我看来，技术的魅力在于让更多的人利用你提供的工具轻而易举就实现了他原来很难做到的事。  一个好的产品，在功能设计上，应该是恰到好处，适可而止，而不是提供更多的功能选择和眼花缭乱的配置项。说实话，无论是 mkdocs-material 还是 Zensical，都有点个性化过度了，配置项太多太复杂了，谁的配置项最后不是动辄几百行？哪个初次用 mkdocs-material 的人没折腾上好几天？  而我希望把它做成一个傻瓜式的程序，用户只需要简单少量的配置，就能轻松把平时的笔记和文档转成自己的专业站点，方便传播分享与交流。  所以，MaterialX 将遵循以下目标和原则：  - 目标：追求人人可用，人人都可拥有自己的网站，包括但不限于开发者、产品经理、运营人员、运维人员等，不再是技术人员的专利</div>
-            <div class="card-cover">
-                <img src="assets/cat.jpg" alt="下一代主题插件 MaterialX">
-            </div>
-        </div>
-    </div>
+<div class="article-grid" style="
+        --summary-lines-grid: 4;
+        --summary-lines-detail: 6;
+     ">
     <div class="article-card">
         <a class="card-header" href="document-dates-zh.html" target="_blank">
             <div class="card-title">日期作者头像插件</div>
-            <time class="dd-timeago card-date" datetime="2026-03-02 14:38:28">2026-03-02</time>
+            <time class="dd-timeago card-date" datetime="2026-03-28 13:46:07">2026-03-28</time>
         </a>
         <div class="card-body">
             <div class="card-summary">新一代用于显示文档确切创建日期、最后更新日期、作者、头像、邮箱等信息的 MkDocs 插件   特性  - 适用于任何环境：无 Git、Git 环境、Docker 容器、所有 CI/CD 构建系统等  - 支持列表显示最近更新的文档（按更新日期倒序排列）  - 支持在 Front Matter 中手动指定日期和作者  - 支持多种日期格式（date、datetime、timeago）  - 支持多种作者模式（头像、文本、隐藏）  - 支持手动配置作者的姓名、链接、头像、邮箱等  - 灵活的显示位置（顶部或底部）  - 优雅的样式设计（完全可定制）</div>
+        </div>
+        <div class="card-footer">
+            <span class="read-time"><span class="read-time-icon material-icons">hourglass_top</span>需要 10 分钟阅读时间</span>
+        </div>
+    </div>
+    <div class="article-card">
+        <a class="card-header" href="materialx-for-mkdocs.html" target="_blank">
+            <div class="card-title">下一代主题插件 MaterialX</div>
+            <time class="dd-timeago card-date" datetime="2026-03-28 13:41:44">2026-03-28</time>
+        </a>
+        <div class="card-body">
+            <div class="card-cover">
+                <img src="assets/cat.jpg" alt="下一代主题插件 MaterialX">
+            </div>
+            <div class="card-summary">MaterialX for MkDocs，下一代 mkdocs-material，让你继续用熟悉的方式构建漂亮站点。基于 mkdocs-material-9.7.1 衍生，取名为 X，提供持续的维护与更新。  由于 MkDocs 原作者的个人问题，MkDocs 项目即将走向尽头。他已停止更新 MkDocs，并打算发布一个全新的 2.0 版本作为替代。可是，这个新版本与现有生态系统完全不兼容，它是一个完全独立的项目，只是沿用了 MkDocs 这个名称，一旦你不小心升级了，将导致毁灭性的破坏。  所以，为了摆脱对 MkDocs 的依赖，原流行主题框架 mkdocs-material 团队停止了对 mkdocs-material 的维护，转而去开发了一个全新的同类项目 Zensical，优点是现代架构，缺点是不兼容原来的 MkDocs 生态（无插件），有着较高的迁移成本（所有配置项都需要从头重建），且目前很多基础功能还不完善。  为了让原有的 MkDocs 生态和项目持续且稳定的运行下去，MkDocs 有了新的社区继任者 ProperDocs (基于 MkDocs 1.6.1)，会提供持续的更新维护且无缝兼容原来的 MkDocs 生态。  同样 mkdocs-material 也迎来了新的继任者 MaterialX (基于 mkdocs-material 9.7.1)，也会提供持续的更新维护，且无缝兼容原有的生态，零迁移成本。  MaterialX 既维持了 mkdocs-material 项目的 丰富功能 和 稳定性，又拥有了 新特性 和 兼容性，并将拥有以下全新愿景和定位。   MaterialX 路线图  MaterialX 旨在成为 极简易用傻瓜式 的静态站点生成器，用户只需要简单且少量的配置，就能轻松把平时的笔记和文档转成专业站点，方便传播分享与交流。  在我看来，技术的魅力在于让更多的人利用你提供的工具轻而易举就实现了他原来很难做到的事。  一个好的产品，在功能设计上，应该是恰到好处，适可而止，而不是提供更多的功能选择和眼花缭乱的配置项。说实话，无论是 mkdocs-material 还是 Zensical，都有点个性化过度了，配置项太多太复杂了，谁的配置项最后不是动辄几百行？哪个初次用 mkdocs-material 的人没折腾上好几天？</div>
+        </div>
+        <div class="card-footer">
+            <span class="read-time"><span class="read-time-icon material-icons">hourglass_top</span>需要 10 分钟阅读时间</span>
         </div>
     </div>
     <div class="article-card">
@@ -1204,6 +1280,9 @@
         <div class="card-body">
             <div class="card-summary">mkdocs-recently-updated-docs：一行代码显示最近更新的文档列表  - 按更新时间降序显示最近更新的文档，列表项动态更新  - 支持列表、详情、网格等多种视图模式  - 支持自动提取文章摘要  - 支持在 Front Matter 中自定义文章封面  - 支持自定义显示数量  - 支持排除指定文件或目录  - 适用于任何环境（no-Git, Git, Docker, all CI/CD build systems, etc.）  最新更新模块会以结构化的方式展示站点的文档信息，这非常适合文档数量众多或更新频繁的网站，这样读者可以快速查看最新内容</div>
         </div>
+        <div class="card-footer">
+            <span class="read-time"><span class="read-time-icon material-icons">hourglass_top</span>需要 1 分钟阅读时间</span>
+        </div>
     </div>
     <div class="article-card">
         <a class="card-header" href="markdown.html" target="_blank">
@@ -1212,6 +1291,13 @@
         </a>
         <div class="card-body">
             <div class="card-summary">一、什么是 Markdown  Markdown 是一种轻量级的纯文本标记语言，用简单少量的符号对文字进行标注，从而实现以最小的输入代价生成印刷级排版格式的文档。它在流畅的书写和印刷级阅读体验之间找到了平衡，让人只需专注内容而不是纠结排版。  常用的标记符号 不超过十个，好记好用好效果。(非程序员用户如产品、运营 ... 也可以轻松搞定)   二、Markdown 编辑器  - Typora（Mac、Win、Linux），简约不简单，所见即所得；✓  - MWeb（Mac、iOS），一款专注于 Markdown 的写作、记笔记和发布软件；  - Obsidian（Mac、Win、Linux、iOS、Android），一款支持 Zettelkasten 笔记法的笔记管理软件，利用「双向链接」打造「知识循环」体系，支持基础的 markdown 语法；  - YankNote（Mac、Win、Linux），一款强大可扩展的 Markdown 编辑器，满足了所有幻想，还可以在线体验；✓  - mdx-notes（Mac、Win、Linux、Web），跨平台笔记软件，Web版 在线编辑器可作为网文排版工具；  - markdown-online-editor，Arya - 在线 Markdown 编辑器，支持所有基础语法、数学公式、Mermaid 图表、Echarts 图表、五线谱，以及 PPT 模式、视频音频解析等；✓</div>
+        </div>
+        <div class="card-footer">
+            <span class="read-time"><span class="read-time-icon material-icons">hourglass_top</span>需要 5 分钟阅读时间</span>
+            <div class="md-tags">
+                <span class="md-tag md-tag-icon">tutorial</span>
+                <span class="md-tag md-tag-icon">markdown</span>
+            </div>
         </div>
     </div>
     <div class="article-card">
@@ -1222,6 +1308,9 @@
         <div class="card-body">
             <div class="card-summary"></div>
         </div>
+        <div class="card-footer">
+            <span class="read-time"><span class="read-time-icon material-icons">hourglass_top</span>需要 1 分钟阅读时间</span>
+        </div>
     </div>
     <div class="article-card">
         <a class="card-header" href="hainan.html" target="_blank">
@@ -1230,6 +1319,9 @@
         </a>
         <div class="card-body">
             <div class="card-summary">一、定目的地  - 三亚：市中心、三亚湾、大东海、亚龙湾、海棠湾；  - 陵水：土福湾、清水湾、日月湾(冲浪)、石梅湾(观海亭+最美公路)；  - 海口：看小红书笔记分享（看个十条八条）；   二、出行方式   飞海口  - 先飞海口，再坐高铁到旅游目的地。海口机场隔壁就是美兰高铁站，可直达三亚、陵水等，海南省的高铁是一个绕岛循环线路，来回转圈，发车多，比较方便和经济，还能欣赏一下沿途风景。   飞三亚  - 直飞三亚，再打车到目的地。旅游旺季机票相对较贵，而且从机场打车到目的地也得个把小时，整体花费多也没省时间。   三、住宿与出行</div>
+        </div>
+        <div class="card-footer">
+            <span class="read-time"><span class="read-time-icon material-icons">hourglass_top</span>需要 2 分钟阅读时间</span>
         </div>
     </div>
 </div>
