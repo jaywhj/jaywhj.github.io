@@ -343,14 +343,14 @@ show_author: text
 
 你可以在模板中使用如下变量访问文档的元信息：
 
-- page.meta._mx.document_dates.dates.created
-- page.meta._mx.document_dates.dates.updated
-- page.meta._mx.document_dates.authors
+- page.meta.document_dates.dates.created
+- page.meta.document_dates.dates.updated
+- page.meta.document_dates.authors
 - config.extra.recently_updated_docs
 
 #### 为 sitemap 设置正确的 lastmod
 
-可以通过模板变量 `_mx.document_dates.dates.updated` 为你站点的 `sitemap.xml` 设置正确的 `lastmod`，以便搜索引擎能更好的处理 SEO，从而提高你网站的曝光率
+可以通过模板变量 `document_dates.dates.updated` 为你站点的 `sitemap.xml` 设置正确的 `lastmod`，以便搜索引擎能更好的处理 SEO，从而提高你网站的曝光率
 
 步骤：下载示例模板 [sitemap.xml](https://github.com/jaywhj/mkdocs-document-dates/blob/main/templates/overrides/sitemap.xml)，覆盖路径 `docs/overrides/sitemap.xml`
 
