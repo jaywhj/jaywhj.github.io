@@ -27,6 +27,6 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-materialx-
-      - run: pip install mkdocs-materialx==10.1.2
+      - run: pip install mkdocs-materialx==10.1.3
       - run: pip install mkdocs-glightbox
       - run: mkdocs gh-deploy --force
