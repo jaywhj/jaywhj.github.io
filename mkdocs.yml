@@ -30,6 +30,9 @@ nav:
 
 # 主题板块
 theme:
+  code:
+    fold:
+      enabled: true
   name: materialx
   custom_dir: docs/overrides  # 配置覆写文件目录
   icon:
@@ -37,6 +40,13 @@ theme:
     repo: material/github
   language: zh
   font: false
+  admonition:
+    git:
+      icon: simple/git
+      color: "#f34f29"
+    desc:
+      icon: octicons/question-16
+      color: rgba(158, 158, 158, 0.7)
 
   # topbar_style: primary   # glass primary accent
   palette:
@@ -106,6 +116,8 @@ markdown_extensions:
   - pymdownx.blocks.caption # 向 Markdown 块添加标题，包括图像、表格和代码块
   - pymdownx.inlinehilite   # 内联代码高亮，建立在 highlight 基础上
   - pymdownx.keys           # 扩展键盘渲染-按键组合写法
+
+  # - material.extensions.code_download
 
   - pymdownx.tasklist:      # 任务列表
       custom_checkbox: true     # 切换复选框渲染样式，用漂亮的图标替换原生的
